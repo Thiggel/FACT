@@ -85,17 +85,9 @@ class Experiment:
             :obj:`Exception` when model is not Graphair. At this moment, only Graphair is supported.
         """
 
-        # Train script
-        dataset_name = self.dataset.name
-
-        features = self.dataset.features
-        sens = self.dataset.sens
-        adj = self.dataset.adj
-        idx_sens = self.dataset.idx_sens_train
-
         # Initialize augmentation model g
         self.aug_model = aug_module(
-            features=features,
+            features=self.dataset.features,
             n_hidden=self.g_hidden,
             temperature=self.g_temperature,
             device=self.device
@@ -103,7 +95,7 @@ class Experiment:
 
         # Initialize encoder model f
         self.f_encoder = GCN_Body(
-            in_feats=features.shape[1],
+            in_feats=self.dataset.features.shape[1],
             n_hidden=self.f_hidden,
             out_feats=self.f_output_features,
             dropout=self.f_dropout,
@@ -112,7 +104,7 @@ class Experiment:
 
         # Initialize adversary model k
         self.sens_model = GCN(
-            in_feats=features.shape[1],
+            in_feats=self.dataset.features.shape[1],
             n_hidden=self.k_hidden,
             out_feats=self.k_output_features,
             nclass=1
@@ -129,28 +121,28 @@ class Experiment:
             classifier_model=self.classifier_model,
             lr=self.lr, # TODO: add a separate lr for classifier model
             weight_decay=self.weight_decay, # TODO: add a separate weight_decay for classifier model
-            dataset=dataset_name
+            dataset=self.dataset.name
             ).to(self.device)
 
         # Train the model
         st_time = time.time()
         self.model.fit_whole(
             epochs=self.epochs,
-            adj=adj,
-            x=features,
-            sens=sens,
-            idx_sens=idx_sens,
+            adj=self.dataset.adj,
+            x=self.dataset.features,
+            sens=self.dataset.sens,
+            idx_sens=self.dataset.idx_sens_train,
             warmup=self.warmup,
             adv_epoches=1) # TODO: figure out what adv_epochs is
         print("Training time: ", time.time() - st_time)
 
         # Test the model
         self.model.test(
-            adj=adj,
-            features=features,
+            adj=self.dataset.adj,
+            features=self.dataset.features,
             labels=self.dataset.labels,
             epochs=self.test_epochs,
             idx_train=self.dataset.idx_train,
             idx_val=self.dataset.idx_val,
             idx_test=self.dataset.idx_test,
-            sens=sens)
+            sens=self.dataset.sens)
