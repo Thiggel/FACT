@@ -5,8 +5,9 @@ import pandas as pd
 import scipy.sparse as sp
 import random
 from torch_geometric.data import download_url
+from ..utils.utils import set_device
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = set_device()
 
 class POKEC():
     r"""Pokec is a social network dataset. Two `different datasets <https://github.com/EnyanDai/FairGNN/tree/main/dataset/pokec>`_ (namely pokec_z and pokec_n) are sampled
@@ -134,13 +135,13 @@ class POKEC():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features.cuda()
-        self.labels = labels.cuda()
-        self.idx_train = idx_train.cuda()
-        self.idx_val = idx_val.cuda()
-        self.idx_test = idx_test.cuda()
-        self.sens = sens.cuda()
-        self.idx_sens_train = idx_sens_train.long().cuda()
+        self.features = features.to(device)
+        self.labels = labels.to(device)
+        self.idx_train = idx_train.to(device)
+        self.idx_val = idx_val.to(device)
+        self.idx_test = idx_test.to(device)
+        self.sens = sens.to(device)
+        self.idx_sens_train = idx_sens_train.long().to(device)
 
         self.adj = adj
 
@@ -256,12 +257,12 @@ class NBA():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features.cuda()
-        self.labels = labels.cuda()
-        self.idx_train = idx_train.cuda()
-        self.idx_val = idx_val.cuda()
-        self.idx_test = idx_test.cuda()
-        self.sens = sens.cuda()
-        self.idx_sens_train = idx_sens_train.long().cuda()
+        self.features = features.to(device)
+        self.labels = labels.to(device)
+        self.idx_train = idx_train.to(device)
+        self.idx_val = idx_val.to(device)
+        self.idx_test = idx_test.to(device)
+        self.sens = sens.to(device)
+        self.idx_sens_train = idx_sens_train.long().to(device)
 
         self.adj = adj
