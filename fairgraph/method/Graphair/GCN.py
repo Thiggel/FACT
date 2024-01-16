@@ -2,10 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import init
-import torch
+
 
 class GCNLayer(nn.Module):
-    def __init__(self, input_dim, output_dim, activation = F.relu, dropout = None, bias=True):
+    def __init__(self, input_dim, output_dim, activation=F.relu, dropout=None, bias=True):
         super(GCNLayer, self).__init__()
         self.W = nn.Parameter(torch.FloatTensor(input_dim, output_dim))
         self.activation = activation
@@ -63,7 +63,7 @@ class GCN_Body(nn.Module):
         return h
 
 class GCN(nn.Module):
-    def __init__(self, in_feats, n_hidden, out_feats, nclass, dropout = 0.2, nlayer = 2):
+    def __init__(self, in_feats, n_hidden, out_feats, nclass, dropout=0.2, nlayer=2):
         super(GCN, self).__init__()
         self.body = GCN_Body(in_feats, n_hidden, out_feats, dropout, nlayer)
         self.fc = nn.Sequential(
@@ -75,4 +75,4 @@ class GCN(nn.Module):
     def forward(self, g, x):
         h = self.body(g, x)
         x = self.fc(h)
-        return x , h
+        return x, h
