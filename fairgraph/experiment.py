@@ -73,9 +73,9 @@ class Experiment:
         # Test the model
         self.model.test(adj=adj,
                    features=features,
-                   labels=dataset.labels,
-                   epochs=test_epochs,
-                   idx_train=dataset.idx_train,
-                   idx_val=dataset.idx_val,
-                   idx_test=dataset.idx_test,
+                   labels=self.dataset.labels,
+                   epochs=self.test_epochs,
+                   idx_train=self.dataset.idx_train,
+                   idx_val=self.dataset.idx_val,
+                   idx_test=self.dataset.idx_test,
                    sens=sens)
