@@ -134,7 +134,7 @@ class Experiment:
         print("Training time: ", time.time() - st_time)
 
         # Test the model
-        self.model.test(
+        results = self.model.test(
             adj=self.dataset.adj,
             features=self.dataset.features,
             labels=self.dataset.labels,
@@ -143,3 +143,5 @@ class Experiment:
             idx_val=self.dataset.idx_val,
             idx_test=self.dataset.idx_test,
             sens=self.dataset.sens)
+
+        return results

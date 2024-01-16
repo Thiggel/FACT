@@ -277,10 +277,16 @@ class Graphair(nn.Module):
             dp_list.append(best_dp_test)
             eo_list.append(best_eo_test)
         
+        average_results = {
+            "acc": {"mean": np.mean(acc_list), "std": np.std(acc_list)},
+            "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
+            "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
+        }
         print("Avg results:",
-                    "acc: {:.4f} std: {:.4f}".format(np.mean(acc_list), np.std(acc_list)), 
-                    "dp: {:.4f} std: {:.4f}".format(np.mean(dp_list), np.std(dp_list)),
-                    "eo: {:.4f} std: {:.4f}".format(np.mean(eo_list), np.std(eo_list)),)
+                    "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
+                    "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
+                    "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
+        return average_results
 
     def _save_checkpoint(self):
         os.makedirs(self.checkpoint_path, exist_ok=True)
