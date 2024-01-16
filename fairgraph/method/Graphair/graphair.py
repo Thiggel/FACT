@@ -51,8 +51,10 @@ class Graphair(nn.Module):
     '''
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
                  weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
-                 num_hidden=64, num_proj_hidden=64):
+                 num_hidden=64, num_proj_hidden=64, device='cpu'):
         super(graphair, self).__init__()
+        self.device = device
+
         self.aug_model = aug_model
         self.f_encoder = f_encoder
         self.sens_model = sens_model
@@ -92,14 +94,14 @@ class Graphair(nn.Module):
 
         labels = torch.cat([torch.arange(batch_size) for i in range(2)], dim=0)
         labels = (labels.unsqueeze(0) == labels.unsqueeze(1)).float()
-        labels = labels.cuda()
+        labels = labels.to(self.device)
 
         features = F.normalize(features, dim=1)
 
         similarity_matrix = torch.matmul(features, features.T)
 
         # discard the main diagonal from both: labels and similarities matrix
-        mask = torch.eye(labels.shape[0], dtype=torch.bool).cuda()
+        mask = torch.eye(labels.shape[0], dtype=torch.bool).to(self.device)
         labels = labels[~mask].view(labels.shape[0], -1)
         similarity_matrix = similarity_matrix[~mask].view(similarity_matrix.shape[0], -1)
 
@@ -108,7 +110,7 @@ class Graphair(nn.Module):
         negatives = similarity_matrix[~labels.bool()].view(similarity_matrix.shape[0], -1)
 
         logits = torch.cat([positives, negatives], dim=1)
-        labels = torch.zeros(logits.shape[0], dtype=torch.long).cuda()
+        labels = torch.zeros(logits.shape[0], dtype=torch.long).to(self.device)
         
         temperature = 0.07
         logits = logits / temperature
@@ -125,7 +127,7 @@ class Graphair(nn.Module):
         adj_norm = degree_mat_inv_sqrt @ adj @ degree_mat_inv_sqrt
         adj_norm = scipysp_to_pytorchsp(adj_norm)
     
-        adj = adj_norm.cuda()
+        adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
 
     def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1):
@@ -141,14 +143,14 @@ class Graphair(nn.Module):
         adj_norm = scipysp_to_pytorchsp(adj_norm)
         
 
-        adj = adj_norm.cuda()
+        adj = adj_norm.to(self.device)
         
         best_contras = float("inf")
         
         if warmup:
             for _ in range(warmup):
-                adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.cuda())
-                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.cuda())
+                adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
+                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
 
                 feat_loss =  self.criterion_recons(x_aug, x)
                 recons_loss =  edge_loss + self.beta * feat_loss
@@ -165,7 +167,7 @@ class Graphair(nn.Module):
 
         for epoch_counter in range(epochs):
             ### generate fair view
-            adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.cuda())
+            adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
             
             ### extract node representations
             h = self.projection(self.f_encoder(adj, x))
@@ -193,7 +195,7 @@ class Graphair(nn.Module):
             contrastive_loss = self.criterion_cont(logits, labels)
 
             ## update encoder
-            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.cuda())
+            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
 
             feat_loss =  self.criterion_recons(x_aug, x)
             recons_loss =  edge_loss + self.lam * feat_loss
