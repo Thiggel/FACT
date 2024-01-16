@@ -1,4 +1,6 @@
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
+from .utils.constants import Datasets
+from .dataset import POKEC, NBA
 
 import time
 
@@ -8,15 +10,24 @@ class Experiment:
     This class instantiates Graphair model and implements method to train and evaluate.
     """
 
-    def __init__(self, device, dataset, epochs=10_000, test_epochs=1_000,
+    def __init__(self, dataset_name, device='cpu', epochs=10_000, test_epochs=1_000,
                  lr=1e-4, weight_decay=1e-5):
         self.device = device
-        self.dataset = dataset
         self.epochs = epochs
         self.test_epochs = test_epochs
         self.lr = lr
         self.weight_decay = weight_decay
+        self.dataset = self.initialize_dataset(dataset_name)
 
+    def initialize_dataset(self, dataset_name):
+        if dataset_name == Datasets.NBA:
+            return NBA(device=self.device)
+        elif dataset_name == Datasets.POKEN:
+            return POKEC(device=self.device, dataset_sample='pokec_n')
+        elif dataset_name == Datasets.POKEZ:
+            return POKEC(device=self.device, dataset_sample='pokec_z')
+        else:
+            raise Exception(f"Dataset {dataset_name} is not supported")
 
     def run(self):
         r""" This method runs training and evaluation for a fairgraph model on the given dataset.
