@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import scipy.sparse as sp
 import numpy as np
-from dig.fairgraph.utils.utils import scipysp_to_pytorchsp,accuracy,fair_metric
+from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric
 
 class Graphair(nn.Module):
     r'''
@@ -52,7 +52,7 @@ class Graphair(nn.Module):
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
                  weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
                  num_hidden=64, num_proj_hidden=64, device='cpu'):
-        super(graphair, self).__init__()
+        super(Graphair, self).__init__()
         self.device = device
 
         self.aug_model = aug_model
