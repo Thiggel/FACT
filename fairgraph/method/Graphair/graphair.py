@@ -5,7 +5,7 @@ import scipy.sparse as sp
 import numpy as np
 from dig.fairgraph.utils.utils import scipysp_to_pytorchsp,accuracy,fair_metric
 
-class graphair(nn.Module):
+class Graphair(nn.Module):
     r'''
         This class implements the Graphair model
 
@@ -49,7 +49,9 @@ class graphair(nn.Module):
         :type num_proj_hidden: int,optional
 
     '''
-    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr = 1e-4, weight_decay = 1e-5, alpha = 20, beta = 0.9, gamma = 0.7, lam = 1, dataset = 'POKEC', num_hidden = 64, num_proj_hidden = 64):
+    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
+                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
+                 num_hidden=64, num_proj_hidden=64):
         super(graphair, self).__init__()
         self.aug_model = aug_model
         self.f_encoder = f_encoder
@@ -65,13 +67,13 @@ class graphair(nn.Module):
         self.criterion_cont= nn.CrossEntropyLoss()
         self.criterion_recons = nn.MSELoss()
 
-        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr = 1e-4, weight_decay = 1e-5)
+        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=1e-4, weight_decay=1e-5)
 
-        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params':self.f_encoder.parameters()}]
-        self.optimizer = torch.optim.Adam(FG_params, lr = lr, weight_decay = weight_decay)
+        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params': self.f_encoder.parameters()}]
+        self.optimizer = torch.optim.Adam(FG_params, lr=lr, weight_decay=weight_decay)
 
-        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr = 1e-3, weight_decay = weight_decay)
-        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr = lr, weight_decay = weight_decay)
+        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=1e-3, weight_decay=weight_decay)
+        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=lr, weight_decay=weight_decay)
 
 
         self.fc1 = torch.nn.Linear(num_hidden, num_proj_hidden)
@@ -211,8 +213,8 @@ class graphair(nn.Module):
         torch.save(self.state_dict(),self.save_path)
     
 
-    def test(self,adj,features,labels,epochs,idx_train,idx_val,idx_test,sens):
-        h = self.forward(adj,features)
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens):
+        h = self.forward(adj, features)
         h = h.detach()
 
         acc_list = []
@@ -220,8 +222,8 @@ class graphair(nn.Module):
         eo_list = []
 
         for i in range(5):
-            torch.manual_seed(i *10)
-            np.random.seed(i *10)
+            torch.manual_seed(i*10)
+            np.random.seed(i*10)
 
             # train classifier
             best_acc = 0.0
@@ -241,8 +243,8 @@ class graphair(nn.Module):
                 acc_val = accuracy(output[idx_val], labels[idx_val])
                 acc_test = accuracy(output[idx_test], labels[idx_test])
 
-                parity_val, equality_val = fair_metric(output,idx_val, labels, sens)
-                parity_test, equality_test = fair_metric(output,idx_test, labels, sens)
+                parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
+                parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
                 if epoch%10==0:
                     print("Epoch [{}] Test set results:".format(epoch),
                         "acc_test= {:.4f}".format(acc_test.item()),
@@ -277,4 +279,3 @@ class graphair(nn.Module):
                     "dp: {:.4f} std: {:.4f}".format(np.mean(dp_list), np.std(dp_list)),
                     "eo: {:.4f} std: {:.4f}".format(np.mean(eo_list), np.std(eo_list)),)
 
-        
