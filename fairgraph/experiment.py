@@ -8,8 +8,9 @@ import time
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
 class Experiment:
-    r"""
-    This class instantiates Graphair model and implements method to train and evaluate.
+    """
+    Creates an experiment with the specified hyperparameters. Instantiates
+    Graphair model and implements method to train and evaluate.
     """
 
     def __init__(self, dataset_name, device=None, epochs=10_000, test_epochs=1_000,
@@ -17,6 +18,21 @@ class Experiment:
                  f_hidden=64, f_layers=2, f_dropout=0.1, f_output_features=64,
                  k_hidden=64, k_output_features=64, c_hidden=64, c_input=64,
                  warmup=0):
+        """
+        Initializes an Experiment class instance.
+
+        Args:
+            dataset_name (str): the name of the dataset to use
+            device (str): the device to use. Default: None, which
+                selects the best available device
+            epochs (int): number of training epochs #TODO: update this
+            test_epochs (int): number of testing epochs #TODO: update this
+            lr (float): learning rate for ... #TODO: update this
+            weight_decay (float): weight decay factor for ... #TODO: update this
+            g_temperature (float): temperature of augmentation model g
+            ... #TODO: finish docstring
+
+        """
         self.device = device if device else set_device()
         self.epochs = epochs
         self.test_epochs = test_epochs
@@ -56,34 +72,7 @@ class Experiment:
             raise Exception(f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}")
 
     def run(self):
-        r""" This method runs training and evaluation for a fairgraph model on the given dataset.
-        Check :obj:`examples.fairgraph.Graphair.run_graphair_nba.py` for examples on how to run the Graphair model.
-
-        
-        :param device: Device for computation.
-        :type device: :obj:`torch.device`
-
-        :param model: Defaults to `Graphair`. (Note that at this moment, only `Graphair` is supported)
-        :type model: str, optional
-        
-        :param dataset: The dataset to train on. Should be one of :obj:`dig.fairgraph.dataset.fairgraph_dataset.POKEC` or :obj:`dig.fairgraph.dataset.fairgraph_dataset.NBA`.
-        :type dataset: :obj:`object`
-        
-        :param epochs: Number of epochs to train on. Defaults to 10_000.
-        :type epochs: int, optional
-
-        :param test_epochs: Number of epochs to train the classifier while running evaluation. Defaults to 1_000.
-        :type test_epochs: int,optional
-
-        :param lr: Learning rate. Defaults to 1e-4.
-        :type lr: float,optional
-
-        :param weight_decay: Weight decay factor for regularization. Defaults to 1e-5.
-        :type weight_decay: float, optional
-
-        :raise:
-            :obj:`Exception` when model is not Graphair. At this moment, only Graphair is supported.
-        """
+        """ Runs training and evaluation for a fairgraph model on the given dataset. """
 
         # Initialize augmentation model g
         self.aug_model = aug_module(
