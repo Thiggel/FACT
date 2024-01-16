@@ -1,5 +1,6 @@
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
 from .utils.constants import Datasets
+from .utils.utils import set_device
 from .dataset import POKEC, NBA
 
 import time
@@ -10,9 +11,9 @@ class Experiment:
     This class instantiates Graphair model and implements method to train and evaluate.
     """
 
-    def __init__(self, dataset_name, device='cpu', epochs=10_000, test_epochs=1_000,
+    def __init__(self, dataset_name, device=None, epochs=10_000, test_epochs=1_000,
                  lr=1e-4, weight_decay=1e-5):
-        self.device = device
+        self.device = device if device else set_device()
         self.epochs = epochs
         self.test_epochs = test_epochs
         self.lr = lr
