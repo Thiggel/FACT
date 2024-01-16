@@ -1,5 +1,29 @@
-from fairgraph.method.experiment import Experiment
+import argparse
+import yaml
+
+from fairgraph import Experiment
 
 
 if __name__ == "__main__":
-    pass
+    # Command line arguments
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--params_file', default='./hyperparams.yml', type=str,
+                        help='Path to the file with hyperparameters')
+    parser.add_argument('--dataset_name', default='NBA', type=str,
+                        help='The dataset to use')
+
+    args = parser.parse_args()
+    kwargs = vars(args)
+
+    with open(args.params_file, "r") as stream:
+        try:
+            hyperparams = yaml.safe_load(stream)
+        except yaml.YAMLError as e:
+            print(e)
+
+    print(args)
+    # Initialize and run an experiment
+    experiment = Experiment(args.dataset_name, **hyperparams)
+    results = experiment.run()
+    print(results)
