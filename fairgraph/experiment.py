@@ -23,12 +23,12 @@ class Experiment:
     def initialize_dataset(self, dataset_name):
         if dataset_name == Datasets.NBA:
             return NBA(device=self.device)
-        elif dataset_name == Datasets.POKEN:
+        elif dataset_name == Datasets.POKEC_N:
             return POKEC(device=self.device, dataset_sample='pokec_n')
-        elif dataset_name == Datasets.POKEZ:
+        elif dataset_name == Datasets.POKEC_Z:
             return POKEC(device=self.device, dataset_sample='pokec_z')
         else:
-            raise Exception(f"Dataset {dataset_name} is not supported")
+            raise Exception(f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}")
 
     def run(self):
         r""" This method runs training and evaluation for a fairgraph model on the given dataset.
