@@ -9,7 +9,7 @@ To install the required dependencies:
 
 To run the experiment use:
 ```
-python run.py --params_file <example.yml>  --dataset_name <example> --device <example>
+python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu
 ```
 `--params_file`: YAML file with hyperparameters, default: hyperparams.yml
 
