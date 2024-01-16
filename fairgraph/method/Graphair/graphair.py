@@ -1,3 +1,5 @@
+import os
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -51,9 +53,10 @@ class Graphair(nn.Module):
     '''
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
                  weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
-                 num_hidden=64, num_proj_hidden=64, device='cpu'):
+                 num_hidden=64, num_proj_hidden=64, device='cpu', checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
+        self.checkpoint_path = checkpoint_path
 
         self.aug_model = aug_model
         self.f_encoder = f_encoder
@@ -210,9 +213,7 @@ class Graphair(nn.Module):
             'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
             'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
             )
-
-        self.save_path = "./checkpoint/graphair_{}_alpha{}_beta{}_gamma{}_lambda{}".format(self.dataset, self.alpha, self.beta, self.gamma, self.lam)
-        torch.save(self.state_dict(),self.save_path)
+        self._save_checkpoint()
     
 
     def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens):
@@ -281,3 +282,7 @@ class Graphair(nn.Module):
                     "dp: {:.4f} std: {:.4f}".format(np.mean(dp_list), np.std(dp_list)),
                     "eo: {:.4f} std: {:.4f}".format(np.mean(eo_list), np.std(eo_list)),)
 
+    def _save_checkpoint(self):
+        os.makedirs(self.checkpoint_path, exist_ok=True)
+        save_path = f"{self.checkpoint_path}graphair_{self.dataset}_alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}"
+        torch.save(self.state_dict(), save_path)
