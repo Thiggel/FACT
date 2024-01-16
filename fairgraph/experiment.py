@@ -17,7 +17,7 @@ class Experiment:
                  lr=1e-4, weight_decay=1e-5, g_temperature=1.0, g_hidden=64,
                  f_hidden=64, f_layers=2, f_dropout=0.1, f_output_features=64,
                  k_hidden=64, k_output_features=64, c_hidden=64, c_input=64,
-                 warmup=0):
+                 warmup=0, alpha=20, beta=0.9, gamma=0.7, lam=1):
         """
         Initializes an Experiment class instance.
 
@@ -60,6 +60,10 @@ class Experiment:
 
         # Graphair model hyperparameters
         self.warmup = warmup
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
+        self.lam = lam
 
     def initialize_dataset(self, dataset_name):
         if dataset_name == Datasets.NBA:
@@ -110,7 +114,11 @@ class Experiment:
             classifier_model=self.classifier_model,
             lr=self.lr, # TODO: add a separate lr for classifier model
             weight_decay=self.weight_decay, # TODO: add a separate weight_decay for classifier model
-            dataset=self.dataset.name
+            dataset=self.dataset.name,
+            alpha=self.alpha,
+            beta=self.beta,
+            gamma=self.gamma,
+            lam=self.lam
             ).to(self.device)
 
         # Train the model
