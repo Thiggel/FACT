@@ -154,5 +154,5 @@ cython_debug/
 
 # Local directories
 venv
-dataset
+dataset/
 checkpoint
