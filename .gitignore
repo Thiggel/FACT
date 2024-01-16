@@ -153,6 +153,6 @@ dmypy.json
 cython_debug/
 
 # Local directories
-venv
-dataset/
-checkpoint
+/venv
+/dataset
+/checkpoint
