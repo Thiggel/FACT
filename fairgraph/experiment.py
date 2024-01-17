@@ -208,6 +208,7 @@ class Experiment:
             f_encoder=self.f_encoder,
             sens_model=self.sens_model,
             classifier_model=self.classifier_model,
+            device=self.device,
             dataset=self.dataset.name,
             **self.graphair_hyperparams
         ).to(self.device)
