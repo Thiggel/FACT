@@ -59,11 +59,12 @@ class Experiment:
 
         """
         self.device = device if device else set_device()
+        self.dataset = self.initialize_dataset(dataset_name)
+
+        # Trainin hyperparameters
+        self.warmup = warmup
         self.epochs = epochs
         self.test_epochs = test_epochs
-        self.lr = lr
-        self.weight_decay = weight_decay
-        self.dataset = self.initialize_dataset(dataset_name)
 
         # Augmentation model g hyperparameters
         self.g_hyperparams = {
@@ -96,11 +97,14 @@ class Experiment:
         self.c_input = c_input
 
         # Graphair model hyperparameters
-        self.warmup = warmup
-        self.alpha = alpha
-        self.beta = beta
-        self.gamma = gamma
-        self.lam = lam
+        self.graphair_hyperparams = {
+            "lr": lr, # TODO: add a separate lr for classifier model
+            "weight_decay": weight_decay, # TODO: add a separate weight_decay for classifier model
+            "alpha": alpha,
+            "beta": beta,
+            "gamma": gamma,
+            "lam": lam
+        }
 
     def initialize_dataset(self, dataset_name):
         if dataset_name == Datasets.NBA:
@@ -147,13 +151,8 @@ class Experiment:
             f_encoder=self.f_encoder,
             sens_model=self.sens_model,
             classifier_model=self.classifier_model,
-            lr=self.lr,  # TODO: add a separate lr for classifier model
-            weight_decay=self.weight_decay,  # TODO: add a separate weight_decay for classifier model
             dataset=self.dataset.name,
-            alpha=self.alpha,
-            beta=self.beta,
-            gamma=self.gamma,
-            lam=self.lam,
+            **self.graphair_hyperparams
         ).to(self.device)
 
         # Train the model
