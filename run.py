@@ -16,6 +16,8 @@ if __name__ == "__main__":
                         help='Device to use')
     parser.add_argument('--verbose', action=argparse.BooleanOptionalAction,
                         help='Whether to print the training logs')
+    parser.add_argument('--seed', default=42, type=int,
+                        help='Seed to use for reproducibility')
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -28,7 +30,7 @@ if __name__ == "__main__":
 
     print(args)
     # Initialize and run an experiment
-    experiment = Experiment(dataset_name=args.dataset_name, device=args.device, verbose=args.verbose, **hyperparams)
+    experiment = Experiment(dataset_name=args.dataset_name, seed=args.seed, device=args.device, verbose=args.verbose, **hyperparams)
     print(experiment)
     results = experiment.run()
     

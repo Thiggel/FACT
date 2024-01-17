@@ -1,6 +1,6 @@
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
 from .utils.constants import Datasets
-from .utils.utils import set_device
+from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA
 
 import time
@@ -21,7 +21,7 @@ class Experiment:
         verbose=False,
         epochs=10_000,
         test_epochs=1_000,
-        lr=1e-4,
+        seed=42,
         weight_decay=1e-5,
         g_temperature=1.0,
         g_hidden=64,
@@ -68,6 +68,9 @@ class Experiment:
         self.device = device if device else set_device()
         self.dataset = self.initialize_dataset(dataset_name)
         self.verbose = verbose
+
+        # Set a seed for reproducibility
+        set_seed(seed)
 
         # Trainig hyperparameters
         self.warmup = warmup

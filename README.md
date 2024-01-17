@@ -9,7 +9,7 @@ To install the required dependencies:
 
 To run the experiment use:
 ```
-python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu
+python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
 ```
 `--params_file`: YAML file with hyperparameters, default: hyperparams.yml
 
@@ -18,5 +18,7 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu
 `--device`: device to use, default: gpu if available, otherwise cpu
 
 `--verbose`: whether to print the training / testing logs
+
+`--seed`: a seed to use for reproducibility
 
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.
