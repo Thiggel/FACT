@@ -5,6 +5,9 @@ weight_decay: 0.00001                 # Weight decay for ...
 warmup: 0                             # Number of wamup steps for ...
 g_temperature: 1.0                    # Temperature of augmentation model g (?)
 g_hidden: 64                          # Number of hidden units for augmentation model g (?)
+g_dropout: 0.1                        # Dropout for encoder for augmentation model g
+g_nlayer: 1                           # Number of layers for encoder for augmentation model g
+mlpx_dropout: 0.1                     # Dropout for MLPX model in augmentation model g
 f_hidden: 64                          # Number of hidden units for encoder model f (?)
 f_output_features: 64                 # Number of output features for encoder model f (?)
 f_dropout: 0.1                        # Dropout for encoder model f (?)

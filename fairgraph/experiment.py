@@ -7,17 +7,40 @@ import time
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
+
 class Experiment:
     """
     Creates an experiment with the specified hyperparameters. Instantiates
     Graphair model and implements method to train and evaluate.
     """
 
-    def __init__(self, dataset_name, device=None, epochs=10_000, test_epochs=1_000,
-                 lr=1e-4, weight_decay=1e-5, g_temperature=1.0, g_hidden=64,
-                 f_hidden=64, f_layers=2, f_dropout=0.1, f_output_features=64,
-                 k_hidden=64, k_output_features=64, c_hidden=64, c_input=64,
-                 warmup=0, alpha=20, beta=0.9, gamma=0.7, lam=1):
+    def __init__(
+        self,
+        dataset_name,
+        device=None,
+        epochs=10_000,
+        test_epochs=1_000,
+        lr=1e-4,
+        weight_decay=1e-5,
+        g_temperature=1.0,
+        g_hidden=64,
+        g_dropout=0.1,
+        g_nlayer=1,
+        mlpx_dropout=0.1,
+        f_hidden=64,
+        f_layers=2,
+        f_dropout=0.1,
+        f_output_features=64,
+        k_hidden=64,
+        k_output_features=64,
+        c_hidden=64,
+        c_input=64,
+        warmup=0,
+        alpha=20,
+        beta=0.9,
+        gamma=0.7,
+        lam=1,
+    ):
         """
         Initializes an Experiment class instance.
 
@@ -41,8 +64,13 @@ class Experiment:
         self.dataset = self.initialize_dataset(dataset_name)
 
         # Augmentation model g hyperparameters
-        self.g_temperature = g_temperature
-        self.g_hidden = g_hidden
+        self.g_hyperparams = {
+            "n_hidden": g_hidden,
+            "temperature": g_temperature,
+            "nlayer": g_nlayer,
+            "dropout": g_dropout,
+            "mlpx_dropout": mlpx_dropout,
+        }
 
         # Encoder model f hyperparameters
         self.f_hidden = f_hidden
@@ -69,22 +97,23 @@ class Experiment:
         if dataset_name == Datasets.NBA:
             return NBA(device=self.device)
         elif dataset_name == Datasets.POKEC_N:
-            return POKEC(device=self.device, dataset_sample='pokec_n')
+            return POKEC(device=self.device, dataset_sample="pokec_n")
         elif dataset_name == Datasets.POKEC_Z:
-            return POKEC(device=self.device, dataset_sample='pokec_z')
+            return POKEC(device=self.device, dataset_sample="pokec_z")
         else:
-            raise Exception(f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}")
+            raise Exception(
+                f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
+            )
 
     def run(self):
-        """ Runs training and evaluation for a fairgraph model on the given dataset. """
+        """Runs training and evaluation for a fairgraph model on the given dataset."""
 
         # Initialize augmentation model g
         self.aug_model = aug_module(
             features=self.dataset.features,
-            n_hidden=self.g_hidden,
-            temperature=self.g_temperature,
-            device=self.device
-            ).to(self.device)
+            device=self.device,
+            **self.g_hyperparams
+        ).to(self.device)
 
         # Initialize encoder model f
         self.f_encoder = GCN_Body(
@@ -92,19 +121,21 @@ class Experiment:
             n_hidden=self.f_hidden,
             out_feats=self.f_output_features,
             dropout=self.f_dropout,
-            nlayer=self.f_layers
-            ).to(self.device)
+            nlayer=self.f_layers,
+        ).to(self.device)
 
         # Initialize adversary model k
         self.sens_model = GCN(
             in_feats=self.dataset.features.shape[1],
             n_hidden=self.k_hidden,
             out_feats=self.k_output_features,
-            nclass=1
-            ).to(self.device)
+            nclass=1,
+        ).to(self.device)
 
         # Initialize classifier for testing
-        self.classifier_model = Classifier(input_dim=self.c_input, hidden_dim=self.c_hidden)
+        self.classifier_model = Classifier(
+            input_dim=self.c_input, hidden_dim=self.c_hidden
+        )
 
         # Initialize the Graphair model
         self.model = Graphair(
@@ -112,14 +143,14 @@ class Experiment:
             f_encoder=self.f_encoder,
             sens_model=self.sens_model,
             classifier_model=self.classifier_model,
-            lr=self.lr, # TODO: add a separate lr for classifier model
-            weight_decay=self.weight_decay, # TODO: add a separate weight_decay for classifier model
+            lr=self.lr,  # TODO: add a separate lr for classifier model
+            weight_decay=self.weight_decay,  # TODO: add a separate weight_decay for classifier model
             dataset=self.dataset.name,
             alpha=self.alpha,
             beta=self.beta,
             gamma=self.gamma,
-            lam=self.lam
-            ).to(self.device)
+            lam=self.lam,
+        ).to(self.device)
 
         # Train the model
         st_time = time.time()
@@ -130,7 +161,8 @@ class Experiment:
             sens=self.dataset.sens,
             idx_sens=self.dataset.idx_sens_train,
             warmup=self.warmup,
-            adv_epoches=1) # TODO: figure out what adv_epochs is
+            adv_epoches=1,
+        )  # TODO: figure out what adv_epochs is
         print("Training time: ", time.time() - st_time)
 
         # Test the model
@@ -142,6 +174,7 @@ class Experiment:
             idx_train=self.dataset.idx_train,
             idx_val=self.dataset.idx_val,
             idx_test=self.dataset.idx_test,
-            sens=self.dataset.sens)
+            sens=self.dataset.sens,
+        )
 
         return results
