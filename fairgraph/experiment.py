@@ -43,6 +43,12 @@ class Experiment:
         beta=0.9,
         gamma=0.7,
         lam=1,
+        k_lr=1e-4,
+        c_lr=1e-3,
+        fg_lr=1e-4,
+        g_warmup_lr=1e-3,
+        f_lr=1e-4,
+        graphair_temperature=0.07
     ):
         """
         Initializes an Experiment class instance.
@@ -100,8 +106,13 @@ class Experiment:
 
         # Graphair model hyperparameters
         self.graphair_hyperparams = {
-            "lr": lr, # TODO: add a separate lr for classifier model
-            "weight_decay": weight_decay, # TODO: add a separate weight_decay for classifier model
+            "k_lr": k_lr,
+            "c_lr": c_lr,
+            "fg_lr": fg_lr,
+            "f_lr": f_lr,
+            "temperature": graphair_temperature,
+            "g_warmup_lr": g_warmup_lr,
+            "weight_decay": weight_decay,
             "alpha": alpha,
             "beta": beta,
             "gamma": gamma,

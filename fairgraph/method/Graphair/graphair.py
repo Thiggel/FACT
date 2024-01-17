@@ -51,9 +51,10 @@ class Graphair(nn.Module):
         :type num_proj_hidden: int,optional
 
     '''
-    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
-                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
-                 num_hidden=64, num_proj_hidden=64, device='cpu', checkpoint_path='./checkpoint/'):
+    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
+                 c_lr=1e-3, fg_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
+                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, temperature=0.07,
+                 num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu', checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
@@ -67,25 +68,26 @@ class Graphair(nn.Module):
         self.gamma = gamma
         self.dataset = dataset
         self.lam = lam
+        self.temperature = temperature
 
         self.criterion_sens = nn.BCEWithLogitsLoss()
         self.criterion_cont= nn.CrossEntropyLoss()
         self.criterion_recons = nn.MSELoss()
 
-        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=1e-4, weight_decay=1e-5)
+        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=k_lr, weight_decay=weight_decay)
 
-        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params': self.f_encoder.parameters()}]
-        self.optimizer = torch.optim.Adam(FG_params, lr=lr, weight_decay=weight_decay)
+        FG_params = [{'params': self.aug_model.parameters(), 'lr': fg_lr} ,  {'params': self.f_encoder.parameters()}]
+        self.optimizer = torch.optim.Adam(FG_params, lr=fg_lr, weight_decay=weight_decay)
 
-        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=1e-3, weight_decay=weight_decay)
-        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=lr, weight_decay=weight_decay)
+        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=g_warmup_lr, weight_decay=weight_decay)
+        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=f_lr, weight_decay=weight_decay)
 
 
         self.fc1 = torch.nn.Linear(num_hidden, num_proj_hidden)
         self.fc2 = torch.nn.Linear(num_proj_hidden, num_hidden)
 
         self.optimizer_classifier = torch.optim.Adam(self.classifier.parameters(),
-                            lr=lr, weight_decay=weight_decay)
+                            lr=c_lr, weight_decay=weight_decay)
     
     def projection(self, z):
         z = F.elu(self.fc1(z))
@@ -115,8 +117,7 @@ class Graphair(nn.Module):
         logits = torch.cat([positives, negatives], dim=1)
         labels = torch.zeros(logits.shape[0], dtype=torch.long).to(self.device)
         
-        temperature = 0.07
-        logits = logits / temperature
+        logits = logits / self.temperature
         return logits, labels
 
 
