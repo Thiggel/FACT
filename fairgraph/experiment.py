@@ -18,6 +18,7 @@ class Experiment:
         self,
         dataset_name,
         device=None,
+        verbose=False,
         epochs=10_000,
         test_epochs=1_000,
         lr=1e-4,
@@ -60,6 +61,7 @@ class Experiment:
         """
         self.device = device if device else set_device()
         self.dataset = self.initialize_dataset(dataset_name)
+        self.verbose = verbose
 
         # Trainin hyperparameters
         self.warmup = warmup
@@ -165,6 +167,7 @@ class Experiment:
             idx_sens=self.dataset.idx_sens_train,
             warmup=self.warmup,
             adv_epoches=1,
+            verbose=self.verbose
         )  # TODO: figure out what adv_epochs is
         print("Training time: ", time.time() - st_time)
 
@@ -178,6 +181,7 @@ class Experiment:
             idx_val=self.dataset.idx_val,
             idx_test=self.dataset.idx_test,
             sens=self.dataset.sens,
+            verbose=self.verbose
         )
 
         return results

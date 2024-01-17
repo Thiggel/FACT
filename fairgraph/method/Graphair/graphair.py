@@ -133,7 +133,7 @@ class Graphair(nn.Module):
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
 
-    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1):
+    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -163,10 +163,11 @@ class Graphair(nn.Module):
                     recons_loss.backward(retain_graph=True)
                 self.optimizer_aug.step()
 
-                print(
-                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
-                )
+                if verbose:
+                    print(
+                    'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                    'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                    )
 
         for epoch_counter in range(epochs):
             ### generate fair view
@@ -207,16 +208,17 @@ class Graphair(nn.Module):
             loss.backward()
             self.optimizer.step()
 
-            print('Epoch: {:04d}'.format(epoch_counter+1),
-            'sens loss: {:.4f}'.format(senloss.item()),
-            'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
-            'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-            'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
-            )
+            if verbose:
+                print('Epoch: {:04d}'.format(epoch_counter+1),
+                'sens loss: {:.4f}'.format(senloss.item()),
+                'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
+                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                )
         self._save_checkpoint()
     
 
-    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens):
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, verbose=False):
         h = self.forward(adj, features)
         h = h.detach()
 
@@ -248,7 +250,7 @@ class Graphair(nn.Module):
 
                 parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
                 parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
-                if epoch%10==0:
+                if epoch%10==0 and verbose:
                     print("Epoch [{}] Test set results:".format(epoch),
                         "acc_test= {:.4f}".format(acc_test.item()),
                         "acc_val: {:.4f}".format(acc_val.item()),
@@ -264,14 +266,15 @@ class Graphair(nn.Module):
                     best_eo = equality_val
                     best_eo_test = equality_test
 
-            print("Optimization Finished!")
-            print("Test results:",
-                        "acc_test= {:.4f}".format(best_test.item()),
-                        "acc_val: {:.4f}".format(best_acc.item()),
-                        "dp_val: {:.4f}".format(best_dp),
-                        "dp_test: {:.4f}".format(best_dp_test),
-                        "eo_val: {:.4f}".format(best_eo),
-                        "eo_test: {:.4f}".format(best_eo_test),)
+            if verbose:
+                print("Optimization Finished!")
+                print("Test results:",
+                            "acc_test= {:.4f}".format(best_test.item()),
+                            "acc_val: {:.4f}".format(best_acc.item()),
+                            "dp_val: {:.4f}".format(best_dp),
+                            "dp_test: {:.4f}".format(best_dp_test),
+                            "eo_val: {:.4f}".format(best_eo),
+                            "eo_test: {:.4f}".format(best_eo_test),)
         
             acc_list.append(best_test.item())
             dp_list.append(best_dp_test)
