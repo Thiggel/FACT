@@ -14,6 +14,8 @@ if __name__ == "__main__":
                         help='The dataset to use')
     parser.add_argument('--device', type=str, nargs='?',
                         help='Device to use')
+    parser.add_argument('--verbose', action=argparse.BooleanOptionalAction,
+                        help='Whether to print the training logs')
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -26,6 +28,7 @@ if __name__ == "__main__":
 
     print(args)
     # Initialize and run an experiment
-    experiment = Experiment(dataset_name=args.dataset_name, device=args.device, **hyperparams)
+    experiment = Experiment(dataset_name=args.dataset_name, device=args.device, verbose=args.verbose, **hyperparams)
+    print(experiment)
     results = experiment.run()
-    print(results)
+    

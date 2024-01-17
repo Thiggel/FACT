@@ -17,4 +17,6 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu
 
 `--device`: device to use, default: gpu if available, otherwise cpu
 
+`--verbose`: whether to print the training / testing logs
+
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.

@@ -51,9 +51,10 @@ class Graphair(nn.Module):
         :type num_proj_hidden: int,optional
 
     '''
-    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
-                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
-                 num_hidden=64, num_proj_hidden=64, device='cpu', checkpoint_path='./checkpoint/'):
+    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
+                 c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
+                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, temperature=0.07,
+                 num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu', checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
@@ -67,25 +68,26 @@ class Graphair(nn.Module):
         self.gamma = gamma
         self.dataset = dataset
         self.lam = lam
+        self.temperature = temperature
 
         self.criterion_sens = nn.BCEWithLogitsLoss()
         self.criterion_cont= nn.CrossEntropyLoss()
         self.criterion_recons = nn.MSELoss()
 
-        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=1e-4, weight_decay=1e-5)
+        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=k_lr, weight_decay=weight_decay)
 
-        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params': self.f_encoder.parameters()}]
-        self.optimizer = torch.optim.Adam(FG_params, lr=lr, weight_decay=weight_decay)
+        FG_params = [{'params': self.aug_model.parameters(), 'lr': g_lr} ,  {'params': self.f_encoder.parameters(), 'lr': f_lr}]
+        self.optimizer = torch.optim.Adam(FG_params, weight_decay=weight_decay)
 
-        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=1e-3, weight_decay=weight_decay)
-        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=lr, weight_decay=weight_decay)
+        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=g_warmup_lr, weight_decay=weight_decay)
+        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=f_lr, weight_decay=weight_decay)
 
 
         self.fc1 = torch.nn.Linear(num_hidden, num_proj_hidden)
         self.fc2 = torch.nn.Linear(num_proj_hidden, num_hidden)
 
         self.optimizer_classifier = torch.optim.Adam(self.classifier.parameters(),
-                            lr=lr, weight_decay=weight_decay)
+                            lr=c_lr, weight_decay=weight_decay)
     
     def projection(self, z):
         z = F.elu(self.fc1(z))
@@ -115,8 +117,7 @@ class Graphair(nn.Module):
         logits = torch.cat([positives, negatives], dim=1)
         labels = torch.zeros(logits.shape[0], dtype=torch.long).to(self.device)
         
-        temperature = 0.07
-        logits = logits / temperature
+        logits = logits / self.temperature
         return logits, labels
 
 
@@ -133,7 +134,7 @@ class Graphair(nn.Module):
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
 
-    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1):
+    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -163,10 +164,11 @@ class Graphair(nn.Module):
                     recons_loss.backward(retain_graph=True)
                 self.optimizer_aug.step()
 
-                print(
-                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
-                )
+                if verbose:
+                    print(
+                    'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                    'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                    )
 
         for epoch_counter in range(epochs):
             ### generate fair view
@@ -207,16 +209,17 @@ class Graphair(nn.Module):
             loss.backward()
             self.optimizer.step()
 
-            print('Epoch: {:04d}'.format(epoch_counter+1),
-            'sens loss: {:.4f}'.format(senloss.item()),
-            'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
-            'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-            'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
-            )
+            if verbose:
+                print('Epoch: {:04d}'.format(epoch_counter+1),
+                'sens loss: {:.4f}'.format(senloss.item()),
+                'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
+                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                )
         self._save_checkpoint()
     
 
-    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens):
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, verbose=False):
         h = self.forward(adj, features)
         h = h.detach()
 
@@ -248,7 +251,7 @@ class Graphair(nn.Module):
 
                 parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
                 parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
-                if epoch%10==0:
+                if epoch%10==0 and verbose:
                     print("Epoch [{}] Test set results:".format(epoch),
                         "acc_test= {:.4f}".format(acc_test.item()),
                         "acc_val: {:.4f}".format(acc_val.item()),
@@ -264,14 +267,15 @@ class Graphair(nn.Module):
                     best_eo = equality_val
                     best_eo_test = equality_test
 
-            print("Optimization Finished!")
-            print("Test results:",
-                        "acc_test= {:.4f}".format(best_test.item()),
-                        "acc_val: {:.4f}".format(best_acc.item()),
-                        "dp_val: {:.4f}".format(best_dp),
-                        "dp_test: {:.4f}".format(best_dp_test),
-                        "eo_val: {:.4f}".format(best_eo),
-                        "eo_test: {:.4f}".format(best_eo_test),)
+            if verbose:
+                print("Optimization Finished!")
+                print("Test results:",
+                            "acc_test= {:.4f}".format(best_test.item()),
+                            "acc_val: {:.4f}".format(best_acc.item()),
+                            "dp_val: {:.4f}".format(best_dp),
+                            "dp_test: {:.4f}".format(best_dp_test),
+                            "eo_val: {:.4f}".format(best_eo),
+                            "eo_test: {:.4f}".format(best_eo_test),)
         
             acc_list.append(best_test.item())
             dp_list.append(best_dp_test)
