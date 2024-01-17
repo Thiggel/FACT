@@ -39,6 +39,9 @@ if __name__ == "__main__":
     print(experiment)
     if args.grid_search:
         results = experiment.run_grid_search(args.grid_hparams)
+        print('------ best results: ------')
+        print(results)
     else: 
         results = experiment.run()
+
     
