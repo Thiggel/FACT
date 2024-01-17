@@ -29,5 +29,6 @@ if __name__ == "__main__":
     print(args)
     # Initialize and run an experiment
     experiment = Experiment(dataset_name=args.dataset_name, device=args.device, verbose=args.verbose, **hyperparams)
+    print(experiment)
     results = experiment.run()
     

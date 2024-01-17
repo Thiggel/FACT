@@ -23,7 +23,7 @@ gamma: 0.7                            # Loss gamma weight ...
 lam: 1                                # Loss lambda weight ...
 k_lr: 0.0001                          # Learning rate for adversary model k
 c_lr: 0.001                           # Learining rate for classifier
-fg_lr: 0.0001                         # Learning rate for joint f and g models optimization
+g_lr: 0.0001                          # Learning rate for joint f and g models optimization
 g_warmup_lr: 0.001                    # Learning rate for a warmup optimizer for augmentation model g
 f_lr: 0.0001                          # Learning rate for encoder model f
 graphair_temperature: 0.07            # Temperature for the whole graphair model

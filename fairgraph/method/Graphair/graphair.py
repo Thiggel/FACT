@@ -52,7 +52,7 @@ class Graphair(nn.Module):
 
     '''
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
-                 c_lr=1e-3, fg_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
+                 c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, temperature=0.07,
                  num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu', checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
@@ -76,8 +76,8 @@ class Graphair(nn.Module):
 
         self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=k_lr, weight_decay=weight_decay)
 
-        FG_params = [{'params': self.aug_model.parameters(), 'lr': fg_lr} ,  {'params': self.f_encoder.parameters()}]
-        self.optimizer = torch.optim.Adam(FG_params, lr=fg_lr, weight_decay=weight_decay)
+        FG_params = [{'params': self.aug_model.parameters(), 'lr': g_lr} ,  {'params': self.f_encoder.parameters(), 'lr': f_lr}]
+        self.optimizer = torch.optim.Adam(FG_params, weight_decay=weight_decay)
 
         self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=g_warmup_lr, weight_decay=weight_decay)
         self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=f_lr, weight_decay=weight_decay)

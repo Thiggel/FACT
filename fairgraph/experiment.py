@@ -45,7 +45,7 @@ class Experiment:
         lam=1,
         k_lr=1e-4,
         c_lr=1e-3,
-        fg_lr=1e-4,
+        g_lr=1e-4,
         g_warmup_lr=1e-3,
         f_lr=1e-4,
         graphair_temperature=0.07
@@ -69,7 +69,7 @@ class Experiment:
         self.dataset = self.initialize_dataset(dataset_name)
         self.verbose = verbose
 
-        # Trainin hyperparameters
+        # Trainig hyperparameters
         self.warmup = warmup
         self.epochs = epochs
         self.test_epochs = test_epochs
@@ -108,7 +108,7 @@ class Experiment:
         self.graphair_hyperparams = {
             "k_lr": k_lr,
             "c_lr": c_lr,
-            "fg_lr": fg_lr,
+            "g_lr": g_lr,
             "f_lr": f_lr,
             "temperature": graphair_temperature,
             "g_warmup_lr": g_warmup_lr,
@@ -196,3 +196,10 @@ class Experiment:
         )
 
         return results
+    
+    def __repr__(self):
+        return f"""Experiment with the following hyperparameters:
+        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}
+        Augmentation model g hyperparameters: {self.g_hyperparams}
+        Encoder model f hyperparameters: {self.f_hyperparams}
+        Adversary model k hyperparameters: {self.k_hyperparams}"""
