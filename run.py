@@ -18,6 +18,11 @@ if __name__ == "__main__":
                         help='Whether to print the training logs')
     parser.add_argument('--seed', default=42, type=int,
                         help='Seed to use for reproducibility')
+    parser.add_argument('--grid_search', action=argparse.BooleanOptionalAction,
+                        help='Whether to run grid seach')
+    parser.add_argument('--hparams_for_gs', type=float, nargs='*',
+                        help='Which hyperparameters are used for the grid search')
+    
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -32,5 +37,8 @@ if __name__ == "__main__":
     # Initialize and run an experiment
     experiment = Experiment(dataset_name=args.dataset_name, seed=args.seed, device=args.device, verbose=args.verbose, **hyperparams)
     print(experiment)
-    results = experiment.run()
+    if args.grid_search:
+        results = experiment.run_grid_search()
+    else: 
+        results = experiment.run()
     
