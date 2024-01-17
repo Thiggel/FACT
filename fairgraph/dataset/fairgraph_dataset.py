@@ -6,7 +6,6 @@ import scipy.sparse as sp
 import random
 from torch_geometric.data import download_url
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class POKEC():
     r"""Pokec is a social network dataset. Two `different datasets <https://github.com/EnyanDai/FairGNN/tree/main/dataset/pokec>`_ (namely pokec_z and pokec_n) are sampled
@@ -27,7 +26,8 @@ class POKEC():
     def __init__(self, 
                 data_path='https://github.com/divelab/DIG_storage/raw/main/fairgraph/datasets/pockec/',
                 root='./dataset/pokec',
-                dataset_sample='pokec_z'):
+                dataset_sample='pokec_z',
+                device='cpu'):
         self.name = "POKEC_Z"
         self.root = root
         self.dataset_sample = dataset_sample
@@ -44,6 +44,7 @@ class POKEC():
         self.seed = 20
         self.test_idx=False
         self.data_path = data_path
+        self.device=device
         self.process()
     
     @property
@@ -134,13 +135,13 @@ class POKEC():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features.cuda()
-        self.labels = labels.cuda()
-        self.idx_train = idx_train.cuda()
-        self.idx_val = idx_val.cuda()
-        self.idx_test = idx_test.cuda()
-        self.sens = sens.cuda()
-        self.idx_sens_train = idx_sens_train.long().cuda()
+        self.features = features.to(self.device)
+        self.labels = labels.to(self.device)
+        self.idx_train = idx_train.to(self.device)
+        self.idx_val = idx_val.to(self.device)
+        self.idx_test = idx_test.to(self.device)
+        self.sens = sens.to(self.device)
+        self.idx_sens_train = idx_sens_train.long().to(self.device)
 
         self.adj = adj
 
@@ -156,7 +157,8 @@ class NBA():
     '''
     def __init__(self, 
                 data_path='https://github.com/divelab/DIG_storage/raw/main/fairgraph/datasets/nba/',
-                root='./dataset/nba'):
+                root='./dataset/nba',
+                device='cpu'):
         self.name = "NBA"
         self.root = root
         self.dataset = 'nba'
@@ -165,8 +167,9 @@ class NBA():
         self.label_number = 100
         self.sens_number = 500
         self.seed = 20
-        self.test_idx=True
+        self.test_idx=False
         self.data_path = data_path
+        self.device=device
         self.process()
 
     @property
@@ -256,12 +259,12 @@ class NBA():
         labels[labels>1]=1
         sens[sens>0]=1
 
-        self.features = features.cuda()
-        self.labels = labels.cuda()
-        self.idx_train = idx_train.cuda()
-        self.idx_val = idx_val.cuda()
-        self.idx_test = idx_test.cuda()
-        self.sens = sens.cuda()
-        self.idx_sens_train = idx_sens_train.long().cuda()
+        self.features = features.to(self.device)
+        self.labels = labels.to(self.device)
+        self.idx_train = idx_train.to(self.device)
+        self.idx_val = idx_val.to(self.device)
+        self.idx_test = idx_test.to(self.device)
+        self.sens = sens.to(self.device)
+        self.idx_sens_train = idx_sens_train.long().to(self.device)
 
         self.adj = adj

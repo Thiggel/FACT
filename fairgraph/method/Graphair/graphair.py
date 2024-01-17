@@ -1,11 +1,13 @@
+import os
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import scipy.sparse as sp
 import numpy as np
-from dig.fairgraph.utils.utils import scipysp_to_pytorchsp,accuracy,fair_metric
+from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric
 
-class graphair(nn.Module):
+class Graphair(nn.Module):
     r'''
         This class implements the Graphair model
 
@@ -49,8 +51,13 @@ class graphair(nn.Module):
         :type num_proj_hidden: int,optional
 
     '''
-    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr = 1e-4, weight_decay = 1e-5, alpha = 20, beta = 0.9, gamma = 0.7, lam = 1, dataset = 'POKEC', num_hidden = 64, num_proj_hidden = 64):
-        super(graphair, self).__init__()
+    def __init__(self, aug_model, f_encoder, sens_model, classifier_model, lr=1e-4,
+                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, dataset='POKEC',
+                 num_hidden=64, num_proj_hidden=64, device='cpu', checkpoint_path='./checkpoint/'):
+        super(Graphair, self).__init__()
+        self.device = device
+        self.checkpoint_path = checkpoint_path
+
         self.aug_model = aug_model
         self.f_encoder = f_encoder
         self.sens_model = sens_model
@@ -65,13 +72,13 @@ class graphair(nn.Module):
         self.criterion_cont= nn.CrossEntropyLoss()
         self.criterion_recons = nn.MSELoss()
 
-        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr = 1e-4, weight_decay = 1e-5)
+        self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=1e-4, weight_decay=1e-5)
 
-        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params':self.f_encoder.parameters()}]
-        self.optimizer = torch.optim.Adam(FG_params, lr = lr, weight_decay = weight_decay)
+        FG_params = [{'params': self.aug_model.parameters(), 'lr': 1e-4} ,  {'params': self.f_encoder.parameters()}]
+        self.optimizer = torch.optim.Adam(FG_params, lr=lr, weight_decay=weight_decay)
 
-        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr = 1e-3, weight_decay = weight_decay)
-        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr = lr, weight_decay = weight_decay)
+        self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=1e-3, weight_decay=weight_decay)
+        self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=lr, weight_decay=weight_decay)
 
 
         self.fc1 = torch.nn.Linear(num_hidden, num_proj_hidden)
@@ -90,14 +97,14 @@ class graphair(nn.Module):
 
         labels = torch.cat([torch.arange(batch_size) for i in range(2)], dim=0)
         labels = (labels.unsqueeze(0) == labels.unsqueeze(1)).float()
-        labels = labels.cuda()
+        labels = labels.to(self.device)
 
         features = F.normalize(features, dim=1)
 
         similarity_matrix = torch.matmul(features, features.T)
 
         # discard the main diagonal from both: labels and similarities matrix
-        mask = torch.eye(labels.shape[0], dtype=torch.bool).cuda()
+        mask = torch.eye(labels.shape[0], dtype=torch.bool).to(self.device)
         labels = labels[~mask].view(labels.shape[0], -1)
         similarity_matrix = similarity_matrix[~mask].view(similarity_matrix.shape[0], -1)
 
@@ -106,7 +113,7 @@ class graphair(nn.Module):
         negatives = similarity_matrix[~labels.bool()].view(similarity_matrix.shape[0], -1)
 
         logits = torch.cat([positives, negatives], dim=1)
-        labels = torch.zeros(logits.shape[0], dtype=torch.long).cuda()
+        labels = torch.zeros(logits.shape[0], dtype=torch.long).to(self.device)
         
         temperature = 0.07
         logits = logits / temperature
@@ -123,7 +130,7 @@ class graphair(nn.Module):
         adj_norm = degree_mat_inv_sqrt @ adj @ degree_mat_inv_sqrt
         adj_norm = scipysp_to_pytorchsp(adj_norm)
     
-        adj = adj_norm.cuda()
+        adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
 
     def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1):
@@ -139,14 +146,14 @@ class graphair(nn.Module):
         adj_norm = scipysp_to_pytorchsp(adj_norm)
         
 
-        adj = adj_norm.cuda()
+        adj = adj_norm.to(self.device)
         
         best_contras = float("inf")
         
         if warmup:
             for _ in range(warmup):
-                adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.cuda())
-                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.cuda())
+                adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
+                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
 
                 feat_loss =  self.criterion_recons(x_aug, x)
                 recons_loss =  edge_loss + self.beta * feat_loss
@@ -163,7 +170,7 @@ class graphair(nn.Module):
 
         for epoch_counter in range(epochs):
             ### generate fair view
-            adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.cuda())
+            adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
             
             ### extract node representations
             h = self.projection(self.f_encoder(adj, x))
@@ -191,7 +198,7 @@ class graphair(nn.Module):
             contrastive_loss = self.criterion_cont(logits, labels)
 
             ## update encoder
-            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.cuda())
+            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
 
             feat_loss =  self.criterion_recons(x_aug, x)
             recons_loss =  edge_loss + self.lam * feat_loss
@@ -206,13 +213,11 @@ class graphair(nn.Module):
             'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
             'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
             )
-
-        self.save_path = "./checkpoint/graphair_{}_alpha{}_beta{}_gamma{}_lambda{}".format(self.dataset, self.alpha, self.beta, self.gamma, self.lam)
-        torch.save(self.state_dict(),self.save_path)
+        self._save_checkpoint()
     
 
-    def test(self,adj,features,labels,epochs,idx_train,idx_val,idx_test,sens):
-        h = self.forward(adj,features)
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens):
+        h = self.forward(adj, features)
         h = h.detach()
 
         acc_list = []
@@ -220,8 +225,8 @@ class graphair(nn.Module):
         eo_list = []
 
         for i in range(5):
-            torch.manual_seed(i *10)
-            np.random.seed(i *10)
+            torch.manual_seed(i*10)
+            np.random.seed(i*10)
 
             # train classifier
             best_acc = 0.0
@@ -241,8 +246,8 @@ class graphair(nn.Module):
                 acc_val = accuracy(output[idx_val], labels[idx_val])
                 acc_test = accuracy(output[idx_test], labels[idx_test])
 
-                parity_val, equality_val = fair_metric(output,idx_val, labels, sens)
-                parity_test, equality_test = fair_metric(output,idx_test, labels, sens)
+                parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
+                parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
                 if epoch%10==0:
                     print("Epoch [{}] Test set results:".format(epoch),
                         "acc_test= {:.4f}".format(acc_test.item()),
@@ -272,9 +277,18 @@ class graphair(nn.Module):
             dp_list.append(best_dp_test)
             eo_list.append(best_eo_test)
         
+        average_results = {
+            "acc": {"mean": np.mean(acc_list), "std": np.std(acc_list)},
+            "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
+            "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
+        }
         print("Avg results:",
-                    "acc: {:.4f} std: {:.4f}".format(np.mean(acc_list), np.std(acc_list)), 
-                    "dp: {:.4f} std: {:.4f}".format(np.mean(dp_list), np.std(dp_list)),
-                    "eo: {:.4f} std: {:.4f}".format(np.mean(eo_list), np.std(eo_list)),)
+                    "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
+                    "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
+                    "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
+        return average_results
 
-        
+    def _save_checkpoint(self):
+        os.makedirs(self.checkpoint_path, exist_ok=True)
+        save_path = f"{self.checkpoint_path}graphair_{self.dataset}_alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}"
+        torch.save(self.state_dict(), save_path)

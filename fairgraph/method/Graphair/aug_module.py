@@ -5,19 +5,17 @@ import pyro
 from .GCN import GCN_Body
 
 
-
 class aug_module(torch.nn.Module):
-    def __init__(self, features, n_hidden=64, temperature=1) -> None:
+    def __init__(self, features, n_hidden=64, temperature=1, device='cpu') -> None:
         super(aug_module,self).__init__()
-        self.g_encoder = GCN_Body(in_feats = features.shape[1], n_hidden = n_hidden, out_feats = n_hidden, dropout = 0.1, nlayer = 1)
-        self.Aaug = MLPA(in_feats = n_hidden, dim_h = n_hidden, dim_z =features.shape[1])
-        self.Xaug = MLPX(in_feats = n_hidden, n_hidden = n_hidden, out_feats = features.shape[1], dropout = 0.1)
+        self.device = device
+        self.g_encoder = GCN_Body(in_feats=features.shape[1], n_hidden=n_hidden, out_feats=n_hidden, dropout=0.1, nlayer=1)
+        self.Aaug = MLPA(in_feats=n_hidden, dim_h=n_hidden, dim_z=features.shape[1])
+        self.Xaug = MLPX(in_feats=n_hidden, n_hidden=n_hidden, out_feats=features.shape[1], dropout=0.1)
         
         self.temperature = temperature
-        
 
-    
-    def forward(self, adj, x, alpha = 0.5, adj_orig = None):
+    def forward(self, adj, x, alpha=0.5, adj_orig=None):
         h = self.g_encoder(adj, x)
 
         # Edge perturbation
@@ -46,7 +44,7 @@ class aug_module(torch.nn.Module):
     def normalize_adj(self,adj):
         adj.fill_diagonal_(1)
         # normalize adj with A = D^{-1/2} @ A @ D^{-1/2}
-        D_norm = torch.diag(torch.pow(adj.sum(1), -0.5)).cuda()
+        D_norm = torch.diag(torch.pow(adj.sum(1), -0.5)).to(self.device)
         adj = D_norm @ adj @ D_norm
         return adj
 
