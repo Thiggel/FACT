@@ -20,7 +20,7 @@ if __name__ == "__main__":
                         help='Seed to use for reproducibility')
     parser.add_argument('--grid_search', action=argparse.BooleanOptionalAction,
                         help='Whether to run grid seach')
-    parser.add_argument('--hparams_for_gs', type=float, nargs='*',
+    parser.add_argument('--grid_hparams', type=float, nargs='*',
                         help='Which hyperparameters are used for the grid search')
     
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     experiment = Experiment(dataset_name=args.dataset_name, seed=args.seed, device=args.device, verbose=args.verbose, **hyperparams)
     print(experiment)
     if args.grid_search:
-        results = experiment.run_grid_search()
+        results = experiment.run_grid_search(args.grid_hparams)
     else: 
         results = experiment.run()
     

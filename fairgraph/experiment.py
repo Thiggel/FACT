@@ -134,7 +134,7 @@ class Experiment:
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
         
-    def run_grid_search(self, hparam_values=(0.1, 1., 10.)):
+    def run_grid_search(self, hparam_values):
         """
         Runs grid seach using the given hyperparameter values
 
@@ -148,6 +148,7 @@ class Experiment:
             best_res_dict (dict): output of self.run for the 
                 best hyperparameter values.  
         """
+        hparam_values = hparam_values if hparam_values else (0.1, 1., 10.)
         best_acc = -1
         best_params = None
         best_res_dict = None
@@ -163,6 +164,7 @@ class Experiment:
                     self.graphair_hyperparams['lam'] = lam
 
                     # run the experiment
+                    print(f"alpha: {self.graphair_hyperparams['alpha']}, lambda: {self.graphair_hyperparams['lam']}, gamma: {self.graphair_hyperparams['gamma']}")
                     res_dict = self.run()
 
                     # keep track of the results which produce the best accuracy
