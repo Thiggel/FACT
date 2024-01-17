@@ -33,6 +33,8 @@ class Experiment:
         f_output_features=64,
         k_hidden=64,
         k_output_features=64,
+        k_dropout=0.1,
+        k_nlayer=2,
         c_hidden=64,
         c_input=64,
         warmup=0,
@@ -73,14 +75,21 @@ class Experiment:
         }
 
         # Encoder model f hyperparameters
-        self.f_hidden = f_hidden
-        self.f_dropout = f_dropout
-        self.f_layers = f_layers
-        self.f_output_features = f_output_features
+        self.f_hyperparams = {
+            "n_hidden": f_hidden,
+            "out_feats": f_output_features,
+            "dropout": f_dropout,
+            "nlayer": f_layers
+        }
 
         # Adversary model k hyperparameters
-        self.k_hidden = k_hidden
-        self.k_output_features = k_output_features
+        self.k_hyperparams = {
+            "n_hidden": k_hidden,
+            "out_feats": k_output_features,
+            "dropout": k_dropout,
+            "nlayer": k_nlayer,
+            "nclass": 1
+        }
 
         # Classifier model hyperparameters
         self.c_hidden = c_hidden
@@ -118,18 +127,13 @@ class Experiment:
         # Initialize encoder model f
         self.f_encoder = GCN_Body(
             in_feats=self.dataset.features.shape[1],
-            n_hidden=self.f_hidden,
-            out_feats=self.f_output_features,
-            dropout=self.f_dropout,
-            nlayer=self.f_layers,
+            **self.f_hyperparams
         ).to(self.device)
 
         # Initialize adversary model k
         self.sens_model = GCN(
             in_feats=self.dataset.features.shape[1],
-            n_hidden=self.k_hidden,
-            out_feats=self.k_output_features,
-            nclass=1,
+            **self.k_hyperparams
         ).to(self.device)
 
         # Initialize classifier for testing
