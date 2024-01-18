@@ -71,6 +71,7 @@ class Experiment:
 
         # Set a seed for reproducibility
         set_seed(seed)
+        self.seed = seed
 
         # Trainig hyperparameters
         self.warmup = warmup
@@ -162,6 +163,9 @@ class Experiment:
                     self.graphair_hyperparams['beta'] = beta
                     self.graphair_hyperparams['gamma'] = gamma
                     self.graphair_hyperparams['lam'] = lam
+                    
+                    # reset the seed
+                    set_seed(self.seed)
 
                     # run the experiment
                     print(f"alpha: {self.graphair_hyperparams['alpha']}, lambda: {self.graphair_hyperparams['lam']}, gamma: {self.graphair_hyperparams['gamma']}")
