@@ -2,6 +2,8 @@ from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA
+import tensorflow as tf
+import datetime
 
 import time
 
