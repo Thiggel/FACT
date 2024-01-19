@@ -29,7 +29,7 @@ class POKEC():
                 root='./dataset/pokec',
                 dataset_sample='pokec_z',
                 device='cpu',
-                batch_size=100):
+                batch_size=1000):
         self.name = "POKEC_Z"
         self.root = root
         self.dataset_sample = dataset_sample

@@ -21,6 +21,7 @@ class Experiment:
         verbose=False,
         epochs=10_000,
         test_epochs=1_000,
+        batch_size=1000,
         seed=42,
         weight_decay=1e-5,
         g_temperature=1.0,
@@ -66,6 +67,7 @@ class Experiment:
 
         """
         self.device = device if device else set_device()
+        self.batch_size = batch_size
         self.dataset = self.initialize_dataset(dataset_name)
         self.verbose = verbose
 
@@ -127,9 +129,9 @@ class Experiment:
         if dataset_name == Datasets.NBA:
             return NBA(device=self.device)
         elif dataset_name == Datasets.POKEC_N:
-            return POKEC(device=self.device, dataset_sample="pokec_n")
+            return POKEC(device=self.device, dataset_sample="pokec_n", batch_size=self.batch_size)
         elif dataset_name == Datasets.POKEC_Z:
-            return POKEC(device=self.device, dataset_sample="pokec_z")
+            return POKEC(device=self.device, dataset_sample="pokec_z", batch_size=self.batch_size)
         else:
             raise Exception(
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
@@ -219,18 +221,34 @@ class Experiment:
 
         # Train the model
         print("Start training")
-        st_time = time.time()
-        self.model.fit_whole(
-            epochs=self.epochs,
-            adj=self.dataset.adj,
-            x=self.dataset.features,
-            sens=self.dataset.sens,
-            idx_sens=self.dataset.idx_sens_train,
-            warmup=self.warmup,
-            adv_epoches=1,
-            verbose=self.verbose
-        )  # TODO: figure out what adv_epochs is
-        print("Training time: ", time.time() - st_time)
+        if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
+            # call fit_batch_GraphSAINT
+            st_time = time.time()
+            self.model.fit_batch_GraphSAINT(
+                epochs=self.epochs,
+                adj=self.dataset.adj,
+                x=self.dataset.features,
+                sens=self.dataset.sens,
+                idx_sens = self.dataset.idx_sens_train,
+                minibatch=self.dataset.minibatch,
+                warmup=self.warmup,
+                adv_epoches=1
+                )
+            print("Training time: ", time.time() - st_time)
+
+        else:
+            st_time = time.time()
+            self.model.fit_whole(
+                epochs=self.epochs,
+                adj=self.dataset.adj,
+                x=self.dataset.features,
+                sens=self.dataset.sens,
+                idx_sens=self.dataset.idx_sens_train,
+                warmup=self.warmup,
+                adv_epoches=1,
+                verbose=self.verbose
+            )  # TODO: figure out what adv_epochs is
+            print("Training time: ", time.time() - st_time)
 
         # Test the model
         results = self.model.test(
@@ -249,7 +267,7 @@ class Experiment:
     
     def __repr__(self):
         return f"""Experiment with the following hyperparameters:
-        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}
+        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}, Batch size: {self.batch_size}
         Augmentation model g hyperparameters: {self.g_hyperparams}
         Encoder model f hyperparameters: {self.f_hyperparams}
         Adversary model k hyperparameters: {self.k_hyperparams}"""
