@@ -1,7 +1,6 @@
 # cython: language_level=3
 # distutils: language=c++
-# distutils: extra_compile_args = -fopenmp -std=c++11
-# distutils: extra_link_args = -fopenmp
+# distutils: extra_compile_args = -std=c++11
 
 import numpy as np
 cimport numpy as np

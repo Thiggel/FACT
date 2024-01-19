@@ -218,6 +218,7 @@ class Experiment:
         ).to(self.device)
 
         # Train the model
+        print("Start training")
         st_time = time.time()
         self.model.fit_whole(
             epochs=self.epochs,

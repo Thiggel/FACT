@@ -171,6 +171,7 @@ class Graphair(nn.Module):
                     )
 
         for epoch_counter in range(epochs):
+            print(f"Epoch {epoch_counter}")
             ### generate fair view
             adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
             

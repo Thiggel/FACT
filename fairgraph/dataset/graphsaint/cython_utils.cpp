@@ -5,19 +5,15 @@
     "distutils": {
         "depends": [],
         "extra_compile_args": [
-            "-fopenmp",
             "-std=c++11"
         ],
-        "extra_link_args": [
-            "-fopenmp"
-        ],
         "language": "c++",
-        "name": "fairgraph.dataset.graphsaint.cython_utils",
+        "name": "graphsaint.cython_utils",
         "sources": [
             "graphsaint/cython_utils.pyx"
         ]
     },
-    "module_name": "fairgraph.dataset.graphsaint.cython_utils"
+    "module_name": "graphsaint.cython_utils"
 }
 END: Cython Metadata */
 
@@ -1819,7 +1815,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pxd":16
+/* "graphsaint/cython_utils.pxd":15
  * 
  * 
  * cdef class array_wrapper_float:             # <<<<<<<<<<<<<<
@@ -1835,7 +1831,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_f
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pxd":22
+/* "graphsaint/cython_utils.pxd":21
  *     cdef void set_data(self,vector[float]& data)
  * 
  * cdef class array_wrapper_int:             # <<<<<<<<<<<<<<
@@ -1852,7 +1848,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_i
 
 
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":18
+/* "graphsaint/cython_utils.pyx":17
  * 
  * # reference: https://stackoverflow.com/questions/45133276/passing-c-vector-to-numpy-through-cython-without-copying-and-taking-care-of-me
  * cdef class array_wrapper_float:             # <<<<<<<<<<<<<<
@@ -1866,7 +1862,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wr
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float;
 
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":46
+/* "graphsaint/cython_utils.pyx":45
  * 
  * 
  * cdef class array_wrapper_int:             # <<<<<<<<<<<<<<
@@ -2823,7 +2819,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
 
 /* Module declarations from "libcpp.map" */
 
-/* Module declarations from "fairgraph.dataset.graphsaint.cython_utils" */
+/* Module declarations from "graphsaint.cython_utils" */
 static PyObject *__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils___pyx_unpickle_array_wrapper_float__set_state(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float *, PyObject *); /*proto*/
 static PyObject *__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils___pyx_unpickle_array_wrapper_int__set_state(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int *, PyObject *); /*proto*/
 static CYTHON_INLINE PyObject *__Pyx_carray_to_py_Py_ssize_t(Py_ssize_t *, Py_ssize_t); /*proto*/
@@ -2837,11 +2833,11 @@ static std::vector<int>  __pyx_convert_vector_from_py_int(PyObject *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "fairgraph.dataset.graphsaint.cython_utils"
+#define __Pyx_MODULE_NAME "graphsaint.cython_utils"
 extern int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_utils;
 int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_utils = 0;
 
-/* Implementation of "fairgraph.dataset.graphsaint.cython_utils" */
+/* Implementation of "graphsaint.cython_utils" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_TypeError;
@@ -2909,7 +2905,7 @@ static const char __pyx_k_array_wrapper_float___reduce_cyt[] = "array_wrapper_fl
 static const char __pyx_k_array_wrapper_float___setstate_c[] = "array_wrapper_float.__setstate_cython__";
 static const char __pyx_k_array_wrapper_int___reduce_cytho[] = "array_wrapper_int.__reduce_cython__";
 static const char __pyx_k_array_wrapper_int___setstate_cyt[] = "array_wrapper_int.__setstate_cython__";
-static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "fairgraph.dataset.graphsaint.cython_utils";
+static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "graphsaint.cython_utils";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 /* #### Code section: decls ### */
 static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrapper_float___getbuffer__(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float *__pyx_v_self, Py_buffer *__pyx_v_buffer, CYTHON_UNUSED int __pyx_v_flags); /* proto */
@@ -5877,7 +5873,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pxd":28
+/* "graphsaint/cython_utils.pxd":27
  *     cdef void set_data(self,vector[int]& data)
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):             # <<<<<<<<<<<<<<
@@ -5902,21 +5898,21 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
   __pyx_pybuffernd_nda.rcbuffer = &__pyx_pybuffer_nda;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(2, 28, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(2, 27, __pyx_L1_error)
   }
   __pyx_pybuffernd_nda.diminfo[0].strides = __pyx_pybuffernd_nda.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_nda.diminfo[0].shape = __pyx_pybuffernd_nda.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":29
+  /* "graphsaint/cython_utils.pxd":28
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):
  *     cdef int size = nda.size             # <<<<<<<<<<<<<<
  *     cdef int* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)
  */
-  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(2, 29, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(2, 28, __pyx_L1_error)
   __pyx_v_size = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":30
+  /* "graphsaint/cython_utils.pxd":29
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):
  *     cdef int size = nda.size
  *     cdef int* vec_c = &(nda[0])             # <<<<<<<<<<<<<<
@@ -5931,11 +5927,11 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
   } else if (unlikely(__pyx_t_2 >= __pyx_pybuffernd_nda.diminfo[0].shape)) __pyx_t_3 = 0;
   if (unlikely(__pyx_t_3 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_3);
-    __PYX_ERR(2, 30, __pyx_L1_error)
+    __PYX_ERR(2, 29, __pyx_L1_error)
   }
   __pyx_v_vec_c = (&(*__Pyx_BufPtrCContig1d(int *, __pyx_pybuffernd_nda.rcbuffer->pybuffer.buf, __pyx_t_2, __pyx_pybuffernd_nda.diminfo[0].strides)));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":31
+  /* "graphsaint/cython_utils.pxd":30
  *     cdef int size = nda.size
  *     cdef int* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)             # <<<<<<<<<<<<<<
@@ -5946,10 +5942,10 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
     __pyx_v_vec.assign(__pyx_v_vec_c, (__pyx_v_vec_c + __pyx_v_size));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(2, 31, __pyx_L1_error)
+    __PYX_ERR(2, 30, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":28
+  /* "graphsaint/cython_utils.pxd":27
  *     cdef void set_data(self,vector[int]& data)
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):             # <<<<<<<<<<<<<<
@@ -5966,14 +5962,14 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_nda.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.npy2vec_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.npy2vec_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
   goto __pyx_L2;
   __pyx_L0:;
   __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_nda.rcbuffer->pybuffer);
   __pyx_L2:;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pxd":33
+/* "graphsaint/cython_utils.pxd":32
  *     vec.assign(vec_c,vec_c+size)
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):             # <<<<<<<<<<<<<<
@@ -5998,21 +5994,21 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
   __pyx_pybuffernd_nda.rcbuffer = &__pyx_pybuffer_nda;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(2, 33, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(2, 32, __pyx_L1_error)
   }
   __pyx_pybuffernd_nda.diminfo[0].strides = __pyx_pybuffernd_nda.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_nda.diminfo[0].shape = __pyx_pybuffernd_nda.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":34
+  /* "graphsaint/cython_utils.pxd":33
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):
  *     cdef int size = nda.size             # <<<<<<<<<<<<<<
  *     cdef float* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)
  */
-  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(2, 34, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(2, 33, __pyx_L1_error)
   __pyx_v_size = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":35
+  /* "graphsaint/cython_utils.pxd":34
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):
  *     cdef int size = nda.size
  *     cdef float* vec_c = &(nda[0])             # <<<<<<<<<<<<<<
@@ -6027,11 +6023,11 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
   } else if (unlikely(__pyx_t_2 >= __pyx_pybuffernd_nda.diminfo[0].shape)) __pyx_t_3 = 0;
   if (unlikely(__pyx_t_3 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_3);
-    __PYX_ERR(2, 35, __pyx_L1_error)
+    __PYX_ERR(2, 34, __pyx_L1_error)
   }
   __pyx_v_vec_c = (&(*__Pyx_BufPtrCContig1d(float *, __pyx_pybuffernd_nda.rcbuffer->pybuffer.buf, __pyx_t_2, __pyx_pybuffernd_nda.diminfo[0].strides)));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":36
+  /* "graphsaint/cython_utils.pxd":35
  *     cdef int size = nda.size
  *     cdef float* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)             # <<<<<<<<<<<<<<
@@ -6041,10 +6037,10 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
     __pyx_v_vec.assign(__pyx_v_vec_c, (__pyx_v_vec_c + __pyx_v_size));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(2, 36, __pyx_L1_error)
+    __PYX_ERR(2, 35, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pxd":33
+  /* "graphsaint/cython_utils.pxd":32
  *     vec.assign(vec_c,vec_c+size)
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):             # <<<<<<<<<<<<<<
@@ -6061,14 +6057,14 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_nda.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.npy2vec_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.npy2vec_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
   goto __pyx_L2;
   __pyx_L0:;
   __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_nda.rcbuffer->pybuffer);
   __pyx_L2:;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":20
+/* "graphsaint/cython_utils.pyx":19
  * cdef class array_wrapper_float:
  * 
  *     cdef void set_data(self, vector[float]& data):             # <<<<<<<<<<<<<<
@@ -6078,7 +6074,7 @@ static CYTHON_INLINE void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_util
 
 static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrapper_float_set_data(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float *__pyx_v_self, std::vector<float>  &__pyx_v_data) {
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":21
+  /* "graphsaint/cython_utils.pyx":20
  * 
  *     cdef void set_data(self, vector[float]& data):
  *         self.vec = move(data)             # <<<<<<<<<<<<<<
@@ -6087,7 +6083,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_self->vec = std::move<std::vector<float>  &>(__pyx_v_data);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":20
+  /* "graphsaint/cython_utils.pyx":19
  * cdef class array_wrapper_float:
  * 
  *     cdef void set_data(self, vector[float]& data):             # <<<<<<<<<<<<<<
@@ -6098,7 +6094,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   /* function exit code */
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":25
+/* "graphsaint/cython_utils.pyx":24
  *     # now implement the buffer protocol for the class
  *     # which makes it generally useful to anything that expects an array
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):             # <<<<<<<<<<<<<<
@@ -6134,7 +6130,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   __pyx_v_buffer->obj = Py_None; __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(__pyx_v_buffer->obj);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":27
+  /* "graphsaint/cython_utils.pyx":26
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):
  *         # relevant documentation http://cython.readthedocs.io/en/latest/src/userguide/buffer.html#a-matrix-class
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])             # <<<<<<<<<<<<<<
@@ -6143,7 +6139,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_itemsize = (sizeof((__pyx_v_self->vec[0])));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":28
+  /* "graphsaint/cython_utils.pyx":27
  *         # relevant documentation http://cython.readthedocs.io/en/latest/src/userguide/buffer.html#a-matrix-class
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])
  *         self.shape[0] = self.vec.size()             # <<<<<<<<<<<<<<
@@ -6152,7 +6148,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   (__pyx_v_self->shape[0]) = __pyx_v_self->vec.size();
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":29
+  /* "graphsaint/cython_utils.pyx":28
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])
  *         self.shape[0] = self.vec.size()
  *         self.strides[0] = sizeof(float)             # <<<<<<<<<<<<<<
@@ -6161,7 +6157,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   (__pyx_v_self->strides[0]) = (sizeof(float));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":30
+  /* "graphsaint/cython_utils.pyx":29
  *         self.shape[0] = self.vec.size()
  *         self.strides[0] = sizeof(float)
  *         buffer.buf = <char *>&(self.vec[0])             # <<<<<<<<<<<<<<
@@ -6170,7 +6166,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->buf = ((char *)(&(__pyx_v_self->vec[0])));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":31
+  /* "graphsaint/cython_utils.pyx":30
  *         self.strides[0] = sizeof(float)
  *         buffer.buf = <char *>&(self.vec[0])
  *         buffer.format = 'f'             # <<<<<<<<<<<<<<
@@ -6179,7 +6175,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->format = ((char *)"f");
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":32
+  /* "graphsaint/cython_utils.pyx":31
  *         buffer.buf = <char *>&(self.vec[0])
  *         buffer.format = 'f'
  *         buffer.internal = NULL             # <<<<<<<<<<<<<<
@@ -6188,7 +6184,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->internal = NULL;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":33
+  /* "graphsaint/cython_utils.pyx":32
  *         buffer.format = 'f'
  *         buffer.internal = NULL
  *         buffer.itemsize = itemsize             # <<<<<<<<<<<<<<
@@ -6197,7 +6193,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->itemsize = __pyx_v_itemsize;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":34
+  /* "graphsaint/cython_utils.pyx":33
  *         buffer.internal = NULL
  *         buffer.itemsize = itemsize
  *         buffer.len = self.vec.size() * itemsize             # <<<<<<<<<<<<<<
@@ -6206,7 +6202,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->len = (__pyx_v_self->vec.size() * __pyx_v_itemsize);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":35
+  /* "graphsaint/cython_utils.pyx":34
  *         buffer.itemsize = itemsize
  *         buffer.len = self.vec.size() * itemsize
  *         buffer.ndim = 1             # <<<<<<<<<<<<<<
@@ -6215,7 +6211,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->ndim = 1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":36
+  /* "graphsaint/cython_utils.pyx":35
  *         buffer.len = self.vec.size() * itemsize
  *         buffer.ndim = 1
  *         buffer.obj = self             # <<<<<<<<<<<<<<
@@ -6228,7 +6224,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   __Pyx_DECREF(__pyx_v_buffer->obj);
   __pyx_v_buffer->obj = ((PyObject *)__pyx_v_self);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":37
+  /* "graphsaint/cython_utils.pyx":36
  *         buffer.ndim = 1
  *         buffer.obj = self
  *         buffer.readonly = 0             # <<<<<<<<<<<<<<
@@ -6237,7 +6233,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->readonly = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":38
+  /* "graphsaint/cython_utils.pyx":37
  *         buffer.obj = self
  *         buffer.readonly = 0
  *         buffer.shape = self.shape             # <<<<<<<<<<<<<<
@@ -6247,7 +6243,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   __pyx_t_1 = __pyx_v_self->shape;
   __pyx_v_buffer->shape = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":39
+  /* "graphsaint/cython_utils.pyx":38
  *         buffer.readonly = 0
  *         buffer.shape = self.shape
  *         buffer.strides = self.strides             # <<<<<<<<<<<<<<
@@ -6257,7 +6253,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   __pyx_t_1 = __pyx_v_self->strides;
   __pyx_v_buffer->strides = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":40
+  /* "graphsaint/cython_utils.pyx":39
  *         buffer.shape = self.shape
  *         buffer.strides = self.strides
  *         buffer.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -6266,7 +6262,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
  */
   __pyx_v_buffer->suboffsets = NULL;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":25
+  /* "graphsaint/cython_utils.pyx":24
  *     # now implement the buffer protocol for the class
  *     # which makes it generally useful to anything that expects an array
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):             # <<<<<<<<<<<<<<
@@ -6284,7 +6280,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrap
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":42
+/* "graphsaint/cython_utils.pyx":41
  *         buffer.suboffsets = NULL
  * 
  *     def __releasebuffer__(self,Py_buffer *buffer):             # <<<<<<<<<<<<<<
@@ -6572,7 +6568,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19arra
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_float.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_float.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -6668,7 +6664,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_float.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_float.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -6716,7 +6712,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19arra
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_float.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_float.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6724,7 +6720,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19arra
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":48
+/* "graphsaint/cython_utils.pyx":47
  * cdef class array_wrapper_int:
  * 
  *     cdef void set_data(self, vector[int]& data):             # <<<<<<<<<<<<<<
@@ -6734,7 +6730,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_19arra
 
 static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrapper_int_set_data(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int *__pyx_v_self, std::vector<int>  &__pyx_v_data) {
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":49
+  /* "graphsaint/cython_utils.pyx":48
  * 
  *     cdef void set_data(self, vector[int]& data):
  *         self.vec = move(data)             # <<<<<<<<<<<<<<
@@ -6743,7 +6739,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_self->vec = std::move<std::vector<int>  &>(__pyx_v_data);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":48
+  /* "graphsaint/cython_utils.pyx":47
  * cdef class array_wrapper_int:
  * 
  *     cdef void set_data(self, vector[int]& data):             # <<<<<<<<<<<<<<
@@ -6754,7 +6750,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   /* function exit code */
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":51
+/* "graphsaint/cython_utils.pyx":50
  *         self.vec = move(data)
  * 
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):             # <<<<<<<<<<<<<<
@@ -6790,7 +6786,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   __pyx_v_buffer->obj = Py_None; __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(__pyx_v_buffer->obj);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":53
+  /* "graphsaint/cython_utils.pyx":52
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):
  *         # relevant documentation http://cython.readthedocs.io/en/latest/src/userguide/buffer.html#a-matrix-class
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])             # <<<<<<<<<<<<<<
@@ -6799,7 +6795,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_itemsize = (sizeof((__pyx_v_self->vec[0])));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":54
+  /* "graphsaint/cython_utils.pyx":53
  *         # relevant documentation http://cython.readthedocs.io/en/latest/src/userguide/buffer.html#a-matrix-class
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])
  *         self.shape[0] = self.vec.size()             # <<<<<<<<<<<<<<
@@ -6808,7 +6804,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   (__pyx_v_self->shape[0]) = __pyx_v_self->vec.size();
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":55
+  /* "graphsaint/cython_utils.pyx":54
  *         cdef Py_ssize_t itemsize = sizeof(self.vec[0])
  *         self.shape[0] = self.vec.size()
  *         self.strides[0] = sizeof(int)             # <<<<<<<<<<<<<<
@@ -6817,7 +6813,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   (__pyx_v_self->strides[0]) = (sizeof(int));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":56
+  /* "graphsaint/cython_utils.pyx":55
  *         self.shape[0] = self.vec.size()
  *         self.strides[0] = sizeof(int)
  *         buffer.buf = <char *>&(self.vec[0])             # <<<<<<<<<<<<<<
@@ -6826,7 +6822,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->buf = ((char *)(&(__pyx_v_self->vec[0])));
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":57
+  /* "graphsaint/cython_utils.pyx":56
  *         self.strides[0] = sizeof(int)
  *         buffer.buf = <char *>&(self.vec[0])
  *         buffer.format = 'i'             # <<<<<<<<<<<<<<
@@ -6835,7 +6831,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->format = ((char *)"i");
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":58
+  /* "graphsaint/cython_utils.pyx":57
  *         buffer.buf = <char *>&(self.vec[0])
  *         buffer.format = 'i'
  *         buffer.internal = NULL             # <<<<<<<<<<<<<<
@@ -6844,7 +6840,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->internal = NULL;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":59
+  /* "graphsaint/cython_utils.pyx":58
  *         buffer.format = 'i'
  *         buffer.internal = NULL
  *         buffer.itemsize = itemsize             # <<<<<<<<<<<<<<
@@ -6853,7 +6849,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->itemsize = __pyx_v_itemsize;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":60
+  /* "graphsaint/cython_utils.pyx":59
  *         buffer.internal = NULL
  *         buffer.itemsize = itemsize
  *         buffer.len = self.vec.size() * itemsize             # <<<<<<<<<<<<<<
@@ -6862,7 +6858,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->len = (__pyx_v_self->vec.size() * __pyx_v_itemsize);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":61
+  /* "graphsaint/cython_utils.pyx":60
  *         buffer.itemsize = itemsize
  *         buffer.len = self.vec.size() * itemsize
  *         buffer.ndim = 1             # <<<<<<<<<<<<<<
@@ -6871,7 +6867,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->ndim = 1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":62
+  /* "graphsaint/cython_utils.pyx":61
  *         buffer.len = self.vec.size() * itemsize
  *         buffer.ndim = 1
  *         buffer.obj = self             # <<<<<<<<<<<<<<
@@ -6884,7 +6880,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   __Pyx_DECREF(__pyx_v_buffer->obj);
   __pyx_v_buffer->obj = ((PyObject *)__pyx_v_self);
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":63
+  /* "graphsaint/cython_utils.pyx":62
  *         buffer.ndim = 1
  *         buffer.obj = self
  *         buffer.readonly = 0             # <<<<<<<<<<<<<<
@@ -6893,7 +6889,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->readonly = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":64
+  /* "graphsaint/cython_utils.pyx":63
  *         buffer.obj = self
  *         buffer.readonly = 0
  *         buffer.shape = self.shape             # <<<<<<<<<<<<<<
@@ -6903,7 +6899,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   __pyx_t_1 = __pyx_v_self->shape;
   __pyx_v_buffer->shape = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":65
+  /* "graphsaint/cython_utils.pyx":64
  *         buffer.readonly = 0
  *         buffer.shape = self.shape
  *         buffer.strides = self.strides             # <<<<<<<<<<<<<<
@@ -6913,7 +6909,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   __pyx_t_1 = __pyx_v_self->strides;
   __pyx_v_buffer->strides = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":66
+  /* "graphsaint/cython_utils.pyx":65
  *         buffer.shape = self.shape
  *         buffer.strides = self.strides
  *         buffer.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -6922,7 +6918,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
  */
   __pyx_v_buffer->suboffsets = NULL;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":51
+  /* "graphsaint/cython_utils.pyx":50
  *         self.vec = move(data)
  * 
  *     def __getbuffer__(self, Py_buffer *buffer, int flags):             # <<<<<<<<<<<<<<
@@ -6940,7 +6936,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrap
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_utils.pyx":68
+/* "graphsaint/cython_utils.pyx":67
  *         buffer.suboffsets = NULL
  * 
  *     def __releasebuffer__(self,Py_buffer *buffer):             # <<<<<<<<<<<<<<
@@ -7228,7 +7224,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17arra
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_int.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_int.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -7324,7 +7320,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_int.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_int.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -7372,7 +7368,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_17arra
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.array_wrapper_int.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.array_wrapper_int.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7495,7 +7491,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -7675,7 +7671,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils___pyx_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -7833,7 +7829,7 @@ static PyObject *__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils___pyx_u
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_float__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7956,7 +7952,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -8136,7 +8132,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_12cython_utils_2__pyx
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -8294,7 +8290,7 @@ static PyObject *__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils___pyx_u
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_utils.__pyx_unpickle_array_wrapper_int__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -8381,7 +8377,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_ar
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float_spec = {
-  "fairgraph.dataset.graphsaint.cython_utils.array_wrapper_float",
+  "graphsaint.cython_utils.array_wrapper_float",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -8408,7 +8404,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array_wrapper_float = {
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_utils.""array_wrapper_float", /*tp_name*/
+  "graphsaint.cython_utils.""array_wrapper_float", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float, /*tp_dealloc*/
@@ -8567,7 +8563,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_ar
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int_spec = {
-  "fairgraph.dataset.graphsaint.cython_utils.array_wrapper_int",
+  "graphsaint.cython_utils.array_wrapper_int",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -8594,7 +8590,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array_wrapper_int = {
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_utils.""array_wrapper_int", /*tp_name*/
+  "graphsaint.cython_utils.""array_wrapper_int", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int, /*tp_dealloc*/
@@ -8939,7 +8935,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float.set_data = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float *, std::vector<float>  &))__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_19array_wrapper_float_set_data;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float)) __PYX_ERR(3, 18, __pyx_L1_error)
+  __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float)) __PYX_ERR(3, 17, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float->tp_as_buffer = &__pyx_tp_as_buffer_array_wrapper_float;
   #elif defined(Py_bf_getbuffer) && defined(Py_bf_releasebuffer)
@@ -8949,14 +8945,14 @@ static int __Pyx_modinit_type_init_code(void) {
   #else
   #warning "The buffer protocol is not supported in the Limited C-API < 3.11."
   #endif
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float = &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float->tp_print = 0;
@@ -8966,18 +8962,18 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_array_wrapper_float, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_array_wrapper_float, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 18, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_float) < 0) __PYX_ERR(3, 17, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int.set_data = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int *, std::vector<int>  &))__pyx_f_9fairgraph_7dataset_10graphsaint_12cython_utils_17array_wrapper_int_set_data;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int)) __PYX_ERR(3, 46, __pyx_L1_error)
+  __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int)) __PYX_ERR(3, 45, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int->tp_as_buffer = &__pyx_tp_as_buffer_array_wrapper_int;
   #elif defined(Py_bf_getbuffer) && defined(Py_bf_releasebuffer)
@@ -8987,14 +8983,14 @@ static int __Pyx_modinit_type_init_code(void) {
   #else
   #warning "The buffer protocol is not supported in the Limited C-API < 3.11."
   #endif
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int = &__pyx_type_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int->tp_print = 0;
@@ -9004,13 +9000,13 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_array_wrapper_int, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_array_wrapper_int, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 46, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_12cython_utils_array_wrapper_int) < 0) __PYX_ERR(3, 45, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -9337,8 +9333,8 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(3, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "fairgraph.dataset.graphsaint.cython_utils")) {
-      if (unlikely((PyDict_SetItemString(modules, "fairgraph.dataset.graphsaint.cython_utils", __pyx_m) < 0))) __PYX_ERR(3, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "graphsaint.cython_utils")) {
+      if (unlikely((PyDict_SetItemString(modules, "graphsaint.cython_utils", __pyx_m) < 0))) __PYX_ERR(3, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -9359,28 +9355,28 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(3, 1, __pyx_L1_error)
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":12
+  /* "graphsaint/cython_utils.pyx":11
  * from libcpp.map cimport map
  * from libcpp.utility cimport pair
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * from libc.stdio cimport printf
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 12, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(3, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(3, 11, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":15
+  /* "graphsaint/cython_utils.pyx":14
  * cimport numpy as np
  * from libc.stdio cimport printf
  * import time             # <<<<<<<<<<<<<<
  * 
  * # reference: https://stackoverflow.com/questions/45133276/passing-c-vector-to-numpy-through-cython-without-copying-and-taking-care-of-me
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_2) < 0) __PYX_ERR(3, 15, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_2) < 0) __PYX_ERR(3, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":1
@@ -9451,10 +9447,10 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_array_wrapper_int, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_utils.pyx":1
+  /* "graphsaint/cython_utils.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: language=c++
- * # distutils: extra_compile_args = -fopenmp -std=c++11
+ * # distutils: extra_compile_args = -std=c++11
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -9468,7 +9464,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init fairgraph.dataset.graphsaint.cython_utils", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init graphsaint.cython_utils", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -9482,7 +9478,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init fairgraph.dataset.graphsaint.cython_utils");
+    PyErr_SetString(PyExc_ImportError, "init graphsaint.cython_utils");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

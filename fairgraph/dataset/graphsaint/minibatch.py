@@ -49,7 +49,7 @@ class Minibatch:
             None
         """
         # self.use_cuda = (args_global.gpu >= 0)
-        self.use_cuda = True
+        self.use_cuda = False
         if cpu_eval:
             self.use_cuda=False
 

@@ -5,19 +5,17 @@
     "distutils": {
         "depends": [],
         "extra_compile_args": [
-            "-fopenmp",
             "-std=c++11"
         ],
         "extra_link_args": [
-            "-fopenmp"
         ],
         "language": "c++",
-        "name": "fairgraph.dataset.graphsaint.cython_sampler",
+        "name": "graphsaint.cython_sampler",
         "sources": [
             "graphsaint/cython_sampler.pyx"
         ]
     },
-    "module_name": "fairgraph.dataset.graphsaint.cython_sampler"
+    "module_name": "graphsaint.cython_sampler"
 }
 END: Cython Metadata */
 
@@ -1869,7 +1867,7 @@ struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":29
+/* "graphsaint/cython_sampler.pyx":29
  * 
  * 
  * cdef class Sampler:             # <<<<<<<<<<<<<<
@@ -1893,7 +1891,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":226
+/* "graphsaint/cython_sampler.pyx":226
  * # ----------------------------------------------------
  * 
  * cdef class MRW(Sampler):             # <<<<<<<<<<<<<<
@@ -1909,7 +1907,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":324
+/* "graphsaint/cython_sampler.pyx":324
  * # ----------------------------------------------------
  * 
  * cdef class RW(Sampler):             # <<<<<<<<<<<<<<
@@ -1923,7 +1921,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":365
+/* "graphsaint/cython_sampler.pyx":365
  * # ----------------------------------------------------
  * 
  * cdef class Edge(Sampler):             # <<<<<<<<<<<<<<
@@ -1938,7 +1936,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":403
+/* "graphsaint/cython_sampler.pyx":403
  * 
  * 
  * cdef class Edge2(Sampler):             # <<<<<<<<<<<<<<
@@ -1954,7 +1952,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":446
+/* "graphsaint/cython_sampler.pyx":446
  * # ----------------------------------------------------
  * 
  * cdef class Node(Sampler):             # <<<<<<<<<<<<<<
@@ -1968,7 +1966,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node {
 };
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":477
+/* "graphsaint/cython_sampler.pyx":477
  * # -----------------------------------------------------
  * 
  * cdef class FullBatch(Sampler):             # <<<<<<<<<<<<<<
@@ -2009,7 +2007,7 @@ struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int {
 static struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":29
+/* "graphsaint/cython_sampler.pyx":29
  * 
  * 
  * cdef class Sampler:             # <<<<<<<<<<<<<<
@@ -2024,7 +2022,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sample
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":226
+/* "graphsaint/cython_sampler.pyx":226
  * # ----------------------------------------------------
  * 
  * cdef class MRW(Sampler):             # <<<<<<<<<<<<<<
@@ -2038,7 +2036,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":324
+/* "graphsaint/cython_sampler.pyx":324
  * # ----------------------------------------------------
  * 
  * cdef class RW(Sampler):             # <<<<<<<<<<<<<<
@@ -2052,7 +2050,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":365
+/* "graphsaint/cython_sampler.pyx":365
  * # ----------------------------------------------------
  * 
  * cdef class Edge(Sampler):             # <<<<<<<<<<<<<<
@@ -2066,7 +2064,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":403
+/* "graphsaint/cython_sampler.pyx":403
  * 
  * 
  * cdef class Edge2(Sampler):             # <<<<<<<<<<<<<<
@@ -2080,7 +2078,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":446
+/* "graphsaint/cython_sampler.pyx":446
  * # ----------------------------------------------------
  * 
  * cdef class Node(Sampler):             # <<<<<<<<<<<<<<
@@ -2094,7 +2092,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node;
 
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":477
+/* "graphsaint/cython_sampler.pyx":477
  * # -----------------------------------------------------
  * 
  * cdef class FullBatch(Sampler):             # <<<<<<<<<<<<<<
@@ -3101,16 +3099,16 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
 static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArrayObject *, std::vector<int>  &); /*proto*/
 static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyArrayObject *, std::vector<float>  &); /*proto*/
 
-/* Module declarations from "fairgraph.dataset.graphsaint.cython_sampler" */
+/* Module declarations from "graphsaint.cython_sampler" */
 /* #### Code section: typeinfo ### */
 static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "fairgraph.dataset.graphsaint.cython_sampler"
+#define __Pyx_MODULE_NAME "graphsaint.cython_sampler"
 extern int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_sampler;
 int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_sampler = 0;
 
-/* Implementation of "fairgraph.dataset.graphsaint.cython_sampler" */
+/* Implementation of "graphsaint.cython_sampler" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_TypeError;
@@ -3233,7 +3231,7 @@ static const char __pyx_k_Sampler___setstate_cython[] = "Sampler.__setstate_cyth
 static const char __pyx_k_FullBatch___setstate_cython[] = "FullBatch.__setstate_cython__";
 static const char __pyx_k_graphsaint_cython_sampler_pyx[] = "graphsaint/cython_sampler.pyx";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
-static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "fairgraph.dataset.graphsaint.cython_sampler";
+static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "graphsaint.cython_sampler";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 /* #### Code section: decls ### */
@@ -5623,7 +5621,7 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyAr
   __pyx_L2:;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":41
+/* "graphsaint/cython_sampler.pyx":41
  *     cdef vector[vector[int]] ret_edge_index
  * 
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -5762,7 +5760,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
     }
   }
   __Pyx_DECREF(__pyx_v_argv); __pyx_v_argv = 0;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -5828,7 +5826,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":45
+  /* "graphsaint/cython_sampler.pyx":45
  *                         np.ndarray[int,ndim=1,mode='c'] node_train,
  *                         int num_proc, int num_sample_per_proc,*argv):
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)             # <<<<<<<<<<<<<<
@@ -5837,7 +5835,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indptr), __pyx_v_self->adj_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":46
+  /* "graphsaint/cython_sampler.pyx":46
  *                         int num_proc, int num_sample_per_proc,*argv):
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)             # <<<<<<<<<<<<<<
@@ -5846,7 +5844,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indices), __pyx_v_self->adj_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":47
+  /* "graphsaint/cython_sampler.pyx":47
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)
  *         cutils.npy2vec_int(node_train,self.node_train_vec)             # <<<<<<<<<<<<<<
@@ -5855,7 +5853,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_node_train), __pyx_v_self->node_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":48
+  /* "graphsaint/cython_sampler.pyx":48
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  *         self.num_proc = num_proc             # <<<<<<<<<<<<<<
@@ -5864,7 +5862,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_v_self->num_proc = __pyx_v_num_proc;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":49
+  /* "graphsaint/cython_sampler.pyx":49
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  *         self.num_proc = num_proc
  *         self.num_sample_per_proc = num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -5873,7 +5871,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_v_self->num_sample_per_proc = __pyx_v_num_sample_per_proc;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":50
+  /* "graphsaint/cython_sampler.pyx":50
  *         self.num_proc = num_proc
  *         self.num_sample_per_proc = num_sample_per_proc
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5888,7 +5886,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->node_sampled = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":51
+  /* "graphsaint/cython_sampler.pyx":51
  *         self.num_sample_per_proc = num_sample_per_proc
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5903,7 +5901,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->ret_indptr = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":52
+  /* "graphsaint/cython_sampler.pyx":52
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5918,7 +5916,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->ret_indices = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":53
+  /* "graphsaint/cython_sampler.pyx":53
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5933,7 +5931,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->ret_indices_orig = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":54
+  /* "graphsaint/cython_sampler.pyx":54
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_data = vector[vector[float]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5948,7 +5946,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->ret_data = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":55
+  /* "graphsaint/cython_sampler.pyx":55
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_data = vector[vector[float]](num_proc*num_sample_per_proc)
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5963,7 +5961,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   }
   __pyx_v_self->ret_edge_index = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":41
+  /* "graphsaint/cython_sampler.pyx":41
  *     cdef vector[vector[int]] ret_edge_index
  * 
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -5983,7 +5981,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -5994,7 +5992,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":57
+/* "graphsaint/cython_sampler.pyx":57
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)
  * 
  *     cdef void adj_extract(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -6025,7 +6023,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":62
+  /* "graphsaint/cython_sampler.pyx":62
  *         ret_indices_orig:   the indices vector corresponding to node id in original G.
  *         """
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -6034,7 +6032,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":63
+  /* "graphsaint/cython_sampler.pyx":63
  *         """
  *         cdef int r = 0
  *         cdef int idx_g = 0             # <<<<<<<<<<<<<<
@@ -6043,7 +6041,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_idx_g = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":69
+  /* "graphsaint/cython_sampler.pyx":69
  *         cdef vector[int] _arr_bit
  *         cdef int cumsum
  *         num_v_orig = self.adj_indptr_vec.size()-1             # <<<<<<<<<<<<<<
@@ -6052,7 +6050,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_num_v_orig = (__pyx_v_self->adj_indptr_vec.size() - 1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":70
+  /* "graphsaint/cython_sampler.pyx":70
  *         cdef int cumsum
  *         num_v_orig = self.adj_indptr_vec.size()-1
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -6063,7 +6061,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":71
+    /* "graphsaint/cython_sampler.pyx":71
  *         num_v_orig = self.adj_indptr_vec.size()-1
  *         while r < self.num_sample_per_proc:
  *             _arr_bit = vector[int](num_v_orig,-1)             # <<<<<<<<<<<<<<
@@ -6084,7 +6082,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     __pyx_v__arr_bit = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":72
+    /* "graphsaint/cython_sampler.pyx":72
  *         while r < self.num_sample_per_proc:
  *             _arr_bit = vector[int](num_v_orig,-1)
  *             idx_g = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -6093,7 +6091,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_idx_g = ((__pyx_v_p * __pyx_v_self->num_sample_per_proc) + __pyx_v_r);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":73
+    /* "graphsaint/cython_sampler.pyx":73
  *             _arr_bit = vector[int](num_v_orig,-1)
  *             idx_g = p*self.num_sample_per_proc+r
  *             num_v_sub = self.node_sampled[idx_g].size()             # <<<<<<<<<<<<<<
@@ -6102,7 +6100,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_num_v_sub = (__pyx_v_self->node_sampled[__pyx_v_idx_g]).size();
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":74
+    /* "graphsaint/cython_sampler.pyx":74
  *             idx_g = p*self.num_sample_per_proc+r
  *             num_v_sub = self.node_sampled[idx_g].size()
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)             # <<<<<<<<<<<<<<
@@ -6123,7 +6121,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     (__pyx_v_self->ret_indptr[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":75
+    /* "graphsaint/cython_sampler.pyx":75
  *             num_v_sub = self.node_sampled[idx_g].size()
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)
  *             self.ret_indices[idx_g] = vector[int]()             # <<<<<<<<<<<<<<
@@ -6144,7 +6142,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     (__pyx_v_self->ret_indices[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":76
+    /* "graphsaint/cython_sampler.pyx":76
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)
  *             self.ret_indices[idx_g] = vector[int]()
  *             self.ret_indices_orig[idx_g] = vector[int]()             # <<<<<<<<<<<<<<
@@ -6165,7 +6163,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     (__pyx_v_self->ret_indices_orig[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":77
+    /* "graphsaint/cython_sampler.pyx":77
  *             self.ret_indices[idx_g] = vector[int]()
  *             self.ret_indices_orig[idx_g] = vector[int]()
  *             self.ret_data[idx_g] = vector[float]()             # <<<<<<<<<<<<<<
@@ -6186,7 +6184,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     (__pyx_v_self->ret_data[__pyx_v_idx_g]) = __pyx_t_3;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":78
+    /* "graphsaint/cython_sampler.pyx":78
  *             self.ret_indices_orig[idx_g] = vector[int]()
  *             self.ret_data[idx_g] = vector[float]()
  *             self.ret_edge_index[idx_g]=vector[int]()             # <<<<<<<<<<<<<<
@@ -6207,7 +6205,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     }
     (__pyx_v_self->ret_edge_index[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":79
+    /* "graphsaint/cython_sampler.pyx":79
  *             self.ret_data[idx_g] = vector[float]()
  *             self.ret_edge_index[idx_g]=vector[int]()
  *             i_end = num_v_sub             # <<<<<<<<<<<<<<
@@ -6216,7 +6214,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i_end = __pyx_v_num_v_sub;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":80
+    /* "graphsaint/cython_sampler.pyx":80
  *             self.ret_edge_index[idx_g]=vector[int]()
  *             i_end = num_v_sub
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6225,7 +6223,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":81
+    /* "graphsaint/cython_sampler.pyx":81
  *             i_end = num_v_sub
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6236,7 +6234,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":82
+      /* "graphsaint/cython_sampler.pyx":82
  *             i = 0
  *             while i < i_end:
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i             # <<<<<<<<<<<<<<
@@ -6245,7 +6243,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       (__pyx_v__arr_bit[((__pyx_v_self->node_sampled[__pyx_v_idx_g])[__pyx_v_i])]) = __pyx_v_i;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":83
+      /* "graphsaint/cython_sampler.pyx":83
  *             while i < i_end:
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6255,7 +6253,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":84
+    /* "graphsaint/cython_sampler.pyx":84
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i
  *                 i = i + 1
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6264,7 +6262,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":85
+    /* "graphsaint/cython_sampler.pyx":85
  *                 i = i + 1
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6275,7 +6273,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":86
+      /* "graphsaint/cython_sampler.pyx":86
  *             i = 0
  *             while i < i_end:
  *                 v = self.node_sampled[idx_g][i]             # <<<<<<<<<<<<<<
@@ -6284,7 +6282,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_v = ((__pyx_v_self->node_sampled[__pyx_v_idx_g])[__pyx_v_i]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":87
+      /* "graphsaint/cython_sampler.pyx":87
  *             while i < i_end:
  *                 v = self.node_sampled[idx_g][i]
  *                 start_neigh = self.adj_indptr_vec[v]             # <<<<<<<<<<<<<<
@@ -6293,7 +6291,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_start_neigh = (__pyx_v_self->adj_indptr_vec[__pyx_v_v]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":88
+      /* "graphsaint/cython_sampler.pyx":88
  *                 v = self.node_sampled[idx_g][i]
  *                 start_neigh = self.adj_indptr_vec[v]
  *                 end_neigh = self.adj_indptr_vec[v+1]             # <<<<<<<<<<<<<<
@@ -6302,7 +6300,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_end_neigh = (__pyx_v_self->adj_indptr_vec[(__pyx_v_v + 1)]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":89
+      /* "graphsaint/cython_sampler.pyx":89
  *                 start_neigh = self.adj_indptr_vec[v]
  *                 end_neigh = self.adj_indptr_vec[v+1]
  *                 j = start_neigh             # <<<<<<<<<<<<<<
@@ -6311,7 +6309,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_j = __pyx_v_start_neigh;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":90
+      /* "graphsaint/cython_sampler.pyx":90
  *                 end_neigh = self.adj_indptr_vec[v+1]
  *                 j = start_neigh
  *                 while j < end_neigh:             # <<<<<<<<<<<<<<
@@ -6322,7 +6320,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_t_1 = (__pyx_v_j < __pyx_v_end_neigh);
         if (!__pyx_t_1) break;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":91
+        /* "graphsaint/cython_sampler.pyx":91
  *                 j = start_neigh
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:             # <<<<<<<<<<<<<<
@@ -6332,7 +6330,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_t_1 = ((__pyx_v__arr_bit[(__pyx_v_self->adj_indices_vec[__pyx_v_j])]) > -1L);
         if (__pyx_t_1) {
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":92
+          /* "graphsaint/cython_sampler.pyx":92
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])             # <<<<<<<<<<<<<<
@@ -6352,7 +6350,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             __PYX_ERR(0, 92, __pyx_L1_error)
           }
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":93
+          /* "graphsaint/cython_sampler.pyx":93
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])             # <<<<<<<<<<<<<<
@@ -6372,7 +6370,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             __PYX_ERR(0, 93, __pyx_L1_error)
           }
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":94
+          /* "graphsaint/cython_sampler.pyx":94
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])
  *                         self.ret_edge_index[idx_g].push_back(j)             # <<<<<<<<<<<<<<
@@ -6392,7 +6390,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             __PYX_ERR(0, 94, __pyx_L1_error)
           }
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":95
+          /* "graphsaint/cython_sampler.pyx":95
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])
  *                         self.ret_edge_index[idx_g].push_back(j)
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1             # <<<<<<<<<<<<<<
@@ -6401,7 +6399,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
           ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[((__pyx_v__arr_bit[__pyx_v_v]) + 1)]) = (((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[((__pyx_v__arr_bit[__pyx_v_v]) + 1)]) + 1);
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":96
+          /* "graphsaint/cython_sampler.pyx":96
  *                         self.ret_edge_index[idx_g].push_back(j)
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1
  *                         self.ret_data[idx_g].push_back(1.)             # <<<<<<<<<<<<<<
@@ -6421,7 +6419,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             __PYX_ERR(0, 96, __pyx_L1_error)
           }
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":91
+          /* "graphsaint/cython_sampler.pyx":91
  *                 j = start_neigh
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:             # <<<<<<<<<<<<<<
@@ -6430,7 +6428,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":97
+        /* "graphsaint/cython_sampler.pyx":97
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1
  *                         self.ret_data[idx_g].push_back(1.)
  *                     j = j + 1             # <<<<<<<<<<<<<<
@@ -6440,7 +6438,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_v_j = (__pyx_v_j + 1);
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":98
+      /* "graphsaint/cython_sampler.pyx":98
  *                         self.ret_data[idx_g].push_back(1.)
  *                     j = j + 1
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6450,7 +6448,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":99
+    /* "graphsaint/cython_sampler.pyx":99
  *                     j = j + 1
  *                 i = i + 1
  *             cumsum = self.ret_indptr[idx_g][0]             # <<<<<<<<<<<<<<
@@ -6459,7 +6457,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_cumsum = ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[0]);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":100
+    /* "graphsaint/cython_sampler.pyx":100
  *                 i = i + 1
  *             cumsum = self.ret_indptr[idx_g][0]
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6468,7 +6466,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":101
+    /* "graphsaint/cython_sampler.pyx":101
  *             cumsum = self.ret_indptr[idx_g][0]
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6479,7 +6477,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":102
+      /* "graphsaint/cython_sampler.pyx":102
  *             i = 0
  *             while i < i_end:
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]             # <<<<<<<<<<<<<<
@@ -6488,7 +6486,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_cumsum = (__pyx_v_cumsum + ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[(__pyx_v_i + 1)]));
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":103
+      /* "graphsaint/cython_sampler.pyx":103
  *             while i < i_end:
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]
  *                 self.ret_indptr[idx_g][i+1] = cumsum             # <<<<<<<<<<<<<<
@@ -6497,7 +6495,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[(__pyx_v_i + 1)]) = __pyx_v_cumsum;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":104
+      /* "graphsaint/cython_sampler.pyx":104
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]
  *                 self.ret_indptr[idx_g][i+1] = cumsum
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6507,7 +6505,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":105
+    /* "graphsaint/cython_sampler.pyx":105
  *                 self.ret_indptr[idx_g][i+1] = cumsum
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -6517,7 +6515,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":57
+  /* "graphsaint/cython_sampler.pyx":57
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)
  * 
  *     cdef void adj_extract(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -6531,14 +6529,14 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.adj_extract", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.adj_extract", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
   __pyx_L0:;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":107
+/* "graphsaint/cython_sampler.pyx":107
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -6639,7 +6637,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_return", 1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":118
+  /* "graphsaint/cython_sampler.pyx":118
  *             see outputs of the `par_sample()` function.
  *         """
  *         num_subg = self.num_proc*self.num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -6648,7 +6646,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v_num_subg = (__pyx_v_self->num_proc * __pyx_v_self->num_sample_per_proc);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":119
+  /* "graphsaint/cython_sampler.pyx":119
  *         """
  *         num_subg = self.num_proc*self.num_sample_per_proc
  *         l_subg_indptr = []             # <<<<<<<<<<<<<<
@@ -6660,7 +6658,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_l_subg_indptr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":120
+  /* "graphsaint/cython_sampler.pyx":120
  *         num_subg = self.num_proc*self.num_sample_per_proc
  *         l_subg_indptr = []
  *         l_subg_indices = []             # <<<<<<<<<<<<<<
@@ -6672,7 +6670,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_l_subg_indices = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":121
+  /* "graphsaint/cython_sampler.pyx":121
  *         l_subg_indptr = []
  *         l_subg_indices = []
  *         l_subg_data = []             # <<<<<<<<<<<<<<
@@ -6684,7 +6682,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_l_subg_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":122
+  /* "graphsaint/cython_sampler.pyx":122
  *         l_subg_indices = []
  *         l_subg_data = []
  *         l_subg_nodes = []             # <<<<<<<<<<<<<<
@@ -6696,7 +6694,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_l_subg_nodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":123
+  /* "graphsaint/cython_sampler.pyx":123
  *         l_subg_data = []
  *         l_subg_nodes = []
  *         l_subg_edge_index = []             # <<<<<<<<<<<<<<
@@ -6708,7 +6706,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_l_subg_edge_index = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":124
+  /* "graphsaint/cython_sampler.pyx":124
  *         l_subg_nodes = []
  *         l_subg_edge_index = []
  *         offset_nodes = [0]             # <<<<<<<<<<<<<<
@@ -6723,7 +6721,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_offset_nodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":125
+  /* "graphsaint/cython_sampler.pyx":125
  *         l_subg_edge_index = []
  *         offset_nodes = [0]
  *         offset_indptr = [0]             # <<<<<<<<<<<<<<
@@ -6738,7 +6736,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_offset_indptr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":126
+  /* "graphsaint/cython_sampler.pyx":126
  *         offset_nodes = [0]
  *         offset_indptr = [0]
  *         offset_indices = [0]             # <<<<<<<<<<<<<<
@@ -6753,7 +6751,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_offset_indices = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":127
+  /* "graphsaint/cython_sampler.pyx":127
  *         offset_indptr = [0]
  *         offset_indices = [0]
  *         offset_data = [0]             # <<<<<<<<<<<<<<
@@ -6768,7 +6766,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_offset_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":128
+  /* "graphsaint/cython_sampler.pyx":128
  *         offset_indices = [0]
  *         offset_data = [0]
  *         offset_edge_index = [0]             # <<<<<<<<<<<<<<
@@ -6783,7 +6781,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_offset_edge_index = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":129
+  /* "graphsaint/cython_sampler.pyx":129
  *         offset_data = [0]
  *         offset_edge_index = [0]
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -6851,7 +6849,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":130
+    /* "graphsaint/cython_sampler.pyx":130
  *         offset_edge_index = [0]
  *         for r in range(num_subg):
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())             # <<<<<<<<<<<<<<
@@ -6870,7 +6868,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_nodes, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":131
+    /* "graphsaint/cython_sampler.pyx":131
  *         for r in range(num_subg):
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())             # <<<<<<<<<<<<<<
@@ -6889,7 +6887,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":132
+    /* "graphsaint/cython_sampler.pyx":132
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())             # <<<<<<<<<<<<<<
@@ -6908,7 +6906,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":133
+    /* "graphsaint/cython_sampler.pyx":133
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())             # <<<<<<<<<<<<<<
@@ -6927,7 +6925,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_data, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":134
+    /* "graphsaint/cython_sampler.pyx":134
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())             # <<<<<<<<<<<<<<
@@ -6946,7 +6944,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_edge_index, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":129
+    /* "graphsaint/cython_sampler.pyx":129
  *         offset_data = [0]
  *         offset_edge_index = [0]
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -6956,7 +6954,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":135
+  /* "graphsaint/cython_sampler.pyx":135
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  *         cdef vector[int] ret_nodes_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -6971,7 +6969,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_ret_nodes_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":136
+  /* "graphsaint/cython_sampler.pyx":136
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  *         cdef vector[int] ret_indptr_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -6986,7 +6984,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_ret_indptr_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":137
+  /* "graphsaint/cython_sampler.pyx":137
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  *         cdef vector[int] ret_indptr_vec = vector[int]()
  *         cdef vector[int] ret_indices_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -7001,7 +6999,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_ret_indices_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":138
+  /* "graphsaint/cython_sampler.pyx":138
  *         cdef vector[int] ret_indptr_vec = vector[int]()
  *         cdef vector[int] ret_indices_vec = vector[int]()
  *         cdef vector[int] ret_edge_index_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -7016,7 +7014,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_ret_edge_index_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":139
+  /* "graphsaint/cython_sampler.pyx":139
  *         cdef vector[int] ret_indices_vec = vector[int]()
  *         cdef vector[int] ret_edge_index_vec = vector[int]()
  *         cdef vector[float] ret_data_vec = vector[float]()             # <<<<<<<<<<<<<<
@@ -7031,7 +7029,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_ret_data_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_11);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":140
+  /* "graphsaint/cython_sampler.pyx":140
  *         cdef vector[int] ret_edge_index_vec = vector[int]()
  *         cdef vector[float] ret_data_vec = vector[float]()
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])             # <<<<<<<<<<<<<<
@@ -7049,7 +7047,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __PYX_ERR(0, 140, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":141
+  /* "graphsaint/cython_sampler.pyx":141
  *         cdef vector[float] ret_data_vec = vector[float]()
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])             # <<<<<<<<<<<<<<
@@ -7067,7 +7065,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __PYX_ERR(0, 141, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":142
+  /* "graphsaint/cython_sampler.pyx":142
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])
  *         ret_indices_vec.reserve(offset_indices[num_subg])             # <<<<<<<<<<<<<<
@@ -7085,7 +7083,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __PYX_ERR(0, 142, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":143
+  /* "graphsaint/cython_sampler.pyx":143
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  *         ret_data_vec.reserve(offset_data[num_subg])             # <<<<<<<<<<<<<<
@@ -7103,7 +7101,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __PYX_ERR(0, 143, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":144
+  /* "graphsaint/cython_sampler.pyx":144
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])             # <<<<<<<<<<<<<<
@@ -7121,7 +7119,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __PYX_ERR(0, 144, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":145
+  /* "graphsaint/cython_sampler.pyx":145
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7189,7 +7187,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":146
+    /* "graphsaint/cython_sampler.pyx":146
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())             # <<<<<<<<<<<<<<
@@ -7205,7 +7203,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       __PYX_ERR(0, 146, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":147
+    /* "graphsaint/cython_sampler.pyx":147
  *         for r in range(num_subg):
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())             # <<<<<<<<<<<<<<
@@ -7221,7 +7219,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       __PYX_ERR(0, 147, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":148
+    /* "graphsaint/cython_sampler.pyx":148
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())             # <<<<<<<<<<<<<<
@@ -7237,7 +7235,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       __PYX_ERR(0, 148, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":149
+    /* "graphsaint/cython_sampler.pyx":149
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())             # <<<<<<<<<<<<<<
@@ -7253,7 +7251,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       __PYX_ERR(0, 149, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":150
+    /* "graphsaint/cython_sampler.pyx":150
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())             # <<<<<<<<<<<<<<
@@ -7269,7 +7267,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       __PYX_ERR(0, 150, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":145
+    /* "graphsaint/cython_sampler.pyx":145
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7279,7 +7277,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":152
+  /* "graphsaint/cython_sampler.pyx":152
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())
  * 
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
@@ -7291,7 +7289,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_wint_indptr = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":153
+  /* "graphsaint/cython_sampler.pyx":153
  * 
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
@@ -7303,7 +7301,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_wint_indices = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":154
+  /* "graphsaint/cython_sampler.pyx":154
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
@@ -7315,7 +7313,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_wint_nodes = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":155
+  /* "graphsaint/cython_sampler.pyx":155
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()             # <<<<<<<<<<<<<<
@@ -7327,7 +7325,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_wfloat_data = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":156
+  /* "graphsaint/cython_sampler.pyx":156
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
@@ -7339,7 +7337,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_wint_edge_index = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":158
+  /* "graphsaint/cython_sampler.pyx":158
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()
  * 
  *         wint_indptr.set_data(ret_indptr_vec)             # <<<<<<<<<<<<<<
@@ -7348,7 +7346,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indptr->__pyx_vtab)->set_data(__pyx_v_wint_indptr, __pyx_v_ret_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":159
+  /* "graphsaint/cython_sampler.pyx":159
  * 
  *         wint_indptr.set_data(ret_indptr_vec)
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)             # <<<<<<<<<<<<<<
@@ -7382,7 +7380,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_indptr_np = __pyx_t_16;
   __pyx_t_16 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":160
+  /* "graphsaint/cython_sampler.pyx":160
  *         wint_indptr.set_data(ret_indptr_vec)
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)
  *         wint_indices.set_data(ret_indices_vec)             # <<<<<<<<<<<<<<
@@ -7391,7 +7389,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indices->__pyx_vtab)->set_data(__pyx_v_wint_indices, __pyx_v_ret_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 160, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":161
+  /* "graphsaint/cython_sampler.pyx":161
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)
  *         wint_indices.set_data(ret_indices_vec)
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)             # <<<<<<<<<<<<<<
@@ -7425,7 +7423,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_indices_np = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":162
+  /* "graphsaint/cython_sampler.pyx":162
  *         wint_indices.set_data(ret_indices_vec)
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  *         wint_nodes.set_data(ret_nodes_vec)             # <<<<<<<<<<<<<<
@@ -7434,7 +7432,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_nodes->__pyx_vtab)->set_data(__pyx_v_wint_nodes, __pyx_v_ret_nodes_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 162, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":163
+  /* "graphsaint/cython_sampler.pyx":163
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  *         wint_nodes.set_data(ret_nodes_vec)
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)             # <<<<<<<<<<<<<<
@@ -7468,7 +7466,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_nodes_np = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":164
+  /* "graphsaint/cython_sampler.pyx":164
  *         wint_nodes.set_data(ret_nodes_vec)
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  *         wfloat_data.set_data(ret_data_vec)             # <<<<<<<<<<<<<<
@@ -7477,7 +7475,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float *)__pyx_v_wfloat_data->__pyx_vtab)->set_data(__pyx_v_wfloat_data, __pyx_v_ret_data_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":165
+  /* "graphsaint/cython_sampler.pyx":165
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  *         wfloat_data.set_data(ret_data_vec)
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)             # <<<<<<<<<<<<<<
@@ -7511,7 +7509,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_data_np = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":166
+  /* "graphsaint/cython_sampler.pyx":166
  *         wfloat_data.set_data(ret_data_vec)
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  *         wint_edge_index.set_data(ret_edge_index_vec)             # <<<<<<<<<<<<<<
@@ -7520,7 +7518,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_edge_index->__pyx_vtab)->set_data(__pyx_v_wint_edge_index, __pyx_v_ret_edge_index_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 166, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":167
+  /* "graphsaint/cython_sampler.pyx":167
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  *         wint_edge_index.set_data(ret_edge_index_vec)
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)             # <<<<<<<<<<<<<<
@@ -7554,7 +7552,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_edge_index_np = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":169
+  /* "graphsaint/cython_sampler.pyx":169
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  * 
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7622,7 +7620,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":170
+    /* "graphsaint/cython_sampler.pyx":170
  * 
  *         for r in range(num_subg):
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])             # <<<<<<<<<<<<<<
@@ -7643,7 +7641,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_nodes, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":171
+    /* "graphsaint/cython_sampler.pyx":171
  *         for r in range(num_subg):
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])             # <<<<<<<<<<<<<<
@@ -7664,7 +7662,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":172
+    /* "graphsaint/cython_sampler.pyx":172
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])             # <<<<<<<<<<<<<<
@@ -7685,7 +7683,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":173
+    /* "graphsaint/cython_sampler.pyx":173
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])             # <<<<<<<<<<<<<<
@@ -7706,7 +7704,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_data, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":174
+    /* "graphsaint/cython_sampler.pyx":174
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])             # <<<<<<<<<<<<<<
@@ -7727,7 +7725,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_edge_index, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 174, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":169
+    /* "graphsaint/cython_sampler.pyx":169
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  * 
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7737,7 +7735,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":176
+  /* "graphsaint/cython_sampler.pyx":176
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])
  * 
  *         return l_subg_indptr,l_subg_indices,l_subg_data,l_subg_nodes,l_subg_edge_index             # <<<<<<<<<<<<<<
@@ -7766,7 +7764,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":107
+  /* "graphsaint/cython_sampler.pyx":107
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -7781,7 +7779,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_16);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.get_return", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.get_return", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_l_subg_indptr);
@@ -7810,7 +7808,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":178
+/* "graphsaint/cython_sampler.pyx":178
  *         return l_subg_indptr,l_subg_indices,l_subg_data,l_subg_nodes,l_subg_edge_index
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -7823,7 +7821,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_s
   /* function exit code */
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":181
+/* "graphsaint/cython_sampler.pyx":181
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -7892,7 +7890,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("par_sample", 1);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":208
+  /* "graphsaint/cython_sampler.pyx":208
  *                                 i-the subgraph edge.
  *         """
  *         cdef int p = 0             # <<<<<<<<<<<<<<
@@ -7901,7 +7899,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v_p = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":209
+  /* "graphsaint/cython_sampler.pyx":209
  *         """
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):             # <<<<<<<<<<<<<<
@@ -7938,7 +7936,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
                 Py_BEGIN_ALLOW_THREADS
                 #endif /* _OPENMP */
 
-                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":210
+                /* "graphsaint/cython_sampler.pyx":210
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):
  *             for p in prange(self.num_proc,schedule='dynamic'):             # <<<<<<<<<<<<<<
@@ -7963,7 +7961,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
                             {
                                 __pyx_v_p = (int)(0 + 1 * __pyx_t_2);
 
-                                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":211
+                                /* "graphsaint/cython_sampler.pyx":211
  *         with nogil, parallel(num_threads=self.num_proc):
  *             for p in prange(self.num_proc,schedule='dynamic'):
  *                 self.sample(p)             # <<<<<<<<<<<<<<
@@ -7972,7 +7970,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
                                 ((struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self->__pyx_vtab)->sample(__pyx_v_self, __pyx_v_p); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 211, __pyx_L12_error)
 
-                                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":212
+                                /* "graphsaint/cython_sampler.pyx":212
  *             for p in prange(self.num_proc,schedule='dynamic'):
  *                 self.sample(p)
  *                 self.adj_extract(p)             # <<<<<<<<<<<<<<
@@ -8104,7 +8102,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         #endif
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":209
+      /* "graphsaint/cython_sampler.pyx":209
  *         """
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):             # <<<<<<<<<<<<<<
@@ -8130,7 +8128,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       }
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":213
+  /* "graphsaint/cython_sampler.pyx":213
  *                 self.sample(p)
  *                 self.adj_extract(p)
  *         ret = self.get_return()             # <<<<<<<<<<<<<<
@@ -8164,7 +8162,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":214
+  /* "graphsaint/cython_sampler.pyx":214
  *                 self.adj_extract(p)
  *         ret = self.get_return()
  *         _len = self.num_proc*self.num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -8173,7 +8171,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v__len = (__pyx_v_self->num_proc * __pyx_v_self->num_sample_per_proc);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":215
+  /* "graphsaint/cython_sampler.pyx":215
  *         ret = self.get_return()
  *         _len = self.num_proc*self.num_sample_per_proc
  *         self.node_sampled.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8188,7 +8186,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->node_sampled.swap(__pyx_t_7);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":216
+  /* "graphsaint/cython_sampler.pyx":216
  *         _len = self.num_proc*self.num_sample_per_proc
  *         self.node_sampled.swap(vector[vector[int]](_len))
  *         self.ret_indptr.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8203,7 +8201,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->ret_indptr.swap(__pyx_t_7);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":217
+  /* "graphsaint/cython_sampler.pyx":217
  *         self.node_sampled.swap(vector[vector[int]](_len))
  *         self.ret_indptr.swap(vector[vector[int]](_len))
  *         self.ret_indices.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8218,7 +8216,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->ret_indices.swap(__pyx_t_7);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":218
+  /* "graphsaint/cython_sampler.pyx":218
  *         self.ret_indptr.swap(vector[vector[int]](_len))
  *         self.ret_indices.swap(vector[vector[int]](_len))
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8233,7 +8231,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->ret_indices_orig.swap(__pyx_t_7);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":219
+  /* "graphsaint/cython_sampler.pyx":219
  *         self.ret_indices.swap(vector[vector[int]](_len))
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))
  *         self.ret_data.swap(vector[vector[float]](_len))             # <<<<<<<<<<<<<<
@@ -8248,7 +8246,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->ret_data.swap(__pyx_t_8);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":220
+  /* "graphsaint/cython_sampler.pyx":220
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))
  *         self.ret_data.swap(vector[vector[float]](_len))
  *         self.ret_edge_index.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8263,7 +8261,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __pyx_v_self->ret_edge_index.swap(__pyx_t_7);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":221
+  /* "graphsaint/cython_sampler.pyx":221
  *         self.ret_data.swap(vector[vector[float]](_len))
  *         self.ret_edge_index.swap(vector[vector[int]](_len))
  *         return ret             # <<<<<<<<<<<<<<
@@ -8275,7 +8273,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_r = __pyx_v_ret;
   goto __pyx_L0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":181
+  /* "graphsaint/cython_sampler.pyx":181
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -8288,7 +8286,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.par_sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.par_sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_ret);
@@ -8369,7 +8367,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -8462,7 +8460,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -8504,14 +8502,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":230
+/* "graphsaint/cython_sampler.pyx":230
  *     cdef int avg_deg
  *     cdef vector[int] arr_deg_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -8701,7 +8699,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -8784,7 +8782,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   }
   __pyx_pybuffernd_p_dist.diminfo[0].strides = __pyx_pybuffernd_p_dist.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist.diminfo[0].shape = __pyx_pybuffernd_p_dist.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":236
+  /* "graphsaint/cython_sampler.pyx":236
  *                         np.ndarray[int,ndim=1,mode='c'] p_dist,
  *                         int max_deg, int size_frontier, int size_subg):
  *         self.size_frontier = size_frontier             # <<<<<<<<<<<<<<
@@ -8793,7 +8791,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
  */
   __pyx_v_self->size_frontier = __pyx_v_size_frontier;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":237
+  /* "graphsaint/cython_sampler.pyx":237
  *                         int max_deg, int size_frontier, int size_subg):
  *         self.size_frontier = size_frontier
  *         self.size_subg = size_subg             # <<<<<<<<<<<<<<
@@ -8802,7 +8800,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
  */
   __pyx_v_self->size_subg = __pyx_v_size_subg;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":238
+  /* "graphsaint/cython_sampler.pyx":238
  *         self.size_frontier = size_frontier
  *         self.size_subg = size_subg
  *         _arr_deg = np.clip(p_dist,0,max_deg)             # <<<<<<<<<<<<<<
@@ -8842,7 +8840,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   __pyx_v__arr_deg = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":239
+  /* "graphsaint/cython_sampler.pyx":239
  *         self.size_subg = size_subg
  *         _arr_deg = np.clip(p_dist,0,max_deg)
  *         cutils.npy2vec_int(_arr_deg,self.arr_deg_vec)             # <<<<<<<<<<<<<<
@@ -8852,7 +8850,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   if (!(likely(((__pyx_v__arr_deg) == Py_None) || likely(__Pyx_TypeTest(__pyx_v__arr_deg, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 239, __pyx_L1_error)
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v__arr_deg), __pyx_v_self->arr_deg_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 239, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":240
+  /* "graphsaint/cython_sampler.pyx":240
  *         _arr_deg = np.clip(p_dist,0,max_deg)
  *         cutils.npy2vec_int(_arr_deg,self.arr_deg_vec)
  *         self.avg_deg = _arr_deg.mean()             # <<<<<<<<<<<<<<
@@ -8887,7 +8885,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->avg_deg = __pyx_t_5;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":230
+  /* "graphsaint/cython_sampler.pyx":230
  *     cdef int avg_deg
  *     cdef vector[int] arr_deg_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -8912,7 +8910,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -8926,7 +8924,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":242
+/* "graphsaint/cython_sampler.pyx":242
  *         self.avg_deg = _arr_deg.mean()
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -8967,7 +8965,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":244
+  /* "graphsaint/cython_sampler.pyx":244
  *     cdef void sample(self, int p) nogil:
  *         cdef vector[int] frontier
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -8976,7 +8974,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_i = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":245
+  /* "graphsaint/cython_sampler.pyx":245
  *         cdef vector[int] frontier
  *         cdef int i = 0
  *         cdef int num_train_node = self.node_train_vec.size()             # <<<<<<<<<<<<<<
@@ -8985,7 +8983,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_num_train_node = __pyx_v_self->__pyx_base.node_train_vec.size();
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":246
+  /* "graphsaint/cython_sampler.pyx":246
  *         cdef int i = 0
  *         cdef int num_train_node = self.node_train_vec.size()
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -8994,7 +8992,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":247
+  /* "graphsaint/cython_sampler.pyx":247
  *         cdef int num_train_node = self.node_train_vec.size()
  *         cdef int r = 0
  *         cdef int alpha = 2             # <<<<<<<<<<<<<<
@@ -9003,7 +9001,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_alpha = 2;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":251
+  /* "graphsaint/cython_sampler.pyx":251
  *         cdef vector[int] arr_ind1
  *         cdef vector[int].iterator it
  *         arr_ind0.reserve(alpha*self.avg_deg)             # <<<<<<<<<<<<<<
@@ -9023,7 +9021,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __PYX_ERR(0, 251, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":252
+  /* "graphsaint/cython_sampler.pyx":252
  *         cdef vector[int].iterator it
  *         arr_ind0.reserve(alpha*self.avg_deg)
  *         arr_ind1.reserve(alpha*self.avg_deg)             # <<<<<<<<<<<<<<
@@ -9043,7 +9041,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __PYX_ERR(0, 252, __pyx_L1_error)
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":257
+  /* "graphsaint/cython_sampler.pyx":257
  *         cdef int idx_begin, idx_end
  *         cdef int num_neighs_pop, num_neighs_next
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -9054,7 +9052,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":259
+    /* "graphsaint/cython_sampler.pyx":259
  *         while r < self.num_sample_per_proc:
  *             # prepare initial frontier
  *             arr_ind0.clear()             # <<<<<<<<<<<<<<
@@ -9063,7 +9061,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_arr_ind0.clear();
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":260
+    /* "graphsaint/cython_sampler.pyx":260
  *             # prepare initial frontier
  *             arr_ind0.clear()
  *             arr_ind1.clear()             # <<<<<<<<<<<<<<
@@ -9072,7 +9070,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_arr_ind1.clear();
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":261
+    /* "graphsaint/cython_sampler.pyx":261
  *             arr_ind0.clear()
  *             arr_ind1.clear()
  *             frontier.clear()             # <<<<<<<<<<<<<<
@@ -9081,7 +9079,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_frontier.clear();
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":262
+    /* "graphsaint/cython_sampler.pyx":262
  *             arr_ind1.clear()
  *             frontier.clear()
  *             i = 0             # <<<<<<<<<<<<<<
@@ -9090,7 +9088,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":263
+    /* "graphsaint/cython_sampler.pyx":263
  *             frontier.clear()
  *             i = 0
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice             # <<<<<<<<<<<<<<
@@ -9101,7 +9099,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_frontier);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":264
+      /* "graphsaint/cython_sampler.pyx":264
  *             i = 0
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice
  *                 frontier.push_back(self.node_train_vec[rand()%num_train_node])             # <<<<<<<<<<<<<<
@@ -9132,7 +9130,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __PYX_ERR(0, 264, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":265
+      /* "graphsaint/cython_sampler.pyx":265
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice
  *                 frontier.push_back(self.node_train_vec[rand()%num_train_node])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -9142,7 +9140,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":267
+    /* "graphsaint/cython_sampler.pyx":267
  *                 i = i + 1
  *             # init indicator array
  *             it = frontier.begin()             # <<<<<<<<<<<<<<
@@ -9151,7 +9149,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_it = __pyx_v_frontier.begin();
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":268
+    /* "graphsaint/cython_sampler.pyx":268
  *             # init indicator array
  *             it = frontier.begin()
  *             while it != frontier.end():             # <<<<<<<<<<<<<<
@@ -9162,7 +9160,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_it != __pyx_v_frontier.end());
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":269
+      /* "graphsaint/cython_sampler.pyx":269
  *             it = frontier.begin()
  *             while it != frontier.end():
  *                 v = deref(it)             # <<<<<<<<<<<<<<
@@ -9171,7 +9169,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_v = (*__pyx_v_it);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":270
+      /* "graphsaint/cython_sampler.pyx":270
  *             while it != frontier.end():
  *                 v = deref(it)
  *                 cnt = arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9180,7 +9178,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_cnt = __pyx_v_arr_ind0.size();
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":271
+      /* "graphsaint/cython_sampler.pyx":271
  *                 v = deref(it)
  *                 cnt = arr_ind0.size()
  *                 c = cnt             # <<<<<<<<<<<<<<
@@ -9189,7 +9187,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_c = __pyx_v_cnt;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":272
+      /* "graphsaint/cython_sampler.pyx":272
  *                 cnt = arr_ind0.size()
  *                 c = cnt
  *                 while c < cnt + self.arr_deg_vec[v]:             # <<<<<<<<<<<<<<
@@ -9200,7 +9198,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_c < (__pyx_v_cnt + (__pyx_v_self->arr_deg_vec[__pyx_v_v])));
         if (!__pyx_t_1) break;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":273
+        /* "graphsaint/cython_sampler.pyx":273
  *                 c = cnt
  *                 while c < cnt + self.arr_deg_vec[v]:
  *                     arr_ind0.push_back(v)             # <<<<<<<<<<<<<<
@@ -9220,7 +9218,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           __PYX_ERR(0, 273, __pyx_L1_error)
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":274
+        /* "graphsaint/cython_sampler.pyx":274
  *                 while c < cnt + self.arr_deg_vec[v]:
  *                     arr_ind0.push_back(v)
  *                     arr_ind1.push_back(c-cnt)             # <<<<<<<<<<<<<<
@@ -9240,7 +9238,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           __PYX_ERR(0, 274, __pyx_L1_error)
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":275
+        /* "graphsaint/cython_sampler.pyx":275
  *                     arr_ind0.push_back(v)
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1             # <<<<<<<<<<<<<<
@@ -9250,7 +9248,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_c = (__pyx_v_c + 1);
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":276
+      /* "graphsaint/cython_sampler.pyx":276
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1
  *                 arr_ind1[cnt] = -self.arr_deg_vec[v]             # <<<<<<<<<<<<<<
@@ -9259,7 +9257,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       (__pyx_v_arr_ind1[__pyx_v_cnt]) = (-(__pyx_v_self->arr_deg_vec[__pyx_v_v]));
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":277
+      /* "graphsaint/cython_sampler.pyx":277
  *                     c = c + 1
  *                 arr_ind1[cnt] = -self.arr_deg_vec[v]
  *                 inc(it)             # <<<<<<<<<<<<<<
@@ -9269,7 +9267,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       (void)((++__pyx_v_it));
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":279
+    /* "graphsaint/cython_sampler.pyx":279
  *                 inc(it)
  *             # iteratively update frontier
  *             j = self.size_frontier             # <<<<<<<<<<<<<<
@@ -9279,7 +9277,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_t_2 = __pyx_v_self->size_frontier;
     __pyx_v_j = __pyx_t_2;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":280
+    /* "graphsaint/cython_sampler.pyx":280
  *             # iteratively update frontier
  *             j = self.size_frontier
  *             while j < self.size_subg:             # <<<<<<<<<<<<<<
@@ -9290,7 +9288,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_j < __pyx_v_self->size_subg);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":282
+      /* "graphsaint/cython_sampler.pyx":282
  *             while j < self.size_subg:
  *                 # select next node to pop out of frontier
  *                 while True:             # <<<<<<<<<<<<<<
@@ -9299,7 +9297,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       while (1) {
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":283
+        /* "graphsaint/cython_sampler.pyx":283
  *                 # select next node to pop out of frontier
  *                 while True:
  *                     vidx = rand()%arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9320,7 +9318,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         }
         __pyx_v_vidx = (__pyx_t_2 % __pyx_t_3);
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":284
+        /* "graphsaint/cython_sampler.pyx":284
  *                 while True:
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]             # <<<<<<<<<<<<<<
@@ -9329,7 +9327,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_vpop = (__pyx_v_arr_ind0[__pyx_v_vidx]);
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":285
+        /* "graphsaint/cython_sampler.pyx":285
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:             # <<<<<<<<<<<<<<
@@ -9339,7 +9337,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_vpop >= 0);
         if (__pyx_t_1) {
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":286
+          /* "graphsaint/cython_sampler.pyx":286
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:
  *                         break             # <<<<<<<<<<<<<<
@@ -9348,7 +9346,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
           goto __pyx_L14_break;
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":285
+          /* "graphsaint/cython_sampler.pyx":285
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:             # <<<<<<<<<<<<<<
@@ -9359,7 +9357,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       }
       __pyx_L14_break:;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":288
+      /* "graphsaint/cython_sampler.pyx":288
  *                         break
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]             # <<<<<<<<<<<<<<
@@ -9368,7 +9366,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_offset = (__pyx_v_arr_ind1[__pyx_v_vidx]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":289
+      /* "graphsaint/cython_sampler.pyx":289
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:             # <<<<<<<<<<<<<<
@@ -9378,7 +9376,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_offset < 0);
       if (__pyx_t_1) {
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":290
+        /* "graphsaint/cython_sampler.pyx":290
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:
  *                     idx_begin = vidx             # <<<<<<<<<<<<<<
@@ -9387,7 +9385,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_idx_begin = __pyx_v_vidx;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":291
+        /* "graphsaint/cython_sampler.pyx":291
  *                 if offset < 0:
  *                     idx_begin = vidx
  *                     idx_end = idx_begin - offset             # <<<<<<<<<<<<<<
@@ -9396,7 +9394,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_idx_end = (__pyx_v_idx_begin - __pyx_v_offset);
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":289
+        /* "graphsaint/cython_sampler.pyx":289
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:             # <<<<<<<<<<<<<<
@@ -9406,7 +9404,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         goto __pyx_L16;
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":293
+      /* "graphsaint/cython_sampler.pyx":293
  *                     idx_end = idx_begin - offset
  *                 else:
  *                     idx_begin = vidx - offset             # <<<<<<<<<<<<<<
@@ -9416,7 +9414,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       /*else*/ {
         __pyx_v_idx_begin = (__pyx_v_vidx - __pyx_v_offset);
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":294
+        /* "graphsaint/cython_sampler.pyx":294
  *                 else:
  *                     idx_begin = vidx - offset
  *                     idx_end = idx_begin - arr_ind1[idx_begin]             # <<<<<<<<<<<<<<
@@ -9427,7 +9425,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       }
       __pyx_L16:;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":296
+      /* "graphsaint/cython_sampler.pyx":296
  *                     idx_end = idx_begin - arr_ind1[idx_begin]
  *                 # cleanup 1: invalidate entries
  *                 k = idx_begin             # <<<<<<<<<<<<<<
@@ -9436,7 +9434,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_k = __pyx_v_idx_begin;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":297
+      /* "graphsaint/cython_sampler.pyx":297
  *                 # cleanup 1: invalidate entries
  *                 k = idx_begin
  *                 while k < idx_end:             # <<<<<<<<<<<<<<
@@ -9447,7 +9445,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_k < __pyx_v_idx_end);
         if (!__pyx_t_1) break;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":298
+        /* "graphsaint/cython_sampler.pyx":298
  *                 k = idx_begin
  *                 while k < idx_end:
  *                     arr_ind0[k] = -1             # <<<<<<<<<<<<<<
@@ -9456,7 +9454,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         (__pyx_v_arr_ind0[__pyx_v_k]) = -1;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":299
+        /* "graphsaint/cython_sampler.pyx":299
  *                 while k < idx_end:
  *                     arr_ind0[k] = -1
  *                     arr_ind1[k] = 0             # <<<<<<<<<<<<<<
@@ -9465,7 +9463,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         (__pyx_v_arr_ind1[__pyx_v_k]) = 0;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":300
+        /* "graphsaint/cython_sampler.pyx":300
  *                     arr_ind0[k] = -1
  *                     arr_ind1[k] = 0
  *                     k = k + 1             # <<<<<<<<<<<<<<
@@ -9475,7 +9473,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_k = (__pyx_v_k + 1);
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":302
+      /* "graphsaint/cython_sampler.pyx":302
  *                     k = k + 1
  *                 # cleanup 2: add new entries
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]             # <<<<<<<<<<<<<<
@@ -9484,7 +9482,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_num_neighs_pop = ((__pyx_v_self->__pyx_base.adj_indptr_vec[(__pyx_v_vpop + 1)]) - (__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_vpop]));
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":303
+      /* "graphsaint/cython_sampler.pyx":303
  *                 # cleanup 2: add new entries
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]             # <<<<<<<<<<<<<<
@@ -9504,7 +9502,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       }
       __pyx_v_vnext = (__pyx_v_self->__pyx_base.adj_indices_vec[((__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_vpop]) + __Pyx_mod_int(__pyx_t_2, __pyx_v_num_neighs_pop))]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":304
+      /* "graphsaint/cython_sampler.pyx":304
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)             # <<<<<<<<<<<<<<
@@ -9524,7 +9522,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __PYX_ERR(0, 304, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":305
+      /* "graphsaint/cython_sampler.pyx":305
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)
  *                 num_neighs_next = self.arr_deg_vec[vnext]             # <<<<<<<<<<<<<<
@@ -9533,7 +9531,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_num_neighs_next = (__pyx_v_self->arr_deg_vec[__pyx_v_vnext]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":306
+      /* "graphsaint/cython_sampler.pyx":306
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)
  *                 num_neighs_next = self.arr_deg_vec[vnext]
  *                 cnt = arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9542,7 +9540,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_cnt = __pyx_v_arr_ind0.size();
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":307
+      /* "graphsaint/cython_sampler.pyx":307
  *                 num_neighs_next = self.arr_deg_vec[vnext]
  *                 cnt = arr_ind0.size()
  *                 c = cnt             # <<<<<<<<<<<<<<
@@ -9551,7 +9549,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_c = __pyx_v_cnt;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":308
+      /* "graphsaint/cython_sampler.pyx":308
  *                 cnt = arr_ind0.size()
  *                 c = cnt
  *                 while c < cnt + num_neighs_next:             # <<<<<<<<<<<<<<
@@ -9562,7 +9560,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_c < (__pyx_v_cnt + __pyx_v_num_neighs_next));
         if (!__pyx_t_1) break;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":309
+        /* "graphsaint/cython_sampler.pyx":309
  *                 c = cnt
  *                 while c < cnt + num_neighs_next:
  *                     arr_ind0.push_back(vnext)             # <<<<<<<<<<<<<<
@@ -9582,7 +9580,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           __PYX_ERR(0, 309, __pyx_L1_error)
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":310
+        /* "graphsaint/cython_sampler.pyx":310
  *                 while c < cnt + num_neighs_next:
  *                     arr_ind0.push_back(vnext)
  *                     arr_ind1.push_back(c-cnt)             # <<<<<<<<<<<<<<
@@ -9602,7 +9600,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           __PYX_ERR(0, 310, __pyx_L1_error)
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":311
+        /* "graphsaint/cython_sampler.pyx":311
  *                     arr_ind0.push_back(vnext)
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1             # <<<<<<<<<<<<<<
@@ -9612,7 +9610,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_c = (__pyx_v_c + 1);
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":312
+      /* "graphsaint/cython_sampler.pyx":312
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1
  *                 arr_ind1[cnt] = -num_neighs_next             # <<<<<<<<<<<<<<
@@ -9621,7 +9619,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       (__pyx_v_arr_ind1[__pyx_v_cnt]) = (-__pyx_v_num_neighs_next);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":313
+      /* "graphsaint/cython_sampler.pyx":313
  *                     c = c + 1
  *                 arr_ind1[cnt] = -num_neighs_next
  *                 j = j + 1             # <<<<<<<<<<<<<<
@@ -9631,7 +9629,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_v_j = (__pyx_v_j + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":314
+    /* "graphsaint/cython_sampler.pyx":314
  *                 arr_ind1[cnt] = -num_neighs_next
  *                 j = j + 1
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())             # <<<<<<<<<<<<<<
@@ -9651,7 +9649,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __PYX_ERR(0, 314, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":315
+    /* "graphsaint/cython_sampler.pyx":315
  *                 j = j + 1
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())             # <<<<<<<<<<<<<<
@@ -9671,7 +9669,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __PYX_ERR(0, 315, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":316
+    /* "graphsaint/cython_sampler.pyx":316
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\             # <<<<<<<<<<<<<<
@@ -9691,7 +9689,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __PYX_ERR(0, 316, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":317
+    /* "graphsaint/cython_sampler.pyx":317
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\
  *                     self.node_sampled[p*self.num_sample_per_proc+r].end()),self.node_sampled[p*self.num_sample_per_proc+r].end())             # <<<<<<<<<<<<<<
@@ -9700,7 +9698,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     (void)((__pyx_v_self->__pyx_base.node_sampled[((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r)]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r)]).end()));
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":318
+    /* "graphsaint/cython_sampler.pyx":318
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\
  *                     self.node_sampled[p*self.num_sample_per_proc+r].end()),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -9710,7 +9708,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":242
+  /* "graphsaint/cython_sampler.pyx":242
  *         self.avg_deg = _arr_deg.mean()
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -9724,7 +9722,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -9803,7 +9801,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -9896,7 +9894,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -9938,14 +9936,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":326
+/* "graphsaint/cython_sampler.pyx":326
  * cdef class RW(Sampler):
  *     cdef int size_root, size_depth
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10105,7 +10103,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -10168,7 +10166,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":331
+  /* "graphsaint/cython_sampler.pyx":331
  *                         int num_proc, int num_sample_per_proc,
  *                         int size_root, int size_depth):
  *         self.size_root = size_root             # <<<<<<<<<<<<<<
@@ -10177,7 +10175,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
  */
   __pyx_v_self->size_root = __pyx_v_size_root;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":332
+  /* "graphsaint/cython_sampler.pyx":332
  *                         int size_root, int size_depth):
  *         self.size_root = size_root
  *         self.size_depth = size_depth             # <<<<<<<<<<<<<<
@@ -10186,7 +10184,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
  */
   __pyx_v_self->size_depth = __pyx_v_size_depth;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":326
+  /* "graphsaint/cython_sampler.pyx":326
  * cdef class RW(Sampler):
  *     cdef int size_root, size_depth
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10206,7 +10204,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -10217,7 +10215,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":334
+/* "graphsaint/cython_sampler.pyx":334
  *         self.size_depth = size_depth
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -10243,7 +10241,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":335
+  /* "graphsaint/cython_sampler.pyx":335
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int iroot = 0             # <<<<<<<<<<<<<<
@@ -10252,7 +10250,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_iroot = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":336
+  /* "graphsaint/cython_sampler.pyx":336
  *     cdef void sample(self, int p) nogil:
  *         cdef int iroot = 0
  *         cdef int idepth = 0             # <<<<<<<<<<<<<<
@@ -10261,7 +10259,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_idepth = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":337
+  /* "graphsaint/cython_sampler.pyx":337
  *         cdef int iroot = 0
  *         cdef int idepth = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -10270,7 +10268,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":340
+  /* "graphsaint/cython_sampler.pyx":340
  *         cdef int idx_subg
  *         cdef int v
  *         cdef int num_train_node = self.node_train_vec.size()             # <<<<<<<<<<<<<<
@@ -10279,7 +10277,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_num_train_node = __pyx_v_self->__pyx_base.node_train_vec.size();
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":341
+  /* "graphsaint/cython_sampler.pyx":341
  *         cdef int v
  *         cdef int num_train_node = self.node_train_vec.size()
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -10290,7 +10288,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":342
+    /* "graphsaint/cython_sampler.pyx":342
  *         cdef int num_train_node = self.node_train_vec.size()
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -10299,7 +10297,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":344
+    /* "graphsaint/cython_sampler.pyx":344
  *             idx_subg = p*self.num_sample_per_proc+r
  *             # sample root
  *             iroot = 0             # <<<<<<<<<<<<<<
@@ -10308,7 +10306,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_iroot = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":345
+    /* "graphsaint/cython_sampler.pyx":345
  *             # sample root
  *             iroot = 0
  *             while iroot < self.size_root:             # <<<<<<<<<<<<<<
@@ -10319,7 +10317,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       __pyx_t_1 = (__pyx_v_iroot < __pyx_v_self->size_root);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":346
+      /* "graphsaint/cython_sampler.pyx":346
  *             iroot = 0
  *             while iroot < self.size_root:
  *                 v = self.node_train_vec[rand()%num_train_node]             # <<<<<<<<<<<<<<
@@ -10339,7 +10337,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       }
       __pyx_v_v = (__pyx_v_self->__pyx_base.node_train_vec[__Pyx_mod_int(__pyx_t_2, __pyx_v_num_train_node)]);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":347
+      /* "graphsaint/cython_sampler.pyx":347
  *             while iroot < self.size_root:
  *                 v = self.node_train_vec[rand()%num_train_node]
  *                 self.node_sampled[idx_subg].push_back(v)             # <<<<<<<<<<<<<<
@@ -10359,7 +10357,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __PYX_ERR(0, 347, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":349
+      /* "graphsaint/cython_sampler.pyx":349
  *                 self.node_sampled[idx_subg].push_back(v)
  *                 # sample random walk
  *                 idepth = 0             # <<<<<<<<<<<<<<
@@ -10368,7 +10366,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
       __pyx_v_idepth = 0;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":350
+      /* "graphsaint/cython_sampler.pyx":350
  *                 # sample random walk
  *                 idepth = 0
  *                 while idepth < self.size_depth:             # <<<<<<<<<<<<<<
@@ -10379,7 +10377,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_t_1 = (__pyx_v_idepth < __pyx_v_self->size_depth);
         if (!__pyx_t_1) break;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":351
+        /* "graphsaint/cython_sampler.pyx":351
  *                 idepth = 0
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):             # <<<<<<<<<<<<<<
@@ -10389,7 +10387,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_t_1 = (((__pyx_v_self->__pyx_base.adj_indptr_vec[(__pyx_v_v + 1)]) - (__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_v])) > 0);
         if (__pyx_t_1) {
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":352
+          /* "graphsaint/cython_sampler.pyx":352
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]             # <<<<<<<<<<<<<<
@@ -10410,7 +10408,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
           }
           __pyx_v_v = (__pyx_v_self->__pyx_base.adj_indices_vec[((__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_v]) + __Pyx_mod_int(__pyx_t_2, __pyx_t_3))]);
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":353
+          /* "graphsaint/cython_sampler.pyx":353
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]
  *                         self.node_sampled[idx_subg].push_back(v)             # <<<<<<<<<<<<<<
@@ -10430,7 +10428,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
             __PYX_ERR(0, 353, __pyx_L1_error)
           }
 
-          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":351
+          /* "graphsaint/cython_sampler.pyx":351
  *                 idepth = 0
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):             # <<<<<<<<<<<<<<
@@ -10439,7 +10437,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
         }
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":354
+        /* "graphsaint/cython_sampler.pyx":354
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]
  *                         self.node_sampled[idx_subg].push_back(v)
  *                     idepth = idepth + 1             # <<<<<<<<<<<<<<
@@ -10449,7 +10447,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_v_idepth = (__pyx_v_idepth + 1);
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":355
+      /* "graphsaint/cython_sampler.pyx":355
  *                         self.node_sampled[idx_subg].push_back(v)
  *                     idepth = idepth + 1
  *                 iroot = iroot + 1             # <<<<<<<<<<<<<<
@@ -10459,7 +10457,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       __pyx_v_iroot = (__pyx_v_iroot + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":356
+    /* "graphsaint/cython_sampler.pyx":356
  *                     idepth = idepth + 1
  *                 iroot = iroot + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -10468,7 +10466,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":357
+    /* "graphsaint/cython_sampler.pyx":357
  *                 iroot = iroot + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -10488,7 +10486,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       __PYX_ERR(0, 357, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":358
+    /* "graphsaint/cython_sampler.pyx":358
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -10510,7 +10508,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":334
+  /* "graphsaint/cython_sampler.pyx":334
  *         self.size_depth = size_depth
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -10524,7 +10522,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -10603,7 +10601,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -10696,7 +10694,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -10738,14 +10736,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":369
+/* "graphsaint/cython_sampler.pyx":369
  *     cdef vector[int] col_train_vec
  *     cdef vector[float] prob_edge_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10929,7 +10927,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
     }
   }
   __Pyx_DECREF(__pyx_v_argv); __pyx_v_argv = 0;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -11029,7 +11027,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
   }
   __pyx_pybuffernd_prob_edge.diminfo[0].strides = __pyx_pybuffernd_prob_edge.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_prob_edge.diminfo[0].shape = __pyx_pybuffernd_prob_edge.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":376
+  /* "graphsaint/cython_sampler.pyx":376
  *                         np.ndarray[int,ndim=1,mode='c'] col_train,
  *                         np.ndarray[float,ndim=1,mode='c'] prob_edge,*argv):
  *         cutils.npy2vec_int(row_train,self.row_train_vec)             # <<<<<<<<<<<<<<
@@ -11038,7 +11036,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 376, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":377
+  /* "graphsaint/cython_sampler.pyx":377
  *                         np.ndarray[float,ndim=1,mode='c'] prob_edge,*argv):
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)             # <<<<<<<<<<<<<<
@@ -11047,7 +11045,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 377, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":378
+  /* "graphsaint/cython_sampler.pyx":378
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)             # <<<<<<<<<<<<<<
@@ -11056,7 +11054,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_prob_edge), __pyx_v_self->prob_edge_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 378, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":369
+  /* "graphsaint/cython_sampler.pyx":369
  *     cdef vector[int] col_train_vec
  *     cdef vector[float] prob_edge_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11079,7 +11077,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_prob_edge.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -11093,7 +11091,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":380
+/* "graphsaint/cython_sampler.pyx":380
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11117,7 +11115,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":381
+  /* "graphsaint/cython_sampler.pyx":381
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int num_edge = self.row_train_vec.size()             # <<<<<<<<<<<<<<
@@ -11126,7 +11124,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_num_edge = __pyx_v_self->row_train_vec.size();
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":382
+  /* "graphsaint/cython_sampler.pyx":382
  *     cdef void sample(self, int p) nogil:
  *         cdef int num_edge = self.row_train_vec.size()
  *         cdef int i=0             # <<<<<<<<<<<<<<
@@ -11135,7 +11133,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_i = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":383
+  /* "graphsaint/cython_sampler.pyx":383
  *         cdef int num_edge = self.row_train_vec.size()
  *         cdef int i=0
  *         cdef float ran=0.             # <<<<<<<<<<<<<<
@@ -11144,7 +11142,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_ran = 0.;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":384
+  /* "graphsaint/cython_sampler.pyx":384
  *         cdef int i=0
  *         cdef float ran=0.
  *         cdef int g=0             # <<<<<<<<<<<<<<
@@ -11153,7 +11151,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_g = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":386
+  /* "graphsaint/cython_sampler.pyx":386
  *         cdef int g=0
  *         cdef int idx_subg
  *         while g < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -11164,7 +11162,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
     __pyx_t_1 = (__pyx_v_g < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":387
+    /* "graphsaint/cython_sampler.pyx":387
  *         cdef int idx_subg
  *         while g < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+g             # <<<<<<<<<<<<<<
@@ -11173,7 +11171,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_g);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":388
+    /* "graphsaint/cython_sampler.pyx":388
  *         while g < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+g
  *             i = 0             # <<<<<<<<<<<<<<
@@ -11182,7 +11180,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":389
+    /* "graphsaint/cython_sampler.pyx":389
  *             idx_subg = p*self.num_sample_per_proc+g
  *             i = 0
  *             while i < num_edge:             # <<<<<<<<<<<<<<
@@ -11193,7 +11191,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_t_1 = (__pyx_v_i < __pyx_v_num_edge);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":390
+      /* "graphsaint/cython_sampler.pyx":390
  *             i = 0
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX             # <<<<<<<<<<<<<<
@@ -11213,7 +11211,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       }
       __pyx_v_ran = (__pyx_t_2 / ((float)RAND_MAX));
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":391
+      /* "graphsaint/cython_sampler.pyx":391
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX
  *                 if ran > self.prob_edge_vec[i]:             # <<<<<<<<<<<<<<
@@ -11223,7 +11221,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_t_1 = (__pyx_v_ran > (__pyx_v_self->prob_edge_vec[__pyx_v_i]));
       if (__pyx_t_1) {
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":393
+        /* "graphsaint/cython_sampler.pyx":393
  *                 if ran > self.prob_edge_vec[i]:
  *                     # edge not selected
  *                     i = i + 1             # <<<<<<<<<<<<<<
@@ -11232,7 +11230,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
         __pyx_v_i = (__pyx_v_i + 1);
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":394
+        /* "graphsaint/cython_sampler.pyx":394
  *                     # edge not selected
  *                     i = i + 1
  *                     continue             # <<<<<<<<<<<<<<
@@ -11241,7 +11239,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
         goto __pyx_L5_continue;
 
-        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":391
+        /* "graphsaint/cython_sampler.pyx":391
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX
  *                 if ran > self.prob_edge_vec[i]:             # <<<<<<<<<<<<<<
@@ -11250,7 +11248,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":395
+      /* "graphsaint/cython_sampler.pyx":395
  *                     i = i + 1
  *                     continue
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])             # <<<<<<<<<<<<<<
@@ -11270,7 +11268,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
         __PYX_ERR(0, 395, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":396
+      /* "graphsaint/cython_sampler.pyx":396
  *                     continue
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])             # <<<<<<<<<<<<<<
@@ -11290,7 +11288,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
         __PYX_ERR(0, 396, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":397
+      /* "graphsaint/cython_sampler.pyx":397
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -11301,7 +11299,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_L5_continue:;
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":398
+    /* "graphsaint/cython_sampler.pyx":398
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -11321,7 +11319,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __PYX_ERR(0, 398, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":399
+    /* "graphsaint/cython_sampler.pyx":399
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -11342,7 +11340,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_3), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":400
+    /* "graphsaint/cython_sampler.pyx":400
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())
  *             g = g + 1             # <<<<<<<<<<<<<<
@@ -11352,7 +11350,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
     __pyx_v_g = (__pyx_v_g + 1);
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":380
+  /* "graphsaint/cython_sampler.pyx":380
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11366,7 +11364,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -11445,7 +11443,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -11538,7 +11536,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -11580,14 +11578,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":411
+/* "graphsaint/cython_sampler.pyx":411
  *     cdef vector[float] p_dist_cumsum_vec
  *     cdef int size_subg_e
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11777,7 +11775,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -11876,7 +11874,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
   }
   __pyx_pybuffernd_p_dist_cumsum.diminfo[0].strides = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist_cumsum.diminfo[0].shape = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":419
+  /* "graphsaint/cython_sampler.pyx":419
  *                         np.ndarray[float,ndim=1,mode='c'] p_dist_cumsum,
  *                         int size_subg_e):
  *         self.size_subg_e = size_subg_e             # <<<<<<<<<<<<<<
@@ -11885,7 +11883,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
  */
   __pyx_v_self->size_subg_e = __pyx_v_size_subg_e;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":420
+  /* "graphsaint/cython_sampler.pyx":420
  *                         int size_subg_e):
  *         self.size_subg_e = size_subg_e
  *         cutils.npy2vec_int(row_train,self.row_train_vec)             # <<<<<<<<<<<<<<
@@ -11894,7 +11892,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":421
+  /* "graphsaint/cython_sampler.pyx":421
  *         self.size_subg_e = size_subg_e
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)             # <<<<<<<<<<<<<<
@@ -11903,7 +11901,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":422
+  /* "graphsaint/cython_sampler.pyx":422
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)             # <<<<<<<<<<<<<<
@@ -11912,7 +11910,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 422, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":411
+  /* "graphsaint/cython_sampler.pyx":411
  *     cdef vector[float] p_dist_cumsum_vec
  *     cdef int size_subg_e
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11935,7 +11933,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -11949,7 +11947,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":424
+/* "graphsaint/cython_sampler.pyx":424
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11975,7 +11973,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":425
+  /* "graphsaint/cython_sampler.pyx":425
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -11984,7 +11982,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_i = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":426
+  /* "graphsaint/cython_sampler.pyx":426
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -11993,7 +11991,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":429
+  /* "graphsaint/cython_sampler.pyx":429
  *         cdef int e
  *         cdef int idx_subg
  *         cdef float ran = 0.             # <<<<<<<<<<<<<<
@@ -12002,7 +12000,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_ran = 0.;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":430
+  /* "graphsaint/cython_sampler.pyx":430
  *         cdef int idx_subg
  *         cdef float ran = 0.
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]             # <<<<<<<<<<<<<<
@@ -12011,7 +12009,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_ran_range = (__pyx_v_self->p_dist_cumsum_vec[(__pyx_v_self->p_dist_cumsum_vec.size() - 1)]);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":431
+  /* "graphsaint/cython_sampler.pyx":431
  *         cdef float ran = 0.
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -12022,7 +12020,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":432
+    /* "graphsaint/cython_sampler.pyx":432
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -12031,7 +12029,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":433
+    /* "graphsaint/cython_sampler.pyx":433
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -12040,7 +12038,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":434
+    /* "graphsaint/cython_sampler.pyx":434
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.size_subg_e:             # <<<<<<<<<<<<<<
@@ -12051,7 +12049,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_subg_e);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":435
+      /* "graphsaint/cython_sampler.pyx":435
  *             i = 0
  *             while i < self.size_subg_e:
  *                 ran = (<float> rand()) / RAND_MAX * ran_range             # <<<<<<<<<<<<<<
@@ -12071,7 +12069,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       }
       __pyx_v_ran = ((__pyx_t_2 / ((float)RAND_MAX)) * __pyx_v_ran_range);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":436
+      /* "graphsaint/cython_sampler.pyx":436
  *             while i < self.size_subg_e:
  *                 ran = (<float> rand()) / RAND_MAX * ran_range
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()             # <<<<<<<<<<<<<<
@@ -12092,7 +12090,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       }
       __pyx_v_e = (__pyx_t_3 - __pyx_v_self->p_dist_cumsum_vec.begin());
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":437
+      /* "graphsaint/cython_sampler.pyx":437
  *                 ran = (<float> rand()) / RAND_MAX * ran_range
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])             # <<<<<<<<<<<<<<
@@ -12112,7 +12110,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         __PYX_ERR(0, 437, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":438
+      /* "graphsaint/cython_sampler.pyx":438
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])             # <<<<<<<<<<<<<<
@@ -12132,7 +12130,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         __PYX_ERR(0, 438, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":439
+      /* "graphsaint/cython_sampler.pyx":439
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -12142,7 +12140,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":440
+    /* "graphsaint/cython_sampler.pyx":440
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12162,7 +12160,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       __PYX_ERR(0, 440, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":441
+    /* "graphsaint/cython_sampler.pyx":441
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12183,7 +12181,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":442
+    /* "graphsaint/cython_sampler.pyx":442
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -12193,7 +12191,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":424
+  /* "graphsaint/cython_sampler.pyx":424
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12207,7 +12205,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -12286,7 +12284,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -12379,7 +12377,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -12421,14 +12419,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":449
+/* "graphsaint/cython_sampler.pyx":449
  *     cdef int size_subg
  *     cdef vector[int] p_dist_cumsum_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -12588,7 +12586,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -12663,7 +12661,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
   }
   __pyx_pybuffernd_p_dist_cumsum.diminfo[0].strides = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist_cumsum.diminfo[0].shape = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.shape[0];
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":455
+  /* "graphsaint/cython_sampler.pyx":455
  *                         np.ndarray[int,ndim=1,mode='c'] p_dist_cumsum,
  *                         int size_subg):
  *         self.size_subg = size_subg             # <<<<<<<<<<<<<<
@@ -12672,7 +12670,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
  */
   __pyx_v_self->size_subg = __pyx_v_size_subg;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":456
+  /* "graphsaint/cython_sampler.pyx":456
  *                         int size_subg):
  *         self.size_subg = size_subg
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)             # <<<<<<<<<<<<<<
@@ -12681,7 +12679,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
  */
   __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":449
+  /* "graphsaint/cython_sampler.pyx":449
  *     cdef int size_subg
  *     cdef vector[int] p_dist_cumsum_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -12702,7 +12700,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -12714,7 +12712,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":458
+/* "graphsaint/cython_sampler.pyx":458
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12738,7 +12736,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":459
+  /* "graphsaint/cython_sampler.pyx":459
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -12747,7 +12745,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_i = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":460
+  /* "graphsaint/cython_sampler.pyx":460
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -12756,7 +12754,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":463
+  /* "graphsaint/cython_sampler.pyx":463
  *         cdef int idx_subg
  *         cdef int sample
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]             # <<<<<<<<<<<<<<
@@ -12765,7 +12763,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_rand_range = (__pyx_v_self->p_dist_cumsum_vec[(__pyx_v_self->__pyx_base.node_train_vec.size() - 1)]);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":464
+  /* "graphsaint/cython_sampler.pyx":464
  *         cdef int sample
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -12776,7 +12774,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":465
+    /* "graphsaint/cython_sampler.pyx":465
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -12785,7 +12783,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":466
+    /* "graphsaint/cython_sampler.pyx":466
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -12794,7 +12792,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":467
+    /* "graphsaint/cython_sampler.pyx":467
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.size_subg:             # <<<<<<<<<<<<<<
@@ -12805,7 +12803,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_subg);
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":468
+      /* "graphsaint/cython_sampler.pyx":468
  *             i = 0
  *             while i < self.size_subg:
  *                 sample = rand()%rand_range             # <<<<<<<<<<<<<<
@@ -12825,7 +12823,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       }
       __pyx_v_sample = __Pyx_mod_int(__pyx_t_2, __pyx_v_rand_range);
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":469
+      /* "graphsaint/cython_sampler.pyx":469
  *             while i < self.size_subg:
  *                 sample = rand()%rand_range
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])             # <<<<<<<<<<<<<<
@@ -12857,7 +12855,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
         __PYX_ERR(0, 469, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":470
+      /* "graphsaint/cython_sampler.pyx":470
  *                 sample = rand()%rand_range
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -12867,7 +12865,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":471
+    /* "graphsaint/cython_sampler.pyx":471
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -12876,7 +12874,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":472
+    /* "graphsaint/cython_sampler.pyx":472
  *                 i = i + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12896,7 +12894,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       __PYX_ERR(0, 472, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":473
+    /* "graphsaint/cython_sampler.pyx":473
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12918,7 +12916,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_3), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":458
+  /* "graphsaint/cython_sampler.pyx":458
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12932,7 +12930,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -13011,7 +13009,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Nod
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13104,7 +13102,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -13146,14 +13144,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Nod
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":478
+/* "graphsaint/cython_sampler.pyx":478
  * 
  * cdef class FullBatch(Sampler):
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -13283,7 +13281,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
@@ -13358,7 +13356,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -13369,7 +13367,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":484
+/* "graphsaint/cython_sampler.pyx":484
  *         pass
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -13391,7 +13389,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":485
+  /* "graphsaint/cython_sampler.pyx":485
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -13400,7 +13398,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
   __pyx_v_i = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":486
+  /* "graphsaint/cython_sampler.pyx":486
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -13409,7 +13407,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
   __pyx_v_r = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":489
+  /* "graphsaint/cython_sampler.pyx":489
  *         cdef int idx_subg
  *         cdef int sample
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -13420,7 +13418,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":490
+    /* "graphsaint/cython_sampler.pyx":490
  *         cdef int sample
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -13429,7 +13427,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":491
+    /* "graphsaint/cython_sampler.pyx":491
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -13438,7 +13436,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_i = 0;
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":492
+    /* "graphsaint/cython_sampler.pyx":492
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.node_train_vec.size():             # <<<<<<<<<<<<<<
@@ -13449,7 +13447,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->__pyx_base.node_train_vec.size());
       if (!__pyx_t_1) break;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":493
+      /* "graphsaint/cython_sampler.pyx":493
  *             i = 0
  *             while i < self.node_train_vec.size():
  *                 sample = i             # <<<<<<<<<<<<<<
@@ -13458,7 +13456,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
       __pyx_v_sample = __pyx_v_i;
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":494
+      /* "graphsaint/cython_sampler.pyx":494
  *             while i < self.node_train_vec.size():
  *                 sample = i
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])             # <<<<<<<<<<<<<<
@@ -13478,7 +13476,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
         __PYX_ERR(0, 494, __pyx_L1_error)
       }
 
-      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":495
+      /* "graphsaint/cython_sampler.pyx":495
  *                 sample = i
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -13488,7 +13486,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":496
+    /* "graphsaint/cython_sampler.pyx":496
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -13497,7 +13495,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":497
+    /* "graphsaint/cython_sampler.pyx":497
  *                 i = i + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -13516,7 +13514,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __PYX_ERR(0, 497, __pyx_L1_error)
     }
 
-    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":498
+    /* "graphsaint/cython_sampler.pyx":498
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -13536,7 +13534,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":484
+  /* "graphsaint/cython_sampler.pyx":484
  *         pass
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -13550,7 +13548,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -13629,7 +13627,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9Ful
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13722,7 +13720,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -13764,7 +13762,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9Ful
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13847,7 +13845,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.Sampler",
+  "graphsaint.cython_sampler.Sampler",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -13857,7 +13855,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""Sampler", /*tp_name*/
+  "graphsaint.cython_sampler.""Sampler", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -13978,7 +13976,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.MRW",
+  "graphsaint.cython_sampler.MRW",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -13988,7 +13986,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""MRW", /*tp_name*/
+  "graphsaint.cython_sampler.""MRW", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW, /*tp_dealloc*/
@@ -14094,7 +14092,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.RW",
+  "graphsaint.cython_sampler.RW",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14104,7 +14102,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""RW", /*tp_name*/
+  "graphsaint.cython_sampler.""RW", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -14229,7 +14227,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.Edge",
+  "graphsaint.cython_sampler.Edge",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14239,7 +14237,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""Edge", /*tp_name*/
+  "graphsaint.cython_sampler.""Edge", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge, /*tp_dealloc*/
@@ -14365,7 +14363,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.Edge2",
+  "graphsaint.cython_sampler.Edge2",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14375,7 +14373,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""Edge2", /*tp_name*/
+  "graphsaint.cython_sampler.""Edge2", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2, /*tp_dealloc*/
@@ -14496,7 +14494,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.Node",
+  "graphsaint.cython_sampler.Node",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14506,7 +14504,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""Node", /*tp_name*/
+  "graphsaint.cython_sampler.""Node", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node, /*tp_dealloc*/
@@ -14612,7 +14610,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch_spec = {
-  "fairgraph.dataset.graphsaint.cython_sampler.FullBatch",
+  "graphsaint.cython_sampler.FullBatch",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14622,7 +14620,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.cython_sampler.""FullBatch", /*tp_name*/
+  "graphsaint.cython_sampler.""FullBatch", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -14879,7 +14877,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":25
+  /* "graphsaint/cython_sampler.pyx":25
  * 
  * cimport graphsaint.cython_utils as cutils
  * import graphsaint.cython_utils as cutils             # <<<<<<<<<<<<<<
@@ -14890,7 +14888,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":107
+  /* "graphsaint/cython_sampler.pyx":107
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -14902,7 +14900,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__5);
   __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_cython_sampler_pyx, __pyx_n_s_get_return, 107, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 107, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":181
+  /* "graphsaint/cython_sampler.pyx":181
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -15681,8 +15679,8 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "fairgraph.dataset.graphsaint.cython_sampler")) {
-      if (unlikely((PyDict_SetItemString(modules, "fairgraph.dataset.graphsaint.cython_sampler", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "graphsaint.cython_sampler")) {
+      if (unlikely((PyDict_SetItemString(modules, "graphsaint.cython_sampler", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -15703,7 +15701,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":14
+  /* "graphsaint/cython_sampler.pyx":14
  * from libcpp.unordered_map cimport unordered_map
  * from libcpp.utility cimport pair
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -15715,7 +15713,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":18
+  /* "graphsaint/cython_sampler.pyx":18
  * from libc.stdio cimport printf
  * from libcpp cimport bool
  * import time,math             # <<<<<<<<<<<<<<
@@ -15731,7 +15729,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":19
+  /* "graphsaint/cython_sampler.pyx":19
  * from libcpp cimport bool
  * import time,math
  * import random             # <<<<<<<<<<<<<<
@@ -15743,7 +15741,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":25
+  /* "graphsaint/cython_sampler.pyx":25
  * 
  * cimport graphsaint.cython_utils as cutils
  * import graphsaint.cython_utils as cutils             # <<<<<<<<<<<<<<
@@ -15755,7 +15753,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cutils, __pyx_t_2) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":107
+  /* "graphsaint/cython_sampler.pyx":107
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -15768,7 +15766,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler);
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":181
+  /* "graphsaint/cython_sampler.pyx":181
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -15928,10 +15926,10 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":1
+  /* "graphsaint/cython_sampler.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: language=c++
- * # distutils: extra_compile_args = -fopenmp -std=c++11
+ * # distutils: extra_compile_args = -std=c++11
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -15945,7 +15943,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init fairgraph.dataset.graphsaint.cython_sampler", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init graphsaint.cython_sampler", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -15959,7 +15957,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init fairgraph.dataset.graphsaint.cython_sampler");
+    PyErr_SetString(PyExc_ImportError, "init graphsaint.cython_sampler");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

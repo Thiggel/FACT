@@ -5,19 +5,15 @@
     "distutils": {
         "depends": [],
         "extra_compile_args": [
-            "-fopenmp",
             "-std=c++11"
         ],
-        "extra_link_args": [
-            "-fopenmp"
-        ],
         "language": "c++",
-        "name": "fairgraph.dataset.graphsaint.norm_aggr",
+        "name": "graphsaint.norm_aggr",
         "sources": [
             "graphsaint/norm_aggr.pyx"
         ]
     },
-    "module_name": "fairgraph.dataset.graphsaint.norm_aggr"
+    "module_name": "graphsaint.norm_aggr"
 }
 END: Cython Metadata */
 
@@ -3170,7 +3166,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy_7ndarray_4data_data(PyArrayObject *__p
 
 /* Module declarations from "libcpp.string" */
 
-/* Module declarations from "fairgraph.dataset.graphsaint.norm_aggr" */
+/* Module declarations from "graphsaint.norm_aggr" */
 static PyObject *__pyx_collections_abc_Sequence = 0;
 static PyObject *generic = 0;
 static PyObject *strided = 0;
@@ -3217,11 +3213,11 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, 
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "fairgraph.dataset.graphsaint.norm_aggr"
+#define __Pyx_MODULE_NAME "graphsaint.norm_aggr"
 extern int __pyx_module_is_main_fairgraph__dataset__graphsaint__norm_aggr;
 int __pyx_module_is_main_fairgraph__dataset__graphsaint__norm_aggr = 0;
 
-/* Implementation of "fairgraph.dataset.graphsaint.norm_aggr" */
+/* Implementation of "graphsaint.norm_aggr" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin___import__;
 static PyObject *__pyx_builtin_ValueError;
@@ -3362,7 +3358,7 @@ static const char __pyx_k_Indirect_dimensions_not_supporte[] = "Indirect dimensi
 static const char __pyx_k_Invalid_mode_expected_c_or_fortr[] = "Invalid mode, expected 'c' or 'fortran', got ";
 static const char __pyx_k_Out_of_bounds_on_buffer_access_a[] = "Out of bounds on buffer access (axis ";
 static const char __pyx_k_Unable_to_convert_item_to_object[] = "Unable to convert item to object";
-static const char __pyx_k_fairgraph_dataset_graphsaint_nor[] = "fairgraph.dataset.graphsaint.norm_aggr";
+static const char __pyx_k_fairgraph_dataset_graphsaint_nor[] = "graphsaint.norm_aggr";
 static const char __pyx_k_got_differing_extents_in_dimensi[] = "got differing extents in dimension ";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
@@ -19233,7 +19229,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-/* "fairgraph/dataset/graphsaint/norm_aggr.pyx":16
+/* "graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -19304,7 +19300,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 15, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19312,9 +19308,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 15, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, 1); __PYX_ERR(1, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, 1); __PYX_ERR(1, 15, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -19322,21 +19318,21 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 15, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, 2); __PYX_ERR(1, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, 2); __PYX_ERR(1, 15, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_num_proc);
           if (value) { values[3] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 15, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "norm_aggr") < 0)) __PYX_ERR(1, 16, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "norm_aggr") < 0)) __PYX_ERR(1, 15, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -19356,7 +19352,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, __pyx_nargs); __PYX_ERR(1, 16, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("norm_aggr", 0, 3, 4, __pyx_nargs); __PYX_ERR(1, 15, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -19366,7 +19362,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -19408,69 +19404,69 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("norm_aggr", 1);
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":17
+  /* "graphsaint/norm_aggr.pyx":16
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):
  *     cdef int num_proc_view=num_proc             # <<<<<<<<<<<<<<
  *     cdef float [:] data_view=data
  *     cdef int length=data.shape[0]
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_num_proc); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_num_proc); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L1_error)
   __pyx_v_num_proc_view = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":18
+  /* "graphsaint/norm_aggr.pyx":17
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data             # <<<<<<<<<<<<<<
  *     cdef int length=data.shape[0]
  *     cdef int [:] edge_index_view=edge_index
  */
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_float(__pyx_v_data, PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_float(__pyx_v_data, PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 17, __pyx_L1_error)
   __pyx_v_data_view = __pyx_t_2;
   __pyx_t_2.memview = NULL;
   __pyx_t_2.data = NULL;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":19
+  /* "graphsaint/norm_aggr.pyx":18
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data
  *     cdef int length=data.shape[0]             # <<<<<<<<<<<<<<
  *     cdef int [:] edge_index_view=edge_index
  *     cdef float [:] norm_aggr_view=norm_aggr
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 19, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 19, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_t_4); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 19, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_t_4); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_length = __pyx_t_1;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":20
+  /* "graphsaint/norm_aggr.pyx":19
  *     cdef float [:] data_view=data
  *     cdef int length=data.shape[0]
  *     cdef int [:] edge_index_view=edge_index             # <<<<<<<<<<<<<<
  *     cdef float [:] norm_aggr_view=norm_aggr
  *     cdef int i
  */
-  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_int(__pyx_v_edge_index, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 20, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_ds_int(__pyx_v_edge_index, PyBUF_WRITABLE); if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(1, 19, __pyx_L1_error)
   __pyx_v_edge_index_view = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":21
+  /* "graphsaint/norm_aggr.pyx":20
  *     cdef int length=data.shape[0]
  *     cdef int [:] edge_index_view=edge_index
  *     cdef float [:] norm_aggr_view=norm_aggr             # <<<<<<<<<<<<<<
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):
  */
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_float(__pyx_v_norm_aggr, PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 21, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_float(__pyx_v_norm_aggr, PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 20, __pyx_L1_error)
   __pyx_v_norm_aggr_view = __pyx_t_2;
   __pyx_t_2.memview = NULL;
   __pyx_t_2.data = NULL;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":23
+  /* "graphsaint/norm_aggr.pyx":22
  *     cdef float [:] norm_aggr_view=norm_aggr
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):             # <<<<<<<<<<<<<<
@@ -19518,7 +19514,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                         {
                             __pyx_v_i = (int)(0 + 1 * __pyx_t_6);
 
-                            /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":24
+                            /* "graphsaint/norm_aggr.pyx":23
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):
  *         data_view[i]=norm_aggr_view[edge_index_view[i]]             # <<<<<<<<<<<<<<
@@ -19531,7 +19527,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                             } else if (unlikely(__pyx_t_8 >= __pyx_v_edge_index_view.shape[0])) __pyx_t_9 = 0;
                             if (unlikely(__pyx_t_9 != -1)) {
                               __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_9);
-                              __PYX_ERR(1, 24, __pyx_L8_error)
+                              __PYX_ERR(1, 23, __pyx_L8_error)
                             }
                             __pyx_t_10 = (*((int *) ( /* dim=0 */ (__pyx_v_edge_index_view.data + __pyx_t_8 * __pyx_v_edge_index_view.strides[0]) )));
                             __pyx_t_9 = -1;
@@ -19541,7 +19537,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                             } else if (unlikely(__pyx_t_10 >= __pyx_v_norm_aggr_view.shape[0])) __pyx_t_9 = 0;
                             if (unlikely(__pyx_t_9 != -1)) {
                               __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_9);
-                              __PYX_ERR(1, 24, __pyx_L8_error)
+                              __PYX_ERR(1, 23, __pyx_L8_error)
                             }
                             __pyx_t_11 = __pyx_v_i;
                             __pyx_t_9 = -1;
@@ -19551,7 +19547,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                             } else if (unlikely(__pyx_t_11 >= __pyx_v_data_view.shape[0])) __pyx_t_9 = 0;
                             if (unlikely(__pyx_t_9 != -1)) {
                               __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_9);
-                              __PYX_ERR(1, 24, __pyx_L8_error)
+                              __PYX_ERR(1, 23, __pyx_L8_error)
                             }
                             *((float *) ( /* dim=0 */ (__pyx_v_data_view.data + __pyx_t_11 * __pyx_v_data_view.strides[0]) )) = (*((float *) ( /* dim=0 */ (__pyx_v_norm_aggr_view.data + __pyx_t_10 * __pyx_v_norm_aggr_view.strides[0]) )));
                             goto __pyx_L11;
@@ -19576,7 +19572,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                             goto __pyx_L10;
                             __pyx_L10:;
                             #ifdef _OPENMP
-                            #pragma omp critical(__pyx_parallel_lastprivates1)
+                            #pragma omp critical(__pyx_parallel_lastprivates0)
                             #endif /* _OPENMP */
                             {
                                 __pyx_parallel_temp0 = __pyx_v_i;
@@ -19635,7 +19631,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
         #endif
       }
 
-      /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":23
+      /* "graphsaint/norm_aggr.pyx":22
  *     cdef float [:] norm_aggr_view=norm_aggr
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):             # <<<<<<<<<<<<<<
@@ -19660,7 +19656,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
       }
   }
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":16
+  /* "graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -19676,7 +19672,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __PYX_XCLEAR_MEMVIEW(&__pyx_t_5, 1);
-  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_data_view, 1);
@@ -19824,7 +19820,7 @@ static PyType_Slot __pyx_type___pyx_array_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_array_spec = {
-  "fairgraph.dataset.graphsaint.norm_aggr.array",
+  "graphsaint.norm_aggr.array",
   sizeof(struct __pyx_array_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_SEQUENCE,
@@ -19870,7 +19866,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.norm_aggr.""array", /*tp_name*/
+  "graphsaint.norm_aggr.""array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -20030,7 +20026,7 @@ static PyType_Slot __pyx_type___pyx_MemviewEnum_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
-  "fairgraph.dataset.graphsaint.norm_aggr.Enum",
+  "graphsaint.norm_aggr.Enum",
   sizeof(struct __pyx_MemviewEnum_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -20040,7 +20036,7 @@ static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.norm_aggr.""Enum", /*tp_name*/
+  "graphsaint.norm_aggr.""Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -20337,7 +20333,7 @@ static PyType_Slot __pyx_type___pyx_memoryview_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryview_spec = {
-  "fairgraph.dataset.graphsaint.norm_aggr.memoryview",
+  "graphsaint.norm_aggr.memoryview",
   sizeof(struct __pyx_memoryview_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -20383,7 +20379,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.norm_aggr.""memoryview", /*tp_name*/
+  "graphsaint.norm_aggr.""memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -20537,7 +20533,7 @@ static PyType_Slot __pyx_type___pyx_memoryviewslice_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
-  "fairgraph.dataset.graphsaint.norm_aggr._memoryviewslice",
+  "graphsaint.norm_aggr._memoryviewslice",
   sizeof(struct __pyx_memoryviewslice_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_SEQUENCE,
@@ -20547,7 +20543,7 @@ static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fairgraph.dataset.graphsaint.norm_aggr.""_memoryviewslice", /*tp_name*/
+  "graphsaint.norm_aggr.""_memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -20971,18 +20967,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__20);
   __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 1, __pyx_L1_error)
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":16
+  /* "graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data
  */
-  __pyx_tuple__22 = PyTuple_Pack(10, __pyx_n_s_data, __pyx_n_s_edge_index, __pyx_n_s_norm_aggr, __pyx_n_s_num_proc, __pyx_n_s_num_proc_view, __pyx_n_s_data_view, __pyx_n_s_length, __pyx_n_s_edge_index_view, __pyx_n_s_norm_aggr_view, __pyx_n_s_i); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(10, __pyx_n_s_data, __pyx_n_s_edge_index, __pyx_n_s_norm_aggr, __pyx_n_s_num_proc, __pyx_n_s_num_proc_view, __pyx_n_s_data_view, __pyx_n_s_length, __pyx_n_s_edge_index_view, __pyx_n_s_norm_aggr_view, __pyx_n_s_i); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_norm_aggr_pyx, __pyx_n_s_norm_aggr, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 16, __pyx_L1_error)
-  __pyx_tuple__24 = PyTuple_Pack(1, ((PyObject *)__pyx_int_20)); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_norm_aggr_pyx, __pyx_n_s_norm_aggr, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 15, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(1, ((PyObject *)__pyx_int_20)); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
   __Pyx_RefNannyFinishContext();
@@ -21558,8 +21554,8 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "fairgraph.dataset.graphsaint.norm_aggr")) {
-      if (unlikely((PyDict_SetItemString(modules, "fairgraph.dataset.graphsaint.norm_aggr", __pyx_m) < 0))) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "graphsaint.norm_aggr")) {
+      if (unlikely((PyDict_SetItemString(modules, "graphsaint.norm_aggr", __pyx_m) < 0))) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -22093,35 +22089,35 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Enum, __pyx_t_7) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":6
- * # distutils: extra_link_args = -fopenmp
+  /* "graphsaint/norm_aggr.pyx":5
+ * # distutils: extra_compile_args = -std=c++11
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * cimport cython
  */
-  __pyx_t_7 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 6, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_7) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_7) < 0) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":16
+  /* "graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_9norm_aggr_1norm_aggr, 0, __pyx_n_s_norm_aggr, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_nor, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_9norm_aggr_1norm_aggr, 0, __pyx_n_s_norm_aggr, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_nor, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_7, __pyx_tuple__24);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_norm_aggr, __pyx_t_7) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_norm_aggr, __pyx_t_7) < 0) __PYX_ERR(1, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":1
+  /* "graphsaint/norm_aggr.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: language=c++
- * # distutils: extra_compile_args = -fopenmp -std=c++11
+ * # distutils: extra_compile_args = -std=c++11
  */
   __pyx_t_7 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -22137,7 +22133,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_7);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init fairgraph.dataset.graphsaint.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init graphsaint.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -22151,7 +22147,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init fairgraph.dataset.graphsaint.norm_aggr");
+    PyErr_SetString(PyExc_ImportError, "init graphsaint.norm_aggr");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
