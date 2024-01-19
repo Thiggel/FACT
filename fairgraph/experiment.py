@@ -229,10 +229,11 @@ class Experiment:
                 adj=self.dataset.adj,
                 x=self.dataset.features,
                 sens=self.dataset.sens,
-                idx_sens = self.dataset.idx_sens_train,
+                idx_sens=self.dataset.idx_sens_train,
                 minibatch=self.dataset.minibatch,
                 warmup=self.warmup,
-                adv_epoches=1
+                adv_epoches=1,
+                verbose=self.verbose
                 )
             print("Training time: ", time.time() - st_time)
 
