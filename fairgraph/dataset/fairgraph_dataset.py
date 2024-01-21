@@ -1,123 +1,107 @@
 import torch
+from torch.utils.data import random_split
 import numpy as np
 import os
 import pandas as pd
 import scipy.sparse as sp
 import random
 from torch_geometric.data import download_url
+import networkx as nx
+
+from .extension_dataset import SyntheticDataset
 
 
-class ArtificialSensitiveGraphDataset():
-    def __init__(self, root, device='cpu'):
-        self.name = "artificial_sensitive_graph"
-        self.root = root
-        self.sens_attr = "region"
-        self.predict_attr = "I_am_working_in_field"
-        self.label_number = 50000
-        self.sens_number = 20000
-        self.seed = 20
-        self.test_idx=False
-        self.data_path = data_path
-        self.device=device
-        self.process()
-    
+class ArtificialSensitiveGraphDataset(SyntheticDataset):
+    def __init__(
+        self,
+        path: str,
+        sensitive_attribute: str = 'm',
+        target_attribute: str = 'income',
+        device: str = 'cpu',
+        seed: int = 42
+    ) -> None:
+        """
+        Args:
+            path (string): path to the dataset
+            sensitive_attribute (string): sensitive attribute
+            target_attribute (string): target attribute to be predicted
+            device (string): device
+            seed (int): seed
+        """
+        self.path = path
+        self.sensitive_attribute = sensitive_attribute
+        self.target_attribute = target_attribute
+        self.seed = seed
+        self.device = device
+
+        self.set_seed(self.seed)
+
+        self.graph = self._open(self.path)
+
+        self.splits = self.get_splits()
+
     @property
-    def raw_paths(self):
-        return [f"{self.dataset}.csv",f"{self.dataset}_relationship.txt",f"{self.dataset}.embedding"]
-    
-    def download(self):
-        print('downloading raw files from:', self.data_path)
-        if not os.path.exists(self.root):
-            os.makedirs(self.root)
-        
-        for raw_path in self.raw_paths:
-            download_url(self.data_path+raw_path,self.root)
+    def adj(self):
+        return nx.to_scipy_sparse_array(self.graph)
 
-    def read_graph(self):
-        self.download()
-        print(f'Loading {self.dataset} dataset from {os.path.abspath(self.root+"/"+self.raw_paths[0])}')
-        # raw_paths[0] will be region_job.csv
-        idx_features_labels = pd.read_csv(os.path.abspath(self.root+"/"+self.raw_paths[0]))
-        header = list(idx_features_labels.columns)
-        header.remove("user_id")
+    def _get_unsensitive_features(self, node: dict):
+        return [
+            value for key, value in node.items()
+            if key != self.sensitive_attribute
+            and key != self.target_attribute
+        ]
 
-        header.remove(self.sens_attr)
-        header.remove(self.predict_attr)
+    @property
+    def features(self):
+        return torch.tensor([
+            self._get_unsensitive_features(node)
+            for node in self.graph.nodes
+        ]).to(self.device)
+            
+    @property
+    def sens(self):
+        return torch.tensor([
+            node[self.sensitive_attribute]
+            for node in self.graph.nodes
+        ]).to(self.device)
 
+    @property
+    def labels(self):
+        return torch.tensor([
+            node[self.target_attribute]
+            for node in self.graph.nodes
+        ]).to(self.device)
 
-        features = sp.csr_matrix(idx_features_labels[header], dtype=np.float32)
-        labels = idx_features_labels[self.predict_attr].values
-        
+    def get_splits(
+        self,
+        train_proportion: float = 0.8,
+        val_proportion: float = 0.1,
+        test_proportion: float = 0.1,
+    ):
+        indices = list(range(len(self.graph)))
 
-        # build graph
-        idx = np.array(idx_features_labels["user_id"], dtype=int)
-        idx_map = {j: i for i, j in enumerate(idx)}
-        # raw_paths[1] will be region_relationship.txt
-        edges_unordered = np.genfromtxt(os.path.abspath(self.root+"/"+self.raw_paths[1]), dtype=int)
+        train_indices, val_indices, test_indices = random_split(
+            indices,
+            [train_proportion, val_proportion, test_proportion]
+        )
 
-        edges = np.array(list(map(idx_map.get, edges_unordered.flatten())),
-                        dtype=int).reshape(edges_unordered.shape)
-        adj = sp.coo_matrix((np.ones(edges.shape[0]), (edges[:, 0], edges[:, 1])),
-                            shape=(labels.shape[0], labels.shape[0]),
-                            dtype=np.float32)
-        # build symmetric adjacency matrix
-        adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
+        return {
+            'train': train_indices,
+            'val': val_indices,
+            'test': test_indices
+        }
 
-        # features = normalize(features)
-        adj = adj + sp.eye(adj.shape[0])
+    @property
+    def idx_train(self):
+        return self.splits['train']
 
-        features = torch.FloatTensor(np.array(features.todense()))
-        labels = torch.LongTensor(labels)
-        # adj = sparse_mx_to_torch_sparse_tensor(adj)
+    @property
+    def idx_val(self):
+        return self.splits['val']
 
-        
-        random.seed(self.seed)
-        label_idx = np.where(labels>=0)[0]
-        random.shuffle(label_idx)
-        idx_train = label_idx[:min(int(0.1 * len(label_idx)),self.label_number)]
-        idx_val = label_idx[int(0.1 * len(label_idx)):int(0.2 * len(label_idx))]
-        if self.test_idx:
-            idx_test = label_idx[self.label_number:]
-            idx_val = idx_test
-        else:
-            idx_test = label_idx[int(0.2 * len(label_idx)):]
-
-        sens = idx_features_labels[self.sens_attr].values
-
-        sens_idx = set(np.where(sens >= 0)[0])
-        idx_test = np.asarray(list(sens_idx & set(idx_test)))
-        sens = torch.FloatTensor(sens)
-        idx_sens_train = torch.LongTensor(list(sens_idx))
-
-        idx_train = torch.LongTensor(idx_train)
-        idx_val = torch.LongTensor(idx_val)
-        idx_test = torch.LongTensor(idx_test)
-
-        return adj, features, labels, idx_train, idx_val, idx_test, sens,idx_sens_train
-
-
-    def feature_norm(self,features):
-        min_values = features.min(axis=0)[0]
-        max_values = features.max(axis=0)[0]
-
-        return 2*(features - min_values).div(max_values-min_values) - 1
-
-    def process(self):
-        adj, features, labels, idx_train, idx_val, idx_test,sens,idx_sens_train = self.read_graph()
-        features = self.feature_norm(features)
-
-        labels[labels>1]=1
-        sens[sens>0]=1
-
-        self.features = features.to(self.device)
-        self.labels = labels.to(self.device)
-        self.idx_train = idx_train.to(self.device)
-        self.idx_val = idx_val.to(self.device)
-        self.idx_test = idx_test.to(self.device)
-        self.sens = sens.to(self.device)
-        self.idx_sens_train = idx_sens_train.long().to(self.device)
-
-        self.adj = adj
+    @property
+    def idx_test(self):
+        return self.splits['test']
 
 
 class POKEC():

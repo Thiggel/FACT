@@ -3,26 +3,31 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import random
+import torch
 
 
-class ExtendDatasetWithIncomeAndEducation:
-    def __init__(self, path, seed = 42):
-        self.set_seed(seed)
-        self.path = path
-        self.graph = self._open()
-        self.arr_for_visualization = []
-
+class SyntheticDataset:
     def set_seed(seed):
         random.seed(seed)
         np.random.seed(seed)
-    
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+
     def _open(self):
         with open(self.path, 'rb') as f:
             graph = pickle.load(f)
 
         return graph
 
-    def _sample_and_add_income(self, attributes):
+
+class ExtendDatasetWithIncomeAndEducation(SyntheticDataset):
+    def __init__(self, path: str, seed: int = 42):
+        self.set_seed(seed)
+        self.path = path
+        self.graph = self._open()
+        self.arr_for_visualization = []
+
+    def _sample_and_add_income(self, attributes: list):
         p_minority_income = [0.9, 0.1]
         p_majority_income = [0.1, 0.9]
 
@@ -32,7 +37,7 @@ class ExtendDatasetWithIncomeAndEducation:
 
         attributes['income'] = np.random.choice([0, 1], p=p_current)
 
-    def _sample_and_add_education(self, attributes):
+    def _sample_and_add_education(self, attributes: list):
         p_minority_education = [0.7, 0.3]
         p_majority_education = [0.3, 0.7]
 
@@ -59,8 +64,10 @@ class ExtendDatasetWithIncomeAndEducation:
         self._save()
         print('Saved!')
 
-    def visualize(self, filename):
-        array = np.array([list(d.values()) for d in self.arr_for_visualization])
+    def visualize(self, filename: str = 'graph.png'):
+        array = np.array([
+            list(d.values()) for d in self.arr_for_visualization
+        ])
 
         df = pd.DataFrame(array, columns=['m', 'income', 'education'])
 
@@ -90,6 +97,7 @@ class ExtendDatasetWithIncomeAndEducation:
 
 
 
-dataset = ExtendDatasetWithIncomeAndEducation('dataset/artificial/DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-hMM0.2-hmm0.2-ID0.gpickle')
-dataset.process()
-dataset.visualize('pie-chart.png')
+if __name__ == '__main__':
+    dataset = ExtendDatasetWithIncomeAndEducation('dataset/artificial/DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-hMM0.2-hmm0.2-ID0.gpickle')
+    dataset.process()
+    dataset.visualize('pie-chart.png')

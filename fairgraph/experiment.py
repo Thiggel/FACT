@@ -182,6 +182,8 @@ class Experiment:
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
 
+        print('features', self.dataset.features, 'adj', self.dataset.adj, 'sens', self.dataset.sens, 'idx_sens_train', self.dataset.idx_sens_train)
+        exit()
         # Initialize augmentation model g
         self.aug_model = aug_module(
             features=self.dataset.features,
