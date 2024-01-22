@@ -7,7 +7,7 @@ import torch
 
 
 class SyntheticDataset:
-    def set_seed(seed):
+    def set_seed(self, seed):
         random.seed(seed)
         np.random.seed(seed)
         torch.manual_seed(seed)
