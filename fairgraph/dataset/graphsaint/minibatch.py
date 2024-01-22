@@ -29,7 +29,7 @@ class Minibatch:
     Provides minibatches for the trainer or evaluator. This class is responsible for
     calling the proper graph sampler and estimating normalization coefficients.
     """
-    def __init__(self, adj_full_norm, adj_train, role, train_params, cpu_eval=False):
+    def __init__(self, adj_full_norm, adj_train, role, train_params, device):
         """
         Inputs:
             adj_full_norm       scipy CSR, adj matrix for the full graph (row-normalized)
@@ -42,16 +42,13 @@ class Minibatch:
             train_params        dict, additional parameters related to training. e.g.,
                                 how many subgraphs we want to get to estimate the norm
                                 coefficients.
-            cpu_eval            bool, whether or not we want to run full-batch evaluation
-                                on the CPU.
+            device              device used for training
 
         Outputs:
             None
         """
         # self.use_cuda = (args_global.gpu >= 0)
-        self.use_cuda = True
-        if cpu_eval:
-            self.use_cuda=False
+        self.use_cuda = device == torch.device('cuda')
 
         self.node_train = np.array(role['tr'])
         self.node_val = np.array(role['va'])
