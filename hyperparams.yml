@@ -15,7 +15,7 @@ k_hidden: 64                          # Number of hidden units for adversary mod
 k_output_features: 64                 # Number of output features for adversary model k (?)
 k_dropout: 0.1                        # Dropout in GCN for adversary model k
 k_nlayer: 2                           # Number of layers in GCN for adversary model k
-c_hidden: 64                          # Number of hidden units for classifier model (?)
+c_hidden: 128                         # Number of hidden units for classifier model (?)
 c_input: 64                           # Number of input units for classifier model (?)
 alpha: 20                             # Loss alpha weight ...
 beta: 0.9                             # Loss beta weight ...
