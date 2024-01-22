@@ -1,3 +1,3 @@
-from .fairgraph_dataset import POKEC, NBA
+from .fairgraph_dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
-__all__ = [POKEC, NBA]
+__all__ = [POKEC, NBA, ArtificialSensitiveGraphDataset]

@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import random
 import torch
+import os
 
 
 class SyntheticDataset:
@@ -98,6 +99,11 @@ class ExtendDatasetWithIncomeAndEducation(SyntheticDataset):
 
 
 if __name__ == '__main__':
-    dataset = ExtendDatasetWithIncomeAndEducation('dataset/artificial/DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-hMM0.2-hmm0.2-ID0.gpickle')
-    dataset.process()
-    dataset.visualize('pie-chart.png')
+    for file in os.listdir('dataset/artificial/'):
+        if file.endswith('.gpickle'):
+            dataset = ExtendDatasetWithIncomeAndEducation('dataset/artificial/' + file)
+            dataset.process()
+
+            print(f'Processing {file}...')
+
+    print('Finished!')

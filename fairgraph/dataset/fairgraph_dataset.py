@@ -8,7 +8,7 @@ import random
 from torch_geometric.data import download_url
 import networkx as nx
 
-from extension_dataset import SyntheticDataset
+from .extension_dataset import SyntheticDataset
 
 
 class ArtificialSensitiveGraphDataset(SyntheticDataset):
@@ -28,6 +28,7 @@ class ArtificialSensitiveGraphDataset(SyntheticDataset):
             device (string): device
             seed (int): seed
         """
+        self.name = 'artificial'
         self.path = path
         self.sensitive_attribute = sensitive_attribute
         self.target_attribute = target_attribute
@@ -53,27 +54,27 @@ class ArtificialSensitiveGraphDataset(SyntheticDataset):
 
     @property
     def features(self) -> torch.tensor:
-        return torch.tensor([
+        return torch.FloatTensor([
             self._get_unsensitive_features(node)
             for node in self.graph.nodes
         ]).to(self.device)
 
     @property
     def sens(self) -> torch.tensor:
-        return torch.tensor([
+        return torch.FloatTensor([
             self.graph.nodes[node][self.sensitive_attribute]
             for node in self.graph.nodes
         ]).to(self.device)
 
     @property
     def labels(self) -> torch.tensor:
-        return torch.tensor([
+        return torch.LongTensor([
             self.graph.nodes[node][self.target_attribute]
             for node in self.graph.nodes
         ]).to(self.device)
 
     def _subset_to_tensor(self, data: Subset) -> torch.tensor:
-        return torch.tensor(list(data)).to(self.device)
+        return torch.LongTensor(list(data)).to(self.device)
 
     def get_splits(
         self,
@@ -97,6 +98,14 @@ class ArtificialSensitiveGraphDataset(SyntheticDataset):
     @property
     def idx_train(self) -> torch.tensor:
         return self.splits['train']
+
+    @property
+    def idx_sens_train(self) -> torch.tensor:
+        '''
+        Those indices within self.idx_train
+        that have 1 as the value for the sensitive attribute
+        '''
+        return self.idx_train[self.sens[self.idx_train] == 1]
 
     @property
     def idx_val(self) -> torch.tensor:
