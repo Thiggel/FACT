@@ -48,7 +48,7 @@ class Minibatch:
             None
         """
         # self.use_cuda = (args_global.gpu >= 0)
-        self.use_cuda = device == torch.device('cuda')
+        self.use_cuda = device == torch.device('cuda') or device == 'cuda'
 
         self.node_train = np.array(role['tr'])
         self.node_val = np.array(role['va'])
