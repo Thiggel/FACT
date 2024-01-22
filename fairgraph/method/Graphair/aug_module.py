@@ -6,7 +6,18 @@ from .GCN import GCN_Body
 
 
 class aug_module(torch.nn.Module):
-    def __init__(self, features, n_hidden=64, temperature=1, device='cpu', dropout=0.1, nlayer=1, mlpx_dropout=0.1) -> None:
+    def __init__(
+        self,
+        features,
+        n_hidden=64,
+        temperature=1,
+        device='cpu',
+        dropout=0.1,
+        nlayer=1,
+        mlpx_dropout=0.1,
+        edge_perturbation=True,
+        node_feature_masiking=True,
+    ) -> None:
         super(aug_module,self).__init__()
         self.device = device
         self.g_encoder = GCN_Body(
