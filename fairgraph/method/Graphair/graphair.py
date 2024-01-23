@@ -190,7 +190,6 @@ class Graphair(nn.Module):
             h = self.projection(self.f_encoder(adj, x))
             h_prime = self.projection(self.f_encoder(adj_aug, x_aug))
             # print("encoder done")
-
             ## update sens model
             adj_aug_nograd = adj_aug.detach()
             x_aug_nograd = x_aug.detach()
