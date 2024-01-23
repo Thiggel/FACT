@@ -54,7 +54,8 @@ class Graphair(nn.Module):
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
-                 num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu', checkpoint_path='./checkpoint/'):
+                 num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
+                 batch_size=None, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
@@ -69,6 +70,7 @@ class Graphair(nn.Module):
         self.dataset = dataset
         self.lam = lam
         self.temperature = temperature
+        self.batch_size = batch_size
 
         self.criterion_sens = nn.BCEWithLogitsLoss()
         self.criterion_cont= nn.CrossEntropyLoss()
@@ -133,6 +135,103 @@ class Graphair(nn.Module):
     
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
+    
+    def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, warmup=None, adv_epoches=10, verbose=False):
+        assert sp.issparse(adj)
+        if not isinstance(adj, sp.coo_matrix):
+            adj = sp.coo_matrix(adj)
+        adj.setdiag(1)
+        adj_orig = sp.csr_matrix(adj)
+        norm_w = adj_orig.shape[0]**2 / float((adj_orig.shape[0]**2 - adj_orig.sum()) * 2)
+
+        idx_sens = idx_sens.cpu().numpy()
+
+        if warmup:
+            for _ in range(warmup):
+
+                node_subgraph, adj, _ = minibatch.one_batch(mode='train')
+                adj = adj.to(self.device)
+                edge_label = torch.FloatTensor(adj_orig[node_subgraph][:,node_subgraph].toarray()).to(self.device)
+
+                adj_aug, x_aug, adj_logits = self.aug_model(adj, x[node_subgraph], adj_orig = edge_label)
+                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, edge_label)
+
+
+                feat_loss =  self.criterion_recons(x_aug, x[node_subgraph])
+                recons_loss =  edge_loss + self.beta * feat_loss
+
+                self.optimizer_aug.zero_grad()
+                with torch.autograd.set_detect_anomaly(True):
+                    recons_loss.backward(retain_graph=True)
+                self.optimizer_aug.step()
+
+                if verbose:
+                    print(
+                    'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                    'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                    )
+
+        for epoch_counter in range(epochs):
+            ### generate fair view
+            node_subgraph, adj, norm_loss_subgraph = minibatch.one_batch(mode='train')
+            adj = adj.to(self.device)
+            norm_loss_subgraph = norm_loss_subgraph.to(self.device)
+
+            edge_label = torch.FloatTensor(adj_orig[node_subgraph][:,node_subgraph].toarray()).to(self.device)
+            adj_aug, x_aug, adj_logits = self.aug_model(adj, x[node_subgraph], adj_orig = edge_label)
+            # print("aug done")
+
+            ### extract node representations
+            h = self.projection(self.f_encoder(adj, x[node_subgraph]))
+            h_prime = self.projection(self.f_encoder(adj_aug, x_aug))
+            # print("encoder done")
+
+            ### update sens model
+            adj_aug_nograd = adj_aug.detach()
+            x_aug_nograd = x_aug.detach()
+
+            mask = np.in1d(node_subgraph, idx_sens)
+
+            if (epoch_counter == 0):
+                sens_epoches = adv_epoches * 10
+            else:
+                sens_epoches = adv_epoches
+            for _ in range(sens_epoches):
+
+                s_pred , _  = self.sens_model(adj_aug_nograd, x_aug_nograd)
+                senloss = torch.nn.BCEWithLogitsLoss(weight=norm_loss_subgraph,reduction='sum')(s_pred[mask].squeeze(),sens[node_subgraph][mask].float())
+
+                self.optimizer_s.zero_grad()
+                senloss.backward()
+                self.optimizer_s.step()
+
+            s_pred , _  = self.sens_model(adj_aug, x_aug)
+            senloss = torch.nn.BCEWithLogitsLoss(weight=norm_loss_subgraph,reduction='sum')(s_pred[mask].squeeze(),sens[node_subgraph][mask].float())
+
+            ## update aug model
+            logits, labels = self.info_nce_loss_2views(torch.cat((h, h_prime), dim = 0))
+            contrastive_loss = (torch.nn.CrossEntropyLoss(reduction='none')(logits, labels) * norm_loss_subgraph.repeat(2)).sum() 
+
+            ## update encoder
+            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, edge_label)
+
+
+            feat_loss =  self.criterion_recons(x_aug, x[node_subgraph])
+            recons_loss =  edge_loss + self.lam * feat_loss
+
+            loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+            if ((epoch_counter + 1) % 1000 == 0 and verbose):
+                print('Epoch: {:04d}'.format(epoch_counter+1),
+                'sens loss: {:.4f}'.format(senloss.item()),
+                'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
+                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
+                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                )
+
+        self._save_checkpoint()
 
     def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1, verbose=False):
         assert sp.issparse(adj)
@@ -168,6 +267,7 @@ class Graphair(nn.Module):
                     )
 
         for epoch_counter in range(epochs):
+            # print(f"Epoch {epoch_counter}")
             ### generate fair view
             adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
             
@@ -293,4 +393,6 @@ class Graphair(nn.Module):
     def _save_checkpoint(self):
         os.makedirs(self.checkpoint_path, exist_ok=True)
         save_path = f"{self.checkpoint_path}graphair_{self.dataset}_alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}"
+        if self.batch_size:
+            save_path += "_batch_size{}"
         torch.save(self.state_dict(), save_path)

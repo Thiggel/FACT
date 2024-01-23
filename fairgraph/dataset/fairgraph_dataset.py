@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import scipy.sparse as sp
 import random
+from graphsaint.minibatch import Minibatch
 from torch_geometric.data import download_url
 
 
@@ -27,7 +28,8 @@ class POKEC():
                 data_path='https://github.com/divelab/DIG_storage/raw/main/fairgraph/datasets/pockec/',
                 root='./dataset/pokec',
                 dataset_sample='pokec_z',
-                device='cpu'):
+                device='cpu',
+                batch_size=1000):
         self.name = "POKEC_Z"
         self.root = root
         self.dataset_sample = dataset_sample
@@ -45,6 +47,7 @@ class POKEC():
         self.test_idx=False
         self.data_path = data_path
         self.device=device
+        self.batch_size = batch_size
         self.process()
     
     @property
@@ -144,6 +147,16 @@ class POKEC():
         self.idx_sens_train = idx_sens_train.long().to(self.device)
 
         self.adj = adj
+
+        self.create_minibatch()
+
+    def create_minibatch(self):
+        ids = np.arange(self.features.shape[0])
+        role = {'tr':ids.copy(), 'va': ids.copy(), 'te':ids.copy()}
+        train_params = {'sample_coverage': 500}
+        train_phase = {'sampler': 'rw', 'num_root': self.batch_size, 'depth': 3, 'end':30}
+        self.minibatch = Minibatch(self.adj, self.adj, role, train_params, self.device)
+        self.minibatch.set_sampler(train_phase)
 
 class NBA():
     r'''
