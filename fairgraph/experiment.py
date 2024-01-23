@@ -144,6 +144,7 @@ class Experiment:
         elif dataset_name == Datasets.POKEC_Z:
             return POKEC(device=self.device, dataset_sample="pokec_z", batch_size=self.batch_size)
         elif dataset_name == Datasets.SYNTHETIC:
+            print(synthetic_hmm, synthetic_hMM)
             return ArtificialSensitiveGraphDataset(
                 path=os.getcwd() + '/fairgraph/dataset/dataset/artificial/' +
                 'DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-' +
