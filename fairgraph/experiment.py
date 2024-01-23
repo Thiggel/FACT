@@ -1,4 +1,4 @@
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
+from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA
@@ -48,7 +48,8 @@ class Experiment:
         g_lr=1e-4,
         g_warmup_lr=1e-3,
         f_lr=1e-4,
-        graphair_temperature=0.07
+        graphair_temperature=0.07,
+        use_graph_attention=False
     ):
         """
         Initializes an Experiment class instance.
@@ -77,6 +78,8 @@ class Experiment:
         self.warmup = warmup
         self.epochs = epochs
         self.test_epochs = test_epochs
+
+        self.use_graph_attention = use_graph_attention
 
         # Augmentation model g hyperparameters
         self.g_hyperparams = {
@@ -186,6 +189,7 @@ class Experiment:
         self.aug_model = aug_module(
             features=self.dataset.features,
             device=self.device,
+            use_graph_attention=self.use_graph_attention,
             **self.g_hyperparams
         ).to(self.device)
 
@@ -193,10 +197,16 @@ class Experiment:
         self.f_encoder = GCN_Body(
             in_feats=self.dataset.features.shape[1],
             **self.f_hyperparams
+        ).to(self.device) if not self.use_graph_attention else GAT_Body(
+            in_feats=self.dataset.features.shape[1],
+            **self.f_hyperparams
         ).to(self.device)
 
         # Initialize adversary model k
         self.sens_model = GCN(
+            in_feats=self.dataset.features.shape[1],
+            **self.k_hyperparams
+        ).to(self.device) if not self.use_graph_attention else GAT_Model(
             in_feats=self.dataset.features.shape[1],
             **self.k_hyperparams
         ).to(self.device)
