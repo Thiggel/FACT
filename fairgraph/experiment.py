@@ -72,6 +72,7 @@ class Experiment:
 
         # Set a seed for reproducibility
         set_seed(seed)
+        self.seed = seed
 
         # Trainig hyperparameters
         self.warmup = warmup
@@ -136,6 +137,50 @@ class Experiment:
             raise Exception(
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
+        
+    def run_grid_search(self, hparam_values):
+        """
+        Runs grid seach using the given hyperparameter values
+
+        Args:
+            hparam_values (tuple): the values alpha, gamma 
+                and lam can take in the grid search.
+
+        Returns: 
+            best_params (dict): values of the hyperparameters 
+                for the setting with the best accuracy.
+            best_res_dict (dict): output of self.run for the 
+                best hyperparameter values.  
+        """
+        hparam_values = hparam_values if hparam_values else (0.1, 1., 10.)
+        best_acc = -1
+        best_params = None
+        best_res_dict = None
+
+        beta = 1.
+        for alpha in hparam_values:
+            for gamma in hparam_values:
+                for lam in hparam_values:
+                    # set the hyperparameter values
+                    self.graphair_hyperparams['alpha'] = alpha
+                    self.graphair_hyperparams['beta'] = beta
+                    self.graphair_hyperparams['gamma'] = gamma
+                    self.graphair_hyperparams['lam'] = lam
+                    
+                    # reset the seed
+                    set_seed(self.seed)
+
+                    # run the experiment
+                    print(f"alpha: {self.graphair_hyperparams['alpha']}, lambda: {self.graphair_hyperparams['lam']}, gamma: {self.graphair_hyperparams['gamma']}")
+                    res_dict = self.run()
+
+                    # keep track of the results which produce the best accuracy
+                    if res_dict['acc']['mean'] > best_acc:
+                        best_acc = res_dict['acc']['mean']
+                        best_res_dict = res_dict
+                        best_params = {'alpha': alpha, 'beta': beta, 'gamma': gamma, 'lam': lam}
+
+        return best_params, best_res_dict
 
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
@@ -170,6 +215,7 @@ class Experiment:
             f_encoder=self.f_encoder,
             sens_model=self.sens_model,
             classifier_model=self.classifier_model,
+            device=self.device,
             dataset=self.dataset.name,
             **self.graphair_hyperparams
         ).to(self.device)
