@@ -53,9 +53,9 @@ class Graphair(nn.Module):
     '''
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
-                 weight_decay=1e-5, alpha=20, beta=0.9, gamma=0.7, lam=1, temperature=0.07,
-                 num_hidden=64, num_proj_hidden=64, batch_size=None, dataset='POKEC',
-                 device='cpu', checkpoint_path='./checkpoint/'):
+                 weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
+                 num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
+                 batch_size=None, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
@@ -245,10 +245,7 @@ class Graphair(nn.Module):
         adj_norm = degree_mat_inv_sqrt @ adj @ degree_mat_inv_sqrt
         adj_norm = scipysp_to_pytorchsp(adj_norm)
         
-
         adj = adj_norm.to(self.device)
-        
-        best_contras = float("inf")
         
         if warmup:
             for _ in range(warmup):
@@ -331,6 +328,7 @@ class Graphair(nn.Module):
             torch.manual_seed(i*10)
             np.random.seed(i*10)
 
+            self.classifier.reset_parameters()
             # train classifier
             best_acc = 0.0
             best_test = 0.0
