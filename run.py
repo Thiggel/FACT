@@ -22,6 +22,10 @@ if __name__ == "__main__":
                         help='Whether to run grid seach')
     parser.add_argument('--grid_hparams', type=float, nargs='*',
                         help='Which hyperparameters are used for the grid search')
+    parser.add_argument('--hmm', type=float, nargs='*', default=0.8,
+                        help='If using synthetic data, the hyperparameters for the hmm')
+    parser.add_argument('--hMM', type=float, default=0.2, nargs='*',
+                        help='If using synthetic data, the hyperparameters for the hMM')
     parser.add_argument('--attention', action=argparse.BooleanOptionalAction,
                         help='Whether to use graph attention instead of convolution')
     
@@ -43,6 +47,8 @@ if __name__ == "__main__":
         seed=args.seed,
         device=args.device,
         verbose=args.verbose,
+        synthetic_hmm=args.hmm,
+        synthetic_hMM=args.hMM,
         use_graph_attention=args.attention,
         **hyperparams
     )

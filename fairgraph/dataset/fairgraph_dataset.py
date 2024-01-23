@@ -1,4 +1,5 @@
 import torch
+from torch.utils.data import random_split, Subset
 import numpy as np
 import os
 import pandas as pd
@@ -6,6 +7,114 @@ import scipy.sparse as sp
 import random
 from graphsaint.minibatch import Minibatch
 from torch_geometric.data import download_url
+import networkx as nx
+
+from .extension_dataset import SyntheticDataset
+
+
+class ArtificialSensitiveGraphDataset(SyntheticDataset):
+    def __init__(
+        self,
+        path: str,
+        sensitive_attribute: str = 'm',
+        target_attribute: str = 'income',
+        device: str = 'cpu',
+        seed: int = 42
+    ) -> None:
+        """
+        Args:
+            path (string): path to the dataset
+            sensitive_attribute (string): sensitive attribute
+            target_attribute (string): target attribute to be predicted
+            device (string): device
+            seed (int): seed
+        """
+        self.name = 'artificial'
+        self.path = path
+        self.sensitive_attribute = sensitive_attribute
+        self.target_attribute = target_attribute
+        self.seed = seed
+        self.device = device
+
+        self.set_seed(self.seed)
+
+        self.graph = self._open()
+
+        self.splits = self.get_splits()
+
+    @property
+    def adj(self):
+        return nx.to_scipy_sparse_array(self.graph)
+
+    def _get_unsensitive_features(self, node: dict) -> list:
+        return [
+            value for key, value in self.graph.nodes[node].items()
+            if key != self.sensitive_attribute
+            and key != self.target_attribute
+        ]
+
+    @property
+    def features(self) -> torch.tensor:
+        return torch.FloatTensor([
+            self._get_unsensitive_features(node)
+            for node in self.graph.nodes
+        ]).to(self.device)
+
+    @property
+    def sens(self) -> torch.tensor:
+        return torch.FloatTensor([
+            self.graph.nodes[node][self.sensitive_attribute]
+            for node in self.graph.nodes
+        ]).to(self.device)
+
+    @property
+    def labels(self) -> torch.tensor:
+        return torch.LongTensor([
+            self.graph.nodes[node][self.target_attribute]
+            for node in self.graph.nodes
+        ]).to(self.device)
+
+    def _subset_to_tensor(self, data: Subset) -> torch.tensor:
+        return torch.LongTensor(list(data)).to(self.device)
+
+    def get_splits(
+        self,
+        train_proportion: float = 0.8,
+        val_proportion: float = 0.1,
+        test_proportion: float = 0.1,
+    ) -> dict:
+        indices = list(range(len(self.graph)))
+
+        train_indices, val_indices, test_indices = random_split(
+            indices,
+            [train_proportion, val_proportion, test_proportion]
+        )
+
+        return {
+            'train': self._subset_to_tensor(train_indices),
+            'val': self._subset_to_tensor(val_indices),
+            'test': self._subset_to_tensor(test_indices),
+        }
+
+    @property
+    def idx_train(self) -> torch.tensor:
+        return self.splits['train']
+
+    @property
+    def idx_sens_train(self) -> torch.tensor:
+        '''
+        Those indices within self.idx_train
+        that have 1 as the value for the sensitive attribute
+        '''
+        return self.idx_train[self.sens[self.idx_train] == 1]
+
+    @property
+    def idx_val(self) -> torch.tensor:
+        return self.splits['val']
+
+    @property
+    def idx_test(self) -> torch.tensor:
+        return self.splits['test']
 
 
 class POKEC():

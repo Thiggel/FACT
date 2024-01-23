@@ -1,7 +1,8 @@
+import os
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
-from .dataset import POKEC, NBA
+from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
 import time
 
@@ -50,6 +51,8 @@ class Experiment:
         g_warmup_lr=1e-3,
         f_lr=1e-4,
         graphair_temperature=0.07,
+        synthetic_hmm=0.8,
+        synthetic_hMM=0.2,
         use_graph_attention=False
     ):
         """
@@ -69,7 +72,7 @@ class Experiment:
         """
         self.device = device if device else set_device()
         self.batch_size = batch_size
-        self.dataset = self.initialize_dataset(dataset_name)
+        self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
         self.verbose = verbose
 
         # Set a seed for reproducibility
@@ -128,13 +131,25 @@ class Experiment:
             "lam": lam
         }
 
-    def initialize_dataset(self, dataset_name):
+    def initialize_dataset(
+        self,
+        dataset_name,
+        synthetic_hmm=0.8,
+        synthetic_hMM=0.2
+    ):
         if dataset_name == Datasets.NBA:
             return NBA(device=self.device)
         elif dataset_name == Datasets.POKEC_N:
             return POKEC(device=self.device, dataset_sample="pokec_n", batch_size=self.batch_size)
         elif dataset_name == Datasets.POKEC_Z:
             return POKEC(device=self.device, dataset_sample="pokec_z", batch_size=self.batch_size)
+        elif dataset_name == Datasets.SYNTHETIC:
+            return ArtificialSensitiveGraphDataset(
+                path=os.getcwd() + '/fairgraph/dataset/dataset/artificial/' +
+                'DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-' +
+                f'hMM{synthetic_hMM}-hmm{synthetic_hmm}-ID0.gpickle',
+                device=self.device
+            )
         else:
             raise Exception(
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
