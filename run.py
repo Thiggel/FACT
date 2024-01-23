@@ -43,5 +43,10 @@ if __name__ == "__main__":
         print(results)
     else: 
         results = experiment.run()
+    
+    # save to file
+    import pickle
+    with open('results.pickle', 'wb') as handle:
+        pickle.dump(results, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     
