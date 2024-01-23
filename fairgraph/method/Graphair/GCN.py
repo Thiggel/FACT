@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import init
+from torch_geometric.nn.models import GAT
 
 
 class GCNLayer(nn.Module):
@@ -37,6 +38,7 @@ class GCNLayer(nn.Module):
             x = self.activation(x)
         return x
 
+
 class GCN_Body(nn.Module):
     def __init__(self, in_feats, n_hidden, out_feats, dropout, nlayer):
         super(GCN_Body, self).__init__()
@@ -62,17 +64,59 @@ class GCN_Body(nn.Module):
             h = (layer(g, h))
         return h
 
+
+class GAT_Body(nn.Module):
+    def __init__(
+        self,
+        in_feats: int,
+        n_hidden: int,
+        out_feats: int,
+        dropout: float,
+        nlayer: int,
+    ) -> None:
+        super(GAT_Body, self).__init__()
+
+        self.gat = GAT(
+            in_channels=in_feats,
+            hidden_channels=n_hidden,
+            out_channels=out_feats,
+            num_layers=nlayer,
+            dropout=dropout,
+        )
+
+    def forward(self, adj, x):
+        return self.gat(x, adj.coalesce())
+
+
 class GCN(nn.Module):
-    def __init__(self, in_feats, n_hidden, out_feats, nclass, dropout=0.2, nlayer=2):
+    def __init__(
+        self,
+        in_feats: int,
+        n_hidden: int,
+        out_feats: int,
+        nclass: int,
+        dropout: float = 0.2,
+        nlayer: int = 2
+    ):
         super(GCN, self).__init__()
-        self.body = GCN_Body(in_feats, n_hidden, out_feats, dropout, nlayer)
+
+        self.create_body(in_feats, n_hidden, out_feats, dropout, nlayer)
+
         self.fc = nn.Sequential(
-                nn.Linear(out_feats, n_hidden),
-                nn.ReLU(),
-                nn.Linear(n_hidden, nclass),
-                )
+            nn.Linear(out_feats, n_hidden),
+            nn.ReLU(),
+            nn.Linear(n_hidden, nclass),
+        )
+
+    def create_body(self, in_feats, n_hidden, out_feats, dropout, nlayer):
+        self.body = GCN_Body(in_feats, n_hidden, out_feats, dropout, nlayer)
 
     def forward(self, g, x):
         h = self.body(g, x)
         x = self.fc(h)
         return x, h
+
+
+class GAT_Model(GCN):
+    def create_body(self, in_feats, n_hidden, out_feats, dropout, nlayer):
+        self.body = GAT_Body(in_feats, n_hidden, out_feats, dropout, nlayer)
