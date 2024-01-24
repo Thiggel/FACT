@@ -7,15 +7,13 @@
         "extra_compile_args": [
             "-std=c++11"
         ],
-        "extra_link_args": [
-        ],
         "language": "c++",
-        "name": "graphsaint.cython_sampler",
+        "name": "fairgraph.dataset.graphsaint.cython_sampler",
         "sources": [
             "graphsaint/cython_sampler.pyx"
         ]
     },
-    "module_name": "graphsaint.cython_sampler"
+    "module_name": "fairgraph.dataset.graphsaint.cython_sampler"
 }
 END: Cython Metadata */
 
@@ -1835,7 +1833,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "graphsaint/cython_utils.pxd":16
+/* "graphsaint/cython_utils.pxd":15
  * 
  * 
  * cdef class array_wrapper_float:             # <<<<<<<<<<<<<<
@@ -1851,7 +1849,7 @@ struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float {
 };
 
 
-/* "graphsaint/cython_utils.pxd":22
+/* "graphsaint/cython_utils.pxd":21
  *     cdef void set_data(self,vector[float]& data)
  * 
  * cdef class array_wrapper_int:             # <<<<<<<<<<<<<<
@@ -1867,7 +1865,7 @@ struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":29
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":28
  * 
  * 
  * cdef class Sampler:             # <<<<<<<<<<<<<<
@@ -1891,7 +1889,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":226
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":225
  * # ----------------------------------------------------
  * 
  * cdef class MRW(Sampler):             # <<<<<<<<<<<<<<
@@ -1907,7 +1905,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":324
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":323
  * # ----------------------------------------------------
  * 
  * cdef class RW(Sampler):             # <<<<<<<<<<<<<<
@@ -1921,7 +1919,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":365
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":364
  * # ----------------------------------------------------
  * 
  * cdef class Edge(Sampler):             # <<<<<<<<<<<<<<
@@ -1936,7 +1934,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":403
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":402
  * 
  * 
  * cdef class Edge2(Sampler):             # <<<<<<<<<<<<<<
@@ -1952,7 +1950,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":446
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":445
  * # ----------------------------------------------------
  * 
  * cdef class Node(Sampler):             # <<<<<<<<<<<<<<
@@ -1966,7 +1964,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node {
 };
 
 
-/* "graphsaint/cython_sampler.pyx":477
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":476
  * # -----------------------------------------------------
  * 
  * cdef class FullBatch(Sampler):             # <<<<<<<<<<<<<<
@@ -1979,7 +1977,7 @@ struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch {
 
 
 
-/* "graphsaint/cython_utils.pxd":16
+/* "graphsaint/cython_utils.pxd":15
  * 
  * 
  * cdef class array_wrapper_float:             # <<<<<<<<<<<<<<
@@ -1993,7 +1991,7 @@ struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float {
 static struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float *__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_float;
 
 
-/* "graphsaint/cython_utils.pxd":22
+/* "graphsaint/cython_utils.pxd":21
  *     cdef void set_data(self,vector[float]& data)
  * 
  * cdef class array_wrapper_int:             # <<<<<<<<<<<<<<
@@ -2007,7 +2005,7 @@ struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int {
 static struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int;
 
 
-/* "graphsaint/cython_sampler.pyx":29
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":28
  * 
  * 
  * cdef class Sampler:             # <<<<<<<<<<<<<<
@@ -2022,7 +2020,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sample
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
 
 
-/* "graphsaint/cython_sampler.pyx":226
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":225
  * # ----------------------------------------------------
  * 
  * cdef class MRW(Sampler):             # <<<<<<<<<<<<<<
@@ -2036,7 +2034,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW;
 
 
-/* "graphsaint/cython_sampler.pyx":324
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":323
  * # ----------------------------------------------------
  * 
  * cdef class RW(Sampler):             # <<<<<<<<<<<<<<
@@ -2050,7 +2048,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW;
 
 
-/* "graphsaint/cython_sampler.pyx":365
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":364
  * # ----------------------------------------------------
  * 
  * cdef class Edge(Sampler):             # <<<<<<<<<<<<<<
@@ -2064,7 +2062,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge;
 
 
-/* "graphsaint/cython_sampler.pyx":403
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":402
  * 
  * 
  * cdef class Edge2(Sampler):             # <<<<<<<<<<<<<<
@@ -2078,7 +2076,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2;
 
 
-/* "graphsaint/cython_sampler.pyx":446
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":445
  * # ----------------------------------------------------
  * 
  * cdef class Node(Sampler):             # <<<<<<<<<<<<<<
@@ -2092,7 +2090,7 @@ struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node {
 static struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node;
 
 
-/* "graphsaint/cython_sampler.pyx":477
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":476
  * # -----------------------------------------------------
  * 
  * cdef class FullBatch(Sampler):             # <<<<<<<<<<<<<<
@@ -3099,16 +3097,16 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
 static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArrayObject *, std::vector<int>  &); /*proto*/
 static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyArrayObject *, std::vector<float>  &); /*proto*/
 
-/* Module declarations from "graphsaint.cython_sampler" */
+/* Module declarations from "fairgraph.dataset.graphsaint.cython_sampler" */
 /* #### Code section: typeinfo ### */
 static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "graphsaint.cython_sampler"
+#define __Pyx_MODULE_NAME "fairgraph.dataset.graphsaint.cython_sampler"
 extern int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_sampler;
 int __pyx_module_is_main_fairgraph__dataset__graphsaint__cython_sampler = 0;
 
-/* Implementation of "graphsaint.cython_sampler" */
+/* Implementation of "fairgraph.dataset.graphsaint.cython_sampler" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_TypeError;
@@ -3231,7 +3229,7 @@ static const char __pyx_k_Sampler___setstate_cython[] = "Sampler.__setstate_cyth
 static const char __pyx_k_FullBatch___setstate_cython[] = "FullBatch.__setstate_cython__";
 static const char __pyx_k_graphsaint_cython_sampler_pyx[] = "graphsaint/cython_sampler.pyx";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
-static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "graphsaint.cython_sampler";
+static const char __pyx_k_fairgraph_dataset_graphsaint_cyt[] = "fairgraph.dataset.graphsaint.cython_sampler";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 /* #### Code section: decls ### */
@@ -5430,7 +5428,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-/* "graphsaint/cython_utils.pxd":28
+/* "graphsaint/cython_utils.pxd":27
  *     cdef void set_data(self,vector[int]& data)
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):             # <<<<<<<<<<<<<<
@@ -5455,21 +5453,21 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArra
   __pyx_pybuffernd_nda.rcbuffer = &__pyx_pybuffer_nda;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 28, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 27, __pyx_L1_error)
   }
   __pyx_pybuffernd_nda.diminfo[0].strides = __pyx_pybuffernd_nda.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_nda.diminfo[0].shape = __pyx_pybuffernd_nda.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_utils.pxd":29
+  /* "graphsaint/cython_utils.pxd":28
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):
  *     cdef int size = nda.size             # <<<<<<<<<<<<<<
  *     cdef int* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)
  */
-  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(3, 29, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(3, 28, __pyx_L1_error)
   __pyx_v_size = __pyx_t_1;
 
-  /* "graphsaint/cython_utils.pxd":30
+  /* "graphsaint/cython_utils.pxd":29
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):
  *     cdef int size = nda.size
  *     cdef int* vec_c = &(nda[0])             # <<<<<<<<<<<<<<
@@ -5484,11 +5482,11 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArra
   } else if (unlikely(__pyx_t_2 >= __pyx_pybuffernd_nda.diminfo[0].shape)) __pyx_t_3 = 0;
   if (unlikely(__pyx_t_3 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_3);
-    __PYX_ERR(3, 30, __pyx_L1_error)
+    __PYX_ERR(3, 29, __pyx_L1_error)
   }
   __pyx_v_vec_c = (&(*__Pyx_BufPtrCContig1d(int *, __pyx_pybuffernd_nda.rcbuffer->pybuffer.buf, __pyx_t_2, __pyx_pybuffernd_nda.diminfo[0].strides)));
 
-  /* "graphsaint/cython_utils.pxd":31
+  /* "graphsaint/cython_utils.pxd":30
  *     cdef int size = nda.size
  *     cdef int* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)             # <<<<<<<<<<<<<<
@@ -5499,10 +5497,10 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArra
     __pyx_v_vec.assign(__pyx_v_vec_c, (__pyx_v_vec_c + __pyx_v_size));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(3, 31, __pyx_L1_error)
+    __PYX_ERR(3, 30, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_utils.pxd":28
+  /* "graphsaint/cython_utils.pxd":27
  *     cdef void set_data(self,vector[int]& data)
  * 
  * cdef inline void npy2vec_int(np.ndarray[int,ndim=1,mode='c'] nda, vector[int]& vec):             # <<<<<<<<<<<<<<
@@ -5526,7 +5524,7 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_int(PyArra
   __pyx_L2:;
 }
 
-/* "graphsaint/cython_utils.pxd":33
+/* "graphsaint/cython_utils.pxd":32
  *     vec.assign(vec_c,vec_c+size)
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):             # <<<<<<<<<<<<<<
@@ -5551,21 +5549,21 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyAr
   __pyx_pybuffernd_nda.rcbuffer = &__pyx_pybuffer_nda;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 33, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_nda.rcbuffer->pybuffer, (PyObject*)__pyx_v_nda, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 32, __pyx_L1_error)
   }
   __pyx_pybuffernd_nda.diminfo[0].strides = __pyx_pybuffernd_nda.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_nda.diminfo[0].shape = __pyx_pybuffernd_nda.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_utils.pxd":34
+  /* "graphsaint/cython_utils.pxd":33
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):
  *     cdef int size = nda.size             # <<<<<<<<<<<<<<
  *     cdef float* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)
  */
-  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(3, 34, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5numpy_7ndarray_4size_size(((PyArrayObject *)__pyx_v_nda)); if (unlikely(__pyx_t_1 == ((npy_intp)-1) && PyErr_Occurred())) __PYX_ERR(3, 33, __pyx_L1_error)
   __pyx_v_size = __pyx_t_1;
 
-  /* "graphsaint/cython_utils.pxd":35
+  /* "graphsaint/cython_utils.pxd":34
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):
  *     cdef int size = nda.size
  *     cdef float* vec_c = &(nda[0])             # <<<<<<<<<<<<<<
@@ -5580,11 +5578,11 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyAr
   } else if (unlikely(__pyx_t_2 >= __pyx_pybuffernd_nda.diminfo[0].shape)) __pyx_t_3 = 0;
   if (unlikely(__pyx_t_3 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_3);
-    __PYX_ERR(3, 35, __pyx_L1_error)
+    __PYX_ERR(3, 34, __pyx_L1_error)
   }
   __pyx_v_vec_c = (&(*__Pyx_BufPtrCContig1d(float *, __pyx_pybuffernd_nda.rcbuffer->pybuffer.buf, __pyx_t_2, __pyx_pybuffernd_nda.diminfo[0].strides)));
 
-  /* "graphsaint/cython_utils.pxd":36
+  /* "graphsaint/cython_utils.pxd":35
  *     cdef int size = nda.size
  *     cdef float* vec_c = &(nda[0])
  *     vec.assign(vec_c,vec_c+size)             # <<<<<<<<<<<<<<
@@ -5594,10 +5592,10 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyAr
     __pyx_v_vec.assign(__pyx_v_vec_c, (__pyx_v_vec_c + __pyx_v_size));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(3, 36, __pyx_L1_error)
+    __PYX_ERR(3, 35, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_utils.pxd":33
+  /* "graphsaint/cython_utils.pxd":32
  *     vec.assign(vec_c,vec_c+size)
  * 
  * cdef inline void npy2vec_float(np.ndarray[float,ndim=1,mode='c'] nda, vector[float]& vec):             # <<<<<<<<<<<<<<
@@ -5621,7 +5619,7 @@ static CYTHON_INLINE void __pyx_f_10graphsaint_12cython_utils_npy2vec_float(PyAr
   __pyx_L2:;
 }
 
-/* "graphsaint/cython_sampler.pyx":41
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":40
  *     cdef vector[vector[int]] ret_edge_index
  * 
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -5684,7 +5682,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -5692,9 +5690,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 1); __PYX_ERR(0, 41, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 1); __PYX_ERR(0, 40, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -5702,9 +5700,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 2); __PYX_ERR(0, 41, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 2); __PYX_ERR(0, 40, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -5712,9 +5710,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 3); __PYX_ERR(0, 41, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 3); __PYX_ERR(0, 40, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -5722,15 +5720,15 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 4); __PYX_ERR(0, 41, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, 4); __PYX_ERR(0, 40, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
         const Py_ssize_t used_pos_args = (kwd_pos_args < 5) ? kwd_pos_args : 5;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 41, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 40, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs < 5)) {
       goto __pyx_L5_argtuple_error;
@@ -5744,12 +5742,12 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, __pyx_nargs); __PYX_ERR(0, 41, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 5, 5, __pyx_nargs); __PYX_ERR(0, 40, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5760,13 +5758,13 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_1
     }
   }
   __Pyx_DECREF(__pyx_v_argv); __pyx_v_argv = 0;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 41, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 42, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 41, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 42, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_argv);
 
   /* function exit code */
@@ -5812,48 +5810,48 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   __pyx_pybuffernd_node_train.rcbuffer = &__pyx_pybuffer_node_train;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 40, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 40, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 40, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":45
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":44
  *                         np.ndarray[int,ndim=1,mode='c'] node_train,
  *                         int num_proc, int num_sample_per_proc,*argv):
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indptr), __pyx_v_self->adj_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indptr), __pyx_v_self->adj_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":46
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":45
  *                         int num_proc, int num_sample_per_proc,*argv):
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  *         self.num_proc = num_proc
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indices), __pyx_v_self->adj_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_adj_indices), __pyx_v_self->adj_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":47
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":46
  *         cutils.npy2vec_int(adj_indptr,self.adj_indptr_vec)
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)
  *         cutils.npy2vec_int(node_train,self.node_train_vec)             # <<<<<<<<<<<<<<
  *         self.num_proc = num_proc
  *         self.num_sample_per_proc = num_sample_per_proc
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_node_train), __pyx_v_self->node_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_node_train), __pyx_v_self->node_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":48
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":47
  *         cutils.npy2vec_int(adj_indices,self.adj_indices_vec)
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  *         self.num_proc = num_proc             # <<<<<<<<<<<<<<
@@ -5862,7 +5860,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_v_self->num_proc = __pyx_v_num_proc;
 
-  /* "graphsaint/cython_sampler.pyx":49
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":48
  *         cutils.npy2vec_int(node_train,self.node_train_vec)
  *         self.num_proc = num_proc
  *         self.num_sample_per_proc = num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -5871,7 +5869,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
  */
   __pyx_v_self->num_sample_per_proc = __pyx_v_num_sample_per_proc;
 
-  /* "graphsaint/cython_sampler.pyx":50
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":49
  *         self.num_proc = num_proc
  *         self.num_sample_per_proc = num_sample_per_proc
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5882,11 +5880,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_1 = std::vector<std::vector<int> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 50, __pyx_L1_error)
+    __PYX_ERR(0, 49, __pyx_L1_error)
   }
   __pyx_v_self->node_sampled = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "graphsaint/cython_sampler.pyx":51
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":50
  *         self.num_sample_per_proc = num_sample_per_proc
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5897,11 +5895,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_1 = std::vector<std::vector<int> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 51, __pyx_L1_error)
+    __PYX_ERR(0, 50, __pyx_L1_error)
   }
   __pyx_v_self->ret_indptr = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "graphsaint/cython_sampler.pyx":52
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":51
  *         self.node_sampled = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5912,11 +5910,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_1 = std::vector<std::vector<int> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 52, __pyx_L1_error)
+    __PYX_ERR(0, 51, __pyx_L1_error)
   }
   __pyx_v_self->ret_indices = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "graphsaint/cython_sampler.pyx":53
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":52
  *         self.ret_indptr = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5927,11 +5925,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_1 = std::vector<std::vector<int> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 53, __pyx_L1_error)
+    __PYX_ERR(0, 52, __pyx_L1_error)
   }
   __pyx_v_self->ret_indices_orig = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "graphsaint/cython_sampler.pyx":54
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":53
  *         self.ret_indices = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_data = vector[vector[float]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5942,11 +5940,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_2 = std::vector<std::vector<float> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 54, __pyx_L1_error)
+    __PYX_ERR(0, 53, __pyx_L1_error)
   }
   __pyx_v_self->ret_data = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2);
 
-  /* "graphsaint/cython_sampler.pyx":55
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":54
  *         self.ret_indices_orig = vector[vector[int]](num_proc*num_sample_per_proc)
  *         self.ret_data = vector[vector[float]](num_proc*num_sample_per_proc)
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)             # <<<<<<<<<<<<<<
@@ -5957,11 +5955,11 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __pyx_t_1 = std::vector<std::vector<int> > ((__pyx_v_num_proc * __pyx_v_num_sample_per_proc));
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 55, __pyx_L1_error)
+    __PYX_ERR(0, 54, __pyx_L1_error)
   }
   __pyx_v_self->ret_edge_index = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_1);
 
-  /* "graphsaint/cython_sampler.pyx":41
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":40
  *     cdef vector[vector[int]] ret_edge_index
  * 
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -5981,7 +5979,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -5992,7 +5990,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler__
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":57
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":56
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)
  * 
  *     cdef void adj_extract(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -6023,7 +6021,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":62
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":61
  *         ret_indices_orig:   the indices vector corresponding to node id in original G.
  *         """
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -6032,7 +6030,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":63
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":62
  *         """
  *         cdef int r = 0
  *         cdef int idx_g = 0             # <<<<<<<<<<<<<<
@@ -6041,7 +6039,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_idx_g = 0;
 
-  /* "graphsaint/cython_sampler.pyx":69
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":68
  *         cdef vector[int] _arr_bit
  *         cdef int cumsum
  *         num_v_orig = self.adj_indptr_vec.size()-1             # <<<<<<<<<<<<<<
@@ -6050,7 +6048,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
   __pyx_v_num_v_orig = (__pyx_v_self->adj_indptr_vec.size() - 1);
 
-  /* "graphsaint/cython_sampler.pyx":70
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":69
  *         cdef int cumsum
  *         num_v_orig = self.adj_indptr_vec.size()-1
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -6061,7 +6059,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":71
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":70
  *         num_v_orig = self.adj_indptr_vec.size()-1
  *         while r < self.num_sample_per_proc:
  *             _arr_bit = vector[int](num_v_orig,-1)             # <<<<<<<<<<<<<<
@@ -6078,11 +6076,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 71, __pyx_L1_error)
+      __PYX_ERR(0, 70, __pyx_L1_error)
     }
     __pyx_v__arr_bit = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2);
 
-    /* "graphsaint/cython_sampler.pyx":72
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":71
  *         while r < self.num_sample_per_proc:
  *             _arr_bit = vector[int](num_v_orig,-1)
  *             idx_g = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -6091,7 +6089,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_idx_g = ((__pyx_v_p * __pyx_v_self->num_sample_per_proc) + __pyx_v_r);
 
-    /* "graphsaint/cython_sampler.pyx":73
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":72
  *             _arr_bit = vector[int](num_v_orig,-1)
  *             idx_g = p*self.num_sample_per_proc+r
  *             num_v_sub = self.node_sampled[idx_g].size()             # <<<<<<<<<<<<<<
@@ -6100,7 +6098,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_num_v_sub = (__pyx_v_self->node_sampled[__pyx_v_idx_g]).size();
 
-    /* "graphsaint/cython_sampler.pyx":74
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":73
  *             idx_g = p*self.num_sample_per_proc+r
  *             num_v_sub = self.node_sampled[idx_g].size()
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)             # <<<<<<<<<<<<<<
@@ -6117,11 +6115,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 74, __pyx_L1_error)
+      __PYX_ERR(0, 73, __pyx_L1_error)
     }
     (__pyx_v_self->ret_indptr[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "graphsaint/cython_sampler.pyx":75
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":74
  *             num_v_sub = self.node_sampled[idx_g].size()
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)
  *             self.ret_indices[idx_g] = vector[int]()             # <<<<<<<<<<<<<<
@@ -6138,11 +6136,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 75, __pyx_L1_error)
+      __PYX_ERR(0, 74, __pyx_L1_error)
     }
     (__pyx_v_self->ret_indices[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "graphsaint/cython_sampler.pyx":76
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":75
  *             self.ret_indptr[idx_g] = vector[int](num_v_sub+1,0)
  *             self.ret_indices[idx_g] = vector[int]()
  *             self.ret_indices_orig[idx_g] = vector[int]()             # <<<<<<<<<<<<<<
@@ -6159,11 +6157,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 76, __pyx_L1_error)
+      __PYX_ERR(0, 75, __pyx_L1_error)
     }
     (__pyx_v_self->ret_indices_orig[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "graphsaint/cython_sampler.pyx":77
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":76
  *             self.ret_indices[idx_g] = vector[int]()
  *             self.ret_indices_orig[idx_g] = vector[int]()
  *             self.ret_data[idx_g] = vector[float]()             # <<<<<<<<<<<<<<
@@ -6180,11 +6178,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 77, __pyx_L1_error)
+      __PYX_ERR(0, 76, __pyx_L1_error)
     }
     (__pyx_v_self->ret_data[__pyx_v_idx_g]) = __pyx_t_3;
 
-    /* "graphsaint/cython_sampler.pyx":78
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":77
  *             self.ret_indices_orig[idx_g] = vector[int]()
  *             self.ret_data[idx_g] = vector[float]()
  *             self.ret_edge_index[idx_g]=vector[int]()             # <<<<<<<<<<<<<<
@@ -6201,11 +6199,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 78, __pyx_L1_error)
+      __PYX_ERR(0, 77, __pyx_L1_error)
     }
     (__pyx_v_self->ret_edge_index[__pyx_v_idx_g]) = __pyx_t_2;
 
-    /* "graphsaint/cython_sampler.pyx":79
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":78
  *             self.ret_data[idx_g] = vector[float]()
  *             self.ret_edge_index[idx_g]=vector[int]()
  *             i_end = num_v_sub             # <<<<<<<<<<<<<<
@@ -6214,7 +6212,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i_end = __pyx_v_num_v_sub;
 
-    /* "graphsaint/cython_sampler.pyx":80
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":79
  *             self.ret_edge_index[idx_g]=vector[int]()
  *             i_end = num_v_sub
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6223,7 +6221,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":81
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":80
  *             i_end = num_v_sub
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6234,7 +6232,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":82
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":81
  *             i = 0
  *             while i < i_end:
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i             # <<<<<<<<<<<<<<
@@ -6243,7 +6241,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       (__pyx_v__arr_bit[((__pyx_v_self->node_sampled[__pyx_v_idx_g])[__pyx_v_i])]) = __pyx_v_i;
 
-      /* "graphsaint/cython_sampler.pyx":83
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":82
  *             while i < i_end:
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6253,7 +6251,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":84
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":83
  *                 _arr_bit[self.node_sampled[idx_g][i]] = i
  *                 i = i + 1
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6262,7 +6260,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":85
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":84
  *                 i = i + 1
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6273,7 +6271,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":86
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":85
  *             i = 0
  *             while i < i_end:
  *                 v = self.node_sampled[idx_g][i]             # <<<<<<<<<<<<<<
@@ -6282,7 +6280,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_v = ((__pyx_v_self->node_sampled[__pyx_v_idx_g])[__pyx_v_i]);
 
-      /* "graphsaint/cython_sampler.pyx":87
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":86
  *             while i < i_end:
  *                 v = self.node_sampled[idx_g][i]
  *                 start_neigh = self.adj_indptr_vec[v]             # <<<<<<<<<<<<<<
@@ -6291,7 +6289,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_start_neigh = (__pyx_v_self->adj_indptr_vec[__pyx_v_v]);
 
-      /* "graphsaint/cython_sampler.pyx":88
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":87
  *                 v = self.node_sampled[idx_g][i]
  *                 start_neigh = self.adj_indptr_vec[v]
  *                 end_neigh = self.adj_indptr_vec[v+1]             # <<<<<<<<<<<<<<
@@ -6300,7 +6298,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_end_neigh = (__pyx_v_self->adj_indptr_vec[(__pyx_v_v + 1)]);
 
-      /* "graphsaint/cython_sampler.pyx":89
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":88
  *                 start_neigh = self.adj_indptr_vec[v]
  *                 end_neigh = self.adj_indptr_vec[v+1]
  *                 j = start_neigh             # <<<<<<<<<<<<<<
@@ -6309,7 +6307,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_j = __pyx_v_start_neigh;
 
-      /* "graphsaint/cython_sampler.pyx":90
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":89
  *                 end_neigh = self.adj_indptr_vec[v+1]
  *                 j = start_neigh
  *                 while j < end_neigh:             # <<<<<<<<<<<<<<
@@ -6320,7 +6318,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_t_1 = (__pyx_v_j < __pyx_v_end_neigh);
         if (!__pyx_t_1) break;
 
-        /* "graphsaint/cython_sampler.pyx":91
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":90
  *                 j = start_neigh
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:             # <<<<<<<<<<<<<<
@@ -6330,7 +6328,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_t_1 = ((__pyx_v__arr_bit[(__pyx_v_self->adj_indices_vec[__pyx_v_j])]) > -1L);
         if (__pyx_t_1) {
 
-          /* "graphsaint/cython_sampler.pyx":92
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":91
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])             # <<<<<<<<<<<<<<
@@ -6347,10 +6345,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 92, __pyx_L1_error)
+            __PYX_ERR(0, 91, __pyx_L1_error)
           }
 
-          /* "graphsaint/cython_sampler.pyx":93
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":92
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])             # <<<<<<<<<<<<<<
@@ -6367,10 +6365,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 93, __pyx_L1_error)
+            __PYX_ERR(0, 92, __pyx_L1_error)
           }
 
-          /* "graphsaint/cython_sampler.pyx":94
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":93
  *                         self.ret_indices[idx_g].push_back(_arr_bit[self.adj_indices_vec[j]])
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])
  *                         self.ret_edge_index[idx_g].push_back(j)             # <<<<<<<<<<<<<<
@@ -6387,10 +6385,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 94, __pyx_L1_error)
+            __PYX_ERR(0, 93, __pyx_L1_error)
           }
 
-          /* "graphsaint/cython_sampler.pyx":95
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":94
  *                         self.ret_indices_orig[idx_g].push_back(self.adj_indices_vec[j])
  *                         self.ret_edge_index[idx_g].push_back(j)
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1             # <<<<<<<<<<<<<<
@@ -6399,7 +6397,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
           ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[((__pyx_v__arr_bit[__pyx_v_v]) + 1)]) = (((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[((__pyx_v__arr_bit[__pyx_v_v]) + 1)]) + 1);
 
-          /* "graphsaint/cython_sampler.pyx":96
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":95
  *                         self.ret_edge_index[idx_g].push_back(j)
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1
  *                         self.ret_data[idx_g].push_back(1.)             # <<<<<<<<<<<<<<
@@ -6416,10 +6414,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 96, __pyx_L1_error)
+            __PYX_ERR(0, 95, __pyx_L1_error)
           }
 
-          /* "graphsaint/cython_sampler.pyx":91
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":90
  *                 j = start_neigh
  *                 while j < end_neigh:
  *                     if _arr_bit[self.adj_indices_vec[j]] > -1:             # <<<<<<<<<<<<<<
@@ -6428,7 +6426,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
         }
 
-        /* "graphsaint/cython_sampler.pyx":97
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":96
  *                         self.ret_indptr[idx_g][_arr_bit[v]+1] = self.ret_indptr[idx_g][_arr_bit[v]+1] + 1
  *                         self.ret_data[idx_g].push_back(1.)
  *                     j = j + 1             # <<<<<<<<<<<<<<
@@ -6438,7 +6436,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
         __pyx_v_j = (__pyx_v_j + 1);
       }
 
-      /* "graphsaint/cython_sampler.pyx":98
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":97
  *                         self.ret_data[idx_g].push_back(1.)
  *                     j = j + 1
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6448,7 +6446,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":99
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":98
  *                     j = j + 1
  *                 i = i + 1
  *             cumsum = self.ret_indptr[idx_g][0]             # <<<<<<<<<<<<<<
@@ -6457,7 +6455,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_cumsum = ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[0]);
 
-    /* "graphsaint/cython_sampler.pyx":100
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":99
  *                 i = i + 1
  *             cumsum = self.ret_indptr[idx_g][0]
  *             i = 0             # <<<<<<<<<<<<<<
@@ -6466,7 +6464,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":101
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":100
  *             cumsum = self.ret_indptr[idx_g][0]
  *             i = 0
  *             while i < i_end:             # <<<<<<<<<<<<<<
@@ -6477,7 +6475,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_t_1 = (__pyx_v_i < __pyx_v_i_end);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":102
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":101
  *             i = 0
  *             while i < i_end:
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]             # <<<<<<<<<<<<<<
@@ -6486,7 +6484,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       __pyx_v_cumsum = (__pyx_v_cumsum + ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[(__pyx_v_i + 1)]));
 
-      /* "graphsaint/cython_sampler.pyx":103
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":102
  *             while i < i_end:
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]
  *                 self.ret_indptr[idx_g][i+1] = cumsum             # <<<<<<<<<<<<<<
@@ -6495,7 +6493,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
  */
       ((__pyx_v_self->ret_indptr[__pyx_v_idx_g])[(__pyx_v_i + 1)]) = __pyx_v_cumsum;
 
-      /* "graphsaint/cython_sampler.pyx":104
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":103
  *                 cumsum = cumsum + self.ret_indptr[idx_g][i+1]
  *                 self.ret_indptr[idx_g][i+1] = cumsum
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -6505,7 +6503,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":105
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":104
  *                 self.ret_indptr[idx_g][i+1] = cumsum
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -6515,7 +6513,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "graphsaint/cython_sampler.pyx":57
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":56
  *         self.ret_edge_index = vector[vector[int]](num_proc*num_sample_per_proc)
  * 
  *     cdef void adj_extract(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -6529,14 +6527,14 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_a
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.adj_extract", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.adj_extract", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
   __pyx_L0:;
 }
 
-/* "graphsaint/cython_sampler.pyx":107
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":106
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -6637,7 +6635,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_return", 1);
 
-  /* "graphsaint/cython_sampler.pyx":118
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":117
  *             see outputs of the `par_sample()` function.
  *         """
  *         num_subg = self.num_proc*self.num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -6646,151 +6644,151 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v_num_subg = (__pyx_v_self->num_proc * __pyx_v_self->num_sample_per_proc);
 
-  /* "graphsaint/cython_sampler.pyx":119
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":118
  *         """
  *         num_subg = self.num_proc*self.num_sample_per_proc
  *         l_subg_indptr = []             # <<<<<<<<<<<<<<
  *         l_subg_indices = []
  *         l_subg_data = []
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_l_subg_indptr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":120
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":119
  *         num_subg = self.num_proc*self.num_sample_per_proc
  *         l_subg_indptr = []
  *         l_subg_indices = []             # <<<<<<<<<<<<<<
  *         l_subg_data = []
  *         l_subg_nodes = []
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_l_subg_indices = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":121
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":120
  *         l_subg_indptr = []
  *         l_subg_indices = []
  *         l_subg_data = []             # <<<<<<<<<<<<<<
  *         l_subg_nodes = []
  *         l_subg_edge_index = []
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_l_subg_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":122
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":121
  *         l_subg_indices = []
  *         l_subg_data = []
  *         l_subg_nodes = []             # <<<<<<<<<<<<<<
  *         l_subg_edge_index = []
  *         offset_nodes = [0]
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_l_subg_nodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":123
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":122
  *         l_subg_data = []
  *         l_subg_nodes = []
  *         l_subg_edge_index = []             # <<<<<<<<<<<<<<
  *         offset_nodes = [0]
  *         offset_indptr = [0]
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_l_subg_edge_index = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":124
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":123
  *         l_subg_nodes = []
  *         l_subg_edge_index = []
  *         offset_nodes = [0]             # <<<<<<<<<<<<<<
  *         offset_indptr = [0]
  *         offset_indices = [0]
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 124, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 123, __pyx_L1_error);
   __pyx_v_offset_nodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":125
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":124
  *         l_subg_edge_index = []
  *         offset_nodes = [0]
  *         offset_indptr = [0]             # <<<<<<<<<<<<<<
  *         offset_indices = [0]
  *         offset_data = [0]
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 125, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 124, __pyx_L1_error);
   __pyx_v_offset_indptr = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":126
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":125
  *         offset_nodes = [0]
  *         offset_indptr = [0]
  *         offset_indices = [0]             # <<<<<<<<<<<<<<
  *         offset_data = [0]
  *         offset_edge_index = [0]
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 126, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 125, __pyx_L1_error);
   __pyx_v_offset_indices = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":127
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":126
  *         offset_indptr = [0]
  *         offset_indices = [0]
  *         offset_data = [0]             # <<<<<<<<<<<<<<
  *         offset_edge_index = [0]
  *         for r in range(num_subg):
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 127, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 126, __pyx_L1_error);
   __pyx_v_offset_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":128
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":127
  *         offset_indices = [0]
  *         offset_data = [0]
  *         offset_edge_index = [0]             # <<<<<<<<<<<<<<
  *         for r in range(num_subg):
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 128, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_int_0)) __PYX_ERR(0, 127, __pyx_L1_error);
   __pyx_v_offset_edge_index = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":129
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":128
  *         offset_data = [0]
  *         offset_edge_index = [0]
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
@@ -6798,9 +6796,9 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 128, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -6809,28 +6807,28 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 128, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 128, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 128, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 128, __pyx_L1_error)
         #else
-        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -6840,7 +6838,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 129, __pyx_L1_error)
+          else __PYX_ERR(0, 128, __pyx_L1_error)
         }
         break;
       }
@@ -6849,102 +6847,102 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":130
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":129
  *         offset_edge_index = [0]
  *         for r in range(num_subg):
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())             # <<<<<<<<<<<<<<
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->node_sampled[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->node_sampled[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_nodes, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_nodes, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":131
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":130
  *         for r in range(num_subg):
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())             # <<<<<<<<<<<<<<
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_indptr[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_indptr[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = PyNumber_Add(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Add(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":132
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":131
  *             offset_nodes.append(offset_nodes[r]+self.node_sampled[r].size())
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())             # <<<<<<<<<<<<<<
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 132, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_indices[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_indices[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":133
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":132
  *             offset_indptr.append(offset_indptr[r]+self.ret_indptr[r].size())
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())             # <<<<<<<<<<<<<<
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_data[__pyx_t_9]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_data[__pyx_t_9]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = PyNumber_Add(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Add(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_data, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_data, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":134
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":133
  *             offset_indices.append(offset_indices[r]+self.ret_indices[r].size())
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())             # <<<<<<<<<<<<<<
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  *         cdef vector[int] ret_indptr_vec = vector[int]()
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_edge_index, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_edge_index, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_edge_index[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_FromSize_t((__pyx_v_self->ret_edge_index[__pyx_t_5]).size()); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_edge_index, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_offset_edge_index, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 133, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":129
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":128
  *         offset_data = [0]
  *         offset_edge_index = [0]
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -6954,7 +6952,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":135
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":134
  *             offset_data.append(offset_data[r]+self.ret_data[r].size())
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  *         cdef vector[int] ret_nodes_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -6965,11 +6963,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_10 = std::vector<int> ();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 135, __pyx_L1_error)
+    __PYX_ERR(0, 134, __pyx_L1_error)
   }
   __pyx_v_ret_nodes_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "graphsaint/cython_sampler.pyx":136
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":135
  *             offset_edge_index.append(offset_edge_index[r]+self.ret_edge_index[r].size())
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  *         cdef vector[int] ret_indptr_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -6980,11 +6978,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_10 = std::vector<int> ();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 136, __pyx_L1_error)
+    __PYX_ERR(0, 135, __pyx_L1_error)
   }
   __pyx_v_ret_indptr_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "graphsaint/cython_sampler.pyx":137
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":136
  *         cdef vector[int] ret_nodes_vec = vector[int]()
  *         cdef vector[int] ret_indptr_vec = vector[int]()
  *         cdef vector[int] ret_indices_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -6995,11 +6993,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_10 = std::vector<int> ();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 137, __pyx_L1_error)
+    __PYX_ERR(0, 136, __pyx_L1_error)
   }
   __pyx_v_ret_indices_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "graphsaint/cython_sampler.pyx":138
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":137
  *         cdef vector[int] ret_indptr_vec = vector[int]()
  *         cdef vector[int] ret_indices_vec = vector[int]()
  *         cdef vector[int] ret_edge_index_vec = vector[int]()             # <<<<<<<<<<<<<<
@@ -7010,11 +7008,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_10 = std::vector<int> ();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 138, __pyx_L1_error)
+    __PYX_ERR(0, 137, __pyx_L1_error)
   }
   __pyx_v_ret_edge_index_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_10);
 
-  /* "graphsaint/cython_sampler.pyx":139
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":138
  *         cdef vector[int] ret_indices_vec = vector[int]()
  *         cdef vector[int] ret_edge_index_vec = vector[int]()
  *         cdef vector[float] ret_data_vec = vector[float]()             # <<<<<<<<<<<<<<
@@ -7025,110 +7023,110 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_11 = std::vector<float> ();
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 139, __pyx_L1_error)
+    __PYX_ERR(0, 138, __pyx_L1_error)
   }
   __pyx_v_ret_data_vec = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_11);
 
-  /* "graphsaint/cython_sampler.pyx":140
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":139
  *         cdef vector[int] ret_edge_index_vec = vector[int]()
  *         cdef vector[float] ret_data_vec = vector[float]()
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])             # <<<<<<<<<<<<<<
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_nodes, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_nodes, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_ret_nodes_vec.reserve(__pyx_t_12);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 140, __pyx_L1_error)
+    __PYX_ERR(0, 139, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":141
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":140
  *         cdef vector[float] ret_data_vec = vector[float]()
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])             # <<<<<<<<<<<<<<
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  *         ret_data_vec.reserve(offset_data[num_subg])
  */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_indptr, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_indptr, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_ret_indptr_vec.reserve(__pyx_t_12);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 141, __pyx_L1_error)
+    __PYX_ERR(0, 140, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":142
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":141
  *         ret_nodes_vec.reserve(offset_nodes[num_subg])
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])
  *         ret_indices_vec.reserve(offset_indices[num_subg])             # <<<<<<<<<<<<<<
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_indices, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_indices, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_ret_indices_vec.reserve(__pyx_t_12);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 142, __pyx_L1_error)
+    __PYX_ERR(0, 141, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":143
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":142
  *         ret_indptr_vec.reserve(offset_indptr[num_subg])
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  *         ret_data_vec.reserve(offset_data[num_subg])             # <<<<<<<<<<<<<<
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):
  */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_data, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_data, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_13 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_13 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_13 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_ret_data_vec.reserve(__pyx_t_13);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 143, __pyx_L1_error)
+    __PYX_ERR(0, 142, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":144
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":143
  *         ret_indices_vec.reserve(offset_indices[num_subg])
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])             # <<<<<<<<<<<<<<
  *         for r in range(num_subg):
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_edge_index, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_offset_edge_index, __pyx_v_num_subg, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_12 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_ret_edge_index_vec.reserve(__pyx_t_12);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 144, __pyx_L1_error)
+    __PYX_ERR(0, 143, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":145
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":144
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
@@ -7136,9 +7134,9 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 144, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   for (;;) {
@@ -7147,28 +7145,28 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 144, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 144, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -7178,7 +7176,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 145, __pyx_L1_error)
+          else __PYX_ERR(0, 144, __pyx_L1_error)
         }
         break;
       }
@@ -7187,87 +7185,87 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":146
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":145
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())             # <<<<<<<<<<<<<<
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  */
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
-    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L1_error)
     try {
       __pyx_v_ret_nodes_vec.insert(__pyx_v_ret_nodes_vec.end(), (__pyx_v_self->node_sampled[__pyx_t_5]).begin(), (__pyx_v_self->node_sampled[__pyx_t_14]).end());
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 146, __pyx_L1_error)
+      __PYX_ERR(0, 145, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":147
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":146
  *         for r in range(num_subg):
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())             # <<<<<<<<<<<<<<
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())
  */
-    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
     try {
       __pyx_v_ret_indptr_vec.insert(__pyx_v_ret_indptr_vec.end(), (__pyx_v_self->ret_indptr[__pyx_t_14]).begin(), (__pyx_v_self->ret_indptr[__pyx_t_5]).end());
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 147, __pyx_L1_error)
+      __PYX_ERR(0, 146, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":148
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":147
  *             ret_nodes_vec.insert(ret_nodes_vec.end(),self.node_sampled[r].begin(),self.node_sampled[r].end())
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())             # <<<<<<<<<<<<<<
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())
  */
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
-    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
     try {
       __pyx_v_ret_indices_vec.insert(__pyx_v_ret_indices_vec.end(), (__pyx_v_self->ret_indices[__pyx_t_5]).begin(), (__pyx_v_self->ret_indices[__pyx_t_14]).end());
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 148, __pyx_L1_error)
+      __PYX_ERR(0, 147, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":149
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":148
  *             ret_indptr_vec.insert(ret_indptr_vec.end(),self.ret_indptr[r].begin(),self.ret_indptr[r].end())
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())             # <<<<<<<<<<<<<<
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())
  * 
  */
-    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_14 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
     try {
       __pyx_v_ret_edge_index_vec.insert(__pyx_v_ret_edge_index_vec.end(), (__pyx_v_self->ret_edge_index[__pyx_t_14]).begin(), (__pyx_v_self->ret_edge_index[__pyx_t_5]).end());
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 149, __pyx_L1_error)
+      __PYX_ERR(0, 148, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":150
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":149
  *             ret_indices_vec.insert(ret_indices_vec.end(),self.ret_indices[r].begin(),self.ret_indices[r].end())
  *             ret_edge_index_vec.insert(ret_edge_index_vec.end(),self.ret_edge_index[r].begin(),self.ret_edge_index[r].end())
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())             # <<<<<<<<<<<<<<
  * 
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()
  */
-    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
-    __pyx_t_15 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_15 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_9 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyInt_As_size_t(__pyx_v_r); if (unlikely((__pyx_t_15 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
     try {
       __pyx_v_ret_data_vec.insert(__pyx_v_ret_data_vec.end(), (__pyx_v_self->ret_data[__pyx_t_9]).begin(), (__pyx_v_self->ret_data[__pyx_t_15]).end());
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 150, __pyx_L1_error)
+      __PYX_ERR(0, 149, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":145
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":144
  *         ret_data_vec.reserve(offset_data[num_subg])
  *         ret_edge_index_vec.reserve(offset_edge_index[num_subg])
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7277,102 +7275,102 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":152
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":151
  *             ret_data_vec.insert(ret_data_vec.end(),self.ret_data[r].begin(),self.ret_data[r].end())
  * 
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wint_indptr = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":153
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":152
  * 
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wint_indices = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":154
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":153
  *         cdef cutils.array_wrapper_int wint_indptr = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wint_nodes = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":155
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":154
  *         cdef cutils.array_wrapper_int wint_indices = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()             # <<<<<<<<<<<<<<
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wfloat_data = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":156
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":155
  *         cdef cutils.array_wrapper_int wint_nodes = cutils.array_wrapper_int()
  *         cdef cutils.array_wrapper_float wfloat_data = cutils.array_wrapper_float()
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()             # <<<<<<<<<<<<<<
  * 
  *         wint_indptr.set_data(ret_indptr_vec)
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wint_edge_index = ((struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":158
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":157
  *         cdef cutils.array_wrapper_int wint_edge_index = cutils.array_wrapper_int()
  * 
  *         wint_indptr.set_data(ret_indptr_vec)             # <<<<<<<<<<<<<<
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)
  *         wint_indices.set_data(ret_indices_vec)
  */
-  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indptr->__pyx_vtab)->set_data(__pyx_v_wint_indptr, __pyx_v_ret_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indptr->__pyx_vtab)->set_data(__pyx_v_wint_indptr, __pyx_v_ret_indptr_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 157, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":159
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":158
  * 
  *         wint_indptr.set_data(ret_indptr_vec)
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)             # <<<<<<<<<<<<<<
  *         wint_indices.set_data(ret_indices_vec)
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF((PyObject *)__pyx_v_wint_indptr);
   __Pyx_GIVEREF((PyObject *)__pyx_v_wint_indptr);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_v_wint_indptr))) __PYX_ERR(0, 159, __pyx_L1_error);
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_v_wint_indptr))) __PYX_ERR(0, 158, __pyx_L1_error);
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int32); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int32); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_dtype, __pyx_t_16) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_dtype, __pyx_t_16) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-  __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7380,42 +7378,42 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_indptr_np = __pyx_t_16;
   __pyx_t_16 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":160
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":159
  *         wint_indptr.set_data(ret_indptr_vec)
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)
  *         wint_indices.set_data(ret_indices_vec)             # <<<<<<<<<<<<<<
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  *         wint_nodes.set_data(ret_nodes_vec)
  */
-  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indices->__pyx_vtab)->set_data(__pyx_v_wint_indices, __pyx_v_ret_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 160, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_indices->__pyx_vtab)->set_data(__pyx_v_wint_indices, __pyx_v_ret_indices_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":161
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":160
  *         ret_indptr_np = np.frombuffer(wint_indptr,dtype=np.int32)
  *         wint_indices.set_data(ret_indices_vec)
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)             # <<<<<<<<<<<<<<
  *         wint_nodes.set_data(ret_nodes_vec)
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-  __pyx_t_16 = PyTuple_New(1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_16 = PyTuple_New(1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_INCREF((PyObject *)__pyx_v_wint_indices);
   __Pyx_GIVEREF((PyObject *)__pyx_v_wint_indices);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_16, 0, ((PyObject *)__pyx_v_wint_indices))) __PYX_ERR(0, 161, __pyx_L1_error);
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_16, 0, ((PyObject *)__pyx_v_wint_indices))) __PYX_ERR(0, 160, __pyx_L1_error);
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_int32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_int32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_16, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_16, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -7423,42 +7421,42 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_indices_np = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":162
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":161
  *         wint_indices.set_data(ret_indices_vec)
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  *         wint_nodes.set_data(ret_nodes_vec)             # <<<<<<<<<<<<<<
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  *         wfloat_data.set_data(ret_data_vec)
  */
-  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_nodes->__pyx_vtab)->set_data(__pyx_v_wint_nodes, __pyx_v_ret_nodes_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 162, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_nodes->__pyx_vtab)->set_data(__pyx_v_wint_nodes, __pyx_v_ret_nodes_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":163
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":162
  *         ret_indices_np = np.frombuffer(wint_indices,dtype=np.int32)
  *         wint_nodes.set_data(ret_nodes_vec)
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)             # <<<<<<<<<<<<<<
  *         wfloat_data.set_data(ret_data_vec)
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF((PyObject *)__pyx_v_wint_nodes);
   __Pyx_GIVEREF((PyObject *)__pyx_v_wint_nodes);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_v_wint_nodes))) __PYX_ERR(0, 163, __pyx_L1_error);
-  __pyx_t_16 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_v_wint_nodes))) __PYX_ERR(0, 162, __pyx_L1_error);
+  __pyx_t_16 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_int32); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_int32); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_16, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_16, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_16); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_16); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -7466,42 +7464,42 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_nodes_np = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":164
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":163
  *         wint_nodes.set_data(ret_nodes_vec)
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  *         wfloat_data.set_data(ret_data_vec)             # <<<<<<<<<<<<<<
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  *         wint_edge_index.set_data(ret_edge_index_vec)
  */
-  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float *)__pyx_v_wfloat_data->__pyx_vtab)->set_data(__pyx_v_wfloat_data, __pyx_v_ret_data_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float *)__pyx_v_wfloat_data->__pyx_vtab)->set_data(__pyx_v_wfloat_data, __pyx_v_ret_data_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":165
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":164
  *         ret_nodes_np = np.frombuffer(wint_nodes,dtype=np.int32)
  *         wfloat_data.set_data(ret_data_vec)
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)             # <<<<<<<<<<<<<<
  *         wint_edge_index.set_data(ret_edge_index_vec)
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_INCREF((PyObject *)__pyx_v_wfloat_data);
   __Pyx_GIVEREF((PyObject *)__pyx_v_wfloat_data);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, ((PyObject *)__pyx_v_wfloat_data))) __PYX_ERR(0, 165, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, ((PyObject *)__pyx_v_wfloat_data))) __PYX_ERR(0, 164, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_float32); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_float32); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(0, 165, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -7509,42 +7507,42 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_data_np = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":166
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":165
  *         wfloat_data.set_data(ret_data_vec)
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  *         wint_edge_index.set_data(ret_edge_index_vec)             # <<<<<<<<<<<<<<
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  * 
  */
-  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_edge_index->__pyx_vtab)->set_data(__pyx_v_wint_edge_index, __pyx_v_ret_edge_index_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 166, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int *)__pyx_v_wint_edge_index->__pyx_vtab)->set_data(__pyx_v_wint_edge_index, __pyx_v_ret_edge_index_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 165, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":167
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":166
  *         ret_data_np = np.frombuffer(wfloat_data,dtype=np.float32)
  *         wint_edge_index.set_data(ret_edge_index_vec)
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)             # <<<<<<<<<<<<<<
  * 
  *         for r in range(num_subg):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF((PyObject *)__pyx_v_wint_edge_index);
   __Pyx_GIVEREF((PyObject *)__pyx_v_wint_edge_index);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, ((PyObject *)__pyx_v_wint_edge_index))) __PYX_ERR(0, 167, __pyx_L1_error);
-  __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, ((PyObject *)__pyx_v_wint_edge_index))) __PYX_ERR(0, 166, __pyx_L1_error);
+  __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_int32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_int32); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_dtype, __pyx_t_1) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_dtype, __pyx_t_1) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -7552,16 +7550,16 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_v_ret_edge_index_np = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":169
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":168
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  * 
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_num_subg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
@@ -7569,9 +7567,9 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   for (;;) {
@@ -7580,28 +7578,28 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 169, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 168, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 169, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 168, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 168, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_MACROS
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 169, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 168, __pyx_L1_error)
           #endif
           if (__pyx_t_3 >= __pyx_temp) break;
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 169, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_7); __pyx_t_3++; if (unlikely((0 < 0))) __PYX_ERR(0, 168, __pyx_L1_error)
         #else
-        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 168, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -7611,7 +7609,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 169, __pyx_L1_error)
+          else __PYX_ERR(0, 168, __pyx_L1_error)
         }
         break;
       }
@@ -7620,112 +7618,112 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":170
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":169
  * 
  *         for r in range(num_subg):
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])             # <<<<<<<<<<<<<<
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_nodes, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_ret_nodes_np, 0, 0, &__pyx_t_7, &__pyx_t_2, NULL, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_ret_nodes_np, 0, 0, &__pyx_t_7, &__pyx_t_2, NULL, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_nodes, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_nodes, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":171
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":170
  *         for r in range(num_subg):
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])             # <<<<<<<<<<<<<<
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])
  */
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indptr, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_ret_indptr_np, 0, 0, &__pyx_t_6, &__pyx_t_7, NULL, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_ret_indptr_np, 0, 0, &__pyx_t_6, &__pyx_t_7, NULL, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 171, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indptr, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 170, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":172
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":171
  *             l_subg_nodes.append(ret_nodes_np[offset_nodes[r]:offset_nodes[r+1]])
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])             # <<<<<<<<<<<<<<
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_ret_indices_np, 0, 0, &__pyx_t_2, &__pyx_t_6, NULL, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_ret_indices_np, 0, 0, &__pyx_t_2, &__pyx_t_6, NULL, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 172, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_indices, __pyx_t_7); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 171, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":173
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":172
  *             l_subg_indptr.append(ret_indptr_np[offset_indptr[r]:offset_indptr[r+1]])
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])             # <<<<<<<<<<<<<<
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])
  * 
  */
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_v_r); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_offset_data, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_ret_data_np, 0, 0, &__pyx_t_7, &__pyx_t_2, NULL, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_ret_data_np, 0, 0, &__pyx_t_7, &__pyx_t_2, NULL, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_data, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_data, __pyx_t_6); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":174
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":173
  *             l_subg_indices.append(ret_indices_np[offset_indices[r]:offset_indices[r+1]])
  *             l_subg_data.append(ret_data_np[offset_data[r]:offset_data[r+1]])
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])             # <<<<<<<<<<<<<<
  * 
  *         return l_subg_indptr,l_subg_indices,l_subg_data,l_subg_nodes,l_subg_edge_index
  */
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_r, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_offset_indices, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_ret_edge_index_np, 0, 0, &__pyx_t_6, &__pyx_t_7, NULL, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_ret_edge_index_np, 0, 0, &__pyx_t_6, &__pyx_t_7, NULL, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_edge_index, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 174, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_l_subg_edge_index, __pyx_t_2); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 173, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "graphsaint/cython_sampler.pyx":169
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":168
  *         ret_edge_index_np = np.frombuffer(wint_edge_index,dtype=np.int32)
  * 
  *         for r in range(num_subg):             # <<<<<<<<<<<<<<
@@ -7735,7 +7733,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":176
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":175
  *             l_subg_edge_index.append(ret_edge_index_np[offset_indices[r]:offset_indices[r+1]])
  * 
  *         return l_subg_indptr,l_subg_indices,l_subg_data,l_subg_nodes,l_subg_edge_index             # <<<<<<<<<<<<<<
@@ -7743,28 +7741,28 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  *     cdef void sample(self, int p) nogil:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_l_subg_indptr);
   __Pyx_GIVEREF(__pyx_v_l_subg_indptr);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_l_subg_indptr)) __PYX_ERR(0, 176, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_l_subg_indptr)) __PYX_ERR(0, 175, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_l_subg_indices);
   __Pyx_GIVEREF(__pyx_v_l_subg_indices);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_l_subg_indices)) __PYX_ERR(0, 176, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_l_subg_indices)) __PYX_ERR(0, 175, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_l_subg_data);
   __Pyx_GIVEREF(__pyx_v_l_subg_data);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_l_subg_data)) __PYX_ERR(0, 176, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_l_subg_data)) __PYX_ERR(0, 175, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_l_subg_nodes);
   __Pyx_GIVEREF(__pyx_v_l_subg_nodes);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_l_subg_nodes)) __PYX_ERR(0, 176, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_l_subg_nodes)) __PYX_ERR(0, 175, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_l_subg_edge_index);
   __Pyx_GIVEREF(__pyx_v_l_subg_edge_index);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_v_l_subg_edge_index)) __PYX_ERR(0, 176, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_v_l_subg_edge_index)) __PYX_ERR(0, 175, __pyx_L1_error);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "graphsaint/cython_sampler.pyx":107
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":106
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
@@ -7779,7 +7777,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_16);
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.get_return", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.get_return", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_l_subg_indptr);
@@ -7808,7 +7806,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":178
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":177
  *         return l_subg_indptr,l_subg_indices,l_subg_data,l_subg_nodes,l_subg_edge_index
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -7821,7 +7819,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_s
   /* function exit code */
 }
 
-/* "graphsaint/cython_sampler.pyx":181
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":180
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -7890,7 +7888,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("par_sample", 1);
 
-  /* "graphsaint/cython_sampler.pyx":208
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":207
  *                                 i-the subgraph edge.
  *         """
  *         cdef int p = 0             # <<<<<<<<<<<<<<
@@ -7899,7 +7897,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v_p = 0;
 
-  /* "graphsaint/cython_sampler.pyx":209
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":208
  *         """
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):             # <<<<<<<<<<<<<<
@@ -7936,7 +7934,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
                 Py_BEGIN_ALLOW_THREADS
                 #endif /* _OPENMP */
 
-                /* "graphsaint/cython_sampler.pyx":210
+                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":209
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):
  *             for p in prange(self.num_proc,schedule='dynamic'):             # <<<<<<<<<<<<<<
@@ -7961,23 +7959,23 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
                             {
                                 __pyx_v_p = (int)(0 + 1 * __pyx_t_2);
 
-                                /* "graphsaint/cython_sampler.pyx":211
+                                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":210
  *         with nogil, parallel(num_threads=self.num_proc):
  *             for p in prange(self.num_proc,schedule='dynamic'):
  *                 self.sample(p)             # <<<<<<<<<<<<<<
  *                 self.adj_extract(p)
  *         ret = self.get_return()
  */
-                                ((struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self->__pyx_vtab)->sample(__pyx_v_self, __pyx_v_p); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 211, __pyx_L12_error)
+                                ((struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self->__pyx_vtab)->sample(__pyx_v_self, __pyx_v_p); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 210, __pyx_L12_error)
 
-                                /* "graphsaint/cython_sampler.pyx":212
+                                /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":211
  *             for p in prange(self.num_proc,schedule='dynamic'):
  *                 self.sample(p)
  *                 self.adj_extract(p)             # <<<<<<<<<<<<<<
  *         ret = self.get_return()
  *         _len = self.num_proc*self.num_sample_per_proc
  */
-                                ((struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self->__pyx_vtab)->adj_extract(__pyx_v_self, __pyx_v_p); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 212, __pyx_L12_error)
+                                ((struct __pyx_vtabstruct_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *)__pyx_v_self->__pyx_vtab)->adj_extract(__pyx_v_self, __pyx_v_p); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 211, __pyx_L12_error)
                                 goto __pyx_L15;
                                 __pyx_L12_error:;
                                 {
@@ -8102,7 +8100,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
         #endif
       }
 
-      /* "graphsaint/cython_sampler.pyx":209
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":208
  *         """
  *         cdef int p = 0
  *         with nogil, parallel(num_threads=self.num_proc):             # <<<<<<<<<<<<<<
@@ -8128,14 +8126,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
       }
   }
 
-  /* "graphsaint/cython_sampler.pyx":213
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":212
  *                 self.sample(p)
  *                 self.adj_extract(p)
  *         ret = self.get_return()             # <<<<<<<<<<<<<<
  *         _len = self.num_proc*self.num_sample_per_proc
  *         self.node_sampled.swap(vector[vector[int]](_len))
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_return); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_return); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_3 = 0;
@@ -8155,14 +8153,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_3, 0+__pyx_t_3);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __pyx_v_ret = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":214
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":213
  *                 self.adj_extract(p)
  *         ret = self.get_return()
  *         _len = self.num_proc*self.num_sample_per_proc             # <<<<<<<<<<<<<<
@@ -8171,7 +8169,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
  */
   __pyx_v__len = (__pyx_v_self->num_proc * __pyx_v_self->num_sample_per_proc);
 
-  /* "graphsaint/cython_sampler.pyx":215
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":214
  *         ret = self.get_return()
  *         _len = self.num_proc*self.num_sample_per_proc
  *         self.node_sampled.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8182,11 +8180,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_7 = std::vector<std::vector<int> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 215, __pyx_L1_error)
+    __PYX_ERR(0, 214, __pyx_L1_error)
   }
   __pyx_v_self->node_sampled.swap(__pyx_t_7);
 
-  /* "graphsaint/cython_sampler.pyx":216
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":215
  *         _len = self.num_proc*self.num_sample_per_proc
  *         self.node_sampled.swap(vector[vector[int]](_len))
  *         self.ret_indptr.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8197,11 +8195,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_7 = std::vector<std::vector<int> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 216, __pyx_L1_error)
+    __PYX_ERR(0, 215, __pyx_L1_error)
   }
   __pyx_v_self->ret_indptr.swap(__pyx_t_7);
 
-  /* "graphsaint/cython_sampler.pyx":217
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":216
  *         self.node_sampled.swap(vector[vector[int]](_len))
  *         self.ret_indptr.swap(vector[vector[int]](_len))
  *         self.ret_indices.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8212,11 +8210,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_7 = std::vector<std::vector<int> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 217, __pyx_L1_error)
+    __PYX_ERR(0, 216, __pyx_L1_error)
   }
   __pyx_v_self->ret_indices.swap(__pyx_t_7);
 
-  /* "graphsaint/cython_sampler.pyx":218
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":217
  *         self.ret_indptr.swap(vector[vector[int]](_len))
  *         self.ret_indices.swap(vector[vector[int]](_len))
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8227,11 +8225,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_7 = std::vector<std::vector<int> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 218, __pyx_L1_error)
+    __PYX_ERR(0, 217, __pyx_L1_error)
   }
   __pyx_v_self->ret_indices_orig.swap(__pyx_t_7);
 
-  /* "graphsaint/cython_sampler.pyx":219
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":218
  *         self.ret_indices.swap(vector[vector[int]](_len))
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))
  *         self.ret_data.swap(vector[vector[float]](_len))             # <<<<<<<<<<<<<<
@@ -8242,11 +8240,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_8 = std::vector<std::vector<float> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 219, __pyx_L1_error)
+    __PYX_ERR(0, 218, __pyx_L1_error)
   }
   __pyx_v_self->ret_data.swap(__pyx_t_8);
 
-  /* "graphsaint/cython_sampler.pyx":220
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":219
  *         self.ret_indices_orig.swap(vector[vector[int]](_len))
  *         self.ret_data.swap(vector[vector[float]](_len))
  *         self.ret_edge_index.swap(vector[vector[int]](_len))             # <<<<<<<<<<<<<<
@@ -8257,11 +8255,11 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
     __pyx_t_7 = std::vector<std::vector<int> > (__pyx_v__len);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 220, __pyx_L1_error)
+    __PYX_ERR(0, 219, __pyx_L1_error)
   }
   __pyx_v_self->ret_edge_index.swap(__pyx_t_7);
 
-  /* "graphsaint/cython_sampler.pyx":221
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":220
  *         self.ret_data.swap(vector[vector[float]](_len))
  *         self.ret_edge_index.swap(vector[vector[int]](_len))
  *         return ret             # <<<<<<<<<<<<<<
@@ -8273,7 +8271,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __pyx_r = __pyx_v_ret;
   goto __pyx_L0;
 
-  /* "graphsaint/cython_sampler.pyx":181
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":180
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -8286,7 +8284,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.par_sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.par_sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_ret);
@@ -8367,7 +8365,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -8460,7 +8458,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -8502,14 +8500,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sam
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Sampler.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":230
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":229
  *     cdef int avg_deg
  *     cdef vector[int] arr_deg_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -8577,7 +8575,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -8585,9 +8583,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 1); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 1); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -8595,9 +8593,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 2); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 2); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -8605,9 +8603,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 3); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 3); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -8615,9 +8613,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 4); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 4); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -8625,9 +8623,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 5); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 5); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -8635,9 +8633,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 6); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 6); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -8645,9 +8643,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[7]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 7); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 7); __PYX_ERR(0, 229, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
@@ -8655,14 +8653,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
           (void)__Pyx_Arg_NewRef_VARARGS(values[8]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 8); __PYX_ERR(0, 230, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 8); __PYX_ERR(0, 229, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 230, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 229, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 9)) {
       goto __pyx_L5_argtuple_error;
@@ -8680,16 +8678,16 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L3_error)
     __pyx_v_p_dist = ((PyArrayObject *)values[5]);
-    __pyx_v_max_deg = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_max_deg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
-    __pyx_v_size_frontier = __Pyx_PyInt_As_int(values[7]); if (unlikely((__pyx_v_size_frontier == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
-    __pyx_v_size_subg = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_size_subg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
+    __pyx_v_max_deg = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_max_deg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
+    __pyx_v_size_frontier = __Pyx_PyInt_As_int(values[7]); if (unlikely((__pyx_v_size_frontier == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
+    __pyx_v_size_subg = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_size_subg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 230, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 229, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8699,14 +8697,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_1__ci
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 230, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 231, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 232, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist), __pyx_ptype_5numpy_ndarray, 1, "p_dist", 0))) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 229, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 230, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 231, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist), __pyx_ptype_5numpy_ndarray, 1, "p_dist", 0))) __PYX_ERR(0, 233, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_p_dist, __pyx_v_max_deg, __pyx_v_size_frontier, __pyx_v_size_subg);
 
   /* function exit code */
@@ -8763,26 +8761,26 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   __pyx_pybuffernd_p_dist.rcbuffer = &__pyx_pybuffer_p_dist;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 229, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 229, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 229, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 229, __pyx_L1_error)
   }
   __pyx_pybuffernd_p_dist.diminfo[0].strides = __pyx_pybuffernd_p_dist.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist.diminfo[0].shape = __pyx_pybuffernd_p_dist.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":236
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":235
  *                         np.ndarray[int,ndim=1,mode='c'] p_dist,
  *                         int max_deg, int size_frontier, int size_subg):
  *         self.size_frontier = size_frontier             # <<<<<<<<<<<<<<
@@ -8791,7 +8789,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
  */
   __pyx_v_self->size_frontier = __pyx_v_size_frontier;
 
-  /* "graphsaint/cython_sampler.pyx":237
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":236
  *                         int max_deg, int size_frontier, int size_subg):
  *         self.size_frontier = size_frontier
  *         self.size_subg = size_subg             # <<<<<<<<<<<<<<
@@ -8800,19 +8798,19 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
  */
   __pyx_v_self->size_subg = __pyx_v_size_subg;
 
-  /* "graphsaint/cython_sampler.pyx":238
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":237
  *         self.size_frontier = size_frontier
  *         self.size_subg = size_subg
  *         _arr_deg = np.clip(p_dist,0,max_deg)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_int(_arr_deg,self.arr_deg_vec)
  *         self.avg_deg = _arr_deg.mean()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clip); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clip); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_max_deg); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_max_deg); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -8833,31 +8831,31 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 3+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v__arr_deg = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":239
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":238
  *         self.size_subg = size_subg
  *         _arr_deg = np.clip(p_dist,0,max_deg)
  *         cutils.npy2vec_int(_arr_deg,self.arr_deg_vec)             # <<<<<<<<<<<<<<
  *         self.avg_deg = _arr_deg.mean()
  * 
  */
-  if (!(likely(((__pyx_v__arr_deg) == Py_None) || likely(__Pyx_TypeTest(__pyx_v__arr_deg, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 239, __pyx_L1_error)
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v__arr_deg), __pyx_v_self->arr_deg_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 239, __pyx_L1_error)
+  if (!(likely(((__pyx_v__arr_deg) == Py_None) || likely(__Pyx_TypeTest(__pyx_v__arr_deg, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 238, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v__arr_deg), __pyx_v_self->arr_deg_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 238, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":240
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":239
  *         _arr_deg = np.clip(p_dist,0,max_deg)
  *         cutils.npy2vec_int(_arr_deg,self.arr_deg_vec)
  *         self.avg_deg = _arr_deg.mean()             # <<<<<<<<<<<<<<
  * 
  *     cdef void sample(self, int p) nogil:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v__arr_deg, __pyx_n_s_mean); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v__arr_deg, __pyx_n_s_mean); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   __pyx_t_5 = 0;
@@ -8877,15 +8875,15 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->avg_deg = __pyx_t_5;
 
-  /* "graphsaint/cython_sampler.pyx":230
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":229
  *     cdef int avg_deg
  *     cdef vector[int] arr_deg_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -8910,7 +8908,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -8924,7 +8922,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW___cin
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":242
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":241
  *         self.avg_deg = _arr_deg.mean()
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -8965,7 +8963,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":244
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":243
  *     cdef void sample(self, int p) nogil:
  *         cdef vector[int] frontier
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -8974,7 +8972,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_i = 0;
 
-  /* "graphsaint/cython_sampler.pyx":245
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":244
  *         cdef vector[int] frontier
  *         cdef int i = 0
  *         cdef int num_train_node = self.node_train_vec.size()             # <<<<<<<<<<<<<<
@@ -8983,7 +8981,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_num_train_node = __pyx_v_self->__pyx_base.node_train_vec.size();
 
-  /* "graphsaint/cython_sampler.pyx":246
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":245
  *         cdef int i = 0
  *         cdef int num_train_node = self.node_train_vec.size()
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -8992,7 +8990,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":247
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":246
  *         cdef int num_train_node = self.node_train_vec.size()
  *         cdef int r = 0
  *         cdef int alpha = 2             # <<<<<<<<<<<<<<
@@ -9001,7 +8999,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
   __pyx_v_alpha = 2;
 
-  /* "graphsaint/cython_sampler.pyx":251
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":250
  *         cdef vector[int] arr_ind1
  *         cdef vector[int].iterator it
  *         arr_ind0.reserve(alpha*self.avg_deg)             # <<<<<<<<<<<<<<
@@ -9018,10 +9016,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     #ifdef WITH_THREAD
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
     #endif
-    __PYX_ERR(0, 251, __pyx_L1_error)
+    __PYX_ERR(0, 250, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":252
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":251
  *         cdef vector[int].iterator it
  *         arr_ind0.reserve(alpha*self.avg_deg)
  *         arr_ind1.reserve(alpha*self.avg_deg)             # <<<<<<<<<<<<<<
@@ -9038,10 +9036,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     #ifdef WITH_THREAD
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
     #endif
-    __PYX_ERR(0, 252, __pyx_L1_error)
+    __PYX_ERR(0, 251, __pyx_L1_error)
   }
 
-  /* "graphsaint/cython_sampler.pyx":257
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":256
  *         cdef int idx_begin, idx_end
  *         cdef int num_neighs_pop, num_neighs_next
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -9052,7 +9050,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":259
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":258
  *         while r < self.num_sample_per_proc:
  *             # prepare initial frontier
  *             arr_ind0.clear()             # <<<<<<<<<<<<<<
@@ -9061,7 +9059,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_arr_ind0.clear();
 
-    /* "graphsaint/cython_sampler.pyx":260
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":259
  *             # prepare initial frontier
  *             arr_ind0.clear()
  *             arr_ind1.clear()             # <<<<<<<<<<<<<<
@@ -9070,7 +9068,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_arr_ind1.clear();
 
-    /* "graphsaint/cython_sampler.pyx":261
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":260
  *             arr_ind0.clear()
  *             arr_ind1.clear()
  *             frontier.clear()             # <<<<<<<<<<<<<<
@@ -9079,7 +9077,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_frontier.clear();
 
-    /* "graphsaint/cython_sampler.pyx":262
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":261
  *             arr_ind1.clear()
  *             frontier.clear()
  *             i = 0             # <<<<<<<<<<<<<<
@@ -9088,7 +9086,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":263
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":262
  *             frontier.clear()
  *             i = 0
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice             # <<<<<<<<<<<<<<
@@ -9099,7 +9097,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_frontier);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":264
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":263
  *             i = 0
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice
  *                 frontier.push_back(self.node_train_vec[rand()%num_train_node])             # <<<<<<<<<<<<<<
@@ -9115,7 +9113,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 264, __pyx_L1_error)
+        __PYX_ERR(0, 263, __pyx_L1_error)
       }
       try {
         __pyx_v_frontier.push_back((__pyx_v_self->__pyx_base.node_train_vec[__Pyx_mod_int(__pyx_t_2, __pyx_v_num_train_node)]));
@@ -9127,10 +9125,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 264, __pyx_L1_error)
+        __PYX_ERR(0, 263, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":265
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":264
  *             while i < self.size_frontier:        # NB: here we don't care if a node appear twice
  *                 frontier.push_back(self.node_train_vec[rand()%num_train_node])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -9140,7 +9138,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":267
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":266
  *                 i = i + 1
  *             # init indicator array
  *             it = frontier.begin()             # <<<<<<<<<<<<<<
@@ -9149,7 +9147,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     __pyx_v_it = __pyx_v_frontier.begin();
 
-    /* "graphsaint/cython_sampler.pyx":268
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":267
  *             # init indicator array
  *             it = frontier.begin()
  *             while it != frontier.end():             # <<<<<<<<<<<<<<
@@ -9160,7 +9158,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_it != __pyx_v_frontier.end());
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":269
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":268
  *             it = frontier.begin()
  *             while it != frontier.end():
  *                 v = deref(it)             # <<<<<<<<<<<<<<
@@ -9169,7 +9167,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_v = (*__pyx_v_it);
 
-      /* "graphsaint/cython_sampler.pyx":270
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":269
  *             while it != frontier.end():
  *                 v = deref(it)
  *                 cnt = arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9178,7 +9176,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_cnt = __pyx_v_arr_ind0.size();
 
-      /* "graphsaint/cython_sampler.pyx":271
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":270
  *                 v = deref(it)
  *                 cnt = arr_ind0.size()
  *                 c = cnt             # <<<<<<<<<<<<<<
@@ -9187,7 +9185,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_c = __pyx_v_cnt;
 
-      /* "graphsaint/cython_sampler.pyx":272
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":271
  *                 cnt = arr_ind0.size()
  *                 c = cnt
  *                 while c < cnt + self.arr_deg_vec[v]:             # <<<<<<<<<<<<<<
@@ -9198,7 +9196,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_c < (__pyx_v_cnt + (__pyx_v_self->arr_deg_vec[__pyx_v_v])));
         if (!__pyx_t_1) break;
 
-        /* "graphsaint/cython_sampler.pyx":273
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":272
  *                 c = cnt
  *                 while c < cnt + self.arr_deg_vec[v]:
  *                     arr_ind0.push_back(v)             # <<<<<<<<<<<<<<
@@ -9215,10 +9213,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           #ifdef WITH_THREAD
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
           #endif
-          __PYX_ERR(0, 273, __pyx_L1_error)
+          __PYX_ERR(0, 272, __pyx_L1_error)
         }
 
-        /* "graphsaint/cython_sampler.pyx":274
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":273
  *                 while c < cnt + self.arr_deg_vec[v]:
  *                     arr_ind0.push_back(v)
  *                     arr_ind1.push_back(c-cnt)             # <<<<<<<<<<<<<<
@@ -9235,10 +9233,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           #ifdef WITH_THREAD
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
           #endif
-          __PYX_ERR(0, 274, __pyx_L1_error)
+          __PYX_ERR(0, 273, __pyx_L1_error)
         }
 
-        /* "graphsaint/cython_sampler.pyx":275
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":274
  *                     arr_ind0.push_back(v)
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1             # <<<<<<<<<<<<<<
@@ -9248,7 +9246,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_c = (__pyx_v_c + 1);
       }
 
-      /* "graphsaint/cython_sampler.pyx":276
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":275
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1
  *                 arr_ind1[cnt] = -self.arr_deg_vec[v]             # <<<<<<<<<<<<<<
@@ -9257,7 +9255,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       (__pyx_v_arr_ind1[__pyx_v_cnt]) = (-(__pyx_v_self->arr_deg_vec[__pyx_v_v]));
 
-      /* "graphsaint/cython_sampler.pyx":277
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":276
  *                     c = c + 1
  *                 arr_ind1[cnt] = -self.arr_deg_vec[v]
  *                 inc(it)             # <<<<<<<<<<<<<<
@@ -9267,7 +9265,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       (void)((++__pyx_v_it));
     }
 
-    /* "graphsaint/cython_sampler.pyx":279
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":278
  *                 inc(it)
  *             # iteratively update frontier
  *             j = self.size_frontier             # <<<<<<<<<<<<<<
@@ -9277,7 +9275,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_t_2 = __pyx_v_self->size_frontier;
     __pyx_v_j = __pyx_t_2;
 
-    /* "graphsaint/cython_sampler.pyx":280
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":279
  *             # iteratively update frontier
  *             j = self.size_frontier
  *             while j < self.size_subg:             # <<<<<<<<<<<<<<
@@ -9288,7 +9286,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_j < __pyx_v_self->size_subg);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":282
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":281
  *             while j < self.size_subg:
  *                 # select next node to pop out of frontier
  *                 while True:             # <<<<<<<<<<<<<<
@@ -9297,7 +9295,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       while (1) {
 
-        /* "graphsaint/cython_sampler.pyx":283
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":282
  *                 # select next node to pop out of frontier
  *                 while True:
  *                     vidx = rand()%arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9314,11 +9312,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           #ifdef WITH_THREAD
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
           #endif
-          __PYX_ERR(0, 283, __pyx_L1_error)
+          __PYX_ERR(0, 282, __pyx_L1_error)
         }
         __pyx_v_vidx = (__pyx_t_2 % __pyx_t_3);
 
-        /* "graphsaint/cython_sampler.pyx":284
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":283
  *                 while True:
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]             # <<<<<<<<<<<<<<
@@ -9327,7 +9325,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_vpop = (__pyx_v_arr_ind0[__pyx_v_vidx]);
 
-        /* "graphsaint/cython_sampler.pyx":285
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":284
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:             # <<<<<<<<<<<<<<
@@ -9337,7 +9335,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_vpop >= 0);
         if (__pyx_t_1) {
 
-          /* "graphsaint/cython_sampler.pyx":286
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":285
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:
  *                         break             # <<<<<<<<<<<<<<
@@ -9346,7 +9344,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
           goto __pyx_L14_break;
 
-          /* "graphsaint/cython_sampler.pyx":285
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":284
  *                     vidx = rand()%arr_ind0.size()
  *                     vpop = arr_ind0[vidx]
  *                     if vpop >= 0:             # <<<<<<<<<<<<<<
@@ -9357,7 +9355,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       }
       __pyx_L14_break:;
 
-      /* "graphsaint/cython_sampler.pyx":288
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":287
  *                         break
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]             # <<<<<<<<<<<<<<
@@ -9366,7 +9364,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_offset = (__pyx_v_arr_ind1[__pyx_v_vidx]);
 
-      /* "graphsaint/cython_sampler.pyx":289
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":288
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:             # <<<<<<<<<<<<<<
@@ -9376,7 +9374,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_t_1 = (__pyx_v_offset < 0);
       if (__pyx_t_1) {
 
-        /* "graphsaint/cython_sampler.pyx":290
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":289
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:
  *                     idx_begin = vidx             # <<<<<<<<<<<<<<
@@ -9385,7 +9383,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_idx_begin = __pyx_v_vidx;
 
-        /* "graphsaint/cython_sampler.pyx":291
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":290
  *                 if offset < 0:
  *                     idx_begin = vidx
  *                     idx_end = idx_begin - offset             # <<<<<<<<<<<<<<
@@ -9394,7 +9392,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         __pyx_v_idx_end = (__pyx_v_idx_begin - __pyx_v_offset);
 
-        /* "graphsaint/cython_sampler.pyx":289
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":288
  *                 # prepare to update arr_ind*
  *                 offset = arr_ind1[vidx]
  *                 if offset < 0:             # <<<<<<<<<<<<<<
@@ -9404,7 +9402,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         goto __pyx_L16;
       }
 
-      /* "graphsaint/cython_sampler.pyx":293
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":292
  *                     idx_end = idx_begin - offset
  *                 else:
  *                     idx_begin = vidx - offset             # <<<<<<<<<<<<<<
@@ -9414,7 +9412,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       /*else*/ {
         __pyx_v_idx_begin = (__pyx_v_vidx - __pyx_v_offset);
 
-        /* "graphsaint/cython_sampler.pyx":294
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":293
  *                 else:
  *                     idx_begin = vidx - offset
  *                     idx_end = idx_begin - arr_ind1[idx_begin]             # <<<<<<<<<<<<<<
@@ -9425,7 +9423,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       }
       __pyx_L16:;
 
-      /* "graphsaint/cython_sampler.pyx":296
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":295
  *                     idx_end = idx_begin - arr_ind1[idx_begin]
  *                 # cleanup 1: invalidate entries
  *                 k = idx_begin             # <<<<<<<<<<<<<<
@@ -9434,7 +9432,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_k = __pyx_v_idx_begin;
 
-      /* "graphsaint/cython_sampler.pyx":297
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":296
  *                 # cleanup 1: invalidate entries
  *                 k = idx_begin
  *                 while k < idx_end:             # <<<<<<<<<<<<<<
@@ -9445,7 +9443,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_k < __pyx_v_idx_end);
         if (!__pyx_t_1) break;
 
-        /* "graphsaint/cython_sampler.pyx":298
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":297
  *                 k = idx_begin
  *                 while k < idx_end:
  *                     arr_ind0[k] = -1             # <<<<<<<<<<<<<<
@@ -9454,7 +9452,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         (__pyx_v_arr_ind0[__pyx_v_k]) = -1;
 
-        /* "graphsaint/cython_sampler.pyx":299
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":298
  *                 while k < idx_end:
  *                     arr_ind0[k] = -1
  *                     arr_ind1[k] = 0             # <<<<<<<<<<<<<<
@@ -9463,7 +9461,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
         (__pyx_v_arr_ind1[__pyx_v_k]) = 0;
 
-        /* "graphsaint/cython_sampler.pyx":300
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":299
  *                     arr_ind0[k] = -1
  *                     arr_ind1[k] = 0
  *                     k = k + 1             # <<<<<<<<<<<<<<
@@ -9473,7 +9471,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_k = (__pyx_v_k + 1);
       }
 
-      /* "graphsaint/cython_sampler.pyx":302
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":301
  *                     k = k + 1
  *                 # cleanup 2: add new entries
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]             # <<<<<<<<<<<<<<
@@ -9482,7 +9480,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_num_neighs_pop = ((__pyx_v_self->__pyx_base.adj_indptr_vec[(__pyx_v_vpop + 1)]) - (__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_vpop]));
 
-      /* "graphsaint/cython_sampler.pyx":303
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":302
  *                 # cleanup 2: add new entries
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]             # <<<<<<<<<<<<<<
@@ -9498,11 +9496,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 303, __pyx_L1_error)
+        __PYX_ERR(0, 302, __pyx_L1_error)
       }
       __pyx_v_vnext = (__pyx_v_self->__pyx_base.adj_indices_vec[((__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_vpop]) + __Pyx_mod_int(__pyx_t_2, __pyx_v_num_neighs_pop))]);
 
-      /* "graphsaint/cython_sampler.pyx":304
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":303
  *                 num_neighs_pop = self.adj_indptr_vec[vpop+1] - self.adj_indptr_vec[vpop]
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)             # <<<<<<<<<<<<<<
@@ -9519,10 +9517,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 304, __pyx_L1_error)
+        __PYX_ERR(0, 303, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":305
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":304
  *                 vnext = self.adj_indices_vec[self.adj_indptr_vec[vpop]+rand()%num_neighs_pop]
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)
  *                 num_neighs_next = self.arr_deg_vec[vnext]             # <<<<<<<<<<<<<<
@@ -9531,7 +9529,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_num_neighs_next = (__pyx_v_self->arr_deg_vec[__pyx_v_vnext]);
 
-      /* "graphsaint/cython_sampler.pyx":306
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":305
  *                 self.node_sampled[p*self.num_sample_per_proc+r].push_back(vnext)
  *                 num_neighs_next = self.arr_deg_vec[vnext]
  *                 cnt = arr_ind0.size()             # <<<<<<<<<<<<<<
@@ -9540,7 +9538,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_cnt = __pyx_v_arr_ind0.size();
 
-      /* "graphsaint/cython_sampler.pyx":307
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":306
  *                 num_neighs_next = self.arr_deg_vec[vnext]
  *                 cnt = arr_ind0.size()
  *                 c = cnt             # <<<<<<<<<<<<<<
@@ -9549,7 +9547,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       __pyx_v_c = __pyx_v_cnt;
 
-      /* "graphsaint/cython_sampler.pyx":308
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":307
  *                 cnt = arr_ind0.size()
  *                 c = cnt
  *                 while c < cnt + num_neighs_next:             # <<<<<<<<<<<<<<
@@ -9560,7 +9558,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_t_1 = (__pyx_v_c < (__pyx_v_cnt + __pyx_v_num_neighs_next));
         if (!__pyx_t_1) break;
 
-        /* "graphsaint/cython_sampler.pyx":309
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":308
  *                 c = cnt
  *                 while c < cnt + num_neighs_next:
  *                     arr_ind0.push_back(vnext)             # <<<<<<<<<<<<<<
@@ -9577,10 +9575,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           #ifdef WITH_THREAD
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
           #endif
-          __PYX_ERR(0, 309, __pyx_L1_error)
+          __PYX_ERR(0, 308, __pyx_L1_error)
         }
 
-        /* "graphsaint/cython_sampler.pyx":310
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":309
  *                 while c < cnt + num_neighs_next:
  *                     arr_ind0.push_back(vnext)
  *                     arr_ind1.push_back(c-cnt)             # <<<<<<<<<<<<<<
@@ -9597,10 +9595,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
           #ifdef WITH_THREAD
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
           #endif
-          __PYX_ERR(0, 310, __pyx_L1_error)
+          __PYX_ERR(0, 309, __pyx_L1_error)
         }
 
-        /* "graphsaint/cython_sampler.pyx":311
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":310
  *                     arr_ind0.push_back(vnext)
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1             # <<<<<<<<<<<<<<
@@ -9610,7 +9608,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
         __pyx_v_c = (__pyx_v_c + 1);
       }
 
-      /* "graphsaint/cython_sampler.pyx":312
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":311
  *                     arr_ind1.push_back(c-cnt)
  *                     c = c + 1
  *                 arr_ind1[cnt] = -num_neighs_next             # <<<<<<<<<<<<<<
@@ -9619,7 +9617,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
       (__pyx_v_arr_ind1[__pyx_v_cnt]) = (-__pyx_v_num_neighs_next);
 
-      /* "graphsaint/cython_sampler.pyx":313
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":312
  *                     c = c + 1
  *                 arr_ind1[cnt] = -num_neighs_next
  *                 j = j + 1             # <<<<<<<<<<<<<<
@@ -9629,7 +9627,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       __pyx_v_j = (__pyx_v_j + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":314
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":313
  *                 arr_ind1[cnt] = -num_neighs_next
  *                 j = j + 1
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())             # <<<<<<<<<<<<<<
@@ -9646,10 +9644,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 314, __pyx_L1_error)
+      __PYX_ERR(0, 313, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":315
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":314
  *                 j = j + 1
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())             # <<<<<<<<<<<<<<
@@ -9666,10 +9664,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 315, __pyx_L1_error)
+      __PYX_ERR(0, 314, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":316
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":315
  *             self.node_sampled[p*self.num_sample_per_proc+r].insert(self.node_sampled[p*self.num_sample_per_proc+r].end(),frontier.begin(),frontier.end())
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\             # <<<<<<<<<<<<<<
@@ -9686,10 +9684,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 316, __pyx_L1_error)
+      __PYX_ERR(0, 315, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":317
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":316
  *             sort(self.node_sampled[p*self.num_sample_per_proc+r].begin(),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\
  *                     self.node_sampled[p*self.num_sample_per_proc+r].end()),self.node_sampled[p*self.num_sample_per_proc+r].end())             # <<<<<<<<<<<<<<
@@ -9698,7 +9696,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
  */
     (void)((__pyx_v_self->__pyx_base.node_sampled[((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r)]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r)]).end()));
 
-    /* "graphsaint/cython_sampler.pyx":318
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":317
  *             self.node_sampled[p*self.num_sample_per_proc+r].erase(unique(self.node_sampled[p*self.num_sample_per_proc+r].begin(),\
  *                     self.node_sampled[p*self.num_sample_per_proc+r].end()),self.node_sampled[p*self.num_sample_per_proc+r].end())
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -9708,7 +9706,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "graphsaint/cython_sampler.pyx":242
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":241
  *         self.avg_deg = _arr_deg.mean()
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -9722,7 +9720,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sampl
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -9801,7 +9799,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -9894,7 +9892,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -9936,14 +9934,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.MRW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":326
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":325
  * cdef class RW(Sampler):
  *     cdef int size_root, size_depth
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10005,7 +10003,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -10013,9 +10011,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(0, 325, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -10023,9 +10021,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(0, 325, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -10033,9 +10031,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(0, 325, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -10043,9 +10041,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(0, 325, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -10053,9 +10051,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(0, 325, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -10063,14 +10061,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
           (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(0, 326, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(0, 325, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 326, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 325, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 7)) {
       goto __pyx_L5_argtuple_error;
@@ -10086,14 +10084,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L3_error)
-    __pyx_v_size_root = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_size_root == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L3_error)
-    __pyx_v_size_depth = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_size_depth == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 328, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 328, __pyx_L3_error)
+    __pyx_v_size_root = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_size_root == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L3_error)
+    __pyx_v_size_depth = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_size_depth == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, __pyx_nargs); __PYX_ERR(0, 326, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, __pyx_nargs); __PYX_ERR(0, 325, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10103,13 +10101,13 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_1__cin
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 326, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 327, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 328, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 326, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 327, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_size_root, __pyx_v_size_depth);
 
   /* function exit code */
@@ -10152,21 +10150,21 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
   __pyx_pybuffernd_node_train.rcbuffer = &__pyx_pybuffer_node_train;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 325, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 325, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 326, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 325, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":331
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":330
  *                         int num_proc, int num_sample_per_proc,
  *                         int size_root, int size_depth):
  *         self.size_root = size_root             # <<<<<<<<<<<<<<
@@ -10175,7 +10173,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
  */
   __pyx_v_self->size_root = __pyx_v_size_root;
 
-  /* "graphsaint/cython_sampler.pyx":332
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":331
  *                         int size_root, int size_depth):
  *         self.size_root = size_root
  *         self.size_depth = size_depth             # <<<<<<<<<<<<<<
@@ -10184,7 +10182,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
  */
   __pyx_v_self->size_depth = __pyx_v_size_depth;
 
-  /* "graphsaint/cython_sampler.pyx":326
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":325
  * cdef class RW(Sampler):
  *     cdef int size_root, size_depth
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10204,7 +10202,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -10215,7 +10213,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW___cini
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":334
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":333
  *         self.size_depth = size_depth
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -10241,7 +10239,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":335
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":334
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int iroot = 0             # <<<<<<<<<<<<<<
@@ -10250,7 +10248,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_iroot = 0;
 
-  /* "graphsaint/cython_sampler.pyx":336
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":335
  *     cdef void sample(self, int p) nogil:
  *         cdef int iroot = 0
  *         cdef int idepth = 0             # <<<<<<<<<<<<<<
@@ -10259,7 +10257,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_idepth = 0;
 
-  /* "graphsaint/cython_sampler.pyx":337
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":336
  *         cdef int iroot = 0
  *         cdef int idepth = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -10268,7 +10266,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":340
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":339
  *         cdef int idx_subg
  *         cdef int v
  *         cdef int num_train_node = self.node_train_vec.size()             # <<<<<<<<<<<<<<
@@ -10277,7 +10275,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
   __pyx_v_num_train_node = __pyx_v_self->__pyx_base.node_train_vec.size();
 
-  /* "graphsaint/cython_sampler.pyx":341
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":340
  *         cdef int v
  *         cdef int num_train_node = self.node_train_vec.size()
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -10288,7 +10286,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":342
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":341
  *         cdef int num_train_node = self.node_train_vec.size()
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -10297,7 +10295,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "graphsaint/cython_sampler.pyx":344
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":343
  *             idx_subg = p*self.num_sample_per_proc+r
  *             # sample root
  *             iroot = 0             # <<<<<<<<<<<<<<
@@ -10306,7 +10304,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_iroot = 0;
 
-    /* "graphsaint/cython_sampler.pyx":345
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":344
  *             # sample root
  *             iroot = 0
  *             while iroot < self.size_root:             # <<<<<<<<<<<<<<
@@ -10317,7 +10315,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       __pyx_t_1 = (__pyx_v_iroot < __pyx_v_self->size_root);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":346
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":345
  *             iroot = 0
  *             while iroot < self.size_root:
  *                 v = self.node_train_vec[rand()%num_train_node]             # <<<<<<<<<<<<<<
@@ -10333,11 +10331,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 346, __pyx_L1_error)
+        __PYX_ERR(0, 345, __pyx_L1_error)
       }
       __pyx_v_v = (__pyx_v_self->__pyx_base.node_train_vec[__Pyx_mod_int(__pyx_t_2, __pyx_v_num_train_node)]);
 
-      /* "graphsaint/cython_sampler.pyx":347
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":346
  *             while iroot < self.size_root:
  *                 v = self.node_train_vec[rand()%num_train_node]
  *                 self.node_sampled[idx_subg].push_back(v)             # <<<<<<<<<<<<<<
@@ -10354,10 +10352,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 347, __pyx_L1_error)
+        __PYX_ERR(0, 346, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":349
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":348
  *                 self.node_sampled[idx_subg].push_back(v)
  *                 # sample random walk
  *                 idepth = 0             # <<<<<<<<<<<<<<
@@ -10366,7 +10364,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
       __pyx_v_idepth = 0;
 
-      /* "graphsaint/cython_sampler.pyx":350
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":349
  *                 # sample random walk
  *                 idepth = 0
  *                 while idepth < self.size_depth:             # <<<<<<<<<<<<<<
@@ -10377,7 +10375,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_t_1 = (__pyx_v_idepth < __pyx_v_self->size_depth);
         if (!__pyx_t_1) break;
 
-        /* "graphsaint/cython_sampler.pyx":351
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":350
  *                 idepth = 0
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):             # <<<<<<<<<<<<<<
@@ -10387,7 +10385,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_t_1 = (((__pyx_v_self->__pyx_base.adj_indptr_vec[(__pyx_v_v + 1)]) - (__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_v])) > 0);
         if (__pyx_t_1) {
 
-          /* "graphsaint/cython_sampler.pyx":352
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":351
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]             # <<<<<<<<<<<<<<
@@ -10404,11 +10402,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 352, __pyx_L1_error)
+            __PYX_ERR(0, 351, __pyx_L1_error)
           }
           __pyx_v_v = (__pyx_v_self->__pyx_base.adj_indices_vec[((__pyx_v_self->__pyx_base.adj_indptr_vec[__pyx_v_v]) + __Pyx_mod_int(__pyx_t_2, __pyx_t_3))]);
 
-          /* "graphsaint/cython_sampler.pyx":353
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":352
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]
  *                         self.node_sampled[idx_subg].push_back(v)             # <<<<<<<<<<<<<<
@@ -10425,10 +10423,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
             #ifdef WITH_THREAD
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
             #endif
-            __PYX_ERR(0, 353, __pyx_L1_error)
+            __PYX_ERR(0, 352, __pyx_L1_error)
           }
 
-          /* "graphsaint/cython_sampler.pyx":351
+          /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":350
  *                 idepth = 0
  *                 while idepth < self.size_depth:
  *                     if (self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v]>0):             # <<<<<<<<<<<<<<
@@ -10437,7 +10435,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
         }
 
-        /* "graphsaint/cython_sampler.pyx":354
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":353
  *                         v = self.adj_indices_vec[self.adj_indptr_vec[v]+rand()%(self.adj_indptr_vec[v+1]-self.adj_indptr_vec[v])]
  *                         self.node_sampled[idx_subg].push_back(v)
  *                     idepth = idepth + 1             # <<<<<<<<<<<<<<
@@ -10447,7 +10445,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
         __pyx_v_idepth = (__pyx_v_idepth + 1);
       }
 
-      /* "graphsaint/cython_sampler.pyx":355
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":354
  *                         self.node_sampled[idx_subg].push_back(v)
  *                     idepth = idepth + 1
  *                 iroot = iroot + 1             # <<<<<<<<<<<<<<
@@ -10457,7 +10455,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       __pyx_v_iroot = (__pyx_v_iroot + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":356
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":355
  *                     idepth = idepth + 1
  *                 iroot = iroot + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -10466,7 +10464,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "graphsaint/cython_sampler.pyx":357
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":356
  *                 iroot = iroot + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -10483,10 +10481,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 357, __pyx_L1_error)
+      __PYX_ERR(0, 356, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":358
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":357
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -10503,12 +10501,12 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 358, __pyx_L1_error)
+      __PYX_ERR(0, 357, __pyx_L1_error)
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "graphsaint/cython_sampler.pyx":334
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":333
  *         self.size_depth = size_depth
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -10522,7 +10520,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -10601,7 +10599,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -10694,7 +10692,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -10736,14 +10734,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.RW.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":369
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":368
  *     cdef vector[int] col_train_vec
  *     cdef vector[float] prob_edge_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -10815,7 +10813,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -10823,9 +10821,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 1); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 1); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -10833,9 +10831,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 2); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 2); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -10843,9 +10841,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 3); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 3); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -10853,9 +10851,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 4); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 4); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -10863,9 +10861,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 5); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 5); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -10873,9 +10871,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 6); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 6); __PYX_ERR(0, 368, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -10883,15 +10881,15 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[7]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 7); __PYX_ERR(0, 369, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, 7); __PYX_ERR(0, 368, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
         const Py_ssize_t used_pos_args = (kwd_pos_args < 8) ? kwd_pos_args : 8;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 369, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 368, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs < 8)) {
       goto __pyx_L5_argtuple_error;
@@ -10908,15 +10906,15 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 371, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 371, __pyx_L3_error)
     __pyx_v_row_train = ((PyArrayObject *)values[5]);
     __pyx_v_col_train = ((PyArrayObject *)values[6]);
     __pyx_v_prob_edge = ((PyArrayObject *)values[7]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, __pyx_nargs); __PYX_ERR(0, 369, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 8, 8, __pyx_nargs); __PYX_ERR(0, 368, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10927,16 +10925,16 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_1__c
     }
   }
   __Pyx_DECREF(__pyx_v_argv); __pyx_v_argv = 0;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 369, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 370, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 371, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_row_train), __pyx_ptype_5numpy_ndarray, 1, "row_train", 0))) __PYX_ERR(0, 373, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_col_train), __pyx_ptype_5numpy_ndarray, 1, "col_train", 0))) __PYX_ERR(0, 374, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_prob_edge), __pyx_ptype_5numpy_ndarray, 1, "prob_edge", 0))) __PYX_ERR(0, 375, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 368, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 369, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 370, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_row_train), __pyx_ptype_5numpy_ndarray, 1, "row_train", 0))) __PYX_ERR(0, 372, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_col_train), __pyx_ptype_5numpy_ndarray, 1, "col_train", 0))) __PYX_ERR(0, 373, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_prob_edge), __pyx_ptype_5numpy_ndarray, 1, "prob_edge", 0))) __PYX_ERR(0, 374, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_row_train, __pyx_v_col_train, __pyx_v_prob_edge, __pyx_v_argv);
 
   /* function exit code */
@@ -10998,63 +10996,63 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
   __pyx_pybuffernd_prob_edge.rcbuffer = &__pyx_pybuffer_prob_edge;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_row_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_row_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_row_train.diminfo[0].strides = __pyx_pybuffernd_row_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_row_train.diminfo[0].shape = __pyx_pybuffernd_row_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_col_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_col_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_col_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_col_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_col_train.diminfo[0].strides = __pyx_pybuffernd_col_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_col_train.diminfo[0].shape = __pyx_pybuffernd_col_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_prob_edge.rcbuffer->pybuffer, (PyObject*)__pyx_v_prob_edge, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_prob_edge.rcbuffer->pybuffer, (PyObject*)__pyx_v_prob_edge, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 368, __pyx_L1_error)
   }
   __pyx_pybuffernd_prob_edge.diminfo[0].strides = __pyx_pybuffernd_prob_edge.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_prob_edge.diminfo[0].shape = __pyx_pybuffernd_prob_edge.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":376
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":375
  *                         np.ndarray[int,ndim=1,mode='c'] col_train,
  *                         np.ndarray[float,ndim=1,mode='c'] prob_edge,*argv):
  *         cutils.npy2vec_int(row_train,self.row_train_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 375, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":377
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":376
  *                         np.ndarray[float,ndim=1,mode='c'] prob_edge,*argv):
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  * 
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 377, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 376, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":378
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":377
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)             # <<<<<<<<<<<<<<
  * 
  *     cdef void sample(self, int p) nogil:
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_prob_edge), __pyx_v_self->prob_edge_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_prob_edge), __pyx_v_self->prob_edge_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 377, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":369
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":368
  *     cdef vector[int] col_train_vec
  *     cdef vector[float] prob_edge_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11077,7 +11075,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_prob_edge.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -11091,7 +11089,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge___ci
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":380
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":379
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11115,7 +11113,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":381
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":380
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int num_edge = self.row_train_vec.size()             # <<<<<<<<<<<<<<
@@ -11124,7 +11122,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_num_edge = __pyx_v_self->row_train_vec.size();
 
-  /* "graphsaint/cython_sampler.pyx":382
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":381
  *     cdef void sample(self, int p) nogil:
  *         cdef int num_edge = self.row_train_vec.size()
  *         cdef int i=0             # <<<<<<<<<<<<<<
@@ -11133,7 +11131,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_i = 0;
 
-  /* "graphsaint/cython_sampler.pyx":383
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":382
  *         cdef int num_edge = self.row_train_vec.size()
  *         cdef int i=0
  *         cdef float ran=0.             # <<<<<<<<<<<<<<
@@ -11142,7 +11140,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_ran = 0.;
 
-  /* "graphsaint/cython_sampler.pyx":384
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":383
  *         cdef int i=0
  *         cdef float ran=0.
  *         cdef int g=0             # <<<<<<<<<<<<<<
@@ -11151,7 +11149,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
   __pyx_v_g = 0;
 
-  /* "graphsaint/cython_sampler.pyx":386
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":385
  *         cdef int g=0
  *         cdef int idx_subg
  *         while g < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -11162,7 +11160,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
     __pyx_t_1 = (__pyx_v_g < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":387
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":386
  *         cdef int idx_subg
  *         while g < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+g             # <<<<<<<<<<<<<<
@@ -11171,7 +11169,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_g);
 
-    /* "graphsaint/cython_sampler.pyx":388
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":387
  *         while g < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+g
  *             i = 0             # <<<<<<<<<<<<<<
@@ -11180,7 +11178,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":389
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":388
  *             idx_subg = p*self.num_sample_per_proc+g
  *             i = 0
  *             while i < num_edge:             # <<<<<<<<<<<<<<
@@ -11191,7 +11189,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_t_1 = (__pyx_v_i < __pyx_v_num_edge);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":390
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":389
  *             i = 0
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX             # <<<<<<<<<<<<<<
@@ -11207,11 +11205,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 390, __pyx_L1_error)
+        __PYX_ERR(0, 389, __pyx_L1_error)
       }
       __pyx_v_ran = (__pyx_t_2 / ((float)RAND_MAX));
 
-      /* "graphsaint/cython_sampler.pyx":391
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":390
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX
  *                 if ran > self.prob_edge_vec[i]:             # <<<<<<<<<<<<<<
@@ -11221,7 +11219,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_t_1 = (__pyx_v_ran > (__pyx_v_self->prob_edge_vec[__pyx_v_i]));
       if (__pyx_t_1) {
 
-        /* "graphsaint/cython_sampler.pyx":393
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":392
  *                 if ran > self.prob_edge_vec[i]:
  *                     # edge not selected
  *                     i = i + 1             # <<<<<<<<<<<<<<
@@ -11230,7 +11228,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
         __pyx_v_i = (__pyx_v_i + 1);
 
-        /* "graphsaint/cython_sampler.pyx":394
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":393
  *                     # edge not selected
  *                     i = i + 1
  *                     continue             # <<<<<<<<<<<<<<
@@ -11239,7 +11237,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
         goto __pyx_L5_continue;
 
-        /* "graphsaint/cython_sampler.pyx":391
+        /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":390
  *             while i < num_edge:
  *                 ran = (<float> rand()) / RAND_MAX
  *                 if ran > self.prob_edge_vec[i]:             # <<<<<<<<<<<<<<
@@ -11248,7 +11246,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
  */
       }
 
-      /* "graphsaint/cython_sampler.pyx":395
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":394
  *                     i = i + 1
  *                     continue
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])             # <<<<<<<<<<<<<<
@@ -11265,10 +11263,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 395, __pyx_L1_error)
+        __PYX_ERR(0, 394, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":396
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":395
  *                     continue
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])             # <<<<<<<<<<<<<<
@@ -11285,10 +11283,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 396, __pyx_L1_error)
+        __PYX_ERR(0, 395, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":397
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":396
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[i])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -11299,7 +11297,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       __pyx_L5_continue:;
     }
 
-    /* "graphsaint/cython_sampler.pyx":398
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":397
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[i])
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -11316,10 +11314,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 398, __pyx_L1_error)
+      __PYX_ERR(0, 397, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":399
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":398
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -11336,11 +11334,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 399, __pyx_L1_error)
+      __PYX_ERR(0, 398, __pyx_L1_error)
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_3), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
 
-    /* "graphsaint/cython_sampler.pyx":400
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":399
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())
  *             g = g + 1             # <<<<<<<<<<<<<<
@@ -11350,7 +11348,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
     __pyx_v_g = (__pyx_v_g + 1);
   }
 
-  /* "graphsaint/cython_sampler.pyx":380
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":379
  *         cutils.npy2vec_float(prob_edge,self.prob_edge_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11364,7 +11362,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_samp
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -11443,7 +11441,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -11536,7 +11534,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -11578,14 +11576,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":411
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":410
  *     cdef vector[float] p_dist_cumsum_vec
  *     cdef int size_subg_e
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11653,7 +11651,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -11661,9 +11659,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 1); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 1); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -11671,9 +11669,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 2); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 2); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -11681,9 +11679,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 3); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 3); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -11691,9 +11689,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 4); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 4); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -11701,9 +11699,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 5); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 5); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -11711,9 +11709,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 6); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 6); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -11721,9 +11719,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[7]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 7); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 7); __PYX_ERR(0, 410, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
@@ -11731,14 +11729,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
           (void)__Pyx_Arg_NewRef_VARARGS(values[8]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 410, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 8); __PYX_ERR(0, 411, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, 8); __PYX_ERR(0, 410, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 411, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 410, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 9)) {
       goto __pyx_L5_argtuple_error;
@@ -11756,16 +11754,16 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 414, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 414, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 413, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 413, __pyx_L3_error)
     __pyx_v_row_train = ((PyArrayObject *)values[5]);
     __pyx_v_col_train = ((PyArrayObject *)values[6]);
     __pyx_v_p_dist_cumsum = ((PyArrayObject *)values[7]);
-    __pyx_v_size_subg_e = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_size_subg_e == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 418, __pyx_L3_error)
+    __pyx_v_size_subg_e = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_size_subg_e == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 417, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 411, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 410, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11775,16 +11773,16 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_1__
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 411, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 412, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 413, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_row_train), __pyx_ptype_5numpy_ndarray, 1, "row_train", 0))) __PYX_ERR(0, 415, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_col_train), __pyx_ptype_5numpy_ndarray, 1, "col_train", 0))) __PYX_ERR(0, 416, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist_cumsum), __pyx_ptype_5numpy_ndarray, 1, "p_dist_cumsum", 0))) __PYX_ERR(0, 417, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 410, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 411, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 412, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_row_train), __pyx_ptype_5numpy_ndarray, 1, "row_train", 0))) __PYX_ERR(0, 414, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_col_train), __pyx_ptype_5numpy_ndarray, 1, "col_train", 0))) __PYX_ERR(0, 415, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist_cumsum), __pyx_ptype_5numpy_ndarray, 1, "p_dist_cumsum", 0))) __PYX_ERR(0, 416, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_row_train, __pyx_v_col_train, __pyx_v_p_dist_cumsum, __pyx_v_size_subg_e);
 
   /* function exit code */
@@ -11845,36 +11843,36 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
   __pyx_pybuffernd_p_dist_cumsum.rcbuffer = &__pyx_pybuffer_p_dist_cumsum;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_row_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_row_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_row_train.diminfo[0].strides = __pyx_pybuffernd_row_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_row_train.diminfo[0].shape = __pyx_pybuffernd_row_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_col_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_col_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_col_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_col_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_col_train.diminfo[0].strides = __pyx_pybuffernd_col_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_col_train.diminfo[0].shape = __pyx_pybuffernd_col_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist_cumsum, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 411, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist_cumsum, &__Pyx_TypeInfo_float, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 410, __pyx_L1_error)
   }
   __pyx_pybuffernd_p_dist_cumsum.diminfo[0].strides = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist_cumsum.diminfo[0].shape = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":419
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":418
  *                         np.ndarray[float,ndim=1,mode='c'] p_dist_cumsum,
  *                         int size_subg_e):
  *         self.size_subg_e = size_subg_e             # <<<<<<<<<<<<<<
@@ -11883,34 +11881,34 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
  */
   __pyx_v_self->size_subg_e = __pyx_v_size_subg_e;
 
-  /* "graphsaint/cython_sampler.pyx":420
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":419
  *                         int size_subg_e):
  *         self.size_subg_e = size_subg_e
  *         cutils.npy2vec_int(row_train,self.row_train_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_row_train), __pyx_v_self->row_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 419, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":421
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":420
  *         self.size_subg_e = size_subg_e
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)             # <<<<<<<<<<<<<<
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_col_train), __pyx_v_self->col_train_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 420, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":422
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":421
  *         cutils.npy2vec_int(row_train,self.row_train_vec)
  *         cutils.npy2vec_int(col_train,self.col_train_vec)
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)             # <<<<<<<<<<<<<<
  * 
  *     cdef void sample(self, int p) nogil:
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 422, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_float(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":411
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":410
  *     cdef vector[float] p_dist_cumsum_vec
  *     cdef int size_subg_e
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -11933,7 +11931,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_row_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -11947,7 +11945,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2___c
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":424
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":423
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -11973,7 +11971,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":425
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":424
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -11982,7 +11980,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_i = 0;
 
-  /* "graphsaint/cython_sampler.pyx":426
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":425
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -11991,7 +11989,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":429
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":428
  *         cdef int e
  *         cdef int idx_subg
  *         cdef float ran = 0.             # <<<<<<<<<<<<<<
@@ -12000,7 +11998,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_ran = 0.;
 
-  /* "graphsaint/cython_sampler.pyx":430
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":429
  *         cdef int idx_subg
  *         cdef float ran = 0.
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]             # <<<<<<<<<<<<<<
@@ -12009,7 +12007,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
   __pyx_v_ran_range = (__pyx_v_self->p_dist_cumsum_vec[(__pyx_v_self->p_dist_cumsum_vec.size() - 1)]);
 
-  /* "graphsaint/cython_sampler.pyx":431
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":430
  *         cdef float ran = 0.
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -12020,7 +12018,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":432
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":431
  *         cdef float ran_range = self.p_dist_cumsum_vec[self.p_dist_cumsum_vec.size()-1]
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -12029,7 +12027,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "graphsaint/cython_sampler.pyx":433
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":432
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -12038,7 +12036,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":434
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":433
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.size_subg_e:             # <<<<<<<<<<<<<<
@@ -12049,7 +12047,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_subg_e);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":435
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":434
  *             i = 0
  *             while i < self.size_subg_e:
  *                 ran = (<float> rand()) / RAND_MAX * ran_range             # <<<<<<<<<<<<<<
@@ -12065,11 +12063,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 435, __pyx_L1_error)
+        __PYX_ERR(0, 434, __pyx_L1_error)
       }
       __pyx_v_ran = ((__pyx_t_2 / ((float)RAND_MAX)) * __pyx_v_ran_range);
 
-      /* "graphsaint/cython_sampler.pyx":436
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":435
  *             while i < self.size_subg_e:
  *                 ran = (<float> rand()) / RAND_MAX * ran_range
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()             # <<<<<<<<<<<<<<
@@ -12086,11 +12084,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 436, __pyx_L1_error)
+        __PYX_ERR(0, 435, __pyx_L1_error)
       }
       __pyx_v_e = (__pyx_t_3 - __pyx_v_self->p_dist_cumsum_vec.begin());
 
-      /* "graphsaint/cython_sampler.pyx":437
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":436
  *                 ran = (<float> rand()) / RAND_MAX * ran_range
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])             # <<<<<<<<<<<<<<
@@ -12107,10 +12105,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 437, __pyx_L1_error)
+        __PYX_ERR(0, 436, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":438
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":437
  *                 e = lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),ran)-self.p_dist_cumsum_vec.begin()
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])             # <<<<<<<<<<<<<<
@@ -12127,10 +12125,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 438, __pyx_L1_error)
+        __PYX_ERR(0, 437, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":439
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":438
  *                 self.node_sampled[idx_subg].push_back(self.row_train_vec[e])
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -12140,7 +12138,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":440
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":439
  *                 self.node_sampled[idx_subg].push_back(self.col_train_vec[e])
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12157,10 +12155,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 440, __pyx_L1_error)
+      __PYX_ERR(0, 439, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":441
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":440
  *                 i = i + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12177,11 +12175,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 441, __pyx_L1_error)
+      __PYX_ERR(0, 440, __pyx_L1_error)
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_4), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
 
-    /* "graphsaint/cython_sampler.pyx":442
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":441
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -12191,7 +12189,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
     __pyx_v_r = (__pyx_v_r + 1);
   }
 
-  /* "graphsaint/cython_sampler.pyx":424
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":423
  *         cutils.npy2vec_float(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12205,7 +12203,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sam
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -12284,7 +12282,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -12377,7 +12375,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -12419,14 +12417,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edg
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Edge2.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":449
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":448
  *     cdef int size_subg
  *     cdef vector[int] p_dist_cumsum_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -12488,7 +12486,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -12496,9 +12494,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(0, 448, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -12506,9 +12504,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(0, 448, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -12516,9 +12514,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(0, 448, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -12526,9 +12524,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(0, 448, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -12536,9 +12534,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(0, 448, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -12546,14 +12544,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
           (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(0, 449, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(0, 448, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 449, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 448, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 7)) {
       goto __pyx_L5_argtuple_error;
@@ -12569,14 +12567,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 452, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 452, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 451, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 451, __pyx_L3_error)
     __pyx_v_p_dist_cumsum = ((PyArrayObject *)values[5]);
-    __pyx_v_size_subg = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_size_subg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 454, __pyx_L3_error)
+    __pyx_v_size_subg = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_size_subg == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, __pyx_nargs); __PYX_ERR(0, 449, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, __pyx_nargs); __PYX_ERR(0, 448, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12586,14 +12584,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_1__c
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 449, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 450, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 451, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist_cumsum), __pyx_ptype_5numpy_ndarray, 1, "p_dist_cumsum", 0))) __PYX_ERR(0, 453, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 448, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 449, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 450, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_dist_cumsum), __pyx_ptype_5numpy_ndarray, 1, "p_dist_cumsum", 0))) __PYX_ERR(0, 452, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc, __pyx_v_p_dist_cumsum, __pyx_v_size_subg);
 
   /* function exit code */
@@ -12642,26 +12640,26 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
   __pyx_pybuffernd_p_dist_cumsum.rcbuffer = &__pyx_pybuffer_p_dist_cumsum;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 449, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 448, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 449, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 448, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 449, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 448, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist_cumsum, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 449, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_dist_cumsum, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 448, __pyx_L1_error)
   }
   __pyx_pybuffernd_p_dist_cumsum.diminfo[0].strides = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_dist_cumsum.diminfo[0].shape = __pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer.shape[0];
 
-  /* "graphsaint/cython_sampler.pyx":455
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":454
  *                         np.ndarray[int,ndim=1,mode='c'] p_dist_cumsum,
  *                         int size_subg):
  *         self.size_subg = size_subg             # <<<<<<<<<<<<<<
@@ -12670,16 +12668,16 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
  */
   __pyx_v_self->size_subg = __pyx_v_size_subg;
 
-  /* "graphsaint/cython_sampler.pyx":456
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":455
  *                         int size_subg):
  *         self.size_subg = size_subg
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)             # <<<<<<<<<<<<<<
  * 
  *     cdef void sample(self, int p) nogil:
  */
-  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_f_10graphsaint_12cython_utils_npy2vec_int(((PyArrayObject *)__pyx_v_p_dist_cumsum), __pyx_v_self->p_dist_cumsum_vec); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 455, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":449
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":448
  *     cdef int size_subg
  *     cdef vector[int] p_dist_cumsum_vec
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -12700,7 +12698,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_p_dist_cumsum.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -12712,7 +12710,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node___ci
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":458
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":457
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12736,7 +12734,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":459
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":458
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -12745,7 +12743,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_i = 0;
 
-  /* "graphsaint/cython_sampler.pyx":460
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":459
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -12754,7 +12752,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":463
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":462
  *         cdef int idx_subg
  *         cdef int sample
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]             # <<<<<<<<<<<<<<
@@ -12763,7 +12761,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
   __pyx_v_rand_range = (__pyx_v_self->p_dist_cumsum_vec[(__pyx_v_self->__pyx_base.node_train_vec.size() - 1)]);
 
-  /* "graphsaint/cython_sampler.pyx":464
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":463
  *         cdef int sample
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -12774,7 +12772,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":465
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":464
  *         cdef int rand_range = self.p_dist_cumsum_vec[self.node_train_vec.size()-1]
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -12783,7 +12781,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "graphsaint/cython_sampler.pyx":466
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":465
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -12792,7 +12790,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":467
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":466
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.size_subg:             # <<<<<<<<<<<<<<
@@ -12803,7 +12801,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->size_subg);
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":468
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":467
  *             i = 0
  *             while i < self.size_subg:
  *                 sample = rand()%rand_range             # <<<<<<<<<<<<<<
@@ -12819,11 +12817,11 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 468, __pyx_L1_error)
+        __PYX_ERR(0, 467, __pyx_L1_error)
       }
       __pyx_v_sample = __Pyx_mod_int(__pyx_t_2, __pyx_v_rand_range);
 
-      /* "graphsaint/cython_sampler.pyx":469
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":468
  *             while i < self.size_subg:
  *                 sample = rand()%rand_range
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])             # <<<<<<<<<<<<<<
@@ -12840,7 +12838,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 469, __pyx_L1_error)
+        __PYX_ERR(0, 468, __pyx_L1_error)
       }
       try {
         (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).push_back((__pyx_v_self->__pyx_base.node_train_vec[(__pyx_t_3 - __pyx_v_self->p_dist_cumsum_vec.begin())]));
@@ -12852,10 +12850,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 469, __pyx_L1_error)
+        __PYX_ERR(0, 468, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":470
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":469
  *                 sample = rand()%rand_range
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -12865,7 +12863,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":471
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":470
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[lower_bound(self.p_dist_cumsum_vec.begin(),self.p_dist_cumsum_vec.end(),sample)-self.p_dist_cumsum_vec.begin()])
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -12874,7 +12872,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "graphsaint/cython_sampler.pyx":472
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":471
  *                 i = i + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12891,10 +12889,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 472, __pyx_L1_error)
+      __PYX_ERR(0, 471, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":473
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":472
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -12911,12 +12909,12 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 473, __pyx_L1_error)
+      __PYX_ERR(0, 472, __pyx_L1_error)
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_3), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "graphsaint/cython_sampler.pyx":458
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":457
  *         cutils.npy2vec_int(p_dist_cumsum,self.p_dist_cumsum_vec)
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -12930,7 +12928,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_samp
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -13009,7 +13007,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Nod
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13102,7 +13100,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -13144,14 +13142,14 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Nod
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":478
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":477
  * 
  * cdef class FullBatch(Sampler):
  *     def __cinit__(self, np.ndarray[int,ndim=1,mode='c'] adj_indptr,             # <<<<<<<<<<<<<<
@@ -13207,7 +13205,7 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -13215,9 +13213,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 1); __PYX_ERR(0, 478, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 1); __PYX_ERR(0, 477, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -13225,9 +13223,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
           (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 2); __PYX_ERR(0, 478, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 2); __PYX_ERR(0, 477, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -13235,9 +13233,9 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
           (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 3); __PYX_ERR(0, 478, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 3); __PYX_ERR(0, 477, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -13245,14 +13243,14 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
           (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 4); __PYX_ERR(0, 478, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, 4); __PYX_ERR(0, 477, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 478, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 477, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
@@ -13266,12 +13264,12 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     __pyx_v_adj_indptr = ((PyArrayObject *)values[0]);
     __pyx_v_adj_indices = ((PyArrayObject *)values[1]);
     __pyx_v_node_train = ((PyArrayObject *)values[2]);
-    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 481, __pyx_L3_error)
-    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 481, __pyx_L3_error)
+    __pyx_v_num_proc = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_num_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 480, __pyx_L3_error)
+    __pyx_v_num_sample_per_proc = __Pyx_PyInt_As_int(values[4]); if (unlikely((__pyx_v_num_sample_per_proc == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 480, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 478, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 477, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13281,13 +13279,13 @@ static int __pyx_pw_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 478, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 479, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 480, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indptr), __pyx_ptype_5numpy_ndarray, 1, "adj_indptr", 0))) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_adj_indices), __pyx_ptype_5numpy_ndarray, 1, "adj_indices", 0))) __PYX_ERR(0, 478, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_node_train), __pyx_ptype_5numpy_ndarray, 1, "node_train", 0))) __PYX_ERR(0, 479, __pyx_L1_error)
   __pyx_r = __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch___cinit__(((struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch *)__pyx_v_self), __pyx_v_adj_indptr, __pyx_v_adj_indices, __pyx_v_node_train, __pyx_v_num_proc, __pyx_v_num_sample_per_proc);
 
   /* function exit code */
@@ -13330,17 +13328,17 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   __pyx_pybuffernd_node_train.rcbuffer = &__pyx_pybuffer_node_train;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 478, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indptr, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 477, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indptr.diminfo[0].strides = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indptr.diminfo[0].shape = __pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 478, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_adj_indices.rcbuffer->pybuffer, (PyObject*)__pyx_v_adj_indices, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 477, __pyx_L1_error)
   }
   __pyx_pybuffernd_adj_indices.diminfo[0].strides = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_adj_indices.diminfo[0].shape = __pyx_pybuffernd_adj_indices.rcbuffer->pybuffer.shape[0];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 478, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer, (PyObject*)__pyx_v_node_train, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 477, __pyx_L1_error)
   }
   __pyx_pybuffernd_node_train.diminfo[0].strides = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_node_train.diminfo[0].shape = __pyx_pybuffernd_node_train.rcbuffer->pybuffer.shape[0];
 
@@ -13356,7 +13354,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_adj_indptr.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_node_train.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -13367,7 +13365,7 @@ static int __pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   return __pyx_r;
 }
 
-/* "graphsaint/cython_sampler.pyx":484
+/* "fairgraph/dataset/graphsaint/cython_sampler.pyx":483
  *         pass
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -13389,7 +13387,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   PyGILState_STATE __pyx_gilstate_save;
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":485
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":484
  * 
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0             # <<<<<<<<<<<<<<
@@ -13398,7 +13396,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
   __pyx_v_i = 0;
 
-  /* "graphsaint/cython_sampler.pyx":486
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":485
  *     cdef void sample(self, int p) nogil:
  *         cdef int i = 0
  *         cdef int r = 0             # <<<<<<<<<<<<<<
@@ -13407,7 +13405,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
   __pyx_v_r = 0;
 
-  /* "graphsaint/cython_sampler.pyx":489
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":488
  *         cdef int idx_subg
  *         cdef int sample
  *         while r < self.num_sample_per_proc:             # <<<<<<<<<<<<<<
@@ -13418,7 +13416,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
     __pyx_t_1 = (__pyx_v_r < __pyx_v_self->__pyx_base.num_sample_per_proc);
     if (!__pyx_t_1) break;
 
-    /* "graphsaint/cython_sampler.pyx":490
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":489
  *         cdef int sample
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r             # <<<<<<<<<<<<<<
@@ -13427,7 +13425,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_idx_subg = ((__pyx_v_p * __pyx_v_self->__pyx_base.num_sample_per_proc) + __pyx_v_r);
 
-    /* "graphsaint/cython_sampler.pyx":491
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":490
  *         while r < self.num_sample_per_proc:
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0             # <<<<<<<<<<<<<<
@@ -13436,7 +13434,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_i = 0;
 
-    /* "graphsaint/cython_sampler.pyx":492
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":491
  *             idx_subg = p*self.num_sample_per_proc+r
  *             i = 0
  *             while i < self.node_train_vec.size():             # <<<<<<<<<<<<<<
@@ -13447,7 +13445,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __pyx_t_1 = (__pyx_v_i < __pyx_v_self->__pyx_base.node_train_vec.size());
       if (!__pyx_t_1) break;
 
-      /* "graphsaint/cython_sampler.pyx":493
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":492
  *             i = 0
  *             while i < self.node_train_vec.size():
  *                 sample = i             # <<<<<<<<<<<<<<
@@ -13456,7 +13454,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
       __pyx_v_sample = __pyx_v_i;
 
-      /* "graphsaint/cython_sampler.pyx":494
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":493
  *             while i < self.node_train_vec.size():
  *                 sample = i
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])             # <<<<<<<<<<<<<<
@@ -13473,10 +13471,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 494, __pyx_L1_error)
+        __PYX_ERR(0, 493, __pyx_L1_error)
       }
 
-      /* "graphsaint/cython_sampler.pyx":495
+      /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":494
  *                 sample = i
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])
  *                 i = i + 1             # <<<<<<<<<<<<<<
@@ -13486,7 +13484,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       __pyx_v_i = (__pyx_v_i + 1);
     }
 
-    /* "graphsaint/cython_sampler.pyx":496
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":495
  *                 self.node_sampled[idx_subg].push_back(self.node_train_vec[sample])
  *                 i = i + 1
  *             r = r + 1             # <<<<<<<<<<<<<<
@@ -13495,7 +13493,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
  */
     __pyx_v_r = (__pyx_v_r + 1);
 
-    /* "graphsaint/cython_sampler.pyx":497
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":496
  *                 i = i + 1
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -13511,10 +13509,10 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 497, __pyx_L1_error)
+      __PYX_ERR(0, 496, __pyx_L1_error)
     }
 
-    /* "graphsaint/cython_sampler.pyx":498
+    /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":497
  *             r = r + 1
  *             sort(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end())
  *             self.node_sampled[idx_subg].erase(unique(self.node_sampled[idx_subg].begin(),self.node_sampled[idx_subg].end()),self.node_sampled[idx_subg].end())             # <<<<<<<<<<<<<<
@@ -13529,12 +13527,12 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 498, __pyx_L1_error)
+      __PYX_ERR(0, 497, __pyx_L1_error)
     }
     (void)((__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).erase(__PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_2), (__pyx_v_self->__pyx_base.node_sampled[__pyx_v_idx_subg]).end()));
   }
 
-  /* "graphsaint/cython_sampler.pyx":484
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":483
  *         pass
  * 
  *     cdef void sample(self, int p) nogil:             # <<<<<<<<<<<<<<
@@ -13548,7 +13546,7 @@ static void __pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch
   #ifdef WITH_THREAD
   __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
   #endif
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.sample", __pyx_clineno, __pyx_lineno, __pyx_filename);
   #ifdef WITH_THREAD
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
@@ -13627,7 +13625,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9Ful
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13720,7 +13718,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -13762,7 +13760,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_14cython_sampler_9Ful
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.cython_sampler.FullBatch.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -13845,7 +13843,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec = {
-  "graphsaint.cython_sampler.Sampler",
+  "fairgraph.dataset.graphsaint.cython_sampler.Sampler",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -13855,7 +13853,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""Sampler", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""Sampler", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -13976,7 +13974,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW_spec = {
-  "graphsaint.cython_sampler.MRW",
+  "fairgraph.dataset.graphsaint.cython_sampler.MRW",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -13986,7 +13984,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""MRW", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""MRW", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW, /*tp_dealloc*/
@@ -14092,7 +14090,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW_spec = {
-  "graphsaint.cython_sampler.RW",
+  "fairgraph.dataset.graphsaint.cython_sampler.RW",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14102,7 +14100,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""RW", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""RW", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -14227,7 +14225,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge_spec = {
-  "graphsaint.cython_sampler.Edge",
+  "fairgraph.dataset.graphsaint.cython_sampler.Edge",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14237,7 +14235,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""Edge", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""Edge", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge, /*tp_dealloc*/
@@ -14363,7 +14361,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2_spec = {
-  "graphsaint.cython_sampler.Edge2",
+  "fairgraph.dataset.graphsaint.cython_sampler.Edge2",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14373,7 +14371,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""Edge2", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""Edge2", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2, /*tp_dealloc*/
@@ -14494,7 +14492,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node_spec = {
-  "graphsaint.cython_sampler.Node",
+  "fairgraph.dataset.graphsaint.cython_sampler.Node",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14504,7 +14502,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""Node", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""Node", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node, /*tp_dealloc*/
@@ -14610,7 +14608,7 @@ static PyType_Slot __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
   {0, 0},
 };
 static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch_spec = {
-  "graphsaint.cython_sampler.FullBatch",
+  "fairgraph.dataset.graphsaint.cython_sampler.FullBatch",
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
@@ -14620,7 +14618,7 @@ static PyType_Spec __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_
 
 static PyTypeObject __pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.cython_sampler.""FullBatch", /*tp_name*/
+  "fairgraph.dataset.graphsaint.cython_sampler.""FullBatch", /*tp_name*/
   sizeof(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, /*tp_dealloc*/
@@ -14842,7 +14840,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 128, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(2, 984, __pyx_L1_error)
   return 0;
@@ -14877,40 +14875,40 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "graphsaint/cython_sampler.pyx":25
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":24
  * 
  * cimport graphsaint.cython_utils as cutils
  * import graphsaint.cython_utils as cutils             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_graphsaint, __pyx_n_s_cython_utils); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_graphsaint, __pyx_n_s_cython_utils); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "graphsaint/cython_sampler.pyx":107
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":106
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
  *         """
  *         Convert the subgraph related data structures from C++ to python. So that cython
  */
-  __pyx_tuple__5 = PyTuple_Pack(28, __pyx_n_s_self, __pyx_n_s_num_subg, __pyx_n_s_l_subg_indptr, __pyx_n_s_l_subg_indices, __pyx_n_s_l_subg_data, __pyx_n_s_l_subg_nodes, __pyx_n_s_l_subg_edge_index, __pyx_n_s_offset_nodes, __pyx_n_s_offset_indptr, __pyx_n_s_offset_indices, __pyx_n_s_offset_data, __pyx_n_s_offset_edge_index, __pyx_n_s_r, __pyx_n_s_ret_nodes_vec, __pyx_n_s_ret_indptr_vec, __pyx_n_s_ret_indices_vec, __pyx_n_s_ret_edge_index_vec, __pyx_n_s_ret_data_vec, __pyx_n_s_wint_indptr, __pyx_n_s_wint_indices, __pyx_n_s_wint_nodes, __pyx_n_s_wfloat_data, __pyx_n_s_wint_edge_index, __pyx_n_s_ret_indptr_np, __pyx_n_s_ret_indices_np, __pyx_n_s_ret_nodes_np, __pyx_n_s_ret_data_np, __pyx_n_s_ret_edge_index_np); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(28, __pyx_n_s_self, __pyx_n_s_num_subg, __pyx_n_s_l_subg_indptr, __pyx_n_s_l_subg_indices, __pyx_n_s_l_subg_data, __pyx_n_s_l_subg_nodes, __pyx_n_s_l_subg_edge_index, __pyx_n_s_offset_nodes, __pyx_n_s_offset_indptr, __pyx_n_s_offset_indices, __pyx_n_s_offset_data, __pyx_n_s_offset_edge_index, __pyx_n_s_r, __pyx_n_s_ret_nodes_vec, __pyx_n_s_ret_indptr_vec, __pyx_n_s_ret_indices_vec, __pyx_n_s_ret_edge_index_vec, __pyx_n_s_ret_data_vec, __pyx_n_s_wint_indptr, __pyx_n_s_wint_indices, __pyx_n_s_wint_nodes, __pyx_n_s_wfloat_data, __pyx_n_s_wint_edge_index, __pyx_n_s_ret_indptr_np, __pyx_n_s_ret_indices_np, __pyx_n_s_ret_nodes_np, __pyx_n_s_ret_data_np, __pyx_n_s_ret_edge_index_np); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_cython_sampler_pyx, __pyx_n_s_get_return, 107, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_cython_sampler_pyx, __pyx_n_s_get_return, 106, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 106, __pyx_L1_error)
 
-  /* "graphsaint/cython_sampler.pyx":181
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":180
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  *     @cython.wraparound(False)
  *     def par_sample(self):
  */
-  __pyx_tuple__7 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_p, __pyx_n_s_ret, __pyx_n_s_len); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_p, __pyx_n_s_ret, __pyx_n_s_len); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_cython_sampler_pyx, __pyx_n_s_par_sample, 181, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_graphsaint_cython_sampler_pyx, __pyx_n_s_par_sample, 180, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 180, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -15110,15 +15108,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler.adj_extract = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_adj_extract;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler)) __PYX_ERR(0, 29, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec, NULL); if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler)) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler->tp_print = 0;
@@ -15128,24 +15126,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Sampler, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Sampler, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_3MRW_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW)) __PYX_ERR(0, 226, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW)) __PYX_ERR(0, 225, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW;
   #endif
@@ -15153,7 +15151,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW->tp_print = 0;
@@ -15163,24 +15161,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_MRW, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_MRW, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 226, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_MRW) < 0) __PYX_ERR(0, 225, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_2RW_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW)) __PYX_ERR(0, 324, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW)) __PYX_ERR(0, 323, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW;
   #endif
@@ -15188,7 +15186,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW->tp_print = 0;
@@ -15198,24 +15196,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RW, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_RW, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_RW) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Edge_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge)) __PYX_ERR(0, 365, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge)) __PYX_ERR(0, 364, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge;
   #endif
@@ -15223,7 +15221,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge->tp_print = 0;
@@ -15233,24 +15231,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_5Edge2_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2)) __PYX_ERR(0, 403, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2)) __PYX_ERR(0, 402, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2 = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2;
   #endif
@@ -15258,7 +15256,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2->tp_print = 0;
@@ -15268,24 +15266,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge2, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge2, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Edge2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_4Node_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node)) __PYX_ERR(0, 446, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node)) __PYX_ERR(0, 445, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node;
   #endif
@@ -15293,7 +15291,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node->tp_print = 0;
@@ -15303,24 +15301,24 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Node) < 0) __PYX_ERR(0, 445, __pyx_L1_error)
   #endif
   __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch = &__pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch.__pyx_base = *__pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   __pyx_vtable_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch.__pyx_base.sample = (void (*)(struct __pyx_obj_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler *, int))__pyx_f_9fairgraph_7dataset_10graphsaint_14cython_sampler_9FullBatch_sample;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 477, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_Pack(1, (PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch_spec, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch)) __PYX_ERR(0, 477, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (unlikely(!__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch)) __PYX_ERR(0, 476, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch_spec, __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #else
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch = &__pyx_type_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch;
   #endif
@@ -15328,7 +15326,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch->tp_base = __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler;
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch->tp_print = 0;
@@ -15338,13 +15336,13 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch, __pyx_vtabptr_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_FullBatch, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_FullBatch, (PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 477, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_FullBatch) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -15392,12 +15390,12 @@ static int __Pyx_modinit_type_import_code(void) {
   __pyx_ptype_5numpy_character = __Pyx_ImportType_3_0_8(__pyx_t_1, "numpy", "character", sizeof(PyObject), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(PyObject),__Pyx_ImportType_CheckSize_Warn_3_0_8); if (!__pyx_ptype_5numpy_character) __PYX_ERR(2, 827, __pyx_L1_error)
   __pyx_ptype_5numpy_ufunc = __Pyx_ImportType_3_0_8(__pyx_t_1, "numpy", "ufunc", sizeof(PyUFuncObject), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(PyUFuncObject),__Pyx_ImportType_CheckSize_Ignore_3_0_8); if (!__pyx_ptype_5numpy_ufunc) __PYX_ERR(2, 866, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyImport_ImportModule("graphsaint.cython_utils"); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 16, __pyx_L1_error)
+  __pyx_t_1 = PyImport_ImportModule("graphsaint.cython_utils"); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float = __Pyx_ImportType_3_0_8(__pyx_t_1, "graphsaint.cython_utils", "array_wrapper_float", sizeof(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float),__Pyx_ImportType_CheckSize_Warn_3_0_8); if (!__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float) __PYX_ERR(3, 16, __pyx_L1_error)
-  __pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_float = (struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float*)__Pyx_GetVtable(__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float); if (unlikely(!__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_float)) __PYX_ERR(3, 16, __pyx_L1_error)
-  __pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int = __Pyx_ImportType_3_0_8(__pyx_t_1, "graphsaint.cython_utils", "array_wrapper_int", sizeof(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int),__Pyx_ImportType_CheckSize_Warn_3_0_8); if (!__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int) __PYX_ERR(3, 22, __pyx_L1_error)
-  __pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int = (struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int*)__Pyx_GetVtable(__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int); if (unlikely(!__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int)) __PYX_ERR(3, 22, __pyx_L1_error)
+  __pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float = __Pyx_ImportType_3_0_8(__pyx_t_1, "graphsaint.cython_utils", "array_wrapper_float", sizeof(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_float),__Pyx_ImportType_CheckSize_Warn_3_0_8); if (!__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_float = (struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_float*)__Pyx_GetVtable(__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_float); if (unlikely(!__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_float)) __PYX_ERR(3, 15, __pyx_L1_error)
+  __pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int = __Pyx_ImportType_3_0_8(__pyx_t_1, "graphsaint.cython_utils", "array_wrapper_int", sizeof(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int), __PYX_GET_STRUCT_ALIGNMENT_3_0_8(struct __pyx_obj_10graphsaint_12cython_utils_array_wrapper_int),__Pyx_ImportType_CheckSize_Warn_3_0_8); if (!__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int) __PYX_ERR(3, 21, __pyx_L1_error)
+  __pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int = (struct __pyx_vtabstruct_10graphsaint_12cython_utils_array_wrapper_int*)__Pyx_GetVtable(__pyx_ptype_10graphsaint_12cython_utils_array_wrapper_int); if (unlikely(!__pyx_vtabptr_10graphsaint_12cython_utils_array_wrapper_int)) __PYX_ERR(3, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -15679,8 +15677,8 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "graphsaint.cython_sampler")) {
-      if (unlikely((PyDict_SetItemString(modules, "graphsaint.cython_sampler", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "fairgraph.dataset.graphsaint.cython_sampler")) {
+      if (unlikely((PyDict_SetItemString(modules, "fairgraph.dataset.graphsaint.cython_sampler", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -15701,81 +15699,81 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "graphsaint/cython_sampler.pyx":14
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":13
  * from libcpp.unordered_map cimport unordered_map
  * from libcpp.utility cimport pair
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * from libc.stdio cimport printf
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_numpy, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":18
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":17
  * from libc.stdio cimport printf
  * from libcpp cimport bool
  * import time,math             # <<<<<<<<<<<<<<
  * import random
  * from libc.stdlib cimport rand
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_math, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_math, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":19
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":18
  * from libcpp cimport bool
  * import time,math
  * import random             # <<<<<<<<<<<<<<
  * from libc.stdlib cimport rand
  * cdef extern from "stdlib.h":
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_random, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_random, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":25
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":24
  * 
  * cimport graphsaint.cython_utils as cutils
  * import graphsaint.cython_utils as cutils             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_graphsaint_cython_utils, __pyx_tuple__4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_graphsaint_cython_utils, __pyx_tuple__4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cutils, __pyx_t_2) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cutils, __pyx_t_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":107
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":106
  *             r = r + 1
  * 
  *     def get_return(self):             # <<<<<<<<<<<<<<
  *         """
  *         Convert the subgraph related data structures from C++ to python. So that cython
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_3get_return, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sampler_get_return, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_cyt, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_3get_return, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sampler_get_return, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_cyt, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_n_s_get_return, __pyx_t_2) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_n_s_get_return, __pyx_t_2) < 0) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler);
 
-  /* "graphsaint/cython_sampler.pyx":181
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":180
  *         pass
  * 
  *     @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  *     @cython.wraparound(False)
  *     def par_sample(self):
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_5par_sample, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sampler_par_sample, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_cyt, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fairgraph_7dataset_10graphsaint_14cython_sampler_7Sampler_5par_sample, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sampler_par_sample, NULL, __pyx_n_s_fairgraph_dataset_graphsaint_cyt, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_n_s_par_sample, __pyx_t_2) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler, __pyx_n_s_par_sample, __pyx_t_2) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_9fairgraph_7dataset_10graphsaint_14cython_sampler_Sampler);
 
@@ -15926,7 +15924,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "graphsaint/cython_sampler.pyx":1
+  /* "fairgraph/dataset/graphsaint/cython_sampler.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: language=c++
  * # distutils: extra_compile_args = -std=c++11
@@ -15943,7 +15941,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init graphsaint.cython_sampler", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init fairgraph.dataset.graphsaint.cython_sampler", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -15957,7 +15955,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init graphsaint.cython_sampler");
+    PyErr_SetString(PyExc_ImportError, "init fairgraph.dataset.graphsaint.cython_sampler");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
