@@ -22,6 +22,12 @@ if __name__ == "__main__":
                         help='Whether to run grid seach')
     parser.add_argument('--grid_hparams', type=float, nargs='*',
                         help='Which hyperparameters are used for the grid search')
+    parser.add_argument('--hmm', type=float, default=0.8,
+                        help='If using synthetic data, the hyperparameters for the hmm')
+    parser.add_argument('--hMM', type=float, default=0.2, 
+                        help='If using synthetic data, the hyperparameters for the hMM')
+    parser.add_argument('--attention', action=argparse.BooleanOptionalAction,
+                        help='Whether to use graph attention instead of convolution')
     
 
     args = parser.parse_args()
@@ -34,9 +40,21 @@ if __name__ == "__main__":
             print(e)
 
     print(args)
+
     # Initialize and run an experiment
-    experiment = Experiment(dataset_name=args.dataset_name, seed=args.seed, device=args.device, verbose=args.verbose, **hyperparams)
+    experiment = Experiment(
+        dataset_name=args.dataset_name,
+        seed=args.seed,
+        device=args.device,
+        verbose=args.verbose,
+        synthetic_hmm=args.hmm,
+        synthetic_hMM=args.hMM,
+        use_graph_attention=args.attention,
+        **hyperparams
+    )
+
     print(experiment)
+
     if args.grid_search:
         results = experiment.run_grid_search(args.grid_hparams)
         print('------ best results: ------')

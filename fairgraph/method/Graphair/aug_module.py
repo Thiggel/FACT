@@ -2,31 +2,42 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import pyro
-from .GCN import GCN_Body
+from .GCN import GCN_Body, GAT_Body
 
 
 class aug_module(torch.nn.Module):
     def __init__(
         self,
-        features,
-        n_hidden=64,
-        temperature=1,
-        device='cpu',
-        dropout=0.1,
-        nlayer=1,
-        mlpx_dropout=0.1,
+        features: torch.tensor,
+        n_hidden: int = 64,
+        temperature: float = 1,
+        device: str = 'cpu',
+        dropout: float = 0.1,
+        nlayer: int = 1,
+        mlpx_dropout: float = 0.1,
         edge_perturbation=True,
         node_feature_masking=True,
+        use_graph_attention: bool = False,
     ) -> None:
-        super(aug_module,self).__init__()
+        super(aug_module, self).__init__()
         self.device = device
+
         self.g_encoder = GCN_Body(
             in_feats=features.shape[1],
             n_hidden=n_hidden,
             out_feats=n_hidden,
             dropout=dropout,
             nlayer=nlayer
-            )
+        ) if not use_graph_attention else GAT_Body(
+            in_feats=features.shape[1],
+            n_hidden=n_hidden,
+            out_feats=n_hidden,
+            dropout=dropout,
+            nlayer=nlayer
+        )
+
+        self.use_graph_attention = use_graph_attention
+
         self.Aaug = MLPA(in_feats=n_hidden, dim_h=n_hidden, dim_z=features.shape[1])
         self.Xaug = MLPX(in_feats=n_hidden, n_hidden=n_hidden, out_feats=features.shape[1], dropout=mlpx_dropout)
         self.edge_perturbation = edge_perturbation
@@ -51,13 +62,15 @@ class aug_module(torch.nn.Module):
             # making adj_sampled symmetric
             adj_sampled = adj_sampled.triu(1)
             adj_sampled = adj_sampled + adj_sampled.T
-            adj_sampled = self.normalize_adj(adj_sampled)
+
+            if not self.use_graph_attention:
+                adj_sampled = self.normalize_adj(adj_sampled)
         else:
             adj_sampled = adj
             adj_logits = None
 
+        # Node feature masking
         if self.node_feature_masking:
-            # Node feature masking
             mask_logits = self.Xaug(h)
             mask_probs = torch.sigmoid(mask_logits)
             mask = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=mask_probs).rsample()
