@@ -7,6 +7,7 @@ from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 import sys
+import torch
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
@@ -77,7 +78,12 @@ class Experiment:
 
         """
         self.name = experiment_name
-        self.device = device if device else set_device()
+        
+        if device in ["cpu", "cuda", "mps"]:
+            self.device = torch.device(device)
+        else:
+            self.device = set_device()
+        
         self.batch_size = batch_size
         self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
         self.verbose = verbose
