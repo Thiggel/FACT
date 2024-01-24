@@ -339,8 +339,9 @@ class Graphair(nn.Module):
         eo_list = []
 
         for i in range(5):
-            torch.manual_seed(i*10)
-            np.random.seed(i*10)
+            seed = i * 10
+            torch.manual_seed(seed)
+            np.random.seed(seed)
 
             self.classifier.reset_parameters()
             # train classifier
@@ -371,13 +372,13 @@ class Graphair(nn.Module):
                         "dp_test: {:.4f}".format(parity_test),
                         "eo_val: {:.4f}".format(equality_val),
                         "eo_test: {:.4f}".format(equality_test), )
-                    
-                    writer.add_scalar('acc_test', acc_test.item(), epoch + 1)
-                    writer.add_scalar('acc_val', acc_val.item(), epoch + 1)
-                    writer.add_scalar('dp_val', parity_val, epoch + 1)
-                    writer.add_scalar('dp_test', parity_test, epoch + 1)
-                    writer.add_scalar('eo_val', equality_val, epoch + 1)
-                    writer.add_scalar('eo_test', equality_test, epoch + 1)
+                
+                writer.add_scalar(f'acc_test/seed_{seed}', acc_test.item(), epoch + 1)
+                writer.add_scalar(f'acc_val/seed_{seed}', acc_val.item(), epoch + 1)
+                writer.add_scalar(f'dp_val/seed_{seed}', parity_val, epoch + 1)
+                writer.add_scalar(f'dp_test/seed_{seed}', parity_test, epoch + 1)
+                writer.add_scalar(f'eo_val/seed_{seed}', equality_val, epoch + 1)
+                writer.add_scalar(f'eo_test/seed_{seed}', equality_test, epoch + 1)
 
                 if acc_val > best_acc:
                     best_acc = acc_val
