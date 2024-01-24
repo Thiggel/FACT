@@ -29,4 +29,4 @@ g_warmup_lr: 0.001                    # Learning rate for a warmup optimizer for
 f_lr: 0.001                           # Learning rate for encoder model f
 graphair_temperature: 0.07            # Temperature for the whole graphair model
 edge_perturbation: True               # Whether to use edge perturbation
-feature_masking: False                # Whether to use feature masking
+node_feature_masking: False           # Whether to use feature masking

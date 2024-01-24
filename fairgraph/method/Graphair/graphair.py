@@ -142,12 +142,12 @@ class Graphair(nn.Module):
         if self.aug_model.edge_perturbation:
             edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
         else:
-            edge_loss = 0
+            edge_loss = torch.tensor(0.)
 
         if self.aug_model.node_feature_masking:
             feat_loss =  self.criterion_recons(x_aug, x)
         else:
-            feat_loss = 0
+            feat_loss = torch.tensor(0.)
 
         return edge_loss + self.lam * feat_loss, edge_loss, feat_loss
     

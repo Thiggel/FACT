@@ -50,7 +50,8 @@ class Experiment:
         g_warmup_lr=1e-3,
         f_lr=1e-4,
         graphair_temperature=0.07,
-        **kwargs,
+        edge_perturbation=True,
+        node_feature_masking=True,        
     ):
         """
         Initializes an Experiment class instance.
@@ -88,8 +89,8 @@ class Experiment:
             "nlayer": g_nlayer,
             "dropout": g_dropout,
             "mlpx_dropout": mlpx_dropout,
-            "edge_perturbation": kwargs["edge_perturbation"],
-            "node_feature_masking": kwargs["node_feature_masking"],
+            "edge_perturbation": edge_perturbation,
+            "node_feature_masking": node_feature_masking,
         }
 
         # Encoder model f hyperparameters
