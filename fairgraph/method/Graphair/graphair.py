@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import scipy.sparse as sp
 import numpy as np
-from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric
+from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric, set_seed
 
 class Graphair(nn.Module):
     r'''
@@ -326,8 +326,7 @@ class Graphair(nn.Module):
         eo_list = []
 
         for i in range(5):
-            torch.manual_seed(i*10)
-            np.random.seed(i*10)
+            set_seed(i*10)
 
             self.classifier.reset_parameters()
             # train classifier
