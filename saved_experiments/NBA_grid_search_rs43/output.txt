@@ -1,0 +1,115 @@
+Experiment with the following hyperparameters:
+        Device: cuda, Dataset: NBA, Epochs: 500, Test epochs: 500, Batch size: 1000
+        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1}
+        Encoder model f hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2}
+        Adversary model k hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2, 'nclass': 1}
+alpha: 0.1, lambda: 0.1, gamma: 0.1
+Start training
+Training time:  21.346787929534912
+Avg results: acc: 0.6794 std: 0.0069 dp: 0.0346 std: 0.0136 eo: 0.0910 std: 0.0470
+alpha: 0.1, lambda: 1.0, gamma: 0.1
+Start training
+Training time:  17.656351327896118
+Avg results: acc: 0.6894 std: 0.0069 dp: 0.0343 std: 0.0249 eo: 0.0647 std: 0.0353
+alpha: 0.1, lambda: 10.0, gamma: 0.1
+Start training
+Training time:  14.876653671264648
+Avg results: acc: 0.6809 std: 0.0045 dp: 0.0130 std: 0.0054 eo: 0.0318 std: 0.0271
+alpha: 0.1, lambda: 0.1, gamma: 1.0
+Start training
+Training time:  16.291263818740845
+Avg results: acc: 0.6965 std: 0.0083 dp: 0.0489 std: 0.0356 eo: 0.1312 std: 0.0722
+alpha: 0.1, lambda: 1.0, gamma: 1.0
+Start training
+Training time:  16.091449975967407
+Avg results: acc: 0.6851 std: 0.0106 dp: 0.0473 std: 0.0310 eo: 0.1173 std: 0.0724
+alpha: 0.1, lambda: 10.0, gamma: 1.0
+Start training
+Training time:  16.10290551185608
+Avg results: acc: 0.7064 std: 0.0085 dp: 0.0248 std: 0.0239 eo: 0.0316 std: 0.0267
+alpha: 0.1, lambda: 0.1, gamma: 10.0
+Start training
+Training time:  13.80722951889038
+Avg results: acc: 0.6752 std: 0.0122 dp: 0.0991 std: 0.0281 eo: 0.1143 std: 0.0343
+alpha: 0.1, lambda: 1.0, gamma: 10.0
+Start training
+Training time:  12.254891157150269
+Avg results: acc: 0.6950 std: 0.0063 dp: 0.0641 std: 0.0223 eo: 0.1143 std: 0.0258
+alpha: 0.1, lambda: 10.0, gamma: 10.0
+Start training
+Training time:  18.993268966674805
+Avg results: acc: 0.6695 std: 0.0159 dp: 0.0840 std: 0.0215 eo: 0.1498 std: 0.0425
+alpha: 1.0, lambda: 0.1, gamma: 0.1
+Start training
+Training time:  17.60624361038208
+Avg results: acc: 0.6936 std: 0.0083 dp: 0.0693 std: 0.0099 eo: 0.1558 std: 0.0134
+alpha: 1.0, lambda: 1.0, gamma: 0.1
+Start training
+Training time:  17.647265434265137
+Avg results: acc: 0.6993 std: 0.0171 dp: 0.0355 std: 0.0289 eo: 0.0746 std: 0.0460
+alpha: 1.0, lambda: 10.0, gamma: 0.1
+Start training
+Training time:  20.042547464370728
+Avg results: acc: 0.6851 std: 0.0072 dp: 0.0238 std: 0.0065 eo: 0.0521 std: 0.0245
+alpha: 1.0, lambda: 0.1, gamma: 1.0
+Start training
+Training time:  18.829090118408203
+Avg results: acc: 0.6922 std: 0.0035 dp: 0.0590 std: 0.0227 eo: 0.0925 std: 0.0466
+alpha: 1.0, lambda: 1.0, gamma: 1.0
+Start training
+Training time:  12.56649374961853
+Avg results: acc: 0.6851 std: 0.0057 dp: 0.0655 std: 0.0099 eo: 0.0353 std: 0.0143
+alpha: 1.0, lambda: 10.0, gamma: 1.0
+Start training
+Training time:  19.93932557106018
+Avg results: acc: 0.7007 std: 0.0083 dp: 0.0782 std: 0.0257 eo: 0.0667 std: 0.0301
+alpha: 1.0, lambda: 0.1, gamma: 10.0
+Start training
+Training time:  14.300694227218628
+Avg results: acc: 0.6865 std: 0.0053 dp: 0.1196 std: 0.0267 eo: 0.1248 std: 0.0211
+alpha: 1.0, lambda: 1.0, gamma: 10.0
+Start training
+Training time:  12.777747392654419
+Avg results: acc: 0.6851 std: 0.0035 dp: 0.0175 std: 0.0110 eo: 0.0335 std: 0.0259
+alpha: 1.0, lambda: 10.0, gamma: 10.0
+Start training
+Training time:  14.84066104888916
+Avg results: acc: 0.7050 std: 0.0057 dp: 0.0238 std: 0.0186 eo: 0.0444 std: 0.0071
+alpha: 10.0, lambda: 0.1, gamma: 0.1
+Start training
+Training time:  19.841257572174072
+Avg results: acc: 0.6823 std: 0.0069 dp: 0.0156 std: 0.0126 eo: 0.0348 std: 0.0135
+alpha: 10.0, lambda: 1.0, gamma: 0.1
+Start training
+Training time:  17.598970651626587
+Avg results: acc: 0.6780 std: 0.0035 dp: 0.0452 std: 0.0129 eo: 0.0280 std: 0.0175
+alpha: 10.0, lambda: 10.0, gamma: 0.1
+Start training
+Training time:  16.170106410980225
+Avg results: acc: 0.6936 std: 0.0113 dp: 0.0227 std: 0.0141 eo: 0.0485 std: 0.0293
+alpha: 10.0, lambda: 0.1, gamma: 1.0
+Start training
+Training time:  18.384101629257202
+Avg results: acc: 0.6908 std: 0.0106 dp: 0.0124 std: 0.0092 eo: 0.0299 std: 0.0191
+alpha: 10.0, lambda: 1.0, gamma: 1.0
+Start training
+Training time:  14.971030950546265
+Avg results: acc: 0.6794 std: 0.0104 dp: 0.0450 std: 0.0159 eo: 0.1024 std: 0.0379
+alpha: 10.0, lambda: 10.0, gamma: 1.0
+Start training
+Training time:  17.861982583999634
+Avg results: acc: 0.7007 std: 0.0069 dp: 0.0724 std: 0.0224 eo: 0.0929 std: 0.0083
+alpha: 10.0, lambda: 0.1, gamma: 10.0
+Start training
+Training time:  17.370545625686646
+Avg results: acc: 0.7234 std: 0.0045 dp: 0.1903 std: 0.0164 eo: 0.2062 std: 0.0403
+alpha: 10.0, lambda: 1.0, gamma: 10.0
+Start training
+Training time:  19.46072244644165
+Avg results: acc: 0.6695 std: 0.0057 dp: 0.0280 std: 0.0048 eo: 0.0316 std: 0.0327
+alpha: 10.0, lambda: 10.0, gamma: 10.0
+Start training
+Training time:  18.53511691093445
+Avg results: acc: 0.6936 std: 0.0094 dp: 0.0714 std: 0.0238 eo: 0.0827 std: 0.0196
+------ best results: ------
+({'alpha': 10.0, 'beta': 1.0, 'gamma': 10.0, 'lam': 0.1}, {'acc': {'mean': 0.7234042553191489, 'std': 0.004485500227189162}, 'dp': {'mean': 0.19033189033189038, 'std': 0.016410930025351354}, 'eo': {'mean': 0.20620300751879705, 'std': 0.040308922132200206}})
