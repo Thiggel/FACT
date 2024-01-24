@@ -6,6 +6,7 @@ To install the required dependencies:
 - Create a python virtual environment: `python -m venv venv`
 - Activate the envirionement: `source ./venv/bin/activate`
 - Install the required dependencies: `pip install -r requirements.txt`
+- Install graphsaint `./install_graphsaint.sh`
 
 To run the experiment use:
 ```

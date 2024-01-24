@@ -8,12 +8,12 @@
             "-std=c++11"
         ],
         "language": "c++",
-        "name": "graphsaint.norm_aggr",
+        "name": "fairgraph.dataset.graphsaint.norm_aggr",
         "sources": [
             "graphsaint/norm_aggr.pyx"
         ]
     },
-    "module_name": "graphsaint.norm_aggr"
+    "module_name": "fairgraph.dataset.graphsaint.norm_aggr"
 }
 END: Cython Metadata */
 
@@ -3166,7 +3166,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy_7ndarray_4data_data(PyArrayObject *__p
 
 /* Module declarations from "libcpp.string" */
 
-/* Module declarations from "graphsaint.norm_aggr" */
+/* Module declarations from "fairgraph.dataset.graphsaint.norm_aggr" */
 static PyObject *__pyx_collections_abc_Sequence = 0;
 static PyObject *generic = 0;
 static PyObject *strided = 0;
@@ -3213,11 +3213,11 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, 
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "graphsaint.norm_aggr"
+#define __Pyx_MODULE_NAME "fairgraph.dataset.graphsaint.norm_aggr"
 extern int __pyx_module_is_main_fairgraph__dataset__graphsaint__norm_aggr;
 int __pyx_module_is_main_fairgraph__dataset__graphsaint__norm_aggr = 0;
 
-/* Implementation of "graphsaint.norm_aggr" */
+/* Implementation of "fairgraph.dataset.graphsaint.norm_aggr" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin___import__;
 static PyObject *__pyx_builtin_ValueError;
@@ -3358,7 +3358,7 @@ static const char __pyx_k_Indirect_dimensions_not_supporte[] = "Indirect dimensi
 static const char __pyx_k_Invalid_mode_expected_c_or_fortr[] = "Invalid mode, expected 'c' or 'fortran', got ";
 static const char __pyx_k_Out_of_bounds_on_buffer_access_a[] = "Out of bounds on buffer access (axis ";
 static const char __pyx_k_Unable_to_convert_item_to_object[] = "Unable to convert item to object";
-static const char __pyx_k_fairgraph_dataset_graphsaint_nor[] = "graphsaint.norm_aggr";
+static const char __pyx_k_fairgraph_dataset_graphsaint_nor[] = "fairgraph.dataset.graphsaint.norm_aggr";
 static const char __pyx_k_got_differing_extents_in_dimensi[] = "got differing extents in dimension ";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
@@ -19229,7 +19229,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-/* "graphsaint/norm_aggr.pyx":15
+/* "fairgraph/dataset/graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -19362,7 +19362,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -19404,7 +19404,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("norm_aggr", 1);
 
-  /* "graphsaint/norm_aggr.pyx":16
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":16
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):
  *     cdef int num_proc_view=num_proc             # <<<<<<<<<<<<<<
@@ -19414,7 +19414,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_num_proc); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L1_error)
   __pyx_v_num_proc_view = __pyx_t_1;
 
-  /* "graphsaint/norm_aggr.pyx":17
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":17
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data             # <<<<<<<<<<<<<<
@@ -19426,7 +19426,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __pyx_t_2.memview = NULL;
   __pyx_t_2.data = NULL;
 
-  /* "graphsaint/norm_aggr.pyx":18
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":18
  *     cdef int num_proc_view=num_proc
  *     cdef float [:] data_view=data
  *     cdef int length=data.shape[0]             # <<<<<<<<<<<<<<
@@ -19442,7 +19442,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_length = __pyx_t_1;
 
-  /* "graphsaint/norm_aggr.pyx":19
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":19
  *     cdef float [:] data_view=data
  *     cdef int length=data.shape[0]
  *     cdef int [:] edge_index_view=edge_index             # <<<<<<<<<<<<<<
@@ -19454,7 +19454,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "graphsaint/norm_aggr.pyx":20
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":20
  *     cdef int length=data.shape[0]
  *     cdef int [:] edge_index_view=edge_index
  *     cdef float [:] norm_aggr_view=norm_aggr             # <<<<<<<<<<<<<<
@@ -19466,7 +19466,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __pyx_t_2.memview = NULL;
   __pyx_t_2.data = NULL;
 
-  /* "graphsaint/norm_aggr.pyx":22
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":22
  *     cdef float [:] norm_aggr_view=norm_aggr
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):             # <<<<<<<<<<<<<<
@@ -19514,7 +19514,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                         {
                             __pyx_v_i = (int)(0 + 1 * __pyx_t_6);
 
-                            /* "graphsaint/norm_aggr.pyx":23
+                            /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":23
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):
  *         data_view[i]=norm_aggr_view[edge_index_view[i]]             # <<<<<<<<<<<<<<
@@ -19572,7 +19572,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
                             goto __pyx_L10;
                             __pyx_L10:;
                             #ifdef _OPENMP
-                            #pragma omp critical(__pyx_parallel_lastprivates0)
+                            #pragma omp critical(__pyx_parallel_lastprivates1)
                             #endif /* _OPENMP */
                             {
                                 __pyx_parallel_temp0 = __pyx_v_i;
@@ -19631,7 +19631,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
         #endif
       }
 
-      /* "graphsaint/norm_aggr.pyx":22
+      /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":22
  *     cdef float [:] norm_aggr_view=norm_aggr
  *     cdef int i
  *     for i in prange(length,schedule='static',nogil=True,num_threads=num_proc_view):             # <<<<<<<<<<<<<<
@@ -19656,7 +19656,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
       }
   }
 
-  /* "graphsaint/norm_aggr.pyx":15
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -19672,7 +19672,7 @@ static PyObject *__pyx_pf_9fairgraph_7dataset_10graphsaint_9norm_aggr_norm_aggr(
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __PYX_XCLEAR_MEMVIEW(&__pyx_t_5, 1);
-  __Pyx_AddTraceback("graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fairgraph.dataset.graphsaint.norm_aggr.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XCLEAR_MEMVIEW(&__pyx_v_data_view, 1);
@@ -19820,7 +19820,7 @@ static PyType_Slot __pyx_type___pyx_array_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_array_spec = {
-  "graphsaint.norm_aggr.array",
+  "fairgraph.dataset.graphsaint.norm_aggr.array",
   sizeof(struct __pyx_array_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_SEQUENCE,
@@ -19866,7 +19866,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.norm_aggr.""array", /*tp_name*/
+  "fairgraph.dataset.graphsaint.norm_aggr.""array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -20026,7 +20026,7 @@ static PyType_Slot __pyx_type___pyx_MemviewEnum_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
-  "graphsaint.norm_aggr.Enum",
+  "fairgraph.dataset.graphsaint.norm_aggr.Enum",
   sizeof(struct __pyx_MemviewEnum_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -20036,7 +20036,7 @@ static PyType_Spec __pyx_type___pyx_MemviewEnum_spec = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.norm_aggr.""Enum", /*tp_name*/
+  "fairgraph.dataset.graphsaint.norm_aggr.""Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -20333,7 +20333,7 @@ static PyType_Slot __pyx_type___pyx_memoryview_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryview_spec = {
-  "graphsaint.norm_aggr.memoryview",
+  "fairgraph.dataset.graphsaint.norm_aggr.memoryview",
   sizeof(struct __pyx_memoryview_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
@@ -20379,7 +20379,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.norm_aggr.""memoryview", /*tp_name*/
+  "fairgraph.dataset.graphsaint.norm_aggr.""memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -20533,7 +20533,7 @@ static PyType_Slot __pyx_type___pyx_memoryviewslice_slots[] = {
   {0, 0},
 };
 static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
-  "graphsaint.norm_aggr._memoryviewslice",
+  "fairgraph.dataset.graphsaint.norm_aggr._memoryviewslice",
   sizeof(struct __pyx_memoryviewslice_obj),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_SEQUENCE,
@@ -20543,7 +20543,7 @@ static PyType_Spec __pyx_type___pyx_memoryviewslice_spec = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "graphsaint.norm_aggr.""_memoryviewslice", /*tp_name*/
+  "fairgraph.dataset.graphsaint.norm_aggr.""_memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -20967,7 +20967,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__20);
   __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 1, __pyx_L1_error)
 
-  /* "graphsaint/norm_aggr.pyx":15
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -21554,8 +21554,8 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "graphsaint.norm_aggr")) {
-      if (unlikely((PyDict_SetItemString(modules, "graphsaint.norm_aggr", __pyx_m) < 0))) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "fairgraph.dataset.graphsaint.norm_aggr")) {
+      if (unlikely((PyDict_SetItemString(modules, "fairgraph.dataset.graphsaint.norm_aggr", __pyx_m) < 0))) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -22089,7 +22089,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Enum, __pyx_t_7) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "graphsaint/norm_aggr.pyx":5
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":5
  * # distutils: extra_compile_args = -std=c++11
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -22101,7 +22101,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_7) < 0) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "graphsaint/norm_aggr.pyx":15
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":15
  * from cython.operator cimport dereference, preincrement
  * 
  * def norm_aggr(data,edge_index,norm_aggr,num_proc=20):             # <<<<<<<<<<<<<<
@@ -22114,7 +22114,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_norm_aggr, __pyx_t_7) < 0) __PYX_ERR(1, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "graphsaint/norm_aggr.pyx":1
+  /* "fairgraph/dataset/graphsaint/norm_aggr.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: language=c++
  * # distutils: extra_compile_args = -std=c++11
@@ -22133,7 +22133,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_7);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init graphsaint.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init fairgraph.dataset.graphsaint.norm_aggr", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -22147,7 +22147,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init graphsaint.norm_aggr");
+    PyErr_SetString(PyExc_ImportError, "init fairgraph.dataset.graphsaint.norm_aggr");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
