@@ -371,12 +371,13 @@ class Graphair(nn.Module):
                         "eo_val: {:.4f}".format(equality_val),
                         "eo_test: {:.4f}".format(equality_test), )
                 
-                writer.add_scalar(f'acc_test/seed_{seed}', acc_test.item(), epoch + 1)
-                writer.add_scalar(f'acc_val/seed_{seed}', acc_val.item(), epoch + 1)
-                writer.add_scalar(f'dp_val/seed_{seed}', parity_val, epoch + 1)
-                writer.add_scalar(f'dp_test/seed_{seed}', parity_test, epoch + 1)
-                writer.add_scalar(f'eo_val/seed_{seed}', equality_val, epoch + 1)
-                writer.add_scalar(f'eo_test/seed_{seed}', equality_test, epoch + 1)
+                alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
+                writer.add_scalar(f'acc_test ({alpha_beta_gamma})/seed_{seed}', acc_test.item(), epoch + 1)
+                writer.add_scalar(f'acc_val ({alpha_beta_gamma})/seed_{seed}', acc_val.item(), epoch + 1)
+                writer.add_scalar(f'dp_val ({alpha_beta_gamma})/seed_{seed}', parity_val, epoch + 1)
+                writer.add_scalar(f'dp_test ({alpha_beta_gamma})/seed_{seed}', parity_test, epoch + 1)
+                writer.add_scalar(f'eo_val ({alpha_beta_gamma})/seed_{seed}', equality_val, epoch + 1)
+                writer.add_scalar(f'eo_test ({alpha_beta_gamma})/seed_{seed}', equality_test, epoch + 1)
 
                 if acc_val > best_acc:
                     best_acc = acc_val
