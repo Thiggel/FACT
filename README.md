@@ -5,6 +5,7 @@
 To install the required dependencies:
 - Create a python virtual environment: `python -m venv venv`
 - Activate the envirionement: `source ./venv/bin/activate`
+- Use the latest version of pip: `pip install --upgrade pip`
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install_graphsaint.sh`
 

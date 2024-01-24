@@ -1,10 +1,12 @@
 import os
+import shutil
+from torch.utils.tensorboard import SummaryWriter
+import time
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
-
-import time
+import sys
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
@@ -17,6 +19,8 @@ class Experiment:
 
     def __init__(
         self,
+        experiment_name,
+        params_file,
         dataset_name,
         device=None,
         verbose=False,
@@ -53,7 +57,7 @@ class Experiment:
         graphair_temperature=0.07,
         synthetic_hmm=0.8,
         synthetic_hMM=0.2,
-        use_graph_attention=False
+        use_graph_attention=False,
     ):
         """
         Initializes an Experiment class instance.
@@ -70,6 +74,7 @@ class Experiment:
             ... #TODO: finish docstring
 
         """
+        self.name = experiment_name
         self.device = device if device else set_device()
         self.batch_size = batch_size
         self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
@@ -130,6 +135,15 @@ class Experiment:
             "gamma": gamma,
             "lam": lam
         }
+
+        self.params_file = params_file
+        self.initialize_logging()
+
+    def initialize_logging(self):
+        log_dir = self.create_log_dir()
+        self.writer = SummaryWriter(log_dir=log_dir)
+        shutil.copy(self.params_file, log_dir)
+        sys.stdout = open(os.path.join(log_dir, "output.txt"), "w")
 
     def initialize_dataset(
         self,
@@ -259,7 +273,8 @@ class Experiment:
                 minibatch=self.dataset.minibatch,
                 warmup=self.warmup,
                 adv_epoches=1,
-                verbose=self.verbose
+                verbose=self.verbose,
+                writer=self.writer,
                 )
             print("Training time: ", time.time() - st_time)
 
@@ -273,7 +288,8 @@ class Experiment:
                 idx_sens=self.dataset.idx_sens_train,
                 warmup=self.warmup,
                 adv_epoches=1,
-                verbose=self.verbose
+                verbose=self.verbose,
+                writer=self.writer,
             )  # TODO: figure out what adv_epochs is
             print("Training time: ", time.time() - st_time)
 
@@ -287,10 +303,18 @@ class Experiment:
             idx_val=self.dataset.idx_val,
             idx_test=self.dataset.idx_test,
             sens=self.dataset.sens,
-            verbose=self.verbose
+            verbose=self.verbose,
+            writer=self.writer,
         )
 
         return results
+
+    def create_log_dir(self):
+        timestamp = time.strftime("%Y-%m-%d_%H-%M-%S")
+        log_dir = os.path.join("experiments", f"{timestamp}_{self.name}")
+        os.makedirs(log_dir, exist_ok=True)
+
+        return log_dir
     
     def __repr__(self):
         return f"""Experiment with the following hyperparameters:
