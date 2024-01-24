@@ -136,7 +136,7 @@ class Graphair(nn.Module):
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
     
-    def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, warmup=None, adv_epoches=10, verbose=False):
+    def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, writer, warmup=None, adv_epoches=10, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -231,9 +231,15 @@ class Graphair(nn.Module):
                 'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
                 )
 
+            alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+
         self._save_checkpoint()
 
-    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1, verbose=False):
+    def fit_whole(self, epochs, adj, x, sens, idx_sens, writer, warmup=None, adv_epoches=1, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -314,10 +320,17 @@ class Graphair(nn.Module):
                 'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
                 'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
                 )
+            
+            alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+
         self._save_checkpoint()
     
 
-    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, verbose=False):
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, writer, verbose=False):
         h = self.forward(adj, features)
         h = h.detach()
 
@@ -358,6 +371,14 @@ class Graphair(nn.Module):
                         "dp_test: {:.4f}".format(parity_test),
                         "eo_val: {:.4f}".format(equality_val),
                         "eo_test: {:.4f}".format(equality_test), )
+                    
+                    writer.add_scalar('acc_test', acc_test.item(), epoch + 1)
+                    writer.add_scalar('acc_val', acc_val.item(), epoch + 1)
+                    writer.add_scalar('dp_val', parity_val, epoch + 1)
+                    writer.add_scalar('dp_test', parity_test, epoch + 1)
+                    writer.add_scalar('eo_val', equality_val, epoch + 1)
+                    writer.add_scalar('eo_test', equality_test, epoch + 1)
+
                 if acc_val > best_acc:
                     best_acc = acc_val
                     best_test = acc_test
