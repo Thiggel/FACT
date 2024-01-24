@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import scipy.sparse as sp
 import numpy as np
-from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric
+from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric, set_seed
 
 class Graphair(nn.Module):
     r'''
@@ -135,7 +135,7 @@ class Graphair(nn.Module):
     
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
-    
+
     def _get_recons_loss(self, adj_orig, adj_logits, x, x_aug):
         norm_w = adj_orig.shape[0]**2 / float((adj_orig.shape[0]**2 - adj_orig.sum()) * 2)
 
@@ -151,7 +151,7 @@ class Graphair(nn.Module):
 
         return edge_loss + self.lam * feat_loss, edge_loss, feat_loss
     
-    def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, warmup=None, adv_epoches=10, verbose=False):
+    def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, writer, warmup=None, adv_epoches=10, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -237,9 +237,15 @@ class Graphair(nn.Module):
                 'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
                 )
 
+            alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+
         self._save_checkpoint()
 
-    def fit_whole(self, epochs, adj, x,sens,idx_sens,warmup=None, adv_epoches=1, verbose=False):
+    def fit_whole(self, epochs, adj, x, sens, idx_sens, writer, warmup=None, adv_epoches=1, verbose=False):
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -313,10 +319,17 @@ class Graphair(nn.Module):
                 'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
                 'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
                 )
+            
+            alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+
         self._save_checkpoint()
     
 
-    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, verbose=False):
+    def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, writer, verbose=False):
         h = self.forward(adj, features)
         h = h.detach()
 
@@ -325,8 +338,8 @@ class Graphair(nn.Module):
         eo_list = []
 
         for i in range(5):
-            torch.manual_seed(i*10)
-            np.random.seed(i*10)
+            seed = i * 10
+            set_seed(seed)
 
             self.classifier.reset_parameters()
             # train classifier
@@ -357,6 +370,14 @@ class Graphair(nn.Module):
                         "dp_test: {:.4f}".format(parity_test),
                         "eo_val: {:.4f}".format(equality_val),
                         "eo_test: {:.4f}".format(equality_test), )
+                
+                writer.add_scalar(f'acc_test/seed_{seed}', acc_test.item(), epoch + 1)
+                writer.add_scalar(f'acc_val/seed_{seed}', acc_val.item(), epoch + 1)
+                writer.add_scalar(f'dp_val/seed_{seed}', parity_val, epoch + 1)
+                writer.add_scalar(f'dp_test/seed_{seed}', parity_test, epoch + 1)
+                writer.add_scalar(f'eo_val/seed_{seed}', equality_val, epoch + 1)
+                writer.add_scalar(f'eo_test/seed_{seed}', equality_test, epoch + 1)
+
                 if acc_val > best_acc:
                     best_acc = acc_val
                     best_test = acc_test
