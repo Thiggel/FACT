@@ -7,6 +7,7 @@ To install the required dependencies:
 - Activate the envirionement: `source ./venv/bin/activate`
 - Use the latest version of pip: `pip install --upgrade pip`
 - Install the required dependencies: `pip install -r requirements.txt`
+- Install graphsaint `./install_graphsaint.sh`
 
 To run the experiment use:
 ```
@@ -21,5 +22,9 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 `--verbose`: whether to print the training / testing logs
 
 `--seed`: a seed to use for reproducibility
+
+`--grid_search`: whether to run one run, or do a grid search over the hyperparameters
+
+`--grid_hparams`: the values over which to do the hyperparameter search
 
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.

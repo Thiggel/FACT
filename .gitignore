@@ -156,3 +156,8 @@ cython_debug/
 /venv
 /dataset
 /checkpoint
+
+# Mac OS
+.DS_Store
+results.pickle
+*.pickle

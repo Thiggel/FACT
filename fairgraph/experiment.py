@@ -1,11 +1,11 @@
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier
+import os
+from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
-from .dataset import POKEC, NBA
 import tensorflow as tf
 import datetime
-
 import time
+from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
@@ -23,6 +23,7 @@ class Experiment:
         verbose=False,
         epochs=10_000,
         test_epochs=1_000,
+        batch_size=1000,
         seed=42,
         weight_decay=1e-5,
         g_temperature=1.0,
@@ -50,7 +51,10 @@ class Experiment:
         g_lr=1e-4,
         g_warmup_lr=1e-3,
         f_lr=1e-4,
-        graphair_temperature=0.07
+        graphair_temperature=0.07,
+        synthetic_hmm=0.8,
+        synthetic_hMM=0.2,
+        use_graph_attention=False
     ):
         """
         Initializes an Experiment class instance.
@@ -68,16 +72,20 @@ class Experiment:
 
         """
         self.device = device if device else set_device()
-        self.dataset = self.initialize_dataset(dataset_name)
+        self.batch_size = batch_size
+        self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
         self.verbose = verbose
 
         # Set a seed for reproducibility
         set_seed(seed)
+        self.seed = seed
 
         # Trainig hyperparameters
         self.warmup = warmup
         self.epochs = epochs
         self.test_epochs = test_epochs
+
+        self.use_graph_attention = use_graph_attention
 
         # Augmentation model g hyperparameters
         self.g_hyperparams = {
@@ -124,17 +132,74 @@ class Experiment:
             "lam": lam
         }
 
-    def initialize_dataset(self, dataset_name):
+    def initialize_dataset(
+        self,
+        dataset_name,
+        synthetic_hmm=0.8,
+        synthetic_hMM=0.2
+    ):
         if dataset_name == Datasets.NBA:
             return NBA(device=self.device)
         elif dataset_name == Datasets.POKEC_N:
-            return POKEC(device=self.device, dataset_sample="pokec_n")
+            return POKEC(device=self.device, dataset_sample="pokec_n", batch_size=self.batch_size)
         elif dataset_name == Datasets.POKEC_Z:
-            return POKEC(device=self.device, dataset_sample="pokec_z")
+            return POKEC(device=self.device, dataset_sample="pokec_z", batch_size=self.batch_size)
+        elif dataset_name == Datasets.SYNTHETIC:
+            print(synthetic_hmm, synthetic_hMM)
+            return ArtificialSensitiveGraphDataset(
+                path=os.getcwd() + '/fairgraph/dataset/dataset/artificial/' +
+                'DPAH-N1000-fm0.3-d0.03-ploM2.5-plom2.5-' +
+                f'hMM{synthetic_hMM}-hmm{synthetic_hmm}-ID0.gpickle',
+                device=self.device
+            )
         else:
             raise Exception(
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
+        
+    def run_grid_search(self, hparam_values):
+        """
+        Runs grid seach using the given hyperparameter values
+
+        Args:
+            hparam_values (tuple): the values alpha, gamma 
+                and lam can take in the grid search.
+
+        Returns: 
+            best_params (dict): values of the hyperparameters 
+                for the setting with the best accuracy.
+            best_res_dict (dict): output of self.run for the 
+                best hyperparameter values.  
+        """
+        hparam_values = hparam_values if hparam_values else (0.1, 1., 10.)
+        best_acc = -1
+        best_params = None
+        best_res_dict = None
+
+        beta = 1.
+        for alpha in hparam_values:
+            for gamma in hparam_values:
+                for lam in hparam_values:
+                    # set the hyperparameter values
+                    self.graphair_hyperparams['alpha'] = alpha
+                    self.graphair_hyperparams['beta'] = beta
+                    self.graphair_hyperparams['gamma'] = gamma
+                    self.graphair_hyperparams['lam'] = lam
+                    
+                    # reset the seed
+                    set_seed(self.seed)
+
+                    # run the experiment
+                    print(f"alpha: {self.graphair_hyperparams['alpha']}, lambda: {self.graphair_hyperparams['lam']}, gamma: {self.graphair_hyperparams['gamma']}")
+                    res_dict = self.run()
+
+                    # keep track of the results which produce the best accuracy
+                    if res_dict['acc']['mean'] > best_acc:
+                        best_acc = res_dict['acc']['mean']
+                        best_res_dict = res_dict
+                        best_params = {'alpha': alpha, 'beta': beta, 'gamma': gamma, 'lam': lam}
+
+        return best_params, best_res_dict
 
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
@@ -143,6 +208,7 @@ class Experiment:
         self.aug_model = aug_module(
             features=self.dataset.features,
             device=self.device,
+            use_graph_attention=self.use_graph_attention,
             **self.g_hyperparams
         ).to(self.device)
 
@@ -150,10 +216,16 @@ class Experiment:
         self.f_encoder = GCN_Body(
             in_feats=self.dataset.features.shape[1],
             **self.f_hyperparams
+        ).to(self.device) if not self.use_graph_attention else GAT_Body(
+            in_feats=self.dataset.features.shape[1],
+            **self.f_hyperparams
         ).to(self.device)
 
         # Initialize adversary model k
         self.sens_model = GCN(
+            in_feats=self.dataset.features.shape[1],
+            **self.k_hyperparams
+        ).to(self.device) if not self.use_graph_attention else GAT_Model(
             in_feats=self.dataset.features.shape[1],
             **self.k_hyperparams
         ).to(self.device)
@@ -169,23 +241,42 @@ class Experiment:
             f_encoder=self.f_encoder,
             sens_model=self.sens_model,
             classifier_model=self.classifier_model,
+            device=self.device,
             dataset=self.dataset.name,
             **self.graphair_hyperparams
         ).to(self.device)
 
         # Train the model
-        st_time = time.time()
-        self.model.fit_whole(
-            epochs=self.epochs,
-            adj=self.dataset.adj,
-            x=self.dataset.features,
-            sens=self.dataset.sens,
-            idx_sens=self.dataset.idx_sens_train,
-            warmup=self.warmup,
-            adv_epoches=1,
-            verbose=self.verbose
-        )  # TODO: figure out what adv_epochs is
-        print("Training time: ", time.time() - st_time)
+        print("Start training")
+        if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
+            # call fit_batch_GraphSAINT
+            st_time = time.time()
+            self.model.fit_batch_GraphSAINT(
+                epochs=self.epochs,
+                adj=self.dataset.adj,
+                x=self.dataset.features,
+                sens=self.dataset.sens,
+                idx_sens=self.dataset.idx_sens_train,
+                minibatch=self.dataset.minibatch,
+                warmup=self.warmup,
+                adv_epoches=1,
+                verbose=self.verbose
+                )
+            print("Training time: ", time.time() - st_time)
+
+        else:
+            st_time = time.time()
+            self.model.fit_whole(
+                epochs=self.epochs,
+                adj=self.dataset.adj,
+                x=self.dataset.features,
+                sens=self.dataset.sens,
+                idx_sens=self.dataset.idx_sens_train,
+                warmup=self.warmup,
+                adv_epoches=1,
+                verbose=self.verbose
+            )  # TODO: figure out what adv_epochs is
+            print("Training time: ", time.time() - st_time)
 
         # Test the model
         results = self.model.test(
@@ -204,7 +295,7 @@ class Experiment:
     
     def __repr__(self):
         return f"""Experiment with the following hyperparameters:
-        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}
+        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}, Batch size: {self.batch_size}
         Augmentation model g hyperparameters: {self.g_hyperparams}
         Encoder model f hyperparameters: {self.f_hyperparams}
         Adversary model k hyperparameters: {self.k_hyperparams}"""
