@@ -289,8 +289,6 @@ class Experiment:
                         },
                     })
 
-                    print('finished run ' + str(count))
-
         best_accuracy_params = max(
             results, key=lambda x: x['accuracy']['mean']
         )
