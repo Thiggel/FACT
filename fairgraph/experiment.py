@@ -5,8 +5,47 @@ from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
 import time
+from enum import Enum
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
+
+
+class Objective:
+    class ObjectiveType(Enum):
+        ACCURACY = 0
+        FAIRNESS = 1
+
+    def __init__(self, objective: ObjectiveType):
+        self.objective = objective
+        self.best_value = self.get_initial_value()
+
+    def get_initial_value(self):
+        return {
+            self.ObjectiveType.ACCURACY: -1,
+            self.ObjectiveType.FAIRNESS: 999,
+        }[self.objective]
+
+    def compare(self, new_val: float) -> bool:
+        return {
+            self.ObjectiveType.ACCURACY: new_val > self.best_value,
+            self.ObjectiveType.FAIRNESS: new_val < self.best_value
+        }[self.objective]
+
+    def is_better(self, res_dict: dict) -> bool:
+        new_val = self.get_result(res_dict)
+
+        if self.compare(new_val):
+            self.best_value = new_val
+            return True
+
+        return False
+
+    def get_result(self, res_dict: dict) -> float:
+        return {
+            self.ObjectiveType.ACCURACY: res_dict['acc']['mean'],
+            self.ObjectiveType.FAIRNESS:
+                res_dict['dp']['mean'] + res_dict['eo']['mean'],
+        }[self.objective]
 
 
 class Experiment:
@@ -156,22 +195,30 @@ class Experiment:
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
         
-    def run_grid_search(self, hparam_values):
+    def run_grid_search(
+        self,
+        hparam_values,
+        objective: Objective.ObjectiveType = Objective.ObjectiveType.FAIRNESS
+    ):
         """
         Runs grid seach using the given hyperparameter values
 
         Args:
             hparam_values (tuple): the values alpha, gamma 
                 and lam can take in the grid search.
+            objective (GridSearchObjective): whether the grid search
+                should optimize fairness or accuracy
 
-        Returns: 
-            best_params (dict): values of the hyperparameters 
+        Returns:
+            best_params (dict): values of the hyperparameters
                 for the setting with the best accuracy.
-            best_res_dict (dict): output of self.run for the 
-                best hyperparameter values.  
+            best_res_dict (dict): output of self.run for the
+                best hyperparameter values.
         """
+        objective = Objective(objective)
+
         hparam_values = hparam_values if hparam_values else (0.1, 1., 10.)
-        best_acc = -1
+
         best_params = None
         best_res_dict = None
 
@@ -179,24 +226,28 @@ class Experiment:
         for alpha in hparam_values:
             for gamma in hparam_values:
                 for lam in hparam_values:
-                    # set the hyperparameter values
                     self.graphair_hyperparams['alpha'] = alpha
                     self.graphair_hyperparams['beta'] = beta
                     self.graphair_hyperparams['gamma'] = gamma
                     self.graphair_hyperparams['lam'] = lam
-                    
-                    # reset the seed
+
                     set_seed(self.seed)
 
-                    # run the experiment
-                    print(f"alpha: {self.graphair_hyperparams['alpha']}, lambda: {self.graphair_hyperparams['lam']}, gamma: {self.graphair_hyperparams['gamma']}")
+                    print(f"alpha: {self.graphair_hyperparams['alpha']}, " +
+                          f"lambda: {self.graphair_hyperparams['lam']}, " +
+                          f"gamma: {self.graphair_hyperparams['gamma']}")
+
                     res_dict = self.run()
 
-                    # keep track of the results which produce the best accuracy
-                    if res_dict['acc']['mean'] > best_acc:
-                        best_acc = res_dict['acc']['mean']
+                    if objective.is_better(res_dict):
                         best_res_dict = res_dict
-                        best_params = {'alpha': alpha, 'beta': beta, 'gamma': gamma, 'lam': lam}
+
+                        best_params = {
+                            'alpha': alpha,
+                            'beta': beta,
+                            'gamma': gamma,
+                            'lam': lam
+                        }
 
         return best_params, best_res_dict
 
