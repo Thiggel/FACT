@@ -29,6 +29,11 @@ if __name__ == "__main__":
                         help='If using synthetic data, the hyperparameters for the hMM')
     parser.add_argument('--attention', action=argparse.BooleanOptionalAction,
                         help='Whether to use graph attention instead of convolution')
+    parser.add_argument('--n_runs', default=5, type=int,
+                        help='Number of experiment runs')
+    parser.add_argument('--n_tests', default=1, type=int,
+                        help='Number of tests for each experiment')
+    
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -51,6 +56,8 @@ if __name__ == "__main__":
         synthetic_hmm=args.hmm,
         synthetic_hMM=args.hMM,
         use_graph_attention=args.attention,
+        n_runs=args.n_runs,
+        n_tests=args.n_tests,
         **hyperparams,
     )
 

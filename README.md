@@ -27,4 +27,8 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 
 `--grid_hparams`: the values over which to do the hyperparameter search
 
+`--n_runs`: number of experiment runs, default: 5
+
+`--n_tests`: number of tests for each experiment, default: 1
+
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.
