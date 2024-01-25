@@ -247,8 +247,6 @@ class Experiment:
                     self.graphair_hyperparams['gamma'] = gamma
                     self.graphair_hyperparams['lam'] = lam
 
-                    set_seed(self.seed)
-
                     print(f"alpha: {self.graphair_hyperparams['alpha']}, " +
                           f"lambda: {self.graphair_hyperparams['lam']}, " +
                           f"gamma: {self.graphair_hyperparams['gamma']}")
