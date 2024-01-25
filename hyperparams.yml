@@ -1,6 +1,6 @@
 batch_size: 1000                      # Batch size for graph sampling
-epochs: 2000                          # Number of epochs for training
-test_epochs: 500                      # Number of epochs for testing
+epochs: 1                          # Number of epochs for training
+test_epochs: 1                      # Number of epochs for testing
 weight_decay: 0.00001                 # Weight decay for ...
 warmup: 50                            # Number of wamup steps for ...
 g_temperature: 1.0                    # Temperature of augmentation model g (?)
