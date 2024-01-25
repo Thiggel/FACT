@@ -1,11 +1,11 @@
 import argparse
 import yaml
+import pickle
 
 from fairgraph import Experiment
 
 
 if __name__ == "__main__":
-    # Command line arguments
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--experiment_name', default='', type=str)
@@ -29,7 +29,6 @@ if __name__ == "__main__":
                         help='If using synthetic data, the hyperparameters for the hMM')
     parser.add_argument('--attention', action=argparse.BooleanOptionalAction,
                         help='Whether to use graph attention instead of convolution')
-    
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -42,7 +41,6 @@ if __name__ == "__main__":
 
     print(args)
 
-    # Initialize and run an experiment
     experiment = Experiment(
         experiment_name=args.experiment_name,
         params_file=args.params_file,
@@ -60,14 +58,8 @@ if __name__ == "__main__":
 
     if args.grid_search:
         results = experiment.run_grid_search(args.grid_hparams)
-        print('------ best results: ------')
-        print(results)
-    else: 
+    else:
         results = experiment.run()
-    
-    # save to file
-    import pickle
+
     with open('results.pickle', 'wb') as handle:
         pickle.dump(results, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-    
