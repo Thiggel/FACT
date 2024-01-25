@@ -2,7 +2,6 @@ import os
 import shutil
 from torch.utils.tensorboard import SummaryWriter
 import time
-from enum import Enum
 import sys
 import matplotlib.pyplot as plt
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
@@ -285,6 +284,8 @@ class Experiment:
                         },
                     })
 
+                    print('finished run ' + str(count))
+
         best_accuracy_params = max(
             results, key=lambda x: x['accuracy']['mean']
         )
@@ -299,15 +300,15 @@ class Experiment:
         self.visualize_pareto_front(
             pareto_front_dp,
             'dp',
-            os.getcwd() + 'pareto_fronts/' +
-            f'{attention}-{self.dataset_name}-{alpha}-{gamma}-{lam}-dp.png'
+            os.getcwd() + '/experiments/pareto_fronts/' +
+            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png'
         )
 
         self.visualize_pareto_front(
             pareto_front_eo,
             'eo',
-            os.getcwd() + 'pareto_fronts/' +
-            f'{attention}-{self.dataset_name}-{alpha}-{gamma}-{lam}-eo.png'
+            os.getcwd() + '/experiments/pareto_fronts/' +
+            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png'
         )
 
         print('Grid Search Results:\n',
