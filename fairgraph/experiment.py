@@ -14,6 +14,21 @@ import sys
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
 
+class Logger(object):
+    def __init__(self, log_file_name):
+        """log both to a file and the terminal"""
+        self.terminal = sys.stdout
+        self.log = open(log_file_name, "w")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        """needed for Python 3 compatibility"""
+        pass
+
+
 class Objective:
     class ObjectiveType(Enum):
         ACCURACY = 0
@@ -184,7 +199,7 @@ class Experiment:
         log_dir = self.create_log_dir()
         self.writer = SummaryWriter(log_dir=log_dir)
         shutil.copy(self.params_file, log_dir)
-        sys.stdout = open(os.path.join(log_dir, "output.txt"), "w")
+        sys.stdout = Logger(os.path.join(log_dir, "output.txt"))
 
     def initialize_dataset(
         self,
@@ -313,11 +328,11 @@ class Experiment:
             **self.graphair_hyperparams
         ).to(self.device)
 
-        # Train the model
         print("Start training")
+
+        start_time = time.time()
+
         if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
-            # call fit_batch_GraphSAINT
-            st_time = time.time()
             self.model.fit_batch_GraphSAINT(
                 epochs=self.epochs,
                 adj=self.dataset.adj,
@@ -330,10 +345,7 @@ class Experiment:
                 verbose=self.verbose,
                 writer=self.writer,
                 )
-            print("Training time: ", time.time() - st_time)
-
         else:
-            st_time = time.time()
             self.model.fit_whole(
                 epochs=self.epochs,
                 adj=self.dataset.adj,
@@ -345,7 +357,12 @@ class Experiment:
                 verbose=self.verbose,
                 writer=self.writer,
             )  # TODO: figure out what adv_epochs is
-            print("Training time: ", time.time() - st_time)
+
+        training_time = time.time() - start_time
+        print("Training time: ", training_time)
+
+        avg_time_per_epoch = training_time / self.epochs
+        print("Average time per epoch: ", avg_time_per_epoch)
 
         # Test the model
         results = self.model.test(
