@@ -227,11 +227,9 @@ class Experiment:
 
         plt.savefig(filename)
 
-
     def run_grid_search(
         self,
         hparam_values,
-        objective: Objective.ObjectiveType = Objective.ObjectiveType.FAIRNESS
     ):
         """
         Runs grid seach using the given hyperparameter values
