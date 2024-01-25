@@ -287,57 +287,58 @@ class Experiment:
 
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
-        
-        # Set the random seed
-        set_seed(self.seed)
-
-        # Initialize augmentation model g
-        self.aug_model = aug_module(
-            features=self.dataset.features,
-            device=self.device,
-            use_graph_attention=self.use_graph_attention,
-            **self.g_hyperparams
-        ).to(self.device)
-
-        # Initialize encoder model f
-        self.f_encoder = GCN_Body(
-            in_feats=self.dataset.features.shape[1],
-            **self.f_hyperparams
-        ).to(self.device) if not self.use_graph_attention else GAT_Body(
-            in_feats=self.dataset.features.shape[1],
-            **self.f_hyperparams
-        ).to(self.device)
-
-        # Initialize adversary model k
-        self.sens_model = GCN(
-            in_feats=self.dataset.features.shape[1],
-            **self.k_hyperparams
-        ).to(self.device) if not self.use_graph_attention else GAT_Model(
-            in_feats=self.dataset.features.shape[1],
-            **self.k_hyperparams
-        ).to(self.device)
-
-        # Initialize classifier for testing
-        self.classifier_model = Classifier(
-            input_dim=self.c_input, hidden_dim=self.c_hidden
-        )
-
-        # Initialize the Graphair model
-        self.model = Graphair(
-            aug_model=self.aug_model,
-            f_encoder=self.f_encoder,
-            sens_model=self.sens_model,
-            classifier_model=self.classifier_model,
-            device=self.device,
-            dataset=self.dataset.name,
-            n_tests=self.n_tests,
-            **self.graphair_hyperparams
-        ).to(self.device)
 
         print("Start training")
         training_times, accuracies, dps, eos = [], [], [], []
 
         for i in range(self.n_runs):
+
+            # Set the random seed
+            set_seed(self.seed + i)
+
+            # Initialize augmentation model g
+            self.aug_model = aug_module(
+                features=self.dataset.features,
+                device=self.device,
+                use_graph_attention=self.use_graph_attention,
+                **self.g_hyperparams
+            ).to(self.device)
+
+            # Initialize encoder model f
+            self.f_encoder = GCN_Body(
+                in_feats=self.dataset.features.shape[1],
+                **self.f_hyperparams
+            ).to(self.device) if not self.use_graph_attention else GAT_Body(
+                in_feats=self.dataset.features.shape[1],
+                **self.f_hyperparams
+            ).to(self.device)
+
+            # Initialize adversary model k
+            self.sens_model = GCN(
+                in_feats=self.dataset.features.shape[1],
+                **self.k_hyperparams
+            ).to(self.device) if not self.use_graph_attention else GAT_Model(
+                in_feats=self.dataset.features.shape[1],
+                **self.k_hyperparams
+            ).to(self.device)
+
+            # Initialize classifier for testing
+            self.classifier_model = Classifier(
+                input_dim=self.c_input, hidden_dim=self.c_hidden
+            )
+
+            # Initialize the Graphair model
+            self.model = Graphair(
+                aug_model=self.aug_model,
+                f_encoder=self.f_encoder,
+                sens_model=self.sens_model,
+                classifier_model=self.classifier_model,
+                device=self.device,
+                dataset=self.dataset.name,
+                n_tests=self.n_tests,
+                **self.graphair_hyperparams
+            ).to(self.device)
+
             start_time = time.time()
 
             if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
