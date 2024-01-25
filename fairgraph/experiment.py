@@ -193,22 +193,22 @@ class Experiment:
             )
 
     def get_pareto_front(self, results, fairness_metric='dp'):
-        sorted_data = sorted(
-            results,
-            key=lambda x: (-x['accuracy']['mean'], x[fairness_metric]['mean'])
-        )
+        accuracy = np.array([d['accuracy']['mean'] for d in data])
+        dp = np.array([d[fairness_metric]['mean'] for d in data])
 
-        pareto_front = [sorted_data[0]]
+        accuracy_norm = (accuracy - accuracy.min()) / (accuracy.max() - accuracy.min())
+        dp_norm = (dp - dp.min()) / (dp.max() - dp.min())
 
-        for item in sorted_data[1:]:
-            if (
-                item['accuracy']['mean'] >=
-                pareto_front[-1]['accuracy']['mean']
-                and
-                item[fairness_metric]['mean'] <=
-                pareto_front[-1][fairness_metric]['mean']
-            ):
-                pareto_front.append(item)
+        is_efficient = np.ones(data.__len__(), dtype=bool)
+        for i, c in enumerate(zip(accuracy_norm, dp_norm)):
+            if is_efficient[i]:
+                is_efficient[is_efficient] = np.any(np.array(list(zip(accuracy_norm, dp_norm)))[is_efficient] <= c, axis=1)
+                is_efficient[i] = True
+
+        pareto_front = []
+        for i, d in enumerate(data):
+            if is_efficient[i]:
+                pareto_front.append(d)
 
         return pareto_front
 
@@ -218,8 +218,13 @@ class Experiment:
         fairness_metric='dp',
         filename='pareto_front.png'
     ):
-        accuracy = [item['accuracy']['mean'] for item in data]
-        dp = [item[fairness_metric]['mean'] for item in data]
+        sorted_data = sorted(
+            data,
+            key=lambda x: (-x['accuracy']['mean'], x[fairness_metric]['mean'])
+        )
+
+        accuracy = [item['accuracy']['mean'] for item in sorted_data]
+        dp = [item[fairness_metric]['mean'] for item in sorted_data]
 
         plt.figure(figsize=(10, 6))
         plt.scatter(accuracy, dp, color='b')
