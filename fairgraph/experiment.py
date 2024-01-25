@@ -261,38 +261,38 @@ class Experiment:
 
         results = []
 
-        alpha = 1.
-        for gamma in hparam_values:
-            for lam in hparam_values:
-                self.graphair_hyperparams['alpha'] = alpha
-                self.graphair_hyperparams['beta'] = beta
-                self.graphair_hyperparams['gamma'] = gamma
-                self.graphair_hyperparams['lam'] = lam
+        for alpha in hparam_values:
+            for gamma in hparam_values:
+                for lam in hparam_values:
+                    self.graphair_hyperparams['alpha'] = alpha
+                    self.graphair_hyperparams['beta'] = beta
+                    self.graphair_hyperparams['gamma'] = gamma
+                    self.graphair_hyperparams['lam'] = lam
 
-                print(f"alpha: {self.graphair_hyperparams['alpha']}, " +
-                      f"lambda: {self.graphair_hyperparams['lam']}, " +
-                      f"gamma: {self.graphair_hyperparams['gamma']}")
+                    print(f"alpha: {self.graphair_hyperparams['alpha']}, " +
+                          f"lambda: {self.graphair_hyperparams['lam']}, " +
+                          f"gamma: {self.graphair_hyperparams['gamma']}")
 
-                res_dict = self.run()
+                    res_dict = self.run()
 
-                results.append({
-                    'alpha': alpha,
-                    'beta': beta,
-                    'gamma': gamma,
-                    'lam': lam,
-                    'accuracy': {
-                        'mean': res_dict['acc']['mean'],
-                        'std': res_dict['acc']['std'],
-                    },
-                    'dp': {
-                        'mean': res_dict['dp']['mean'],
-                        'std': res_dict['eo']['std'],
-                    },
-                    'eo': {
-                        'mean': res_dict['dp']['mean'],
-                        'std': res_dict['eo']['std'],
-                    },
-                })
+                    results.append({
+                        'alpha': alpha,
+                        'beta': beta,
+                        'gamma': gamma,
+                        'lam': lam,
+                        'accuracy': {
+                            'mean': res_dict['acc']['mean'],
+                            'std': res_dict['acc']['std'],
+                        },
+                        'dp': {
+                            'mean': res_dict['dp']['mean'],
+                            'std': res_dict['eo']['std'],
+                        },
+                        'eo': {
+                            'mean': res_dict['dp']['mean'],
+                            'std': res_dict['eo']['std'],
+                        },
+                    })
 
         best_accuracy_params = max(
             results, key=lambda x: x['accuracy']['mean']
