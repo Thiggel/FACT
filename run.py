@@ -1,11 +1,11 @@
 import argparse
 import yaml
+import pickle
 
 from fairgraph import Experiment
 
 
 if __name__ == "__main__":
-    # Command line arguments
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--experiment_name', default='', type=str)
@@ -46,7 +46,6 @@ if __name__ == "__main__":
 
     print(args)
 
-    # Initialize and run an experiment
     experiment = Experiment(
         experiment_name=args.experiment_name,
         params_file=args.params_file,
@@ -66,14 +65,8 @@ if __name__ == "__main__":
 
     if args.grid_search:
         results = experiment.run_grid_search(args.grid_hparams)
-        print('------ best results: ------')
-        print(results)
-    else: 
+    else:
         results = experiment.run()
-    
-    # save to file
-    import pickle
+
     with open('results.pickle', 'wb') as handle:
         pickle.dump(results, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-    

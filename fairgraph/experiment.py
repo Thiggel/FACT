@@ -3,14 +3,13 @@ import shutil
 from torch.utils.tensorboard import SummaryWriter
 import numpy as np
 import time
+import sys
+import matplotlib.pyplot as plt
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
-import time
-from enum import Enum
-import sys
 
 # TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
 
@@ -28,44 +27,6 @@ class Logger(object):
     def flush(self):
         """needed for Python 3 compatibility"""
         pass
-
-
-class Objective:
-    class ObjectiveType(Enum):
-        ACCURACY = 0
-        FAIRNESS = 1
-
-    def __init__(self, objective: ObjectiveType):
-        self.objective = objective
-        self.best_value = self.get_initial_value()
-
-    def get_initial_value(self):
-        return {
-            self.ObjectiveType.ACCURACY: -1,
-            self.ObjectiveType.FAIRNESS: 999,
-        }[self.objective]
-
-    def compare(self, new_val: float) -> bool:
-        return {
-            self.ObjectiveType.ACCURACY: new_val > self.best_value,
-            self.ObjectiveType.FAIRNESS: new_val < self.best_value
-        }[self.objective]
-
-    def is_better(self, res_dict: dict) -> bool:
-        new_val = self.get_result(res_dict)
-
-        if self.compare(new_val):
-            self.best_value = new_val
-            return True
-
-        return False
-
-    def get_result(self, res_dict: dict) -> float:
-        return {
-            self.ObjectiveType.ACCURACY: res_dict['acc']['mean'],
-            self.ObjectiveType.FAIRNESS:
-                res_dict['dp']['mean'] + res_dict['eo']['mean'],
-        }[self.objective]
 
 
 class Experiment:
@@ -230,17 +191,55 @@ class Experiment:
             raise Exception(
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
-        
+
+    def get_pareto_front(self, results, fairness_metric='dp'):
+        sorted_data = sorted(
+            results,
+            key=lambda x: (-x['accuracy']['mean'], x[fairness_metric]['mean'])
+        )
+
+        pareto_front = [sorted_data[0]]
+
+        for item in sorted_data[1:]:
+            if (
+                item['accuracy']['mean'] >=
+                pareto_front[-1]['accuracy']['mean']
+                and
+                item[fairness_metric]['mean'] <=
+                pareto_front[-1][fairness_metric]['mean']
+            ):
+                pareto_front.append(item)
+
+        return pareto_front
+
+    def visualize_pareto_front(
+        self,
+        data,
+        fairness_metric='dp',
+        filename='pareto_front.png'
+    ):
+        accuracy = [item['accuracy']['mean'] for item in data]
+        dp = [item[fairness_metric]['mean'] for item in data]
+
+        plt.figure(figsize=(10, 6))
+        plt.scatter(accuracy, dp, color='b')
+        plt.plot(accuracy, dp, color='r')
+
+        plt.xlabel('Accuracy')
+        plt.ylabel('DP')
+        plt.title('Pareto Front')
+
+        plt.savefig(filename)
+
     def run_grid_search(
         self,
         hparam_values,
-        objective: Objective.ObjectiveType = Objective.ObjectiveType.FAIRNESS
     ):
         """
         Runs grid seach using the given hyperparameter values
 
         Args:
-            hparam_values (tuple): the values alpha, gamma 
+            hparam_values (tuple): the values alpha, gamma
                 and lam can take in the grid search.
             objective (GridSearchObjective): whether the grid search
                 should optimize fairness or accuracy
@@ -251,14 +250,12 @@ class Experiment:
             best_res_dict (dict): output of self.run for the
                 best hyperparameter values.
         """
-        objective = Objective(objective)
-
         hparam_values = hparam_values if hparam_values else (0.1, 1., 10.)
 
-        best_params = None
-        best_res_dict = None
-
         beta = 1.
+
+        results = []
+
         for alpha in hparam_values:
             for gamma in hparam_values:
                 for lam in hparam_values:
@@ -273,17 +270,61 @@ class Experiment:
 
                     res_dict = self.run()
 
-                    if objective.is_better(res_dict):
-                        best_res_dict = res_dict
+                    results.append({
+                        'alpha': alpha,
+                        'beta': beta,
+                        'gamma': gamma,
+                        'lam': lam,
+                        'accuracy': {
+                            'mean': res_dict['acc']['mean'],
+                            'std': res_dict['acc']['std'],
+                        },
+                        'dp': {
+                            'mean': res_dict['dp']['mean'],
+                            'std': res_dict['eo']['std'],
+                        },
+                        'eo': {
+                            'mean': res_dict['dp']['mean'],
+                            'std': res_dict['eo']['std'],
+                        },
+                    })
 
-                        best_params = {
-                            'alpha': alpha,
-                            'beta': beta,
-                            'gamma': gamma,
-                            'lam': lam
-                        }
+                    print('finished run ' + str(count))
 
-        return best_params, best_res_dict
+        best_accuracy_params = max(
+            results, key=lambda x: x['accuracy']['mean']
+        )
+        best_dp_params = max(results, key=lambda x: x['dp']['mean'])
+        best_eo_params = max(results, key=lambda x: x['eo']['mean'])
+
+        pareto_front_dp = self.get_pareto_front(results, fairness_metric='dp')
+        pareto_front_eo = self.get_pareto_front(results, fairness_metric='eo')
+
+        attention = 'attention' if self.use_graph_attention else 'no-attention'
+
+        self.visualize_pareto_front(
+            pareto_front_dp,
+            'dp',
+            os.getcwd() + '/experiments/pareto_fronts/' +
+            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png'
+        )
+
+        self.visualize_pareto_front(
+            pareto_front_eo,
+            'eo',
+            os.getcwd() + '/experiments/pareto_fronts/' +
+            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png'
+        )
+
+        print('Grid Search Results:\n',
+              'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
+              'Best DP: ' + str(best_dp_params) + '\n' +
+              'Best EO: ' + str(best_eo_params) + '\n\n\n')
+
+        print('Pareto Front (Accuracy - DP):\n', pareto_front_dp)
+        print('Pareto Front (Accuracy - EO):\n\n\n', pareto_front_eo)
+
+        print('All Results:\n', results)
 
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
