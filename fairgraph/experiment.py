@@ -192,7 +192,7 @@ class Experiment:
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
             )
 
-    def get_pareto_front(self, results, fairness_metric='dp'):
+    def get_pareto_front(self, data, fairness_metric='dp'):
         accuracy = np.array([d['accuracy']['mean'] for d in data])
         dp = np.array([d[fairness_metric]['mean'] for d in data])
 
