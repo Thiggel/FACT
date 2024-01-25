@@ -1,6 +1,7 @@
 import os
 import shutil
 from torch.utils.tensorboard import SummaryWriter
+import numpy as np
 import time
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
@@ -114,6 +115,8 @@ class Experiment:
         synthetic_hmm=0.8,
         synthetic_hMM=0.2,
         use_graph_attention=False,
+        n_runs=5,
+        n_tests=1
     ):
         """
         Initializes an Experiment class instance.
@@ -135,6 +138,8 @@ class Experiment:
         self.batch_size = batch_size
         self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
         self.verbose = verbose
+        self.n_runs = n_runs
+        self.n_tests = n_tests
 
         # Set a seed for reproducibility
         set_seed(seed)
@@ -325,60 +330,78 @@ class Experiment:
             classifier_model=self.classifier_model,
             device=self.device,
             dataset=self.dataset.name,
+            n_tests=self.n_tests,
             **self.graphair_hyperparams
         ).to(self.device)
 
         print("Start training")
+        training_times, accuracies, dps, eos = [], [], [], []
 
-        start_time = time.time()
+        for i in range(self.n_runs):
+            start_time = time.time()
 
-        if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
-            self.model.fit_batch_GraphSAINT(
-                epochs=self.epochs,
+            if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
+                self.model.fit_batch_GraphSAINT(
+                    epochs=self.epochs,
+                    adj=self.dataset.adj,
+                    x=self.dataset.features,
+                    sens=self.dataset.sens,
+                    idx_sens=self.dataset.idx_sens_train,
+                    minibatch=self.dataset.minibatch,
+                    warmup=self.warmup,
+                    adv_epoches=1,
+                    verbose=self.verbose,
+                    writer=self.writer,
+                    )
+            else:
+                self.model.fit_whole(
+                    epochs=self.epochs,
+                    adj=self.dataset.adj,
+                    x=self.dataset.features,
+                    sens=self.dataset.sens,
+                    idx_sens=self.dataset.idx_sens_train,
+                    warmup=self.warmup,
+                    adv_epoches=1,
+                    verbose=self.verbose,
+                    writer=self.writer,
+                )  # TODO: figure out what adv_epochs is
+
+            training_time = time.time() - start_time
+            print(f"Training time: {training_time:.2f}")
+            training_times.append(training_time)
+
+            avg_time_per_epoch = training_time / self.epochs
+            print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
+
+            # Test the model
+            results = self.model.test(
                 adj=self.dataset.adj,
-                x=self.dataset.features,
+                features=self.dataset.features,
+                labels=self.dataset.labels,
+                epochs=self.test_epochs,
+                idx_train=self.dataset.idx_train,
+                idx_val=self.dataset.idx_val,
+                idx_test=self.dataset.idx_test,
                 sens=self.dataset.sens,
-                idx_sens=self.dataset.idx_sens_train,
-                minibatch=self.dataset.minibatch,
-                warmup=self.warmup,
-                adv_epoches=1,
                 verbose=self.verbose,
                 writer=self.writer,
-                )
-        else:
-            self.model.fit_whole(
-                epochs=self.epochs,
-                adj=self.dataset.adj,
-                x=self.dataset.features,
-                sens=self.dataset.sens,
-                idx_sens=self.dataset.idx_sens_train,
-                warmup=self.warmup,
-                adv_epoches=1,
-                verbose=self.verbose,
-                writer=self.writer,
-            )  # TODO: figure out what adv_epochs is
+            )
+            # Collect the results
+            accuracies.append(results['acc']['mean'])
+            eos.append(results['eo']['mean'])
+            dps.append(results['dp']['mean'])
+            print(f"Run {i} results: {results}")
 
-        training_time = time.time() - start_time
-        print("Training time: ", training_time)
+        average_results = {
+            "acc": {"mean": np.mean(accuracies), "std": np.std(accuracies)},
+            "dp": {"mean": np.mean(dps), "std": np.std(dps)},
+            "eo": {"mean": np.mean(eos), "std": np.std(eos)}
+        }
+        
+        print(f"Average training time per run: {np.mean(training_times):.2f}")
+        print(f"Average results: {average_results}")
 
-        avg_time_per_epoch = training_time / self.epochs
-        print("Average time per epoch: ", avg_time_per_epoch)
-
-        # Test the model
-        results = self.model.test(
-            adj=self.dataset.adj,
-            features=self.dataset.features,
-            labels=self.dataset.labels,
-            epochs=self.test_epochs,
-            idx_train=self.dataset.idx_train,
-            idx_val=self.dataset.idx_val,
-            idx_test=self.dataset.idx_test,
-            sens=self.dataset.sens,
-            verbose=self.verbose,
-            writer=self.writer,
-        )
-
-        return results
+        return average_results
 
     def create_log_dir(self):
         timestamp = time.strftime("%Y-%m-%d_%H-%M-%S")
@@ -389,7 +412,8 @@ class Experiment:
     
     def __repr__(self):
         return f"""Experiment with the following hyperparameters:
-        Device: {self.device}, Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}, Batch size: {self.batch_size}
+        Dataset: {self.dataset.name}, Epochs: {self.epochs}, Test epochs: {self.test_epochs}, Batch size: {self.batch_size}
+        Device: {self.device}, Seed: {self.seed}, N Runs: {self.n_runs}, N Tests: {self.n_tests}
         Augmentation model g hyperparameters: {self.g_hyperparams}
         Encoder model f hyperparameters: {self.f_hyperparams}
         Adversary model k hyperparameters: {self.k_hyperparams}"""
