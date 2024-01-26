@@ -159,7 +159,8 @@ class GraphSAINT(nn.Module):
         Forward and backward propagation
         """
         self.train()
-        self.optimizer.zero_grad()
+        for param in self.parameters():
+            param.grad = None
         preds, labels, labels_converted = self(node_subgraph, adj_subgraph)
         loss = self._loss(preds, labels_converted, norm_loss_subgraph) # labels.squeeze()?
         loss.backward()

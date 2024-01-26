@@ -161,9 +161,10 @@ class Graphair(nn.Module):
                 feat_loss =  self.criterion_recons(x_aug, x[node_subgraph])
                 recons_loss =  edge_loss + self.beta * feat_loss
 
-                self.optimizer_aug.zero_grad()
-                with torch.autograd.set_detect_anomaly(True):
-                    recons_loss.backward(retain_graph=True)
+                for param in self.aug_model.parameters():
+                    param.grad = None
+
+                recons_loss.backward()
                 self.optimizer_aug.step()
 
                 if verbose:
@@ -202,7 +203,9 @@ class Graphair(nn.Module):
                 s_pred , _  = self.sens_model(adj_aug_nograd, x_aug_nograd)
                 senloss = torch.nn.BCEWithLogitsLoss(weight=norm_loss_subgraph,reduction='sum')(s_pred[mask].squeeze(),sens[node_subgraph][mask].float())
 
-                self.optimizer_s.zero_grad()
+                for param in self.sens_model.parameters():
+                    param.grad = None
+
                 senloss.backward()
                 self.optimizer_s.step()
 
@@ -221,7 +224,13 @@ class Graphair(nn.Module):
             recons_loss =  edge_loss + self.lam * feat_loss
 
             loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
-            self.optimizer.zero_grad()
+            
+            for param in self.aug_model.parameters():
+                param.grad = None
+
+            for param in self.f_encoder.parameters():
+                param.grad = None
+
             loss.backward()
             self.optimizer.step()
             if ((epoch_counter + 1) % 1000 == 0 and verbose):
@@ -262,7 +271,9 @@ class Graphair(nn.Module):
                 feat_loss =  self.criterion_recons(x_aug, x)
                 recons_loss =  edge_loss + self.beta * feat_loss
 
-                self.optimizer_aug.zero_grad()
+                for param in self.aug_model.parameters():
+                    param.grad = None
+
                 recons_loss.backward()
                 self.optimizer_aug.step()
 
@@ -293,7 +304,10 @@ class Graphair(nn.Module):
             for _ in range(sens_epoches):
                 s_pred , _  = self.sens_model(adj_aug_nograd, x_aug_nograd)
                 senloss = self.criterion_sens(s_pred[idx_sens],sens[idx_sens].unsqueeze(1).float())
-                self.optimizer_s.zero_grad()
+
+                for param in self.sens_model.parameters():
+                    param.grad = None
+
                 senloss.backward()
                 self.optimizer_s.step()
             s_pred , _  = self.sens_model(adj_aug, x_aug)
@@ -309,7 +323,13 @@ class Graphair(nn.Module):
             feat_loss =  self.criterion_recons(x_aug, x)
             recons_loss =  edge_loss + self.lam * feat_loss
             loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
-            self.optimizer.zero_grad()
+        
+            for param in self.aug_model.parameters():
+                param.grad = None
+
+            for param in self.f_encoder.parameters():
+                param.grad = None
+
             loss.backward()
             self.optimizer.step()
 
@@ -349,7 +369,10 @@ class Graphair(nn.Module):
             for epoch in range(epochs):
 
                 self.classifier.train()
-                self.optimizer_classifier.zero_grad()
+
+                for param in self.classifier.parameters():
+                    param.grad = None
+
                 output = self.classifier(h)
                 loss_train = F.binary_cross_entropy_with_logits(output[idx_train], labels[idx_train].unsqueeze(1).float())
                 acc_train = accuracy(output[idx_train], labels[idx_train])
