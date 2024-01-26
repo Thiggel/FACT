@@ -7,7 +7,7 @@ import sys
 import matplotlib.pyplot as plt
 from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
-from .utils.utils import set_device, set_seed
+from .utils.utils import set_device, set_seed, find_pareto_front, plot_pareto
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
 
@@ -190,50 +190,6 @@ class Experiment:
                 f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA, Datasets.SYNTHETIC]}"
             )
 
-    def get_pareto_front(self, data, fairness_metric='dp'):
-        accuracy = np.array([d['accuracy']['mean'] for d in data])
-        dp = np.array([d[fairness_metric]['mean'] for d in data])
-
-        accuracy_norm = (accuracy - accuracy.min()) / (accuracy.max() - accuracy.min())
-        dp_norm = (dp - dp.min()) / (dp.max() - dp.min())
-
-        is_efficient = np.ones(data.__len__(), dtype=bool)
-        for i, c in enumerate(zip(accuracy_norm, dp_norm)):
-            if is_efficient[i]:
-                is_efficient[is_efficient] = np.any(np.array(list(zip(accuracy_norm, dp_norm)))[is_efficient] <= c, axis=1)
-                is_efficient[i] = True
-
-        pareto_front = []
-        for i, d in enumerate(data):
-            if is_efficient[i]:
-                pareto_front.append(d)
-
-        return pareto_front
-
-    def visualize_pareto_front(
-        self,
-        data,
-        fairness_metric='dp',
-        filename='pareto_front.png'
-    ):
-        sorted_data = sorted(
-            data,
-            key=lambda x: (-x['accuracy']['mean'], x[fairness_metric]['mean'])
-        )
-
-        accuracy = [item['accuracy']['mean'] for item in sorted_data]
-        dp = [item[fairness_metric]['mean'] for item in sorted_data]
-
-        plt.figure(figsize=(10, 6))
-        plt.scatter(dp, accuracy, color='b')
-        plt.plot(dp, accuracy, color='r')
-
-        plt.xlabel('Accuracy')
-        plt.ylabel(fairness_metric.upper())
-        plt.title('Pareto Front')
-
-        plt.savefig(filename)
-
     def run_grid_search(
         self,
         hparam_values,
@@ -301,22 +257,18 @@ class Experiment:
         best_dp_params = min(results, key=lambda x: x['dp']['mean']) # Best DP is lowest DP
         best_eo_params = min(results, key=lambda x: x['eo']['mean']) # Best EO is lowest EO
 
-        pareto_front_dp = self.get_pareto_front(results, fairness_metric='dp')
-        pareto_front_eo = self.get_pareto_front(results, fairness_metric='eo')
+        pareto_front_dp = find_pareto_front(results, metric1='accuracy', metric2='dp')
+        pareto_front_eo = find_pareto_front(results, metric1='accuracy', metric2='eo')
 
-        attention = 'attention' if self.use_graph_attention else 'no-attention'
-
-        self.visualize_pareto_front(
-            data=pareto_front_dp,
-            fairness_metric='dp',
-            filename=os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png')
-        )
-
-        self.visualize_pareto_front(
-            data=pareto_front_eo,
-            fairness_metric='eo',
-            filename=os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png')
-        )
+        for fairness_metric in ['dp', 'eo']:
+            for show_all in [True, False]:
+                plot_pareto(
+                    results=results,
+                    fairness_metric=fairness_metric,
+                    title=f"{fairness_metric.upper()}-Acc Pareto front",
+                    show_all=show_all,
+                    filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.png"),
+                )
 
         self.logger.log_file.close()
         self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "w")
