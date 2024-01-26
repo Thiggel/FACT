@@ -324,13 +324,13 @@ class Experiment:
         self.logger.log_file.close()
         self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "w")
 
-        print('Grid Search Results:\n',
+        print('Grid Search Results:\n' +
               'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
               'Best DP: ' + str(best_dp_params) + '\n' +
-              'Best EO: ' + str(best_eo_params) + '\n\n\n')
+              'Best EO: ' + str(best_eo_params) + '\n')
 
         print('Pareto Front (Accuracy - DP):\n', pareto_front_dp)
-        print('Pareto Front (Accuracy - EO):\n\n\n', pareto_front_eo)
+        print('Pareto Front (Accuracy - EO):\n', pareto_front_eo)
 
         print('All Results:\n', results)
 
