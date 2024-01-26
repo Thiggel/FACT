@@ -168,8 +168,8 @@ class Graphair(nn.Module):
 
                 if verbose:
                     print(
-                    'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                    'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                    'edge reconstruction loss: {:.4f}'.format(edge_loss),
+                    'feature reconstruction loss: {:.4f}'.format(feat_loss),
                     )
 
         for epoch_counter in range(epochs):
@@ -226,17 +226,17 @@ class Graphair(nn.Module):
             self.optimizer.step()
             if ((epoch_counter + 1) % 1000 == 0 and verbose):
                 print('Epoch: {:04d}'.format(epoch_counter+1),
-                'sens loss: {:.4f}'.format(senloss.item()),
-                'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
-                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                'sens loss: {:.4f}'.format(senloss),
+                'contrastive loss: {:.4f}'.format(contrastive_loss),
+                'edge reconstruction loss: {:.4f}'.format(edge_loss),
+                'feature reconstruction loss: {:.4f}'.format(feat_loss),
                 )
 
             alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
-            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
-            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
-            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
-            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss, epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss, epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss, epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss, epoch_counter + 1)
 
         self._save_checkpoint()
 
@@ -263,14 +263,13 @@ class Graphair(nn.Module):
                 recons_loss =  edge_loss + self.beta * feat_loss
 
                 self.optimizer_aug.zero_grad()
-                with torch.autograd.set_detect_anomaly(True):
-                    recons_loss.backward(retain_graph=True)
+                recons_loss.backward()
                 self.optimizer_aug.step()
 
                 if verbose:
                     print(
-                    'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                    'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                    'edge reconstruction loss: {:.4f}'.format(edge_loss),
+                    'feature reconstruction loss: {:.4f}'.format(feat_loss),
                     )
 
         for epoch_counter in range(epochs):
@@ -316,17 +315,17 @@ class Graphair(nn.Module):
 
             if verbose:
                 print('Epoch: {:04d}'.format(epoch_counter+1),
-                'sens loss: {:.4f}'.format(senloss.item()),
-                'contrastive loss: {:.4f}'.format(contrastive_loss.item()),
-                'edge reconstruction loss: {:.4f}'.format(edge_loss.item()),
-                'feature reconstruction loss: {:.4f}'.format(feat_loss.item()),
+                'sens loss: {:.4f}'.format(senloss),
+                'contrastive loss: {:.4f}'.format(contrastive_loss),
+                'edge reconstruction loss: {:.4f}'.format(edge_loss),
+                'feature reconstruction loss: {:.4f}'.format(feat_loss),
                 )
             
             alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
-            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss.item(), epoch_counter + 1)
-            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss.item(), epoch_counter + 1)
-            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss.item(), epoch_counter + 1)
-            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss.item(), epoch_counter + 1)
+            writer.add_scalar(f'sens loss ({alpha_beta_gamma})', senloss, epoch_counter + 1)
+            writer.add_scalar(f'contrastive loss ({alpha_beta_gamma})', contrastive_loss, epoch_counter + 1)
+            writer.add_scalar(f'edge reconstruction loss ({alpha_beta_gamma})', edge_loss, epoch_counter + 1)
+            writer.add_scalar(f'feature reconstruction loss ({alpha_beta_gamma})', feat_loss, epoch_counter + 1)
 
         self._save_checkpoint()
     
@@ -366,16 +365,16 @@ class Graphair(nn.Module):
                 parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
                 if epoch%10==0 and verbose:
                     print("Epoch [{}] Test set results:".format(epoch),
-                        "acc_test= {:.4f}".format(acc_test.item()),
-                        "acc_val: {:.4f}".format(acc_val.item()),
+                        "acc_test= {:.4f}".format(acc_test),
+                        "acc_val: {:.4f}".format(acc_val),
                         "dp_val: {:.4f}".format(parity_val),
                         "dp_test: {:.4f}".format(parity_test),
                         "eo_val: {:.4f}".format(equality_val),
                         "eo_test: {:.4f}".format(equality_test), )
                 
                 alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
-                writer.add_scalar(f'acc_test ({alpha_beta_gamma})/seed_{seed}', acc_test.item(), epoch + 1)
-                writer.add_scalar(f'acc_val ({alpha_beta_gamma})/seed_{seed}', acc_val.item(), epoch + 1)
+                writer.add_scalar(f'acc_test ({alpha_beta_gamma})/seed_{seed}', acc_test, epoch + 1)
+                writer.add_scalar(f'acc_val ({alpha_beta_gamma})/seed_{seed}', acc_val, epoch + 1)
                 writer.add_scalar(f'dp_val ({alpha_beta_gamma})/seed_{seed}', parity_val, epoch + 1)
                 writer.add_scalar(f'dp_test ({alpha_beta_gamma})/seed_{seed}', parity_test, epoch + 1)
                 writer.add_scalar(f'eo_val ({alpha_beta_gamma})/seed_{seed}', equality_val, epoch + 1)
@@ -392,14 +391,14 @@ class Graphair(nn.Module):
             if verbose:
                 print("Optimization Finished!")
                 print("Test results:",
-                            "acc_test= {:.4f}".format(best_test.item()),
-                            "acc_val: {:.4f}".format(best_acc.item()),
+                            "acc_test= {:.4f}".format(best_test),
+                            "acc_val: {:.4f}".format(best_acc),
                             "dp_val: {:.4f}".format(best_dp),
                             "dp_test: {:.4f}".format(best_dp_test),
                             "eo_val: {:.4f}".format(best_eo),
                             "eo_test: {:.4f}".format(best_eo_test),)
         
-            acc_list.append(best_test.item())
+            acc_list.append(best_test)
             dp_list.append(best_dp_test)
             eo_list.append(best_eo_test)
         
