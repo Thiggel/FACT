@@ -228,11 +228,11 @@ class Experiment:
         dp = [item[fairness_metric]['mean'] for item in sorted_data]
 
         plt.figure(figsize=(10, 6))
-        plt.scatter(accuracy, dp, color='b')
-        plt.plot(accuracy, dp, color='r')
+        plt.scatter(dp, accuracy, color='b')
+        plt.plot(dp, accuracy, color='r')
 
         plt.xlabel('Accuracy')
-        plt.ylabel('DP')
+        plt.ylabel(fairness_metric.upper())
         plt.title('Pareto Front')
 
         plt.savefig(filename)
@@ -310,15 +310,15 @@ class Experiment:
         attention = 'attention' if self.use_graph_attention else 'no-attention'
 
         self.visualize_pareto_front(
-            pareto_front_dp,
-            'dp',
-            os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png')
+            data=pareto_front_dp,
+            fairness_metric='dp',
+            filename=os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png')
         )
 
         self.visualize_pareto_front(
-            pareto_front_eo,
-            'eo',
-            os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png')
+            data=pareto_front_eo,
+            fairness_metric='eo',
+            filename=os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png')
         )
 
         self.logger.log_file.close()

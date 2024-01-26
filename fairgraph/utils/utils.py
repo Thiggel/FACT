@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.sparse as sp
 import torch
+import matplotlib.pyplot as plt
 
 def scipysp_to_pytorchsp(sp_mx):
     """ converts scipy sparse matrix to pytorch sparse matrix """
@@ -68,3 +69,43 @@ def set_seed(seed):
             torch.mps.manual_seed(seed)
     except:
         pass
+
+def get_pareto_front(self, data, fairness_metric='dp'):
+    accs = np.array([d['accuracy']['mean'] for d in data])              # higher is better
+    fair_metrics = np.array([d[fairness_metric]['mean'] for d in data]) # lower is better
+
+    pareto_front = []
+    for i, (acc, fair_metric) in enumerate(zip(accs, fair_metrics)):
+        better_idxs = np.where((accs >= acc) & (fair_metrics <= fair_metric))[0]
+        
+        # remove i from idxs
+        better_idxs = np.delete(better_idxs, np.where(better_idxs == i))
+
+        if len(better_idxs) == 0 or np.all((accs[better_idxs] == acc) & (fair_metrics[better_idxs] == fair_metric)): 
+            pareto_front.append(data[i])
+
+    return pareto_front
+
+def visualize_pareto_front(
+    self,
+    data,
+    fairness_metric='dp',
+    filename='pareto_front.png'
+):
+    sorted_data = sorted(
+        data,
+        key=lambda x: (-x['accuracy']['mean'], x[fairness_metric]['mean'])
+    )
+
+    accuracy = [item['accuracy']['mean'] for item in sorted_data]
+    dp = [item[fairness_metric]['mean'] for item in sorted_data]
+
+    plt.figure(figsize=(10, 6))
+    plt.scatter(dp, accuracy, color='b')
+    plt.plot(dp, accuracy, color='r')
+
+    plt.xlabel(fairness_metric.upper())
+    plt.ylabel('Accuracy')
+    plt.title('Pareto Front')
+
+    plt.savefig(filename)
