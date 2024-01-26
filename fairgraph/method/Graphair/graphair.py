@@ -349,6 +349,51 @@ class Graphair(nn.Module):
 
         self._save_checkpoint()
     
+    def train_classifier(self, h, epochs, idx_train, idx_val, labels, sens, verbose=False):
+        best_acc = 0
+        best_model_weights = None
+
+        for epoch in range(epochs):
+            self.classifier.train()
+
+            # more performant way of doing zero_grad
+            for param in self.classifier.parameters():
+                param.grad = None
+
+            output = self.classifier(h)
+
+            loss_train = F.binary_cross_entropy_with_logits(
+                output[idx_train],
+                labels[idx_train].unsqueeze(1).float()
+            )
+
+            acc_train = accuracy(output[idx_train], labels[idx_train])
+
+            loss_train.backward()
+            self.optimizer_classifier.step()
+
+            val_acc, _, _ = self.test_classifier(h, idx_val, sens, labels, verbose)
+
+            if val_acc > best_acc:
+                best_acc = val_acc
+                best_model_weights = self.classifier.state_dict()
+
+        self.classifier.load_state_dict(best_model_weights)
+
+    def test_classifier(self, h, idx_test, sens, labels, verbose=False):
+        # more performant version of zero_grad
+        for param in self.classifier.parameters():
+            param.grad = None
+
+        output = self.classifier(h)
+        acc_test = accuracy(output[idx_test], labels[idx_test])
+
+        parity_test, equality_test = fair_metric(
+            output, idx_test, labels, sens
+        )
+
+        return acc_test, parity_test, equality_test
+
 
     def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, writer, verbose=False):
         h = self.forward(adj, features)
@@ -363,77 +408,34 @@ class Graphair(nn.Module):
             set_seed(seed)
 
             self.classifier.reset_parameters()
-            # train classifier
-            best_acc = 0.0
-            best_test = 0.0
-            for epoch in range(epochs):
 
-                self.classifier.train()
+            self.train_classifier(
+                h, epochs, idx_train, idx_val, labels, sens, verbose
+            )
 
-                for param in self.classifier.parameters():
-                    param.grad = None
-
-                output = self.classifier(h)
-                loss_train = F.binary_cross_entropy_with_logits(output[idx_train], labels[idx_train].unsqueeze(1).float())
-                acc_train = accuracy(output[idx_train], labels[idx_train])
-                loss_train.backward()
-                self.optimizer_classifier.step()
-                            
-                self.classifier.eval()
-                output = self.classifier(h)
-                acc_val = accuracy(output[idx_val], labels[idx_val])
-                acc_test = accuracy(output[idx_test], labels[idx_test])
-
-                parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
-                parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
-                if epoch%10==0 and verbose:
-                    print("Epoch [{}] Test set results:".format(epoch),
-                        "acc_test= {:.4f}".format(acc_test),
-                        "acc_val: {:.4f}".format(acc_val),
-                        "dp_val: {:.4f}".format(parity_val),
-                        "dp_test: {:.4f}".format(parity_test),
-                        "eo_val: {:.4f}".format(equality_val),
-                        "eo_test: {:.4f}".format(equality_test), )
-                
-                alpha_beta_gamma = f'alpha{self.alpha}_beta{self.beta}_gamma{self.gamma}_lambda{self.lam}'
-                writer.add_scalar(f'acc_test ({alpha_beta_gamma})/seed_{seed}', acc_test, epoch + 1)
-                writer.add_scalar(f'acc_val ({alpha_beta_gamma})/seed_{seed}', acc_val, epoch + 1)
-                writer.add_scalar(f'dp_val ({alpha_beta_gamma})/seed_{seed}', parity_val, epoch + 1)
-                writer.add_scalar(f'dp_test ({alpha_beta_gamma})/seed_{seed}', parity_test, epoch + 1)
-                writer.add_scalar(f'eo_val ({alpha_beta_gamma})/seed_{seed}', equality_val, epoch + 1)
-                writer.add_scalar(f'eo_test ({alpha_beta_gamma})/seed_{seed}', equality_test, epoch + 1)
-
-                if acc_val > best_acc:
-                    best_acc = acc_val
-                    best_test = acc_test
-                    best_dp = parity_val
-                    best_dp_test = parity_test
-                    best_eo = equality_val
-                    best_eo_test = equality_test
+            acc, dp, eo = self.test_classifier(
+                h, idx_test, sens, labels, verbose
+            )
 
             if verbose:
                 print("Optimization Finished!")
-                print("Test results:",
-                            "acc_test= {:.4f}".format(best_test),
-                            "acc_val: {:.4f}".format(best_acc),
-                            "dp_val: {:.4f}".format(best_dp),
-                            "dp_test: {:.4f}".format(best_dp_test),
-                            "eo_val: {:.4f}".format(best_eo),
-                            "eo_test: {:.4f}".format(best_eo_test),)
-        
-            acc_list.append(best_test)
-            dp_list.append(best_dp_test)
-            eo_list.append(best_eo_test)
-        
+                print(
+                    "Test results:",
+                    "acc_test= {:.4f}".format(acc),
+                    "dp_test: {:.4f}".format(dp),
+                    "eo_test: {:.4f}".format(eo)
+                )
+
+            acc_list.append(acc)
+            dp_list.append(dp)
+            eo_list.append(eo)
+
         average_results = {
             "acc": {"mean": np.mean(acc_list), "std": np.std(acc_list)},
             "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
             "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
         }
-        # print("Avg results:",
-        #             "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
-        #             "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
-        #             "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
+
         return average_results
 
     def _save_checkpoint(self):
