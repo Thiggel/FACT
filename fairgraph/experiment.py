@@ -290,10 +290,10 @@ class Experiment:
                         },
                         'dp': {
                             'mean': res_dict['dp']['mean'],
-                            'std': res_dict['eo']['std'],
+                            'std': res_dict['dp']['std'],
                         },
                         'eo': {
-                            'mean': res_dict['dp']['mean'],
+                            'mean': res_dict['eo']['mean'],
                             'std': res_dict['eo']['std'],
                         },
                     })
