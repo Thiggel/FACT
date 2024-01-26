@@ -11,9 +11,6 @@ from .utils.utils import set_device, set_seed
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
 
 
-# TODO: go through all the models and replace hardcoded hyperparemters with arguments, then add to hyperparams file
-
-
 class Logger(object):
     def __init__(self, log_file_name):
         """log both to a file and the terminal"""
@@ -190,7 +187,7 @@ class Experiment:
             )
         else:
             raise Exception(
-                f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA]}"
+                f"Dataset {dataset_name} is not supported. Available datasets are: {[Datasets.POKEC_Z, Datasets.POKEC_N, Datasets.NBA, Datasets.SYNTHETIC]}"
             )
 
     def get_pareto_front(self, data, fairness_metric='dp'):
@@ -301,8 +298,8 @@ class Experiment:
         best_accuracy_params = max(
             results, key=lambda x: x['accuracy']['mean']
         )
-        best_dp_params = max(results, key=lambda x: x['dp']['mean'])
-        best_eo_params = max(results, key=lambda x: x['eo']['mean'])
+        best_dp_params = min(results, key=lambda x: x['dp']['mean']) # Best DP is lowest DP
+        best_eo_params = min(results, key=lambda x: x['eo']['mean']) # Best EO is lowest EO
 
         pareto_front_dp = self.get_pareto_front(results, fairness_metric='dp')
         pareto_front_eo = self.get_pareto_front(results, fairness_metric='eo')
@@ -414,7 +411,7 @@ class Experiment:
                     adv_epoches=1,
                     verbose=self.verbose,
                     writer=self.writer,
-                )  # TODO: figure out what adv_epochs is
+                )
 
             training_time = time.time() - start_time
             print(f"Training time: {training_time:.2f}")
