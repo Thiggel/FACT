@@ -281,6 +281,8 @@ class Graphair(nn.Module):
                     'feature reconstruction loss: {:.4f}'.format(feat_loss),
                     )
 
+        num_epochs_loss_hasnt_decreased = 0
+        last_loss = float('inf')
         for epoch_counter in range(epochs):
             # print(f"Epoch {epoch_counter}")
             ### generate fair view
@@ -295,10 +297,12 @@ class Graphair(nn.Module):
             ## update sens model
             adj_aug_nograd = adj_aug.detach()
             x_aug_nograd = x_aug.detach()
+
             if (epoch_counter == 0):
                 sens_epoches = adv_epoches * 10
             else:
                 sens_epoches = adv_epoches
+
             for _ in range(sens_epoches):
                 s_pred , _  = self.sens_model(adj_aug_nograd, x_aug_nograd)
                 senloss = self.criterion_sens(s_pred[idx_sens],sens[idx_sens].unsqueeze(1).float())
@@ -308,6 +312,7 @@ class Graphair(nn.Module):
 
                 senloss.backward()
                 self.optimizer_s.step()
+
             s_pred , _  = self.sens_model(adj_aug, x_aug)
             senloss = self.criterion_sens(s_pred[idx_sens],sens[idx_sens].unsqueeze(1).float())
 
@@ -321,6 +326,16 @@ class Graphair(nn.Module):
             feat_loss =  self.criterion_recons(x_aug, x)
             recons_loss =  edge_loss + self.lam * feat_loss
             loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
+
+            if last_loss - loss <= 0.01:
+                num_epochs_loss_hasnt_decreased += 1
+            else:
+                num_epochs_loss_hasnt_decreased = 0
+                last_loss = loss
+
+            if num_epochs_loss_hasnt_decreased >= 70:
+                print('Early stopping')
+                break
         
             for param in self.aug_model.parameters():
                 param.grad = None
