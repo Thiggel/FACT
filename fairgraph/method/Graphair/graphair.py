@@ -145,8 +145,6 @@ class Graphair(nn.Module):
         adj_orig = sp.csr_matrix(adj)
         norm_w = adj_orig.shape[0]**2 / float((adj_orig.shape[0]**2 - adj_orig.sum()) * 2)
 
-        idx_sens = idx_sens.cpu().numpy()
-
         if warmup:
             for _ in range(warmup):
 
@@ -192,7 +190,7 @@ class Graphair(nn.Module):
             adj_aug_nograd = adj_aug.detach()
             x_aug_nograd = x_aug.detach()
 
-            mask = np.in1d(node_subgraph, idx_sens)
+            mask = torch.in1d(node_subgraph, idx_sens)
 
             if (epoch_counter == 0):
                 sens_epoches = adv_epoches * 10
@@ -430,11 +428,22 @@ class Graphair(nn.Module):
             dp_list.append(dp)
             eo_list.append(eo)
 
-        average_results = {
-            "acc": {"mean": np.mean(acc_list), "std": np.std(acc_list)},
-            "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
-            "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
+        acc = {
+           'mean': torch.mean(torch.as_tensor(acc_list)) if self.n_tests > 1 else acc_list[0],
+           'std': torch.std(torch.as_tensor(acc_list)) if self.n_tests > 1 else 0,
         }
+
+        dp = {
+            'mean': torch.mean(torch.as_tensor(dp_list)) if self.n_tests > 1 else dp_list[0],
+            'std': torch.std(torch.as_tensor(dp_list)) if self.n_tests > 1 else 0
+        }
+
+        eo = {
+            'mean': torch.mean(torch.as_tensor(eo_list)) if self.n_tests > 1 else eo_list[0],
+            'std': torch.std(torch.as_tensor(eo_list)) if self.n_tests > 1 else 0
+        }
+
+        average_results = {"acc": acc, "dp": dp, "eo": eo}
 
         return average_results
 
