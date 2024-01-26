@@ -18,11 +18,11 @@ class Logger(object):
     def __init__(self, log_file_name):
         """log both to a file and the terminal"""
         self.terminal = sys.stdout
-        self.log = open(log_file_name, "w")
+        self.log_file = open(log_file_name, "w")
 
     def write(self, message):
         self.terminal.write(message)
-        self.log.write(message)
+        self.log_file.write(message)
 
     def flush(self):
         """needed for Python 3 compatibility"""
@@ -162,10 +162,11 @@ class Experiment:
         self.initialize_logging()
 
     def initialize_logging(self):
-        log_dir = self.create_log_dir()
-        self.writer = SummaryWriter(log_dir=log_dir)
-        shutil.copy(self.params_file, log_dir)
-        sys.stdout = Logger(os.path.join(log_dir, "output.txt"))
+        self.log_dir = self.create_log_dir()
+        self.writer = SummaryWriter(log_dir=self.log_dir)
+        shutil.copy(self.params_file, self.log_dir)
+        self.logger = Logger(os.path.join(self.log_dir, "output.txt"))
+        sys.stdout = self.logger
 
     def initialize_dataset(
         self,
@@ -264,6 +265,9 @@ class Experiment:
         for alpha in hparam_values:
             for gamma in hparam_values:
                 for lam in hparam_values:
+                    self.logger.log_file.close()
+                    self.logger.log_file = open(os.path.join(self.log_dir, f"output-a{alpha}-b{beta}-g{gamma}-l{lam}.txt"), "w")
+
                     self.graphair_hyperparams['alpha'] = alpha
                     self.graphair_hyperparams['beta'] = beta
                     self.graphair_hyperparams['gamma'] = gamma
@@ -308,15 +312,13 @@ class Experiment:
         self.visualize_pareto_front(
             pareto_front_dp,
             'dp',
-            os.getcwd() + '/experiments/pareto_fronts/' +
-            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png'
+            os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-dp.png')
         )
 
         self.visualize_pareto_front(
             pareto_front_eo,
             'eo',
-            os.getcwd() + '/experiments/pareto_fronts/' +
-            f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png'
+            os.path.join(self.log_dir, f'{attention}-{self.dataset.name}-{alpha}-{gamma}-{lam}-eo.png')
         )
 
         print('Grid Search Results:\n',
