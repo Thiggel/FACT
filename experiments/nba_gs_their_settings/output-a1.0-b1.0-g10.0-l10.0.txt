@@ -1,0 +1,7 @@
+alpha: 1.0, lambda: 10.0, gamma: 10.0
+Start training
+Training time: 11.72
+Average time per epoch: 0.0234
+Run 0 results: {'acc': {'mean': 0.6425531914893616, 'std': 0.0034744535358626144}, 'dp': {'mean': 0.004329004329004326, 'std': 0.003534617233453394}, 'eo': {'mean': 0.046052631578947345, 'std': 0.0}}
+Average training time per run: 11.72
+Average results: {'acc': {'mean': 0.6425531914893616, 'std': 0.0}, 'dp': {'mean': 0.004329004329004326, 'std': 0.0}, 'eo': {'mean': 0.046052631578947345, 'std': 0.0}}
