@@ -272,7 +272,7 @@ class Experiment:
 
         self.logger.log_file.close()
         self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "a")
-
+        
         print('Grid Search Results:\n' +
               'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
               'Best DP: ' + str(best_dp_params) + '\n' +
