@@ -76,7 +76,7 @@ class Experiment:
         use_gcn_classifier=False,
         n_runs=5,
         n_tests=1,
-        supervised_testing=False,
+        skip_graphair=False,
     ):
         """
         Initializes an Experiment class instance.
@@ -93,7 +93,7 @@ class Experiment:
             ... #TODO: finish docstring
 
         """
-        if supervised_testing and not use_gcn_classifier:
+        if skip_graphair and not use_gcn_classifier:
             raise Exception("Supervised testing requires a GCN classifier")
 
         self.name = experiment_name
@@ -103,7 +103,7 @@ class Experiment:
         self.verbose = verbose
         self.n_runs = n_runs
         self.n_tests = n_tests
-        self.supervised_testing = supervised_testing
+        self.skip_graphair = skip_graphair
         self.use_gcn_classifier = use_gcn_classifier
 
         # Set a seed for reproducibility
@@ -349,12 +349,12 @@ class Experiment:
                 device=self.device,
                 dataset=self.dataset.name,
                 n_tests=self.n_tests,
-                supervised_testing=self.supervised_testing,
+                skip_graphair=self.skip_graphair,
                 use_gcn_classifier=self.use_gcn_classifier,
                 **self.graphair_hyperparams
             ).to(self.device)
 
-            if not self.supervised_testing:
+            if not self.skip_graphair:
                 start_time = time.time()
                 if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
                     self.model.fit_batch_GraphSAINT(
@@ -405,7 +405,7 @@ class Experiment:
                 writer=self.writer,
             )
 
-            if self.supervised_testing:
+            if self.skip_graphair:
                 print(results)
                 return results
 

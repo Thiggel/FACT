@@ -55,12 +55,12 @@ class Graphair(nn.Module):
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
                  num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
-                 batch_size=None, n_tests=5, supervised_testing=False, use_gcn_classifier=False, checkpoint_path='./checkpoint/'):
+                 batch_size=None, n_tests=5, skip_graphair=False, use_gcn_classifier=False, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
         self.n_tests = n_tests
-        self.supervised_testing = supervised_testing
+        self.skip_graphair = skip_graphair
         self.use_gcn_classifier = use_gcn_classifier
 
         self.aug_model = aug_model
@@ -352,7 +352,7 @@ class Graphair(nn.Module):
         Returns:
             dict: A dictionary containing the average results of the tests
         """
-        if not self.supervised_testing:
+        if not self.skip_graphair:
             h = self.forward(adj, features)
             h = h.detach()
         else:
