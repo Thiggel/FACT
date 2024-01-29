@@ -355,7 +355,7 @@ class Graphair(nn.Module):
             h = self.forward(adj, features)
             h = h.detach()
         else:
-            adj = scipysp_to_pytorchsp(adj)
+            adj = scipysp_to_pytorchsp(adj).to(self.device)
 
         acc_list, dp_list, eo_list = [], [], []
 
