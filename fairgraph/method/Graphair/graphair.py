@@ -55,11 +55,13 @@ class Graphair(nn.Module):
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
                  num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
-                 batch_size=None, n_tests=5, checkpoint_path='./checkpoint/'):
+                 batch_size=None, n_tests=5, skip_graphair=False, use_gcn_classifier=False, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
         self.n_tests = n_tests
+        self.skip_graphair = skip_graphair
+        self.use_gcn_classifier = use_gcn_classifier
 
         self.aug_model = aug_model
         self.f_encoder = f_encoder
@@ -332,12 +334,31 @@ class Graphair(nn.Module):
     
 
     def test(self, adj, features, labels, epochs, idx_train, idx_val, idx_test, sens, writer, verbose=False):
-        h = self.forward(adj, features)
-        h = h.detach()
+        """
+        Tests the Graphair model on the given dataset.
 
-        acc_list = []
-        dp_list = []
-        eo_list = []
+        Args:
+            adj (scipy.sparse.csr_matrix): The adjacency matrix of the graph
+            features (torch.Tensor): The features of the nodes in the graph
+            labels (torch.Tensor): The labels of the nodes in the graph
+            epochs (int): The number of epochs to train the classifier for
+            idx_train (torch.Tensor): The indices of the training nodes
+            idx_val (torch.Tensor): The indices of the validation nodes
+            idx_test (torch.Tensor): The indices of the test nodes
+            sens (torch.Tensor): The sensitive labels of the nodes in the graph
+            writer (SummaryWriter): The tensorboard writer
+            verbose (bool, optional): Whether to print the training logs. Defaults to False.
+        
+        Returns:
+            dict: A dictionary containing the average results of the tests
+        """
+        if not self.skip_graphair:
+            h = self.forward(adj, features)
+            h = h.detach()
+        else:
+            adj = scipysp_to_pytorchsp(adj)
+
+        acc_list, dp_list, eo_list = [], [], []
 
         for i in range(self.n_tests):
             seed = i * 10
@@ -351,14 +372,21 @@ class Graphair(nn.Module):
 
                 self.classifier.train()
                 self.optimizer_classifier.zero_grad()
-                output = self.classifier(h)
+                if self.use_gcn_classifier:
+                    output = self.classifier(adj, features)
+                else:
+                    output = self.classifier(h)
                 loss_train = F.binary_cross_entropy_with_logits(output[idx_train], labels[idx_train].unsqueeze(1).float())
                 acc_train = accuracy(output[idx_train], labels[idx_train])
                 loss_train.backward()
                 self.optimizer_classifier.step()
                             
+                # Evaluate validation set performance
                 self.classifier.eval()
-                output = self.classifier(h)
+                if self.use_gcn_classifier:
+                    output = self.classifier(adj, features)
+                else:
+                    output = self.classifier(h)
                 acc_val = accuracy(output[idx_val], labels[idx_val])
                 acc_test = accuracy(output[idx_test], labels[idx_test])
 
@@ -408,10 +436,6 @@ class Graphair(nn.Module):
             "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
             "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
         }
-        # print("Avg results:",
-        #             "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
-        #             "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
-        #             "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
         return average_results
 
     def _save_checkpoint(self):

@@ -1,7 +1,7 @@
 from .graphair import Graphair
 from .aug_module import aug_module
 from .GCN import GCN, GCN_Body, GAT_Body, GAT_Model
-from .classifier import Classifier
+from .classifier import Classifier, GCNClassifier
 
 
 __all__ = [
@@ -12,4 +12,5 @@ __all__ = [
     'GAT_Body',
     'GAT_Model',
     'Classifier'
+    'GCNClassifier'
 ]
