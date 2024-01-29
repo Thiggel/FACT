@@ -5,7 +5,7 @@ import numpy as np
 import time
 import sys
 import matplotlib.pyplot as plt
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
+from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GCNClassifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import set_device, set_seed, find_pareto_front, plot_pareto
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
@@ -73,8 +73,10 @@ class Experiment:
         synthetic_hmm=0.8,
         synthetic_hMM=0.2,
         use_graph_attention=False,
+        use_gcn_classifier=False,
         n_runs=5,
-        n_tests=1
+        n_tests=1,
+        supervised_testing=False,
     ):
         """
         Initializes an Experiment class instance.
@@ -98,6 +100,8 @@ class Experiment:
         self.verbose = verbose
         self.n_runs = n_runs
         self.n_tests = n_tests
+        self.supervised_testing = supervised_testing
+        self.use_gcn_classifier = use_gcn_classifier
 
         # Set a seed for reproducibility
         set_seed(seed)
@@ -321,9 +325,17 @@ class Experiment:
             ).to(self.device)
 
             # Initialize classifier for testing
-            self.classifier_model = Classifier(
-                input_dim=self.c_input, hidden_dim=self.c_hidden
-            )
+            if self.use_gcn_classifier:
+                self.classifier_model = GCNClassifier(
+                    input_dim=self.dataset.features.shape[1],
+                    hidden_dim=self.c_hidden,
+                    dropout=0,
+                    n_layer=2
+                    )
+            else:
+                self.classifier_model = Classifier(
+                    input_dim=self.c_input, hidden_dim=self.c_hidden
+                )
 
             # Initialize the Graphair model
             self.model = Graphair(
@@ -334,6 +346,7 @@ class Experiment:
                 device=self.device,
                 dataset=self.dataset.name,
                 n_tests=self.n_tests,
+                supervised_testing=self.supervised_testing,
                 **self.graphair_hyperparams
             ).to(self.device)
 
