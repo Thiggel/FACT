@@ -12,7 +12,6 @@ from .utils.utils import (
     set_seed,
     find_pareto_front,
     plot_pareto,
-    get_grid_search_result_files,
     get_grid_search_results_from_dir,
 )
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
@@ -244,11 +243,13 @@ class Experiment:
         results = []
 
         if self.grid_search_resume_dir is not None:
-            # copy individual output files from the grid search resume dir to the log dir
-            for path in get_grid_search_result_files(self.grid_search_resume_dir):
-                shutil.copy(path, self.log_dir)
-            
             results, finished_hparams = get_grid_search_results_from_dir(self.grid_search_resume_dir)
+            for hparams in finished_hparams:
+                [a, g, l] = hparams
+                shutil.copy(
+                    os.path.join(self.grid_search_resume_dir, f"output-a{a}-b{beta}-g{g}-l{l}.txt"),
+                    self.log_dir,
+                )
 
         for alpha in hparam_values:
             for gamma in hparam_values:

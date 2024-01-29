@@ -126,7 +126,7 @@ def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
     else:
         plt.show()
 
-def get_grid_search_result_files(dir):
+def get_grid_search_output_files(dir):
     """Returns a list of paths to all the output files in the given directory."""
     return glob(os.path.join(dir, "output-a*.txt"))
 
@@ -134,14 +134,14 @@ def get_grid_search_results_from_dir(dir):
     """Returns a tuple: (all_avg_results, finshed_hparams), where results is a list of dicts containing average results,
     and finished_hparams is a list of lists of hyperparameter values for which the experiment has been completed."""
 
-    paths = get_grid_search_result_files(dir)
+    output_files = get_grid_search_output_files(dir)
 
-    all_avg_results = [], finished_hparams = []
-    for path in paths:
-        a, _, g, l = [float(param) for param in os.path.splitext(os.path.basename(paths[0]))[0].split("-")[-4:]]
-        with open(path, "r") as f:
+    all_avg_results, finished_hparams = [], []
+    for output_file in output_files:
+        a, _, g, l = [float(param[1:]) for param in os.path.splitext(os.path.basename(output_file))[0].split("-")[-4:]]
+        with open(output_file, "r") as f:
             log_text = f.read()
-            if re.match("Average results:", log_text) is None:
+            if "Average results" in log_text:
                 finished_hparams.append([a, g, l])
                 avg_results_text = log_text.split('Average results: ')[1][:-1]
                 avg_results = literal_eval(avg_results_text)
