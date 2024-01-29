@@ -306,7 +306,7 @@ class Experiment:
                     fairness_metric=fairness_metric,
                     title=f"{fairness_metric.upper()}-Acc Pareto front",
                     show_all=show_all,
-                    filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.png"),
+                    filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.svg"),
                 )
 
         self.logger.log_file.close()
