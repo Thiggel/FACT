@@ -6,6 +6,11 @@ from glob import glob
 import os
 import re
 from ast import literal_eval
+from fairgraph.utils.constants import (
+    pareto_fronts,
+    colors,
+)
+
 
 def scipysp_to_pytorchsp(sp_mx):
     """ converts scipy sparse matrix to pytorch sparse matrix """
@@ -90,7 +95,7 @@ def find_pareto_front(results, metric1, metric2):
             
     return pareto_front
 
-def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
+def plot_pareto(results, fairness_metric, show_all, dataset, filepath=None):
     """This only properly works if metric2 is acc"""
     # Create a new figure
     plt.figure()
@@ -99,28 +104,34 @@ def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
     pareto_front = find_pareto_front(results, "acc", fairness_metric)
 
     # collect all the points (also ones not in the front)
-    all_points = np.zeros((len(results),2))
-    for i in range(len(results)):
-        all_points[i][0] = results[i]["acc"]['mean']
-        all_points[i][1] = results[i][fairness_metric]['mean']
+    all_points = np.array([[r["acc"]['mean'] * 100, r[fairness_metric]['mean'] * 100] for r in results])
     
-    # create the xs and ys for the plot
-    arr = np.zeros((len(pareto_front), 2))
-    for i, r in enumerate(pareto_front):
-        arr[i][0] = r[fairness_metric]['mean']
-        arr[i][1] = r["acc"]['mean']
-    arr = np.sort(arr, axis=0)
+    # collect pareto front points
+    arr = np.sort(
+        np.array([[r[fairness_metric]['mean'] * 100, r["acc"]['mean'] * 100] for r in pareto_front]),
+        axis=0,
+    )
 
-    # create the plot
+    # plot all other points to make sure the pareto front is correct
     if show_all:
-        plt.scatter(all_points[:, 1], all_points[:, 0], color='red')
+        plt.scatter(all_points[:, 1], all_points[:, 0], color='blue', alpha=0.2)
 
-    plt.plot(arr[:, 0], arr[:, 1], color='blue')
-    plt.scatter(arr[:, 0], arr[:, 1], color='blue')
+    # plot the pareto front of other methods
+    for method, pf in pareto_fronts.items():
+        plt.plot(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method], label=f"{method}")
+        plt.scatter(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method])
+
+    # plot the pareto front of the reproduced Graphair results
+    plt.plot(arr[:, 0], arr[:, 1], color='darkviolet', label='Graphair (reproduced)')
+    plt.scatter(arr[:, 0], arr[:, 1], color='darkviolet')
+
+    # labels, title and legend
     plt.xlabel(fairness_metric.upper())
-    plt.ylabel("accuracy")
-    plt.title(title)
+    plt.ylabel("Accuracy")
+    plt.title(f"{fairness_metric.upper()}-Accuracy {dataset.upper()}")
+    plt.legend()
     
+    # save and show figure
     if filepath is not None:
         plt.savefig(filepath)
     else:

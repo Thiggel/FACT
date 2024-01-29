@@ -304,8 +304,8 @@ class Experiment:
                 plot_pareto(
                     results=results,
                     fairness_metric=fairness_metric,
-                    title=f"{fairness_metric.upper()}-Acc Pareto front",
                     show_all=show_all,
+                    dataset=self.dataset.name,
                     filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.svg"),
                 )
 
