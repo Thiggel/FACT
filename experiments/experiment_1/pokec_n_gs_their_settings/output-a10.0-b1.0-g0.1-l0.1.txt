@@ -1,0 +1,9 @@
+alpha: 10.0, lambda: 0.1, gamma: 0.1
+Start training
+sampling 200 subgraphs:   time = 0.226 sec
+sampling 200 subgraphs:   time = 0.244 sec
+Training time: 122.70
+Average time per epoch: 0.2454
+Run 0 results: {'acc': {'mean': 0.585819835180449, 'std': 0.00283175292261511}, 'dp': {'mean': 0.06301517621974162, 'std': 0.00719370204539122}, 'eo': {'mean': 0.05478271728271729, 'std': 0.009754572326658712}}
+Average training time per run: 122.70
+Average results: {'acc': {'mean': 0.585819835180449, 'std': 0.0}, 'dp': {'mean': 0.06301517621974162, 'std': 0.0}, 'eo': {'mean': 0.05478271728271729, 'std': 0.0}}

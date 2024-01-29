@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.sparse as sp
 import torch
+import matplotlib.pyplot as plt
 
 def scipysp_to_pytorchsp(sp_mx):
     """ converts scipy sparse matrix to pytorch sparse matrix """
@@ -68,3 +69,55 @@ def set_seed(seed):
             torch.mps.manual_seed(seed)
     except:
         pass
+
+def find_pareto_front(results, metric1, metric2):
+    """In this method, the first metric is maximized, the second is minimized!!"""
+    pareto_front = []
+    for i in range(len(results)):
+        is_dominated = False
+        for j in range(len(results)):
+            if i == j: continue
+            if results[i][metric1]['mean'] <= results[j][metric1]['mean'] and \
+                results[i][metric2]['mean'] >= results[j][metric2]['mean']:
+                is_dominated = True
+
+        if not is_dominated:
+            pareto_front.append(results[i])  
+            
+    return pareto_front
+
+def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
+    """This only properly works if metric2 is acc"""
+    # Create a new figure
+    plt.figure()
+
+    # find the pareto front
+    pareto_front = find_pareto_front(results, "accuracy", fairness_metric)
+
+    # collect all the points (also ones not in the front)
+    all_points = np.zeros((len(results),2))
+    for i in range(len(results)):
+        all_points[i][0] = results[i]["accuracy"]['mean']
+        all_points[i][1] = results[i][fairness_metric]['mean']
+    
+    # create the xs and ys for the plot
+    arr = np.zeros((len(pareto_front), 2))
+    for i, r in enumerate(pareto_front):
+        arr[i][0] = r[fairness_metric]['mean']
+        arr[i][1] = r["accuracy"]['mean']
+    arr = np.sort(arr, axis=0)
+
+    # create the plot
+    if show_all:
+        plt.scatter(all_points[:, 1], all_points[:, 0], color='red')
+
+    plt.plot(arr[:, 0], arr[:, 1], color='blue')
+    plt.scatter(arr[:, 0], arr[:, 1], color='blue')
+    plt.xlabel(fairness_metric.upper())
+    plt.ylabel("accuracy")
+    plt.title(title)
+    
+    if filepath is not None:
+        plt.savefig(filepath)
+    else:
+        plt.show()

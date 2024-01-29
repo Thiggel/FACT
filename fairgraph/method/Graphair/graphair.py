@@ -55,10 +55,11 @@ class Graphair(nn.Module):
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
                  num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
-                 batch_size=None, checkpoint_path='./checkpoint/'):
+                 batch_size=None, n_tests=5, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
+        self.n_tests = n_tests
 
         self.aug_model = aug_model
         self.f_encoder = f_encoder
@@ -337,7 +338,7 @@ class Graphair(nn.Module):
         dp_list = []
         eo_list = []
 
-        for i in range(5):
+        for i in range(self.n_tests):
             seed = i * 10
             set_seed(seed)
 
@@ -406,10 +407,10 @@ class Graphair(nn.Module):
             "dp": {"mean": np.mean(dp_list), "std": np.std(dp_list)},
             "eo": {"mean": np.mean(eo_list), "std": np.std(eo_list)}
         }
-        print("Avg results:",
-                    "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
-                    "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
-                    "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
+        # print("Avg results:",
+        #             "acc: {:.4f} std: {:.4f}".format(average_results["acc"]["mean"], average_results["acc"]["std"]), 
+        #             "dp: {:.4f} std: {:.4f}".format(average_results["dp"]["mean"], average_results["dp"]["std"]),
+        #             "eo: {:.4f} std: {:.4f}".format(average_results["eo"]["mean"], average_results["eo"]["std"]),)
         return average_results
 
     def _save_checkpoint(self):
