@@ -1,8 +1,0 @@
-Experiment with the following hyperparameters:
-        Device: cuda, Dataset: NBA, Epochs: 2000, Test epochs: 500, Batch size: 1000
-        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1, 'edge_perturbation': True, 'node_feature_masking': False}
-        Encoder model f hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2}
-        Adversary model k hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2, 'nclass': 1}
-Start training
-Training time:  50.96653413772583
-Avg results: acc: 0.6397 std: 0.0104 dp: 0.0597 std: 0.0339 eo: 0.0774 std: 0.0370
