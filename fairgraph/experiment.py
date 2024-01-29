@@ -15,7 +15,7 @@ class Logger(object):
     def __init__(self, log_file_name):
         """log both to a file and the terminal"""
         self.terminal = sys.stdout
-        self.log_file = open(log_file_name, "w")
+        self.log_file = open(log_file_name, "a")
 
     def write(self, message):
         self.terminal.write(message)
@@ -271,7 +271,7 @@ class Experiment:
                 )
 
         self.logger.log_file.close()
-        self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "w")
+        self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "a")
 
         print('Grid Search Results:\n' +
               'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
