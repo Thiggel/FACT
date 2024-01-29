@@ -93,6 +93,9 @@ class Experiment:
             ... #TODO: finish docstring
 
         """
+        if supervised_testing and not use_gcn_classifier:
+            raise Exception("Supervised testing requires a GCN classifier")
+
         self.name = experiment_name
         self.device = device if device else set_device()
         self.batch_size = batch_size
@@ -330,7 +333,7 @@ class Experiment:
                     input_dim=self.dataset.features.shape[1],
                     hidden_dim=self.c_hidden,
                     dropout=0,
-                    n_layer=2
+                    nlayer=2
                     )
             else:
                 self.classifier_model = Classifier(
@@ -347,10 +350,11 @@ class Experiment:
                 dataset=self.dataset.name,
                 n_tests=self.n_tests,
                 supervised_testing=self.supervised_testing,
+                use_gcn_classifier=self.use_gcn_classifier,
                 **self.graphair_hyperparams
             ).to(self.device)
 
-            if self.supervised_testing:
+            if not self.supervised_testing:
                 start_time = time.time()
                 if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
                     self.model.fit_batch_GraphSAINT(
@@ -384,6 +388,8 @@ class Experiment:
 
                 avg_time_per_epoch = training_time / self.epochs
                 print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
+            else:
+                print("Skipping training")
 
             # Test the model
             results = self.model.test(
@@ -398,6 +404,11 @@ class Experiment:
                 verbose=self.verbose,
                 writer=self.writer,
             )
+
+            if self.supervised_testing:
+                print(results)
+                return results
+
             # Collect the results
             accuracies.append(results['acc']['mean'])
             eos.append(results['eo']['mean'])

@@ -21,10 +21,10 @@ class Classifier(nn.Module):
                 layer.reset_parameters()
 
 class GCNClassifier(nn.Module):
-    def __init__(self, input_dim, hidden_dim, dropout=0, n_layer=2) -> None:
-        super(Classifier,self).__init__()
+    def __init__(self, input_dim, hidden_dim, dropout=0, nlayer=2) -> None:
+        super(GCNClassifier, self).__init__()
 
-        self.gcn = GCN_Body(in_feats=input_dim, n_hidden=hidden_dim, out_feats=hidden_dim, dropout=dropout, n_layer=n_layer)
+        self.gcn = GCN_Body(in_feats=input_dim, n_hidden=hidden_dim, out_feats=hidden_dim, dropout=dropout, nlayer=nlayer)
 
         self.model = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim),
