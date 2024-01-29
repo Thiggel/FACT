@@ -33,6 +33,8 @@ if __name__ == "__main__":
                         help='Number of experiment runs')
     parser.add_argument('--n_tests', default=1, type=int,
                         help='Number of tests for each experiment')
+    parser.add_argument('--grid_search_resume_dir', type=str, default=None,
+                        help='Directory to resume grid search from')
     
 
     args = parser.parse_args()
@@ -58,6 +60,7 @@ if __name__ == "__main__":
         use_graph_attention=args.attention,
         n_runs=args.n_runs,
         n_tests=args.n_tests,
+        grid_search_resume_dir=args.grid_search_resume_dir,
         **hyperparams,
     )
 

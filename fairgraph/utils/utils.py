@@ -2,6 +2,10 @@ import numpy as np
 import scipy.sparse as sp
 import torch
 import matplotlib.pyplot as plt
+from glob import glob
+import os
+import re
+from ast import literal_eval
 
 def scipysp_to_pytorchsp(sp_mx):
     """ converts scipy sparse matrix to pytorch sparse matrix """
@@ -92,19 +96,19 @@ def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
     plt.figure()
 
     # find the pareto front
-    pareto_front = find_pareto_front(results, "accuracy", fairness_metric)
+    pareto_front = find_pareto_front(results, "acc", fairness_metric)
 
     # collect all the points (also ones not in the front)
     all_points = np.zeros((len(results),2))
     for i in range(len(results)):
-        all_points[i][0] = results[i]["accuracy"]['mean']
+        all_points[i][0] = results[i]["acc"]['mean']
         all_points[i][1] = results[i][fairness_metric]['mean']
     
     # create the xs and ys for the plot
     arr = np.zeros((len(pareto_front), 2))
     for i, r in enumerate(pareto_front):
         arr[i][0] = r[fairness_metric]['mean']
-        arr[i][1] = r["accuracy"]['mean']
+        arr[i][1] = r["acc"]['mean']
     arr = np.sort(arr, axis=0)
 
     # create the plot
@@ -121,3 +125,26 @@ def plot_pareto(results, fairness_metric, title, show_all, filepath=None):
         plt.savefig(filepath)
     else:
         plt.show()
+
+def get_grid_search_result_files(dir):
+    """Returns a list of paths to all the output files in the given directory."""
+    return glob(os.path.join(dir, "output-a*.txt"))
+
+def get_grid_search_results_from_dir(dir):
+    """Returns a tuple: (all_avg_results, finshed_hparams), where results is a list of dicts containing average results,
+    and finished_hparams is a list of lists of hyperparameter values for which the experiment has been completed."""
+
+    paths = get_grid_search_result_files(dir)
+
+    all_avg_results = [], finished_hparams = []
+    for path in paths:
+        a, _, g, l = [float(param) for param in os.path.splitext(os.path.basename(paths[0]))[0].split("-")[-4:]]
+        with open(path, "r") as f:
+            log_text = f.read()
+            if re.match("Average results:", log_text) is None:
+                finished_hparams.append([a, g, l])
+                avg_results_text = log_text.split('Average results: ')[1][:-1]
+                avg_results = literal_eval(avg_results_text)
+                all_avg_results.append(avg_results)
+
+    return all_avg_results, finished_hparams
