@@ -117,7 +117,33 @@ class ArtificialSensitiveGraphDataset(SyntheticDataset):
         return self.splits['test']
 
 
-class POKEC():
+class GraphDataset:
+    def get_neighbours(self, node):
+        return self.adj[node].nonzero()[1]
+
+    def get_neighbours_with_same_sensitive_attribute(self, node, neighbours):
+        return neighbours[(self.sens[neighbours] == self.sens[node]).tolist()]
+
+    def get_node_sensitive_homophily(self, node):
+        neighbours = self.get_neighbours(node)
+        num_neighbours = len(neighbours)
+        
+
+        same_sens = self.get_neighbours_with_same_sensitive_attribute(
+            node, neighbours
+        )
+        num_same_sens = len(same_sens)
+
+        return num_same_sens / num_neighbours
+
+    def node_sensitive_homophily_per_node(self):
+        return [
+            self.get_node_sensitive_homophily(node)
+            for node in range(len(self.features))
+        ]
+
+
+class POKEC(GraphDataset):
     r"""Pokec is a social network dataset. Two `different datasets <https://github.com/EnyanDai/FairGNN/tree/main/dataset/pokec>`_ (namely pokec_z and pokec_n) are sampled
         from the original `Pokec dataset <https://snap.stanford.edu/data/soc-pokec.html>`_.
 
@@ -267,7 +293,7 @@ class POKEC():
         # self.minibatch = Minibatch(self.adj, self.adj, role, train_params, self.device)
         self.minibatch.set_sampler(train_phase)
 
-class NBA():
+class NBA(GraphDataset):
     r'''
         `NBA <https://github.com/EnyanDai/FairGNN/tree/main/dataset/NBA>`_ is an NBA on court performance dataset along salary, social engagement etc.
 
