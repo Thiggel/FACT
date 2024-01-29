@@ -31,4 +31,8 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 
 `--n_tests`: number of tests for each experiment, default: 1
 
+`--supervised_testing`: whether to only run supervised testing and skip training Graphair, default: False
+
+`--use_gcn_classifier`: whether to use a GCN+MLP classifier instead of just a MLP, default: False
+
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.
