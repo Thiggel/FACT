@@ -5,7 +5,7 @@ import numpy as np
 import time
 import sys
 import matplotlib.pyplot as plt
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
+from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GCNClassifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
 from .utils.utils import (
     set_device,
@@ -24,7 +24,7 @@ class Logger(object):
     def __init__(self, log_file_name):
         """log both to a file and the terminal"""
         self.terminal = sys.stdout
-        self.log_file = open(log_file_name, "w")
+        self.log_file = open(log_file_name, "a")
 
     def write(self, message):
         self.terminal.write(message)
@@ -84,9 +84,11 @@ class Experiment:
         synthetic_hmm=0.8,
         synthetic_hMM=0.2,
         use_graph_attention=False,
+        use_gcn_classifier=False,
         n_runs=5,
         n_tests=1,
         grid_search_resume_dir=None,
+        skip_graphair=False,
     ):
         """
         Initializes an Experiment class instance.
@@ -103,6 +105,9 @@ class Experiment:
             ... #TODO: finish docstring
 
         """
+        if skip_graphair and not use_gcn_classifier:
+            raise Exception("Supervised testing requires a GCN classifier")
+
         self.name = experiment_name
         
         if device in ["cpu", "cuda", "mps"]:
@@ -115,6 +120,8 @@ class Experiment:
         self.verbose = verbose
         self.n_runs = n_runs
         self.n_tests = n_tests
+        self.skip_graphair = skip_graphair
+        self.use_gcn_classifier = use_gcn_classifier
 
         # Set a seed for reproducibility
         set_seed(seed)
@@ -302,8 +309,8 @@ class Experiment:
                 )
 
         self.logger.log_file.close()
-        self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "w")
-        print(self)
+        self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "a")
+        
         print('Grid Search Results:\n' +
               'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
               'Best DP: ' + str(best_dp_params) + '\n' +
@@ -352,9 +359,17 @@ class Experiment:
             ).to(self.device)
 
             # Initialize classifier for testing
-            self.classifier_model = Classifier(
-                input_dim=self.c_input, hidden_dim=self.c_hidden
-            )
+            if self.use_gcn_classifier:
+                self.classifier_model = GCNClassifier(
+                    input_dim=self.dataset.features.shape[1],
+                    hidden_dim=self.c_hidden,
+                    dropout=0,
+                    nlayer=2
+                    )
+            else:
+                self.classifier_model = Classifier(
+                    input_dim=self.c_input, hidden_dim=self.c_hidden
+                )
 
             # Initialize the Graphair model
             self.model = Graphair(
@@ -365,43 +380,47 @@ class Experiment:
                 device=self.device,
                 dataset=self.dataset.name,
                 n_tests=self.n_tests,
+                skip_graphair=self.skip_graphair,
+                use_gcn_classifier=self.use_gcn_classifier,
                 **self.graphair_hyperparams
             ).to(self.device)
 
-            start_time = time.time()
-
-            if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
-                self.model.fit_batch_GraphSAINT(
-                    epochs=self.epochs,
-                    adj=self.dataset.adj,
-                    x=self.dataset.features,
-                    sens=self.dataset.sens,
-                    idx_sens=self.dataset.idx_sens_train,
-                    minibatch=self.dataset.minibatch,
-                    warmup=self.warmup,
-                    adv_epoches=1,
-                    verbose=self.verbose,
-                    writer=self.writer,
+            if not self.skip_graphair:
+                start_time = time.time()
+                if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
+                    self.model.fit_batch_GraphSAINT(
+                        epochs=self.epochs,
+                        adj=self.dataset.adj,
+                        x=self.dataset.features,
+                        sens=self.dataset.sens,
+                        idx_sens=self.dataset.idx_sens_train,
+                        minibatch=self.dataset.minibatch,
+                        warmup=self.warmup,
+                        adv_epoches=1,
+                        verbose=self.verbose,
+                        writer=self.writer,
+                        )
+                else:
+                    self.model.fit_whole(
+                        epochs=self.epochs,
+                        adj=self.dataset.adj,
+                        x=self.dataset.features,
+                        sens=self.dataset.sens,
+                        idx_sens=self.dataset.idx_sens_train,
+                        warmup=self.warmup,
+                        adv_epoches=1,
+                        verbose=self.verbose,
+                        writer=self.writer,
                     )
+
+                training_time = time.time() - start_time
+                print(f"Training time: {training_time:.2f}")
+                training_times.append(training_time)
+
+                avg_time_per_epoch = training_time / self.epochs
+                print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
             else:
-                self.model.fit_whole(
-                    epochs=self.epochs,
-                    adj=self.dataset.adj,
-                    x=self.dataset.features,
-                    sens=self.dataset.sens,
-                    idx_sens=self.dataset.idx_sens_train,
-                    warmup=self.warmup,
-                    adv_epoches=1,
-                    verbose=self.verbose,
-                    writer=self.writer,
-                )
-
-            training_time = time.time() - start_time
-            print(f"Training time: {training_time:.2f}")
-            training_times.append(training_time)
-
-            avg_time_per_epoch = training_time / self.epochs
-            print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
+                print("Skipping training")
 
             # Test the model
             results = self.model.test(
@@ -416,6 +435,11 @@ class Experiment:
                 verbose=self.verbose,
                 writer=self.writer,
             )
+
+            if self.skip_graphair:
+                print(results)
+                return results
+
             # Collect the results
             accuracies.append(results['acc']['mean'])
             eos.append(results['eo']['mean'])
