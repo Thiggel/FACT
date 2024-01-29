@@ -350,40 +350,40 @@ class Experiment:
                 **self.graphair_hyperparams
             ).to(self.device)
 
-            start_time = time.time()
-
-            if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
-                self.model.fit_batch_GraphSAINT(
-                    epochs=self.epochs,
-                    adj=self.dataset.adj,
-                    x=self.dataset.features,
-                    sens=self.dataset.sens,
-                    idx_sens=self.dataset.idx_sens_train,
-                    minibatch=self.dataset.minibatch,
-                    warmup=self.warmup,
-                    adv_epoches=1,
-                    verbose=self.verbose,
-                    writer=self.writer,
+            if self.supervised_testing:
+                start_time = time.time()
+                if self.dataset.name in [Datasets.POKEC_Z, Datasets.POKEC_N]:
+                    self.model.fit_batch_GraphSAINT(
+                        epochs=self.epochs,
+                        adj=self.dataset.adj,
+                        x=self.dataset.features,
+                        sens=self.dataset.sens,
+                        idx_sens=self.dataset.idx_sens_train,
+                        minibatch=self.dataset.minibatch,
+                        warmup=self.warmup,
+                        adv_epoches=1,
+                        verbose=self.verbose,
+                        writer=self.writer,
+                        )
+                else:
+                    self.model.fit_whole(
+                        epochs=self.epochs,
+                        adj=self.dataset.adj,
+                        x=self.dataset.features,
+                        sens=self.dataset.sens,
+                        idx_sens=self.dataset.idx_sens_train,
+                        warmup=self.warmup,
+                        adv_epoches=1,
+                        verbose=self.verbose,
+                        writer=self.writer,
                     )
-            else:
-                self.model.fit_whole(
-                    epochs=self.epochs,
-                    adj=self.dataset.adj,
-                    x=self.dataset.features,
-                    sens=self.dataset.sens,
-                    idx_sens=self.dataset.idx_sens_train,
-                    warmup=self.warmup,
-                    adv_epoches=1,
-                    verbose=self.verbose,
-                    writer=self.writer,
-                )
 
-            training_time = time.time() - start_time
-            print(f"Training time: {training_time:.2f}")
-            training_times.append(training_time)
+                training_time = time.time() - start_time
+                print(f"Training time: {training_time:.2f}")
+                training_times.append(training_time)
 
-            avg_time_per_epoch = training_time / self.epochs
-            print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
+                avg_time_per_epoch = training_time / self.epochs
+                print(f"Average time per epoch: {avg_time_per_epoch:.4f}")
 
             # Test the model
             results = self.model.test(

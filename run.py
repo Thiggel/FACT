@@ -33,6 +33,10 @@ if __name__ == "__main__":
                         help='Number of experiment runs')
     parser.add_argument('--n_tests', default=1, type=int,
                         help='Number of tests for each experiment')
+    parser.add_argument('--supervised_testing', action=argparse.BooleanOptionalAction,
+                        help='Whether to only run supervised testing and skip training Graphair')
+    parser.add_argument('--use_gcn_classifier', action=argparse.BooleanOptionalAction,
+                        help='Whether to use a GCN+MLP classifier instead of just a MLP')
     
 
     args = parser.parse_args()
@@ -58,6 +62,8 @@ if __name__ == "__main__":
         use_graph_attention=args.attention,
         n_runs=args.n_runs,
         n_tests=args.n_tests,
+        use_gcn_classifier=args.use_gcn_classifier,
+        supervised_testing=args.supervised_testing,
         **hyperparams,
     )
 
