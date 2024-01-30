@@ -92,16 +92,51 @@ class Experiment:
         Initializes an Experiment class instance.
 
         Args:
-            dataset_name (str): the name of the dataset to use
-            device (str): the device to use. Default: None, which
-                selects the best available device
-            epochs (int): number of training epochs #TODO: update this
-            test_epochs (int): number of testing epochs #TODO: update this
-            lr (float): learning rate for ... #TODO: update this
-            weight_decay (float): weight decay factor for ... #TODO: update this
-            g_temperature (float): temperature of augmentation model g
-            ... #TODO: finish docstring
-
+            experiment_name (str): name of the experiment.
+            params_file (str): path to the file containing the hyperparameters.
+            dataset_name (str): name of the dataset to use.
+            device (str): device to use for training and evaluation.
+            verbose (bool): whether to print training progress. Defaults to False.
+            epochs (int): number of epochs to train for. Defaults to 10000.
+            test_epochs (int): number of epochs to test for. Defaults to 1000.
+            batch_size (int): batch size to use for training. Defaults to 1000.
+            seed (int): random seed to use for reproducibility. Defaults to 42.
+            weight_decay (float): weight decay to use for training. Defaults to 1e-5.
+            g_temperature (float): temperature to use for the augmentation model. Defaults to 1.0.
+            g_hidden (int): number of hidden units to use for the augmentation model. Defaults to 64.
+            g_dropout (float): dropout to use for the augmentation model. Defaults to 0.1.
+            g_nlayer (int): number of layers to use for the augmentation model. Defaults to 1.
+            mlpx_dropout (float): dropout to use for the MLPX module. Defaults to 0.1.
+            f_hidden (int): number of hidden units to use for the encoder model. Defaults to 64.
+            f_layers (int): number of layers to use for the encoder model. Defaults to 2.
+            f_dropout (float): dropout to use for the encoder model. Defaults to 0.1.
+            f_output_features (int): number of output features to use for the encoder model. Defaults to 64.
+            k_hidden (int): number of hidden units to use for the adversary model. Defaults to 64.
+            k_output_features (int): number of output features to use for the adversary model. Defaults to 64.
+            k_dropout (float): dropout to use for the adversary model. Defaults to 0.1.
+            k_nlayer (int): number of layers to use for the adversary model. Defaults to 2.
+            c_hidden (int): number of hidden units to use for the classifier model. Defaults to 64.
+            c_input (int): number of input features to use for the classifier model. Defaults to 64.
+            warmup (int): number of warmup epochs to use for training the adversary model. Defaults to 0.
+            alpha (float): weight of the adversarial loss. Defaults to 20.
+            beta (float): weight of the contrastive loss. Defaults to 0.9.
+            gamma (float): weight of the reconstruction loss. Defaults to 0.7.
+            lam (float): weight of the node reconstruction loss term. Defaults to 1.
+            k_lr (float): learning rate to use for the adversary model. Defaults to 1e-4.
+            c_lr (float): learning rate to use for the classifier model. Defaults to 1e-3.
+            g_lr (float): learning rate to use for the augmentation model. Defaults to 1e-4.
+            g_warmup_lr (float): learning rate to use for the augmentation model during warmup. Defaults to 1e-3.
+            f_lr (float): learning rate to use for the encoder model. Defaults to 1e-4.
+            graphair_temperature (float): temperature to use for the Graphair model. Defaults to 0.07.
+            edge_perturbation (bool): whether to use edge perturbation. Defaults to True.
+            node_feature_masking (bool): whether to use node feature masking. Defaults to True.
+            synthetic_hmm (float): probability of a node being connected to a node of the same class in the synthetic dataset. Defaults to 0.8.
+            synthetic_hMM (float): probability of a node being connected to a node of a different class in the synthetic dataset. Defaults to 0.2.
+            use_graph_attention (bool): whether to use graph attention instead of GCN. Defaults to False.
+            n_runs (int): number of training runs to average over. Defaults to 5.
+            n_tests (int): number of tests to average over after each training run. Defaults to 1.
+            grid_search_resume_dir (str): path to the directory containing the results of a grid search to resume. Defaults to None.
+            skip_graphair (bool): whether to skip training the Graphair model and evaluate by directly training the GNN encoder + MLP. Defaults to False.
         """
         self.name = experiment_name
         
@@ -222,8 +257,6 @@ class Experiment:
         Args:
             hparam_values (tuple): the values alpha, gamma
                 and lam can take in the grid search.
-            objective (GridSearchObjective): whether the grid search
-                should optimize fairness or accuracy
 
         Returns:
             best_params (dict): values of the hyperparameters
