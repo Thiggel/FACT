@@ -6,11 +6,11 @@ python run.py \
     --device cuda \
     --dataset NBA \
     --experiment_name witout_fm_NBA
-
-python run.py 
+    
+python run.py \
     --params_file $hyperparams_dir/hyperparams_no_fm_pokec_n.yml \
     --device cuda \
-    --dataset POKEC_N \
+    --dataset_name POKEC_N \
     --experiment_name witout_fm_POKEC_N
 
 python run.py \
