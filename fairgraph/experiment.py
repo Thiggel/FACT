@@ -1,11 +1,22 @@
 import os
 import shutil
-from torch.utils.tensorboard import SummaryWriter
-import numpy as np
-import time
 import sys
-import matplotlib.pyplot as plt
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
+import time
+
+import numpy as np
+import torch
+from torch.utils.tensorboard import SummaryWriter
+
+from .dataset import NBA, POKEC, ArtificialSensitiveGraphDataset
+from .method.Graphair import (
+    GCN,
+    Classifier,
+    GAT_Body,
+    GAT_Model,
+    GCN_Body,
+    Graphair,
+    aug_module
+)
 from .utils.constants import Datasets
 from .utils.utils import (
     set_device,
@@ -14,9 +25,6 @@ from .utils.utils import (
     plot_pareto,
     get_grid_search_results_from_dir,
 )
-from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
-import sys
-import torch
 
 
 class Logger(object):
