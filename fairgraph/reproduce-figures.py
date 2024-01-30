@@ -7,6 +7,7 @@ import os
 from scipy.stats import gaussian_kde
 import torch
 from utils.utils import scipysp_to_pytorchsp
+import argparse
 
 sys.path.insert(0, os.path.abspath('..'))
 
@@ -42,6 +43,12 @@ class Figures:
 
         plt.axvline(mode, color=color, linestyle='--')
 
+    def get_filename(self) -> str:
+        return (
+            f'graphair_{self.dataset}_alpha{self.alpha}_' +
+            f'beta{self.beta}_gamma{self.gamma}_lambda{self.lambda_}'
+        )
+
     def load_augmentation_module(
         self,
         dataset: GraphDataset
@@ -54,8 +61,7 @@ class Figures:
         state_dict = torch.load(os.path.join(
             os.getcwd(),
             '../checkpoint',
-            f'graphair_{self.dataset}_alpha{self.alpha}_' +
-            f'beta{self.beta}_gamma{self.gamma}_lambda{self.lambda_}'
+            self.get_filename()
         ))
 
         new_state_dict = {}
@@ -91,7 +97,7 @@ class Figures:
             'POKEC-N': lambda: POKEC(dataset_sample='pokec_n')
         }[self.dataset]()
 
-    def create_plot(self):
+    def nsh_plot(self):
         sns.set_style('whitegrid')
 
         dataset = self.init_dataset()
@@ -110,7 +116,14 @@ class Figures:
         plt.xlabel('Node sensitive homophily')
         plt.ylabel('Density')
 
-        plt.show()
+        plt.savefig(
+            os.path.join(
+                os.getcwd(),
+                '../experiments/plots',
+                self.get_filename() + '_nsh.png'
+            )
+        )
+        plt.close()
 
     def correlation_plot(self):
         sns.set_style('whitegrid')
@@ -136,14 +149,33 @@ class Figures:
         plt.ylabel('Spearman correlation')
         plt.legend()
 
-        plt.show()
+        plt.savefig(
+            os.path.join(
+                os.getcwd(),
+                '../experiments/plots',
+                self.get_filename() + '_correlation.png'
+            )
+        )
+        plt.close()
+
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--alpha', type=float)
+    parser.add_argument('--beta', type=float)
+    parser.add_argument('--gamma', type=float)
+    parser.add_argument('--lambda_', type=float)
+    parser.add_argument('--dataset', type=str)
+
+    args = parser.parse_args()
+
     figures = Figures(
-        alpha=0.1,
-        beta=1.0,
-        gamma=1.0,
-        lambda_=10.0,
-        dataset='NBA'
+        alpha=args.alpha,
+        beta=args.beta,
+        gamma=args.gamma,
+        lambda_=args.lambda_,
+        dataset=args.dataset
     )
+
     figures.correlation_plot()
+    figures.nsh_plot()
