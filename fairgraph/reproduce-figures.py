@@ -10,68 +10,98 @@ from utils.utils import scipysp_to_pytorchsp
 
 sys.path.insert(0, os.path.abspath('..'))
 
-from dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
+from dataset import POKEC, NBA, GraphDataset
 from method.Graphair import aug_module
 
 
-dataset = NBA()
+class Figures:
+    def __init__(
+        self,
+        alpha: float,
+        beta: float,
+        gamma: float,
+        lambda_: float,
+    ) -> None:
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
+        self.lambda_ = lambda_
 
-sns.set_style('whitegrid')
+    def kdeplot(subplot, data, label='Original', color='dodgerblue'):
+        density = gaussian_kde(data)
 
+        x_values = np.linspace(min(data), max(data), 1000)
 
-def kdeplot(data, label='Original', color='dodgerblue'):
-    density = gaussian_kde(data)
+        pdf_values = density.evaluate(x_values)
 
-    x_values = np.linspace(min(data), max(data), 1000)
+        mode = x_values[np.argmax(pdf_values)]
 
-    pdf_values = density.evaluate(x_values)
+        subplot.plot(x_values, pdf_values, label=label, color=color)
 
-    mode = x_values[np.argmax(pdf_values)]
+        subplot.axvline(mode, color=color, linestyle='--')
 
-    plt.plot(x_values, pdf_values, label=label, color=color)
+    def load_augmentation_module(
+        self,
+        dataset: str = 'NBA'
+    ) -> torch.nn.Module:
+        augmentation_module = aug_module(features=dataset.features)
 
-    plt.axvline(mode, color=color, linestyle='--')
+        state_dict = torch.load(os.path.join(
+            os.getcwd(),
+            '../checkpoint',
+            f'graphair_{dataset}_{self.alpha}20_' +
+            f'{self.beta}0.9_{self.gamma}0.7_{self.lambda_}1'
+        ))
 
+        new_state_dict = {}
 
-data = dataset.node_sensitive_homophily_per_node()
-kdeplot(data)
+        for key, value in state_dict.items():
+            if key.startswith('aug_model.'):
+                new_key = key.replace('aug_model.', '', 1)
+                new_state_dict[new_key] = value
 
-augmentation_module = aug_module(features=dataset.features)
+        augmentation_module.load_state_dict(new_state_dict)
 
-state_dict = torch.load(os.path.join(
-    os.getcwd(),
-    '../checkpoint',
-    'graphair_NBA_alpha20_beta0.9_gamma0.7_lambda1'
-))
+        return augmentation_module
 
-# TODO:
-# 1. make it so that all three datasets are shown side by side
-# 2. you only input the HPs, and it'll load all the three files
-# 3. make this into a neat class structure with good functions
+    def augment_dataset(
+        self,
+        augmentation_module: torch.nn.Module,
+        dataset: GraphDataset
+    ):
 
-# Create a new state dictionary
-new_state_dict = {}
+        adjacency_matrix = scipysp_to_pytorchsp(dataset.adj).to_dense()
 
-for key, value in state_dict.items():
-    # Check if the key starts with 'aug_model.'
-    if key.startswith('aug_model.'):
-        # Remove 'aug_model.' from the key
-        new_key = key.replace('aug_model.', '', 1)
-        new_state_dict[new_key] = value
+        dataset.adj = csr_matrix(
+            augmentation_module(
+                adjacency_matrix,
+                dataset.features
+            )[0].detach().numpy()
+        )
 
+    def create_plot(self):
+        dataset = NBA()
 
-augmentation_module.load_state_dict(new_state_dict)
+        sns.set_style('whitegrid')
 
-adjacency_matrix = scipysp_to_pytorchsp(dataset.adj).to_dense()
+        ax, _ = plt.subplots(1, 3)
 
-dataset.adj = csr_matrix(augmentation_module(adjacency_matrix, dataset.features)[0].detach().numpy())
+        for index, dataset in enumerate([
+            NBA(),
+            POKEC(dataset_sample='pokec-z'),
+            POKEC(dataset_sample='pokec-n')
+        ]):
+            data = dataset.node_sensitive_homophily_per_node()
+            self.kdeplot(ax[index], data)
 
-data = dataset.node_sensitive_homophily_per_node()
-kdeplot(data, 'Fair View', 'coral')
+            augmentation_module = self.load_augmentation_module()
+            self.augment_dataset(augmentation_module, dataset)
 
+            data = dataset.node_sensitive_homophily_per_node()
+            self.kdeplot(ax[index], data, 'Fair View', 'coral')
 
-plt.legend()
-plt.xlabel('Node sensitive homophily')
-plt.ylabel('Density')
+            ax[index].legend()
+            ax[index].xlabel('Node sensitive homophily')
+            ax[index].ylabel('Density')
 
-plt.show()
+        plt.show()
