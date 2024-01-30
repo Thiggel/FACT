@@ -2,6 +2,7 @@
 
 ## Quick start
 
+### Setup
 To install the required dependencies:
 - Create a python virtual environment: `python -m venv venv`
 - Activate the envirionement: `source ./venv/bin/activate`
@@ -9,6 +10,7 @@ To install the required dependencies:
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install_graphsaint.sh`
 
+### Experiments
 To run the experiment use:
 ```
 python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
