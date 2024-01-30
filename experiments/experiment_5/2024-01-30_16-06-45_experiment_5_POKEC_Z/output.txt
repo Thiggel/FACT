@@ -1,9 +1,9 @@
 Experiment with the following hyperparameters:
         Dataset: POKEC_Z, Epochs: 500, Test epochs: 500, Batch size: 1000
         Device: cuda, Seed: 42, N Runs: 5, N Tests: 5
-        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1}
+        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1, 'edge_perturbation': True, 'node_feature_masking': True}
         Encoder model f hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2}
         Adversary model k hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2, 'nclass': 1}
 Start training
-Training time: 170.21
-Average time per epoch: 0.3404
+Skipping training
+{'acc': {'mean': 0.7020706455542023, 'std': 0.00485991165487452}, 'dp': {'mean': 0.08933886648050472, 'std': 0.014068531026052043}, 'eo': {'mean': 0.08532215837123566, 'std': 0.014498004149220877}}
