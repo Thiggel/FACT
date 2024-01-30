@@ -6,13 +6,11 @@ from scipy.sparse import csr_matrix
 import os
 from scipy.stats import gaussian_kde
 import torch
-from utils.utils import scipysp_to_pytorchsp
+from fairgraph.utils.utils import scipysp_to_pytorchsp
 import argparse
 
-sys.path.insert(0, os.path.abspath('..'))
-
-from dataset import POKEC, NBA, GraphDataset
-from method.Graphair import aug_module
+from fairgraph.dataset import POKEC, NBA, GraphDataset
+from fairgraph.method.Graphair import aug_module
 
 
 class Figures:
@@ -55,13 +53,13 @@ class Figures:
     ) -> torch.nn.Module:
         augmentation_module = aug_module(
             features=dataset.features,
-            normalize=False
+            normalize=True
         )
 
         try:
             state_dict = torch.load(os.path.join(
                 os.getcwd(),
-                '../checkpoint',
+                'checkpoint',
                 self.get_filename()
             ))
         except FileNotFoundError:
@@ -124,10 +122,12 @@ class Figures:
         plt.xlabel('Node sensitive homophily')
         plt.ylabel('Density')
 
+        os.makedirs(os.path.join(os.getcwd(), 'experiments/plots'), exist_ok=True)
+
         plt.savefig(
             os.path.join(
                 os.getcwd(),
-                '../experiments/plots',
+                'experiments/plots',
                 self.get_filename() + '_nsh.svg'
             )
         )
@@ -157,10 +157,12 @@ class Figures:
         plt.ylabel('Spearman correlation')
         plt.legend()
 
+        os.makedirs(os.path.join(os.getcwd(), 'experiments/plots'), exist_ok=True)
+
         plt.savefig(
             os.path.join(
                 os.getcwd(),
-                '../experiments/plots',
+                'experiments/plots',
                 self.get_filename() + '_correlation.svg'
             )
         )
