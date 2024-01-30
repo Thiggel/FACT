@@ -41,6 +41,6 @@ To run with different hyperparameters, either change `hyperparams.yml` or create
 
 ```
 python reproduce-figures.py --alpha 0.1 --beta 1.0 --gamma 1.0 --lambda 10.0 --dataset NBA
-python reproduce-figures.py --alpha 1.0 --beta 1.0 --gamma 10.0 --lambda 0.1 --dataset POKEC-Z
-python reproduce-figures.py --alpha 1.0 --beta 1.0 --gamma 1.0 --lambda 0.1 --dataset POKEC-N
+python reproduce-figures.py --alpha 1 --beta 1 --gamma 10 --lambda 0.1 --dataset POKEC_N
+python reproduce-figures.py --alpha 1 --beta 1 --gamma 1 --lambda 0.1 --dataset POKEC_Z
 ```

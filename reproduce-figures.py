@@ -47,6 +47,13 @@ class Figures:
             f'beta{self.beta}_gamma{self.gamma}_lambda{self.lambda_}'
         )
 
+    def get_checkpoint_path(self) -> str:
+        return os.path.join(
+            os.getcwd(),
+            'checkpoint',
+            self.get_filename()
+        )
+
     def load_augmentation_module(
         self,
         dataset: GraphDataset
@@ -57,13 +64,12 @@ class Figures:
         )
 
         try:
-            state_dict = torch.load(os.path.join(
-                os.getcwd(),
-                'checkpoint',
-                self.get_filename()
-            ))
+            state_dict = torch.load(
+                self.get_checkpoint_path(),
+                map_location=torch.device('cpu')
+            )
         except FileNotFoundError:
-            print('Checkpoint not found')
+            print('Checkpoint not found: ' + self.get_checkpoint_path())
             exit()
 
         new_state_dict = {}
@@ -96,8 +102,8 @@ class Figures:
         try:
             return {
                 'NBA': lambda: NBA(),
-                'POKEC-Z': lambda: POKEC(dataset_sample='pokec_z'),
-                'POKEC-N': lambda: POKEC(dataset_sample='pokec_n')
+                'POKEC_Z': lambda: POKEC(dataset_sample='pokec_z'),
+                'POKEC_N': lambda: POKEC(dataset_sample='pokec_n')
             }[self.dataset]()
         except:
             print('Invalid dataset')
@@ -171,10 +177,10 @@ class Figures:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--alpha', type=float)
-    parser.add_argument('--beta', type=float)
-    parser.add_argument('--gamma', type=float)
-    parser.add_argument('--lambda_', type=float)
+    parser.add_argument('--alpha', type=str)
+    parser.add_argument('--beta', type=str)
+    parser.add_argument('--gamma', type=str)
+    parser.add_argument('--lambda_', type=str)
     parser.add_argument('--dataset', type=str)
 
     args = parser.parse_args()
