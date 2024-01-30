@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import scipy.sparse as sp
 import random
-#from graphsaint.minibatch import Minibatch
+from graphsaint.minibatch import Minibatch
 from torch_geometric.data import download_url
 import networkx as nx
 
@@ -290,7 +290,7 @@ class POKEC(GraphDataset):
         role = {'tr':ids.copy(), 'va': ids.copy(), 'te':ids.copy()}
         train_params = {'sample_coverage': 500}
         train_phase = {'sampler': 'rw', 'num_root': self.batch_size, 'depth': 3, 'end':30}
-        # self.minibatch = Minibatch(self.adj, self.adj, role, train_params, self.device)
+        self.minibatch = Minibatch(self.adj, self.adj, role, train_params, self.device)
         self.minibatch.set_sampler(train_phase)
 
 class NBA(GraphDataset):
