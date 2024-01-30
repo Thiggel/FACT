@@ -1,4 +1,4 @@
-hyperparams_dir="experiments/experiment_without_ep_and_fm"
+hyperparams_dir="experiments/experiment_6"
 
 # Without node feature masking
 python run.py \
