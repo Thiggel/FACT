@@ -6,7 +6,7 @@ import pandas as pd
 import scipy.sparse as sp
 from scipy.stats import spearmanr
 import random
-#from graphsaint.minibatch import Minibatch
+from graphsaint.minibatch import Minibatch
 from torch_geometric.data import download_url
 import networkx as nx
 
