@@ -21,13 +21,15 @@ class Figures:
         beta: float,
         gamma: float,
         lambda_: float,
+        dataset: str
     ) -> None:
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma
         self.lambda_ = lambda_
+        self.dataset = dataset
 
-    def kdeplot(subplot, data, label='Original', color='dodgerblue'):
+    def kdeplot(self, data, label='Original', color='royalblue'):
         density = gaussian_kde(data)
 
         x_values = np.linspace(min(data), max(data), 1000)
@@ -36,21 +38,24 @@ class Figures:
 
         mode = x_values[np.argmax(pdf_values)]
 
-        subplot.plot(x_values, pdf_values, label=label, color=color)
+        plt.plot(x_values, pdf_values, label=label, color=color)
 
-        subplot.axvline(mode, color=color, linestyle='--')
+        plt.axvline(mode, color=color, linestyle='--')
 
     def load_augmentation_module(
         self,
-        dataset: str = 'NBA'
+        dataset: GraphDataset
     ) -> torch.nn.Module:
-        augmentation_module = aug_module(features=dataset.features)
+        augmentation_module = aug_module(
+            features=dataset.features,
+            dont_normalize=True
+        )
 
         state_dict = torch.load(os.path.join(
             os.getcwd(),
             '../checkpoint',
-            f'graphair_{dataset}_{self.alpha}20_' +
-            f'{self.beta}0.9_{self.gamma}0.7_{self.lambda_}1'
+            f'graphair_{self.dataset}_alpha{self.alpha}_' +
+            f'beta{self.beta}_gamma{self.gamma}_lambda{self.lambda_}'
         ))
 
         new_state_dict = {}
@@ -69,39 +74,76 @@ class Figures:
         augmentation_module: torch.nn.Module,
         dataset: GraphDataset
     ):
-
         adjacency_matrix = scipysp_to_pytorchsp(dataset.adj).to_dense()
 
-        dataset.adj = csr_matrix(
-            augmentation_module(
-                adjacency_matrix,
-                dataset.features
-            )[0].detach().numpy()
+        new_adjacency_matrix, new_features, _ = augmentation_module(
+            adjacency_matrix,
+            dataset.features
         )
 
-    def create_plot(self):
-        dataset = NBA()
+        dataset.adj = csr_matrix(new_adjacency_matrix.detach().numpy())
+        dataset.features = new_features.detach().numpy()
 
+    def init_dataset(self) -> GraphDataset:
+        return {
+            'NBA': lambda: NBA(),
+            'POKEC-Z': lambda: POKEC(dataset_sample='pokec_z'),
+            'POKEC-N': lambda: POKEC(dataset_sample='pokec_n')
+        }[self.dataset]()
+
+    def create_plot(self):
         sns.set_style('whitegrid')
 
-        ax, _ = plt.subplots(1, 3)
+        dataset = self.init_dataset()
 
-        for index, dataset in enumerate([
-            NBA(),
-            POKEC(dataset_sample='pokec-z'),
-            POKEC(dataset_sample='pokec-n')
-        ]):
-            data = dataset.node_sensitive_homophily_per_node()
-            self.kdeplot(ax[index], data)
+        data = dataset.node_sensitive_homophily_per_node()
 
-            augmentation_module = self.load_augmentation_module()
-            self.augment_dataset(augmentation_module, dataset)
+        self.kdeplot(data)
 
-            data = dataset.node_sensitive_homophily_per_node()
-            self.kdeplot(ax[index], data, 'Fair View', 'coral')
+        augmentation_module = self.load_augmentation_module(dataset)
+        self.augment_dataset(augmentation_module, dataset)
 
-            ax[index].legend()
-            ax[index].xlabel('Node sensitive homophily')
-            ax[index].ylabel('Density')
+        data = dataset.node_sensitive_homophily_per_node()
+        self.kdeplot(data, 'Fair View', 'coral')
+
+        plt.legend()
+        plt.xlabel('Node sensitive homophily')
+        plt.ylabel('Density')
 
         plt.show()
+
+    def correlation_plot(self):
+        sns.set_style('whitegrid')
+        dataset = self.init_dataset()
+
+        correlation = dataset.get_correlation_sens()
+        sort_indices = np.argsort(correlation)[::-1]
+        correlation = correlation[sort_indices]
+
+        augmentation_module = self.load_augmentation_module(dataset)
+        self.augment_dataset(augmentation_module, dataset)
+
+        correlation_aug = dataset.get_correlation_sens()
+        correlation_aug = correlation_aug[sort_indices]
+
+        x = np.arange(len(correlation[0:10]))
+
+        plt.bar(x - 0.2, correlation[:10], 0.4, label='Original', color='royalblue')
+
+        plt.bar(x + 0.2, correlation_aug[:10], 0.4, label='Fair view', color='coral')
+
+        plt.xlabel('Feature index')
+        plt.ylabel('Spearman correlation')
+        plt.legend()
+
+        plt.show()
+
+if __name__ == '__main__':
+    figures = Figures(
+        alpha=0.1,
+        beta=1.0,
+        gamma=1.0,
+        lambda_=10.0,
+        dataset='NBA'
+    )
+    figures.correlation_plot()

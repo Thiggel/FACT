@@ -16,6 +16,7 @@ class aug_module(torch.nn.Module):
         nlayer: int = 1,
         mlpx_dropout: float = 0.1,
         use_graph_attention: bool = False,
+        dont_normalize: bool = False,
     ) -> None:
         super(aug_module, self).__init__()
 
@@ -41,6 +42,7 @@ class aug_module(torch.nn.Module):
         self.Xaug = MLPX(in_feats=n_hidden, n_hidden=n_hidden, out_feats=features.shape[1], dropout=mlpx_dropout)
         
         self.temperature = temperature
+        self.dont_normalize = dont_normalize
 
     def forward(self, adj, x, alpha=0.5, adj_orig=None):
         h = self.g_encoder(adj, x)
@@ -59,7 +61,8 @@ class aug_module(torch.nn.Module):
         adj_sampled = adj_sampled.triu(1)
         adj_sampled = adj_sampled + adj_sampled.T
 
-        if not self.use_graph_attention:
+        if not (self.use_graph_attention or self.dont_normalize):
+            print('normalizing')
             adj_sampled = self.normalize_adj(adj_sampled)
 
         # Node feature masking

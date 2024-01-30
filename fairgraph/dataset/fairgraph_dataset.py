@@ -4,8 +4,9 @@ import numpy as np
 import os
 import pandas as pd
 import scipy.sparse as sp
+from scipy.stats import spearmanr
 import random
-from graphsaint.minibatch import Minibatch
+#from graphsaint.minibatch import Minibatch
 from torch_geometric.data import download_url
 import networkx as nx
 
@@ -142,6 +143,11 @@ class GraphDataset:
             for node in range(len(self.features))
         ]
 
+    def get_correlation_sens(self):
+        return np.array([
+            spearmanr(self.features[:, i], self.sens)[0]
+            for i in range(self.features.shape[1])
+        ])
 
 class POKEC(GraphDataset):
     r"""Pokec is a social network dataset. Two `different datasets <https://github.com/EnyanDai/FairGNN/tree/main/dataset/pokec>`_ (namely pokec_z and pokec_n) are sampled
