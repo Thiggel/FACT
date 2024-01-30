@@ -55,13 +55,12 @@ class Graphair(nn.Module):
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
                  weight_decay=1e-5, alpha=10, beta=0.1, gamma=0.5, lam=0.5, temperature=0.07,
                  num_hidden=64, num_proj_hidden=64, dataset='POKEC', device='cpu',
-                 batch_size=None, n_tests=5, skip_graphair=False, use_gcn_classifier=False, checkpoint_path='./checkpoint/'):
+                 batch_size=None, n_tests=5, skip_graphair=False, checkpoint_path='./checkpoint/'):
         super(Graphair, self).__init__()
         self.device = device
         self.checkpoint_path = checkpoint_path
         self.n_tests = n_tests
         self.skip_graphair = skip_graphair
-        self.use_gcn_classifier = use_gcn_classifier
 
         self.aug_model = aug_model
         self.f_encoder = f_encoder
@@ -279,7 +278,7 @@ class Graphair(nn.Module):
                     )
 
         for epoch_counter in range(epochs):
-            # print(f"Epoch {epoch_counter}")
+
             ### generate fair view
             adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
 
@@ -287,7 +286,7 @@ class Graphair(nn.Module):
             ### extract node representations
             h = self.projection(self.f_encoder(adj, x))
             h_prime = self.projection(self.f_encoder(adj_aug, x_aug))
-            # print("encoder done")
+
             ## update sens model
             adj_aug_nograd = adj_aug.detach()
             x_aug_nograd = x_aug.detach()
@@ -351,46 +350,78 @@ class Graphair(nn.Module):
         Returns:
             dict: A dictionary containing the average results of the tests
         """
-        if not self.skip_graphair:
+        # If Graphair is skipped, train the f_encoder together with MLP
+        # Otherwise, make a pass through f_encoder to get representations
+        # and train an MLP on top of that
+        if self.skip_graphair:
+            assert sp.issparse(adj)
+            if not isinstance(adj, sp.coo_matrix):
+                adj = sp.coo_matrix(adj)
+            adj.setdiag(1)
+            adj_orig = scipysp_to_pytorchsp(adj).to_dense()
+            degrees = np.array(adj.sum(1))
+            degree_mat_inv_sqrt = sp.diags(np.power(degrees, -0.5).flatten())
+            adj_norm = degree_mat_inv_sqrt @ adj @ degree_mat_inv_sqrt
+            adj_norm = scipysp_to_pytorchsp(adj_norm)
+            
+            adj = adj_norm.to(self.device)
+        else:
             h = self.forward(adj, features)
             h = h.detach()
-        else:
-            adj = scipysp_to_pytorchsp(adj).to(self.device)
 
+        # Run the tests n_tests times and log average results
         acc_list, dp_list, eo_list = [], [], []
-
         for i in range(self.n_tests):
+            # Set random seed for reproducibility
             seed = i * 10
             set_seed(seed)
 
+            # Reset classifier (and f_encoder if needed) before each run
             self.classifier.reset_parameters()
-            # train classifier
+            if self.skip_graphair:
+                for layer in self.f_encoder.layers:
+                    layer.init_params()
+
+            # Train classifier
             best_acc = 0.0
             best_test = 0.0
+
             for epoch in range(epochs):
 
+                # Reset gradients and make a forward pass
                 self.classifier.train()
                 self.optimizer_classifier.zero_grad()
-                if self.use_gcn_classifier:
-                    output = self.classifier(adj, features)
-                else:
-                    output = self.classifier(h)
+                if self.skip_graphair:
+                    self.f_encoder.train()
+                    self.optimizer_enc.zero_grad()
+                    h = self.f_encoder(adj, features)
+                output = self.classifier(h)
+
+                # Compute loss
                 loss_train = F.binary_cross_entropy_with_logits(output[idx_train], labels[idx_train].unsqueeze(1).float())
-                acc_train = accuracy(output[idx_train], labels[idx_train])
                 loss_train.backward()
+
+                # Update weights
                 self.optimizer_classifier.step()
+                if self.skip_graphair:
+                    self.optimizer_enc.step()
+
+                acc_train = accuracy(output[idx_train], labels[idx_train])
                             
                 # Evaluate validation set performance
                 self.classifier.eval()
-                if self.use_gcn_classifier:
-                    output = self.classifier(adj, features)
-                else:
-                    output = self.classifier(h)
+                if self.skip_graphair:
+                    self.f_encoder.eval()
+                    h = self.f_encoder(adj, features)
+                output = self.classifier(h)
+
+                # Compute metrics
                 acc_val = accuracy(output[idx_val], labels[idx_val])
                 acc_test = accuracy(output[idx_test], labels[idx_test])
-
                 parity_val, equality_val = fair_metric(output, idx_val, labels, sens)
                 parity_test, equality_test = fair_metric(output, idx_test, labels, sens)
+
+                # Log the metrics
                 if epoch%10==0 and verbose:
                     print("Epoch [{}] Test set results:".format(epoch),
                         "acc_test= {:.4f}".format(acc_test.item()),
@@ -408,6 +439,7 @@ class Graphair(nn.Module):
                 writer.add_scalar(f'eo_val ({alpha_beta_gamma})/seed_{seed}', equality_val, epoch + 1)
                 writer.add_scalar(f'eo_test ({alpha_beta_gamma})/seed_{seed}', equality_test, epoch + 1)
 
+                # Save the best results
                 if acc_val > best_acc:
                     best_acc = acc_val
                     best_test = acc_test

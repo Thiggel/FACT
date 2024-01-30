@@ -37,8 +37,6 @@ if __name__ == "__main__":
                         help='Directory to resume grid search from')
     parser.add_argument('--skip_graphair', action=argparse.BooleanOptionalAction,
                         help='Whether to only run supervised testing and skip training Graphair')
-    parser.add_argument('--use_gcn_classifier', action=argparse.BooleanOptionalAction,
-                        help='Whether to use a GCN+MLP classifier instead of just a MLP')
 
     args = parser.parse_args()
     kwargs = vars(args)
@@ -64,7 +62,6 @@ if __name__ == "__main__":
         n_runs=args.n_runs,
         n_tests=args.n_tests,
         grid_search_resume_dir=args.grid_search_resume_dir,
-        use_gcn_classifier=args.use_gcn_classifier,
         skip_graphair=args.skip_graphair,
         **hyperparams,
     )
