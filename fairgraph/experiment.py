@@ -5,10 +5,18 @@ import numpy as np
 import time
 import sys
 import matplotlib.pyplot as plt
-from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GCNClassifier, GAT_Body, GAT_Model
+from .method.Graphair import Graphair, aug_module, GCN, GCN_Body, Classifier, GAT_Body, GAT_Model
 from .utils.constants import Datasets
-from .utils.utils import set_device, set_seed, find_pareto_front, plot_pareto
+from .utils.utils import (
+    set_device,
+    set_seed,
+    find_pareto_front,
+    plot_pareto,
+    get_grid_search_results_from_dir,
+)
 from .dataset import POKEC, NBA, ArtificialSensitiveGraphDataset
+import sys
+import torch
 
 
 class Logger(object):
@@ -70,12 +78,14 @@ class Experiment:
         g_warmup_lr=1e-3,
         f_lr=1e-4,
         graphair_temperature=0.07,
+        edge_perturbation=True,
+        node_feature_masking=True,        
         synthetic_hmm=0.8,
         synthetic_hMM=0.2,
         use_graph_attention=False,
-        use_gcn_classifier=False,
         n_runs=5,
         n_tests=1,
+        grid_search_resume_dir=None,
         skip_graphair=False,
     ):
         """
@@ -93,18 +103,19 @@ class Experiment:
             ... #TODO: finish docstring
 
         """
-        if skip_graphair and not use_gcn_classifier:
-            raise Exception("Supervised testing requires a GCN classifier")
-
         self.name = experiment_name
-        self.device = device if device else set_device()
+        
+        if device in ["cpu", "cuda", "mps"]:
+            self.device = torch.device(device)
+        else:
+            self.device = set_device()
+        
         self.batch_size = batch_size
         self.dataset = self.initialize_dataset(dataset_name, synthetic_hmm, synthetic_hMM)
         self.verbose = verbose
         self.n_runs = n_runs
         self.n_tests = n_tests
         self.skip_graphair = skip_graphair
-        self.use_gcn_classifier = use_gcn_classifier
 
         # Set a seed for reproducibility
         set_seed(seed)
@@ -124,6 +135,8 @@ class Experiment:
             "nlayer": g_nlayer,
             "dropout": g_dropout,
             "mlpx_dropout": mlpx_dropout,
+            "edge_perturbation": edge_perturbation,
+            "node_feature_masking": node_feature_masking,
         }
 
         # Encoder model f hyperparameters
@@ -161,6 +174,8 @@ class Experiment:
             "gamma": gamma,
             "lam": lam
         }
+
+        self.grid_search_resume_dir = grid_search_resume_dir
 
         self.params_file = params_file
         self.initialize_logging()
@@ -222,9 +237,21 @@ class Experiment:
 
         results = []
 
+        if self.grid_search_resume_dir is not None:
+            results, finished_hparams = get_grid_search_results_from_dir(self.grid_search_resume_dir)
+            for hparams in finished_hparams:
+                [a, g, l] = hparams
+                shutil.copy(
+                    os.path.join(self.grid_search_resume_dir, f"output-a{a}-b{beta}-g{g}-l{l}.txt"),
+                    self.log_dir,
+                )
+
         for alpha in hparam_values:
             for gamma in hparam_values:
                 for lam in hparam_values:
+                    if self.grid_search_resume_dir is not None and [alpha, gamma, lam] in finished_hparams:
+                        continue
+
                     self.logger.log_file.close()
                     self.logger.log_file = open(os.path.join(self.log_dir, f"output-a{alpha}-b{beta}-g{gamma}-l{lam}.txt"), "w")
 
@@ -244,7 +271,7 @@ class Experiment:
                         'beta': beta,
                         'gamma': gamma,
                         'lam': lam,
-                        'accuracy': {
+                        'acc': {
                             'mean': res_dict['acc']['mean'],
                             'std': res_dict['acc']['std'],
                         },
@@ -259,22 +286,22 @@ class Experiment:
                     })
 
         best_accuracy_params = max(
-            results, key=lambda x: x['accuracy']['mean']
+            results, key=lambda x: x['acc']['mean']
         )
         best_dp_params = min(results, key=lambda x: x['dp']['mean']) # Best DP is lowest DP
         best_eo_params = min(results, key=lambda x: x['eo']['mean']) # Best EO is lowest EO
 
-        pareto_front_dp = find_pareto_front(results, metric1='accuracy', metric2='dp')
-        pareto_front_eo = find_pareto_front(results, metric1='accuracy', metric2='eo')
+        pareto_front_dp = find_pareto_front(results, metric1='acc', metric2='dp')
+        pareto_front_eo = find_pareto_front(results, metric1='acc', metric2='eo')
 
         for fairness_metric in ['dp', 'eo']:
             for show_all in [True, False]:
                 plot_pareto(
                     results=results,
                     fairness_metric=fairness_metric,
-                    title=f"{fairness_metric.upper()}-Acc Pareto front",
                     show_all=show_all,
-                    filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.png"),
+                    dataset=self.dataset.name,
+                    filepath=os.path.join(self.log_dir, f"{fairness_metric.upper()}-Acc_pareto{'_all' if show_all else ''}.svg"),
                 )
 
         self.logger.log_file.close()
@@ -328,17 +355,9 @@ class Experiment:
             ).to(self.device)
 
             # Initialize classifier for testing
-            if self.use_gcn_classifier:
-                self.classifier_model = GCNClassifier(
-                    input_dim=self.dataset.features.shape[1],
-                    hidden_dim=self.c_hidden,
-                    dropout=0,
-                    nlayer=2
-                    )
-            else:
-                self.classifier_model = Classifier(
-                    input_dim=self.c_input, hidden_dim=self.c_hidden
-                )
+            self.classifier_model = Classifier(
+                input_dim=self.c_input, hidden_dim=self.c_hidden
+            )
 
             # Initialize the Graphair model
             self.model = Graphair(
@@ -350,7 +369,6 @@ class Experiment:
                 dataset=self.dataset.name,
                 n_tests=self.n_tests,
                 skip_graphair=self.skip_graphair,
-                use_gcn_classifier=self.use_gcn_classifier,
                 **self.graphair_hyperparams
             ).to(self.device)
 

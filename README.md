@@ -2,6 +2,7 @@
 
 ## Quick start
 
+### Setup
 To install the required dependencies:
 - Create a python virtual environment: `python -m venv venv`
 - Activate the envirionement: `source ./venv/bin/activate`
@@ -9,6 +10,7 @@ To install the required dependencies:
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install_graphsaint.sh`
 
+### Experiments
 To run the experiment use:
 ```
 python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
@@ -32,7 +34,5 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 `--n_tests`: number of tests for each experiment, default: 1
 
 `--supervised_testing`: whether to only run supervised testing and skip training Graphair, default: False
-
-`--use_gcn_classifier`: whether to use a GCN+MLP classifier instead of just a MLP, default: False
 
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.

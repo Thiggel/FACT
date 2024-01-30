@@ -171,7 +171,7 @@ class POKEC(GraphDataset):
                 dataset_sample='pokec_z',
                 device='cpu',
                 batch_size=1000):
-        self.name = "POKEC_Z"
+        self.name = dataset_sample.upper()
         self.root = root
         self.dataset_sample = dataset_sample
         if self.dataset_sample=='pokec_z':
