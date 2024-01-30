@@ -138,6 +138,21 @@ class Graphair(nn.Module):
     
         adj = adj_norm.to(self.device)
         return self.f_encoder(adj,x)
+
+    def _get_recons_loss(self, adj_orig, adj_logits, x, x_aug):
+        norm_w = adj_orig.shape[0]**2 / float((adj_orig.shape[0]**2 - adj_orig.sum()) * 2)
+
+        if self.aug_model.edge_perturbation:
+            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
+        else:
+            edge_loss = torch.tensor(0.).to(self.device)
+
+        if self.aug_model.node_feature_masking:
+            feat_loss =  self.criterion_recons(x_aug, x)
+        else:
+            feat_loss = torch.tensor(0.).to(self.device)
+
+        return edge_loss + self.lam * feat_loss, edge_loss, feat_loss
     
     def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, writer, warmup=None, adv_epoches=10, verbose=False):
         assert sp.issparse(adj)
@@ -157,11 +172,7 @@ class Graphair(nn.Module):
                 edge_label = torch.FloatTensor(adj_orig[node_subgraph][:,node_subgraph].toarray()).to(self.device)
 
                 adj_aug, x_aug, adj_logits = self.aug_model(adj, x[node_subgraph], adj_orig = edge_label)
-                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, edge_label)
-
-
-                feat_loss =  self.criterion_recons(x_aug, x[node_subgraph])
-                recons_loss =  edge_loss + self.beta * feat_loss
+                recons_loss, edge_loss, feat_loss = self._get_recons_loss(edge_label, adj_logits, x[node_subgraph], x_aug)
 
                 self.optimizer_aug.zero_grad()
                 with torch.autograd.set_detect_anomaly(True):
@@ -215,12 +226,7 @@ class Graphair(nn.Module):
             logits, labels = self.info_nce_loss_2views(torch.cat((h, h_prime), dim = 0))
             contrastive_loss = (torch.nn.CrossEntropyLoss(reduction='none')(logits, labels) * norm_loss_subgraph.repeat(2)).sum() 
 
-            ## update encoder
-            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, edge_label)
-
-
-            feat_loss =  self.criterion_recons(x_aug, x[node_subgraph])
-            recons_loss =  edge_loss + self.lam * feat_loss
+            recons_loss, edge_loss, feat_loss = self._get_recons_loss(edge_label, adj_logits, x[node_subgraph], x_aug)
 
             loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
             self.optimizer.zero_grad()
@@ -248,7 +254,6 @@ class Graphair(nn.Module):
             adj = sp.coo_matrix(adj)
         adj.setdiag(1)
         adj_orig = scipysp_to_pytorchsp(adj).to_dense()
-        norm_w = adj_orig.shape[0]**2 / float((adj_orig.shape[0]**2 - adj_orig.sum()) * 2)
         degrees = np.array(adj.sum(1))
         degree_mat_inv_sqrt = sp.diags(np.power(degrees, -0.5).flatten())
         adj_norm = degree_mat_inv_sqrt @ adj @ degree_mat_inv_sqrt
@@ -259,10 +264,8 @@ class Graphair(nn.Module):
         if warmup:
             for _ in range(warmup):
                 adj_aug, x_aug, adj_logits = self.aug_model(adj, x, adj_orig = adj_orig.to(self.device))
-                edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
-
-                feat_loss =  self.criterion_recons(x_aug, x)
-                recons_loss =  edge_loss + self.beta * feat_loss
+                
+                recons_loss, edge_loss, feat_loss = self._get_recons_loss(adj_orig, adj_logits, x, x_aug)
 
                 self.optimizer_aug.zero_grad()
                 with torch.autograd.set_detect_anomaly(True):
@@ -285,7 +288,6 @@ class Graphair(nn.Module):
             h = self.projection(self.f_encoder(adj, x))
             h_prime = self.projection(self.f_encoder(adj_aug, x_aug))
             # print("encoder done")
-
             ## update sens model
             adj_aug_nograd = adj_aug.detach()
             x_aug_nograd = x_aug.detach()
@@ -307,10 +309,7 @@ class Graphair(nn.Module):
             contrastive_loss = self.criterion_cont(logits, labels)
 
             ## update encoder
-            edge_loss = norm_w * F.binary_cross_entropy_with_logits(adj_logits, adj_orig.to(self.device))
-
-            feat_loss =  self.criterion_recons(x_aug, x)
-            recons_loss =  edge_loss + self.lam * feat_loss
+            recons_loss, edge_loss, feat_loss = self._get_recons_loss(adj_orig, adj_logits, x, x_aug)
             loss = self.beta * contrastive_loss + self.gamma * recons_loss - self.alpha * senloss
             self.optimizer.zero_grad()
             loss.backward()

@@ -15,10 +15,11 @@ class aug_module(torch.nn.Module):
         dropout: float = 0.1,
         nlayer: int = 1,
         mlpx_dropout: float = 0.1,
+        edge_perturbation=True,
+        node_feature_masking=True,
         use_graph_attention: bool = False,
     ) -> None:
         super(aug_module, self).__init__()
-
         self.device = device
 
         self.g_encoder = GCN_Body(
@@ -39,6 +40,8 @@ class aug_module(torch.nn.Module):
 
         self.Aaug = MLPA(in_feats=n_hidden, dim_h=n_hidden, dim_z=features.shape[1])
         self.Xaug = MLPX(in_feats=n_hidden, n_hidden=n_hidden, out_feats=features.shape[1], dropout=mlpx_dropout)
+        self.edge_perturbation = edge_perturbation
+        self.node_feature_masking = node_feature_masking
         
         self.temperature = temperature
 
@@ -46,27 +49,34 @@ class aug_module(torch.nn.Module):
         h = self.g_encoder(adj, x)
 
         # Edge perturbation
-        adj_logits = self.Aaug(h)
-        ## sample a new adj
-        edge_probs = torch.sigmoid(adj_logits)
+        if self.edge_perturbation:
+            adj_logits = self.Aaug(h)
+            ## sample a new adj
+            edge_probs = torch.sigmoid(adj_logits)
 
-        if adj_orig is not None:
-            edge_probs = alpha*edge_probs + (1-alpha)*adj_orig
+            if (adj_orig is not None) :
+                edge_probs = alpha*edge_probs + (1-alpha)*adj_orig
 
-        # sampling
-        adj_sampled = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=edge_probs).rsample()
-        # making adj_sampled symmetric
-        adj_sampled = adj_sampled.triu(1)
-        adj_sampled = adj_sampled + adj_sampled.T
+            # sampling
+            adj_sampled = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=edge_probs).rsample()
+            # making adj_sampled symmetric
+            adj_sampled = adj_sampled.triu(1)
+            adj_sampled = adj_sampled + adj_sampled.T
 
-        if not self.use_graph_attention:
-            adj_sampled = self.normalize_adj(adj_sampled)
+            if not self.use_graph_attention:
+                adj_sampled = self.normalize_adj(adj_sampled)
+        else:
+            adj_sampled = adj
+            adj_logits = None
 
         # Node feature masking
-        mask_logits = self.Xaug(h)
-        mask_probs = torch.sigmoid(mask_logits)
-        mask = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=mask_probs).rsample()
-        x_new = x * mask
+        if self.node_feature_masking:
+            mask_logits = self.Xaug(h)
+            mask_probs = torch.sigmoid(mask_logits)
+            mask = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=mask_probs).rsample()
+            x_new = x * mask
+        else:
+            x_new = x
 
         return adj_sampled, x_new, adj_logits
     
