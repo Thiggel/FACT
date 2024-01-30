@@ -99,6 +99,10 @@ def plot_pareto(results, fairness_metric, show_all, dataset, filepath=None):
     """This only properly works if metric2 is acc"""
     # Create a new figure
     plt.figure()
+    plt.rc('text', usetex=True)
+    plt.rc('font', family='serif')
+    plt.rcParams.update({'font.size': 14})
+    plt.rcParams.update({'figure.autolayout': True})
 
     # find the pareto front
     pareto_front = find_pareto_front(results, "acc", fairness_metric)
@@ -114,7 +118,7 @@ def plot_pareto(results, fairness_metric, show_all, dataset, filepath=None):
 
     # plot all other points to make sure the pareto front is correct
     if show_all:
-        plt.scatter(all_points[:, 1], all_points[:, 0], color='blue', alpha=0.2)
+        plt.scatter(all_points[:, 1], all_points[:, 0], color='darkviolet', alpha=0.1)
 
     # plot the pareto front of other methods
     for method, pf in pareto_fronts.items():
@@ -129,7 +133,7 @@ def plot_pareto(results, fairness_metric, show_all, dataset, filepath=None):
     plt.xlabel(fairness_metric.upper())
     plt.ylabel("Accuracy")
     plt.title(f"{fairness_metric.upper()}-Accuracy {dataset.upper()}")
-    plt.legend()
+    plt.legend(prop={'size': 12})
     
     # save and show figure
     if filepath is not None:
