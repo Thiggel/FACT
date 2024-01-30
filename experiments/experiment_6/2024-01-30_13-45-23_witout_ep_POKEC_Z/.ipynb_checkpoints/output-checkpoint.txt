@@ -1,0 +1,24 @@
+Experiment with the following hyperparameters:
+        Dataset: POKEC_Z, Epochs: 500, Test epochs: 500, Batch size: 1000
+        Device: cuda, Seed: 42, N Runs: 5, N Tests: 1
+        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1, 'edge_perturbation': False, 'node_feature_masking': True}
+        Encoder model f hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2}
+        Adversary model k hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2, 'nclass': 1}
+Start training
+Training time: 152.88
+Average time per epoch: 0.3058
+Run 0 results: {'acc': {'mean': 0.6929354445797807, 'std': 0.0}, 'dp': {'mean': 0.05546204364463747, 'std': 0.0}, 'eo': {'mean': 0.06458527050999618, 'std': 0.0}}
+Training time: 154.06
+Average time per epoch: 0.3081
+Run 1 results: {'acc': {'mean': 0.6897685749086481, 'std': 0.0}, 'dp': {'mean': 0.1039352570069293, 'std': 0.0}, 'eo': {'mean': 0.08800108605176238, 'std': 0.0}}
+Training time: 155.47
+Average time per epoch: 0.3109
+Run 2 results: {'acc': {'mean': 0.6923264311814861, 'std': 0.0}, 'dp': {'mean': 0.11891289171579278, 'std': 0.0}, 'eo': {'mean': 0.11493395143138219, 'std': 0.0}}
+Training time: 154.77
+Average time per epoch: 0.3095
+Run 3 results: {'acc': {'mean': 0.6990255785627284, 'std': 0.0}, 'dp': {'mean': 0.11349932774847454, 'std': 0.0}, 'eo': {'mean': 0.10261339907659495, 'std': 0.0}}
+Training time: 152.09
+Average time per epoch: 0.3042
+Run 4 results: {'acc': {'mean': 0.6919610231425092, 'std': 0.0}, 'dp': {'mean': 0.10158366945909608, 'std': 0.0}, 'eo': {'mean': 0.08656171937310098, 'std': 0.0}}
+Average training time per run: 153.85
+Average results: {'acc': {'mean': 0.6932034104750304, 'std': 0.0031009727923935635}, 'dp': {'mean': 0.09867863791498603, 'std': 0.022506990677982307}, 'eo': {'mean': 0.09133908528856734, 'std': 0.016932571741407283}}
