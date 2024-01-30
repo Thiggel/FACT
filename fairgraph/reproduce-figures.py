@@ -55,7 +55,7 @@ class Figures:
     ) -> torch.nn.Module:
         augmentation_module = aug_module(
             features=dataset.features,
-            normalize=True
+            normalize=False
         )
 
         try:
