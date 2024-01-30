@@ -163,3 +163,4 @@ results.pickle
 *.pickle
 
 experiments
+-experiments/plots

@@ -18,7 +18,7 @@ class aug_module(torch.nn.Module):
         edge_perturbation=True,
         node_feature_masking=True,
         use_graph_attention: bool = False,
-        dont_normalize: bool = False,
+        normalize: bool = True,
     ) -> None:
         super(aug_module, self).__init__()
         self.device = device
@@ -45,7 +45,7 @@ class aug_module(torch.nn.Module):
         self.node_feature_masking = node_feature_masking
         
         self.temperature = temperature
-        self.dont_normalize = dont_normalize
+        self.normalize = normalize
 
     def forward(self, adj, x, alpha=0.5, adj_orig=None):
         h = self.g_encoder(adj, x)
@@ -65,7 +65,7 @@ class aug_module(torch.nn.Module):
             adj_sampled = adj_sampled.triu(1)
             adj_sampled = adj_sampled + adj_sampled.T
 
-            if not (self.use_graph_attention or self.dont_normalize):
+            if not self.use_graph_attention and self.normalize:
                 adj_sampled = self.normalize_adj(adj_sampled)
         else:
             adj_sampled = adj

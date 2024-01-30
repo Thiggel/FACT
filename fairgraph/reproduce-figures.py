@@ -55,14 +55,18 @@ class Figures:
     ) -> torch.nn.Module:
         augmentation_module = aug_module(
             features=dataset.features,
-            dont_normalize=True
+            normalize=True
         )
 
-        state_dict = torch.load(os.path.join(
-            os.getcwd(),
-            '../checkpoint',
-            self.get_filename()
-        ))
+        try:
+            state_dict = torch.load(os.path.join(
+                os.getcwd(),
+                '../checkpoint',
+                self.get_filename()
+            ))
+        except FileNotFoundError:
+            print('Checkpoint not found')
+            exit()
 
         new_state_dict = {}
 
@@ -91,11 +95,15 @@ class Figures:
         dataset.features = new_features.detach().numpy()
 
     def init_dataset(self) -> GraphDataset:
-        return {
-            'NBA': lambda: NBA(),
-            'POKEC-Z': lambda: POKEC(dataset_sample='pokec_z'),
-            'POKEC-N': lambda: POKEC(dataset_sample='pokec_n')
-        }[self.dataset]()
+        try:
+            return {
+                'NBA': lambda: NBA(),
+                'POKEC-Z': lambda: POKEC(dataset_sample='pokec_z'),
+                'POKEC-N': lambda: POKEC(dataset_sample='pokec_n')
+            }[self.dataset]()
+        except:
+            print('Invalid dataset')
+            exit()
 
     def nsh_plot(self):
         sns.set_style('whitegrid')
@@ -120,7 +128,7 @@ class Figures:
             os.path.join(
                 os.getcwd(),
                 '../experiments/plots',
-                self.get_filename() + '_nsh.png'
+                self.get_filename() + '_nsh.svg'
             )
         )
         plt.close()
@@ -153,7 +161,7 @@ class Figures:
             os.path.join(
                 os.getcwd(),
                 '../experiments/plots',
-                self.get_filename() + '_correlation.png'
+                self.get_filename() + '_correlation.svg'
             )
         )
         plt.close()

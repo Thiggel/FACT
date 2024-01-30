@@ -4,9 +4,8 @@ import torch
 import matplotlib.pyplot as plt
 from glob import glob
 import os
-import re
 from ast import literal_eval
-from fairgraph.utils.constants import (
+from .constants import (
     pareto_fronts,
     colors,
 )
