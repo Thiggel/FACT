@@ -6,3 +6,4 @@ PyYAML==6.0.1
 matplotlib==3.8.2
 tensorboard==2.14.1
 torch==2.1.2
+seaborn==0.13.2
