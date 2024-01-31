@@ -28,6 +28,12 @@ class Figures:
         self.lambda_ = lambda_
         self.dataset = dataset
 
+    def invoke_style(self):
+        plt.rc('text', usetex=True)
+        plt.rc('font', family='serif')
+        plt.rcParams.update({'font.size': 14})
+        plt.rcParams.update({'figure.autolayout': True})
+
     def kdeplot(self, data, label='Original', color='royalblue'):
         density = gaussian_kde(data)
 
@@ -112,7 +118,7 @@ class Figures:
             exit()
 
     def nsh_plot(self):
-        sns.set_style('whitegrid')
+        self.invoke_style
 
         dataset = self.init_dataset()
 
@@ -126,7 +132,7 @@ class Figures:
         data = dataset.node_sensitive_homophily_per_node()
         self.kdeplot(data, 'Fair View', 'coral')
 
-        plt.legend()
+        plt.legend(prop={'size': 12})
         plt.xlabel('Node sensitive homophily')
         plt.ylabel('Density')
 
@@ -142,7 +148,7 @@ class Figures:
         plt.close()
 
     def correlation_plot(self):
-        sns.set_style('whitegrid')
+        self.invoke_style()
         dataset = self.init_dataset()
 
         correlation = dataset.get_correlation_sens()
@@ -165,7 +171,7 @@ class Figures:
 
         plt.xlabel('Feature index')
         plt.ylabel('Spearman correlation')
-        plt.legend()
+        plt.legend(prop={'size': 12})
 
         os.makedirs(os.path.join(os.getcwd(), 'experiments/plots'), exist_ok=True)
 
