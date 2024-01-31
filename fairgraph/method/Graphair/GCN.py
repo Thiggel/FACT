@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import init
 from torch_geometric.nn.models import GAT
+from scipy.sparse import csr_matrix
 
 
 class GCNLayer(nn.Module):
@@ -85,6 +86,9 @@ class GAT_Body(nn.Module):
         )
 
     def forward(self, adj, x):
+        if not adj.is_sparse:
+            adj = adj.to_sparse_coo()
+
         return self.gat(x, adj.coalesce())
 
 
