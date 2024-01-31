@@ -163,3 +163,10 @@ def get_grid_search_results_from_dir(dir):
                 all_avg_results.append(avg_results)
 
     return all_avg_results, finished_hparams
+
+def make_row(d):
+    """For copying from output files to latex table."""
+    acc_mean, acc_std = round(d['acc']['mean'] * 100, 2), round(d['acc']['std'] * 100, 2)
+    dp_mean, dp_std = round(d['dp']['mean'] * 100, 2), round(d['dp']['std'] * 100, 2)
+    eo_mean, eo_std = round(d['eo']['mean'] * 100, 2), round(d['eo']['std'] * 100, 2)
+    print(f"${acc_mean:0.2f} \pm {acc_std:0.2f}$ & ${dp_mean:0.2f} \pm {dp_std:0.2f}$ & ${eo_mean:0.2f} \pm {eo_std:0.2f}$")
