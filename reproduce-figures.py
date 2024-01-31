@@ -89,11 +89,13 @@ class Figures:
         dataset: GraphDataset
     ):
         adjacency_matrix = scipysp_to_pytorchsp(dataset.adj).to_dense()
+        print('adjacency matrix created')
 
         new_adjacency_matrix, new_features, _ = augmentation_module(
             adjacency_matrix,
             dataset.features
         )
+        print('augmentation complete')
 
         dataset.adj = csr_matrix(new_adjacency_matrix.detach().numpy())
         dataset.features = new_features.detach().numpy()
@@ -146,9 +148,11 @@ class Figures:
         correlation = dataset.get_correlation_sens()
         sort_indices = np.argsort(correlation)[::-1]
         correlation = correlation[sort_indices]
+        print('correlations for original dataset created')
 
         augmentation_module = self.load_augmentation_module(dataset)
         self.augment_dataset(augmentation_module, dataset)
+        print('augmentations complete')
 
         correlation_aug = dataset.get_correlation_sens()
         correlation_aug = correlation_aug[sort_indices]
