@@ -50,17 +50,18 @@ class aug_module(torch.nn.Module):
     def forward(self, adj, x, alpha=0.5, adj_orig=None):
         h = self.g_encoder(adj, x)
 
-        # Edge perturbation
-        if self.edge_perturbation:
-            adj_logits = self.Aaug(h)
-            ## sample a new adj
-            edge_probs = torch.sigmoid(adj_logits)
+        adj_logits = None
 
-            if (adj_orig is not None) :
+        if self.edge_perturbation:
+            edge_probs = torch.sigmoid(self.Aaug(h))
+
+            if adj_orig is not None:
                 edge_probs = alpha*edge_probs + (1-alpha)*adj_orig
 
-            # sampling
-            adj_sampled = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=edge_probs).rsample()
+            adj_sampled = pyro.distributions.RelaxedBernoulliStraightThrough(
+                temperature=self.temperature,
+                probs=edge_probs
+            ).rsample()
             # making adj_sampled symmetric
             adj_sampled = adj_sampled.triu(1)
             adj_sampled = adj_sampled + adj_sampled.T
@@ -73,9 +74,11 @@ class aug_module(torch.nn.Module):
 
         # Node feature masking
         if self.node_feature_masking:
-            mask_logits = self.Xaug(h)
-            mask_probs = torch.sigmoid(mask_logits)
-            mask = pyro.distributions.RelaxedBernoulliStraightThrough(temperature=self.temperature, probs=mask_probs).rsample()
+            mask_probs = torch.sigmoid(self.Xaug(h))
+            mask = pyro.distributions.RelaxedBernoulliStraightThrough(
+                temperature=self.temperature,
+                probs=mask_probs
+            ).rsample()
             x_new = x * mask
         else:
             x_new = x

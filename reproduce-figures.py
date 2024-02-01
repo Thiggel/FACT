@@ -29,13 +29,19 @@ class Figures:
         self.dataset = dataset
 
     def invoke_style(self):
-        plt.rc('text', usetex=True)
         plt.rc('font', family='serif')
         plt.rcParams.update({'font.size': 14})
         plt.rcParams.update({'figure.autolayout': True})
 
+    def integrate_kde(self, data, kde):
+        x_values = np.linspace(min(data), max(data), num=1000)
+        dx = (max(data) - min(data)) / (len(x_values) - 1)
+        kde_integral = np.trapz(kde(x_values), dx=dx)
+
+        print('Integral of KDE: ', kde_integral)
+
     def kdeplot(self, data, label='Original', color='royalblue'):
-        density = gaussian_kde(data)
+        density = gaussian_kde(data, bw_method='silverman')
 
         x_values = np.linspace(min(data), max(data), 1000)
 
@@ -46,6 +52,8 @@ class Figures:
         plt.plot(x_values, pdf_values, label=label, color=color)
 
         plt.axvline(mode, color=color, linestyle='--')
+
+        self.integrate_kde(data, density)
 
     def get_filename(self) -> str:
         return (
@@ -89,6 +97,13 @@ class Figures:
 
         return augmentation_module
 
+    def get_title(self):
+        return {
+            'NBA': 'NBA',
+            'POKEC_Z': 'POKEC-Z',
+            'POKEC_N': 'POKEC-N'
+        }[self.dataset]
+
     def augment_dataset(
         self,
         augmentation_module: torch.nn.Module,
@@ -107,15 +122,26 @@ class Figures:
         dataset.features = new_features.detach().numpy()
 
     def init_dataset(self) -> GraphDataset:
-        try:
-            return {
-                'NBA': lambda: NBA(),
-                'POKEC_Z': lambda: POKEC(dataset_sample='pokec_z'),
-                'POKEC_N': lambda: POKEC(dataset_sample='pokec_n')
-            }[self.dataset]()
-        except:
+        if self.dataset not in ['NBA', 'POKEC_Z', 'POKEC_N']:
             print('Invalid dataset')
             exit()
+
+        dataset = {
+            'NBA': lambda: NBA(),
+            'POKEC_Z': lambda: POKEC(dataset_sample='pokec_z'),
+            'POKEC_N': lambda: POKEC(dataset_sample='pokec_n')
+        }[self.dataset]()
+
+        if self.dataset in ['POKEC_Z', 'POKEC_N']:
+            node_subgraph, adj, _ = dataset.minibatch.one_batch(mode='train')
+            dataset.adj = csr_matrix(adj.detach().to_dense().numpy())
+            dataset.features = dataset.features[node_subgraph]
+            dataset.sens = dataset.sens[node_subgraph]
+            dataset.idx_train = node_subgraph
+            dataset.idx_val = []
+            dataset.idx_test = []
+
+        return dataset
 
     def nsh_plot(self):
         self.invoke_style
@@ -134,7 +160,9 @@ class Figures:
 
         plt.legend(prop={'size': 12})
         plt.xlabel('Node sensitive homophily')
-        plt.ylabel('Density')
+        if self.dataset == 'NBA':
+            plt.ylabel('Density')
+        plt.title(self.get_title())
 
         os.makedirs(os.path.join(os.getcwd(), 'experiments/plots'), exist_ok=True)
 
@@ -170,7 +198,9 @@ class Figures:
         plt.bar(x + 0.2, correlation_aug[:10], 0.4, label='Fair view', color='coral')
 
         plt.xlabel('Feature index')
-        plt.ylabel('Spearman correlation')
+        if self.dataset == 'NBA':
+            plt.ylabel('Spearman correlation')
+        plt.title(self.get_title())
         plt.legend(prop={'size': 12})
 
         os.makedirs(os.path.join(os.getcwd(), 'experiments/plots'), exist_ok=True)
@@ -203,5 +233,5 @@ if __name__ == '__main__':
         dataset=args.dataset
     )
 
-    figures.correlation_plot()
+    #figures.correlation_plot()
     figures.nsh_plot()
