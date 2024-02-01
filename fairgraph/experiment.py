@@ -335,6 +335,16 @@ class Experiment:
         pareto_front_dp = find_pareto_front(results, metric1='acc', metric2='dp')
         pareto_front_eo = find_pareto_front(results, metric1='acc', metric2='eo')
 
+        print('Grid Search Results:\n' +
+              'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
+              'Best DP: ' + str(best_dp_params) + '\n' +
+              'Best EO: ' + str(best_eo_params) + '\n')
+
+        print('Pareto Front (Accuracy - DP):\n', pareto_front_dp)
+        print('Pareto Front (Accuracy - EO):\n', pareto_front_eo)
+
+        print('All Results:\n', results)
+
         for fairness_metric in ['dp', 'eo']:
             for show_all in [True, False]:
                 plot_pareto(
@@ -347,16 +357,6 @@ class Experiment:
 
         self.logger.log_file.close()
         self.logger.log_file = open(os.path.join(self.log_dir, "output.txt"), "a")
-        
-        print('Grid Search Results:\n' +
-              'Best Accuracy: ' + str(best_accuracy_params) + '\n' +
-              'Best DP: ' + str(best_dp_params) + '\n' +
-              'Best EO: ' + str(best_eo_params) + '\n')
-
-        print('Pareto Front (Accuracy - DP):\n', pareto_front_dp)
-        print('Pareto Front (Accuracy - EO):\n', pareto_front_eo)
-
-        print('All Results:\n', results)
 
     def run(self):
         """Runs training and evaluation for a fairgraph model on the given dataset."""
