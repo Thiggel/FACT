@@ -1,0 +1,19 @@
+alpha: 1.0, lambda: 10.0, gamma: 1.0
+Start training
+Training time: 23.40
+Average time per epoch: 0.0468
+Run 0 results: {'acc': {'mean': 0.7688888888888888, 'std': 0.0}, 'dp': {'mean': 0.5214197430097246, 'std': 0.0}, 'eo': {'mean': 0.5819672131147541, 'std': 0.0}}
+Training time: 27.31
+Average time per epoch: 0.0546
+Run 1 results: {'acc': {'mean': 0.8422222222222222, 'std': 0.0}, 'dp': {'mean': 0.7901401553135421, 'std': 0.0}, 'eo': {'mean': 0.8032786885245902, 'std': 0.0}}
+Training time: 25.28
+Average time per epoch: 0.0506
+Run 2 results: {'acc': {'mean': 0.7777777777777778, 'std': 0.0}, 'dp': {'mean': 0.6044401949581399, 'std': 0.0}, 'eo': {'mean': 0.5589635113696456, 'std': 0.0}}
+Training time: 23.10
+Average time per epoch: 0.0462
+Run 3 results: {'acc': {'mean': 0.74, 'std': 0.0}, 'dp': {'mean': 0.41328327231174644, 'std': 0.0}, 'eo': {'mean': 0.4114225277630883, 'std': 0.0}}
+Training time: 24.81
+Average time per epoch: 0.0496
+Run 4 results: {'acc': {'mean': 0.7244444444444444, 'std': 0.0}, 'dp': {'mean': 0.37725332898020103, 'std': 0.0}, 'eo': {'mean': 0.40216816499206764, 'std': 0.0}}
+Average training time per run: 24.78
+Average results: {'acc': {'mean': 0.7706666666666666, 'std': 0.04062231947471947}, 'dp': {'mean': 0.5413073389146709, 'std': 0.14805601933403947}, 'eo': {'mean': 0.5515600211528292, 'std': 0.14580681755976463}}
