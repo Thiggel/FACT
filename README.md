@@ -1,5 +1,7 @@
 # Reproducing Graphair
 
+This repository includes code for implementations, experiments used for evaluating the reproducibility of the paper ["Learning Fair Graph Representations via Automated Data Augmentations"](https://openreview.net/pdf?id=1_OGWcP1s9w) by Ling et al. (2023).
+
 ## Quick start
 
 ### Setup
@@ -10,7 +12,10 @@ To install the required dependencies:
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install_graphsaint.sh`
 
-### Experiments
+### Our experiments
+The scripts with the configurations for all the experiments can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
+
+### Custom experiments
 To run the experiment use:
 ```
 python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
