@@ -18,9 +18,9 @@ Here is a more detailed description of each experiment:
 
 | Experiment Description | File | Notes |
 |-------------|------| ----- |
-|             |      |   ?    |
-|             |      |   ?    |
-|             |      |   ?    |
+|             |   ?   |       |
+|             |   ?   |       |
+|             |   ?   |       |
 |             |   experiment_4.sh   | |
 |             |   experiment_5.sh   | |
 |             |   experiment_6.sh   | |
