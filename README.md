@@ -13,10 +13,22 @@ To install the required dependencies:
 - Install graphsaint `./install_graphsaint.sh`
 
 ### Our experiments
-The scripts with the configurations for all the experiments can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
+The scripts with the configurations for all the experiments carried our as a part of our reproduction can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
+Here is a more detailed description of each experiment:
+
+| Experiment Description | File | Notes |
+|-------------|------| ----- |
+|             |      |   ?    |
+|             |      |   ?    |
+|             |      |   ?    |
+|             |   experiment_4.sh   | |
+|             |   experiment_5.sh   | |
+|             |   experiment_6.sh   | |
+|             |   experiment_7.sh   | |
+|             |   experiment_8.sh   | |
 
 ### Custom experiments
-To run the experiment use:
+To run an experiment with custom settings (e.g. different device or hyperparameters):
 ```
 python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
 ```
