@@ -2,9 +2,7 @@
 
 This repository includes code for implementations, experiments used for evaluating the reproducibility of the paper ["Learning Fair Graph Representations via Automated Data Augmentations"](https://openreview.net/pdf?id=1_OGWcP1s9w) by Ling et al. (2023).
 
-## Quick start
-
-### Setup
+## Setup
 To install the required dependencies:
 - Create a python virtual environment: `python -m venv venv`
 - Activate the envirionement: `source ./venv/bin/activate`
@@ -12,7 +10,7 @@ To install the required dependencies:
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install_graphsaint.sh`
 
-### Our experiments
+## Our experiments
 The scripts with the configurations for all the experiments carried our as a part of our reproduction can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
 Here is a more detailed description of each experiment:
 
@@ -27,7 +25,7 @@ Here is a more detailed description of each experiment:
 |      Synthetic datasets with different homophily values       |   [experiment_7.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_7.sh)   | |
 |      Replacing GCN with GAT       |   [experiment_8.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_8.sh)   | |
 
-### Custom experiments
+## Custom experiments
 To run an experiment with custom settings (e.g. different device or hyperparameters):
 ```
 python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --verbose --seed 42
