@@ -18,7 +18,7 @@ Here is a more detailed description of each experiment:
 |-------------|------| ----- |
 |      Grid search as specified in the original paper       |   [experiment_1.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_1.sh)   |       |
 |      Grid search with our evaluation protocol       |   [experiment_2.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_2.sh)   |       |
-|      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   [experiment_3.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_3.sh)   |       |
+|      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   [experiment_3.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_3.sh)   |   Need to run experiment 2 first as this experiment uses best hyperparams found there    |
 |      Disabling adversarial training (`alpha = 0`)       |   [experiment_4.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_4.sh)   | |
 |      Training a supervised model on the original graph with no augmentations from Graphair       |   [experiment_5.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_5.sh)   | |
 |      Ablation study: training Graphair w/o node feature masking an w/o edge perturbation       |   [experiment_6.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_6.sh)   | |
