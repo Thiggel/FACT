@@ -22,7 +22,7 @@ Here is a more detailed description of each experiment:
 |             |   ?   |       |
 |             |   ?   |       |
 |             |   experiment_4.sh   | |
-|             |   experiment_5.sh   | |
+|      Training a supervised model on the original graph with no augmentations from Graphair       |   experiment_5.sh   | |
 |             |   experiment_6.sh   | |
 |             |   experiment_7.sh   | |
 |             |   experiment_8.sh   | |
