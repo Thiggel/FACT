@@ -16,10 +16,10 @@ Here is a more detailed description of each experiment:
 
 | Experiment Description | File | Notes |
 |-------------|------| ----- |
-|      Grid search as specified in the original paper       |   ?   |       |
+|      Grid search as specified in the original paper       |   [experiment_1.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_1.sh)   |       |
 |      Grid search with our evaluation protocol       |   [experiment_2.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_2.sh)   |       |
-|      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   ?   |       |
-|      Disabling adversarial trainin (`alpha` = 0)       |   [experiment_4.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_4.sh)   | |
+|      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   [experiment_3.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_3.sh)   |       |
+|      Disabling adversarial training (`alpha = 0`)       |   [experiment_4.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_4.sh)   | |
 |      Training a supervised model on the original graph with no augmentations from Graphair       |   [experiment_5.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_5.sh)   | |
 |      Ablation study: training Graphair w/o node feature masking an w/o edge perturbation       |   [experiment_6.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_6.sh)   | |
 |      Synthetic datasets with different homophily values       |   [experiment_7.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_7.sh)   | |
@@ -36,13 +36,13 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 
 `--device`: device to use, default: gpu if available, otherwise cpu
 
-`--verbose`: whether to print the training / testing logs
+`--verbose`: print the training / testing logs
 
-`--seed`: a seed to use for reproducibility
+`--seed`: a seed to use for reproducibility, default: 42
 
 `--grid_search`: whether to run one run, or do a grid search over the hyperparameters
 
-`--grid_hparams`: the values over which to do the hyperparameter search
+`--grid_hparams`: the values over which to do the hyperparameter search, default: (0.1, 1, 10)
 
 `--n_runs`: number of experiment runs, default: 5
 
