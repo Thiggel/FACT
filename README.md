@@ -21,7 +21,7 @@ Here is a more detailed description of each experiment:
 |      Grid search as specified in the original paper       |   ?   |       |
 |      Grid search with our evaluation protocol       |   ?   |       |
 |      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   ?   |       |
-|      Disabling adversarial trainin (`alpha`` = 0)       |   experiment_4.sh   | |
+|      Disabling adversarial trainin (`alpha` = 0)       |   experiment_4.sh   | |
 |      Training a supervised model on the original graph with no augmentations from Graphair       |   experiment_5.sh   | |
 |      Ablation study: training Graphair w/o node feature masking an w/o edge perturbation       |   experiment_6.sh   | |
 |      Synthetic datasets with different homophily values       |   ?   | |
