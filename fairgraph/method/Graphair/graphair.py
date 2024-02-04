@@ -9,47 +9,32 @@ from fairgraph.utils.utils import scipysp_to_pytorchsp, accuracy, fair_metric, s
 
 class Graphair(nn.Module):
     r'''
-        This class implements the Graphair model
+    This class implements the Graphair model.
 
-        :param aug_model: The augmentation model g described in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ used for automated graph augmentations
-        :type aug_model: :obj:`torch.nn.Module`
-
-        :param f_encoder: The represnetation encoder f described in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ used for contrastive learning
-        :type f_encoder: :obj:`torch.nn.Module`
-
-        :param sens_model: The adversary model k described in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ used for adversarial learning
-        :type sens_model: :obj:`torch.nn.Module`
-
-        :param classifier_model: The classifier used to predict the sensitive label of nodes on the augmented graph data.
-        :type classifier_model: :obj:`torch.nn.Module`
-
-        :param lr: Learning rate for aug_model, f_encoder and sens_model. Defaults to 1e-4
-        :type lr: float,optional
-
-        :param weight_decay: Weight decay for regularization. Defaults to 1e-5
-        :type weight_decay: float,optional
-
-        :param alpha: The hyperparameter alpha used in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ to scale adversarial loss component. Defaults to 20.0
-        :type alpha: float,optional
-
-        :param beta: The hyperparameter beta used in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ to scale contrastive loss component. Defaults to 0.9
-        :type beta: float,optional
-
-        :param gamma: The hyperparameter gamma used in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ to scale reconstruction loss component. Defaults to 0.7
-        :type gamma: float,optional
-
-        :param lam: The hyperparameter lambda used in the `paper <https://openreview.net/forum?id=1_OGWcP1s9w>`_ to compute reconstruction loss component. Defaults to 1.0
-        :type lam: float,optional
-
-        :param dataset: The name of the dataset being used. Used only for the model's output path. Defaults to 'POKEC'
-        :type dataset: str,optional
-
-        :param num_hidden: The input dimension for the MLP networks used in the model. Defaults to 64
-        :type num_hidden: int,optional
-
-        :param num_proj_hidden: The output dimension for the MLP networks used in the model. Defaults to 64
-        :type num_proj_hidden: int,optional
-
+    Args:
+        aug_model (torch.nn.Module): The augmentation model g described in the paper used for automated graph augmentations.
+        f_encoder (torch.nn.Module): The representation encoder f described in the paper used for contrastive learning.
+        sens_model (torch.nn.Module): The adversary model k described in the paper used for adversarial learning.
+        classifier_model (torch.nn.Module): The classifier used to predict the sensitive label of nodes on the augmented graph data.
+        k_lr (float, optional): Learning rate for sens_model. Defaults to 1e-4.
+        c_lr (float, optional): Learning rate for classifier_model. Defaults to 1e-3.
+        g_lr (float, optional): Learning rate for aug_model. Defaults to 1e-4.
+        g_warmup_lr (float, optional): Learning rate for aug_model during warm-up phase. Defaults to 1e-3.
+        f_lr (float, optional): Learning rate for f_encoder. Defaults to 1e-4.
+        weight_decay (float, optional): Weight decay for regularization. Defaults to 1e-5.
+        alpha (float, optional): The hyperparameter alpha used to scale adversarial loss component. Defaults to 10.
+        beta (float, optional): The hyperparameter beta used to scale contrastive loss component. Defaults to 0.1.
+        gamma (float, optional): The hyperparameter gamma used to scale reconstruction loss component. Defaults to 0.5.
+        lam (float, optional): The hyperparameter lambda used to compute reconstruction loss component. Defaults to 0.5.
+        temperature (float, optional): The temperature parameter used in the info_nce_loss_2views method. Defaults to 0.07.
+        num_hidden (int, optional): The input dimension for the projection MLP network used in the model. Defaults to 64.
+        num_proj_hidden (int, optional): The output dimension for the projection MLP network used in the model. Defaults to 64.
+        dataset (str, optional): The name of the dataset being used. Used only for the model's checkpoint path. Defaults to 'POKEC'.
+        device (str, optional): The device to run the model on. Defaults to 'cpu'.
+        batch_size (int, optional): The batch size for training. Defaults to None.
+        n_tests (int, optional): The number of tests to run during evaluation protocol. Defaults to 5.
+        skip_graphair (bool, optional): Whether to skip the Graphair model during evaluation and train a supervised classifier. Defaults to False.
+        checkpoint_path (str, optional): The path to save the model checkpoints. Defaults to './checkpoint/'.
     '''
     def __init__(self, aug_model, f_encoder, sens_model, classifier_model, k_lr=1e-4,
                  c_lr=1e-3, g_lr=1e-4, g_warmup_lr=1e-3, f_lr=1e-4,
@@ -74,10 +59,12 @@ class Graphair(nn.Module):
         self.temperature = temperature
         self.batch_size = batch_size
 
+        # Initialize loss functions
         self.criterion_sens = nn.BCEWithLogitsLoss()
         self.criterion_cont= nn.CrossEntropyLoss()
         self.criterion_recons = nn.MSELoss()
 
+        # Initialize optimizers
         self.optimizer_s = torch.optim.Adam(self.sens_model.parameters(), lr=k_lr, weight_decay=weight_decay)
 
         FG_params = [{'params': self.aug_model.parameters(), 'lr': g_lr} ,  {'params': self.f_encoder.parameters(), 'lr': f_lr}]
@@ -85,7 +72,6 @@ class Graphair(nn.Module):
 
         self.optimizer_aug = torch.optim.Adam(self.aug_model.parameters(), lr=g_warmup_lr, weight_decay=weight_decay)
         self.optimizer_enc = torch.optim.Adam(self.f_encoder.parameters(), lr=f_lr, weight_decay=weight_decay)
-
 
         self.fc1 = torch.nn.Linear(num_hidden, num_proj_hidden)
         self.fc2 = torch.nn.Linear(num_proj_hidden, num_hidden)
@@ -154,6 +140,21 @@ class Graphair(nn.Module):
         return edge_loss + self.lam * feat_loss, edge_loss, feat_loss
     
     def fit_batch_GraphSAINT(self, epochs, adj, x, sens, idx_sens, minibatch, writer, warmup=None, adv_epoches=10, verbose=False):
+        """
+        Trains the Graphair model on the given dataset using batch training.
+
+        Args:
+            epochs (int): The number of epochs to train the model for
+            adj (scipy.sparse.csr_matrix): The adjacency matrix of the graph
+            x (torch.Tensor): The features of the nodes in the graph
+            sens (torch.Tensor): The sensitive labels of the nodes in the graph
+            idx_sens (torch.Tensor): The indices of the sensitive nodes in the graph
+            minibatch (Minibatch): The minibatch object used to generate batches of nodes
+            writer (SummaryWriter): The tensorboard writer
+            warmup (int, optional): The number of warmup epochs to train the augmentation model for. Defaults to None.
+            adv_epoches (int, optional): The number of epochs to train the adversary model for in each epoch. Defaults to 10.
+            verbose (bool, optional): Whether to print the training logs. Defaults to False.
+        """
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)
@@ -248,6 +249,20 @@ class Graphair(nn.Module):
         self._save_checkpoint()
 
     def fit_whole(self, epochs, adj, x, sens, idx_sens, writer, warmup=None, adv_epoches=1, verbose=False):
+        """
+        Trains the Graphair model on the given dataset.
+
+        Args:
+            epochs (int): The number of epochs to train the model for
+            adj (scipy.sparse.csr_matrix): The adjacency matrix of the graph
+            x (torch.Tensor): The features of the nodes in the graph
+            sens (torch.Tensor): The sensitive labels of the nodes in the graph
+            idx_sens (torch.Tensor): The indices of the sensitive nodes in the graph
+            writer (SummaryWriter): The tensorboard writer
+            warmup (int, optional): The number of warmup epochs to train the augmentation model for. Defaults to None.
+            adv_epoches (int, optional): The number of epochs to train the adversary model for in each epoch. Defaults to 1.
+            verbose (bool, optional): Whether to print the training logs. Defaults to False.
+        """
         assert sp.issparse(adj)
         if not isinstance(adj, sp.coo_matrix):
             adj = sp.coo_matrix(adj)

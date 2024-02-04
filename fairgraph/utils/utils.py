@@ -52,12 +52,6 @@ def set_device():
         device = torch.device('cuda')
     else:
         device = torch.device('cpu')
-
-    try:
-        if torch.backends.mps.is_available():
-            device = torch.device('mps')
-    except:
-        device = torch.device('cpu')
     return device
 
 def set_seed(seed):
@@ -80,17 +74,21 @@ def set_seed(seed):
 
 def find_pareto_front(results, metric1, metric2):
     """In this method, the first metric is maximized, the second is minimized!!"""
+    accuracies = np.array([r[metric1]['mean'] for r in results])
+    fairness_metrics = np.array([r[metric2]['mean'] for r in results])
+
     pareto_front = []
     for i in range(len(results)):
-        is_dominated = False
-        for j in range(len(results)):
-            if i == j: continue
-            if results[i][metric1]['mean'] <= results[j][metric1]['mean'] and \
-                results[i][metric2]['mean'] >= results[j][metric2]['mean']:
-                is_dominated = True
+        better_idxs = np.where((accuracies >= accuracies[i]) & (fairness_metrics <= fairness_metrics[i]))[0]
+        better_idxs = better_idxs[better_idxs != i]
 
-        if not is_dominated:
-            pareto_front.append(results[i])  
+        is_best_point = len(better_idxs) == 0
+        is_one_of_best_points = np.all(
+            (accuracies[better_idxs] == accuracies[i]) & (fairness_metrics[better_idxs] == fairness_metrics[i])
+        ) and len(better_idxs) > 0
+
+        if is_best_point or is_one_of_best_points:
+            pareto_front.append(results[i])
             
     return pareto_front
 
@@ -121,8 +119,9 @@ def plot_pareto(results, fairness_metric, show_all, dataset, filepath=None):
 
     # plot the pareto front of other methods
     for method, pf in pareto_fronts.items():
-        plt.plot(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method], label=f"{method}")
-        plt.scatter(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method])
+        if dataset in pf:
+            plt.plot(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method], label=f"{method}")
+            plt.scatter(np.array(pf[dataset])[:, 0], np.array(pf[dataset])[:, 1], color=colors[method])
 
     # plot the pareto front of the reproduced Graphair results
     plt.plot(arr[:, 0], arr[:, 1], color='darkviolet', label='Graphair (reproduced)')
@@ -162,3 +161,10 @@ def get_grid_search_results_from_dir(dir):
                 all_avg_results.append(avg_results)
 
     return all_avg_results, finished_hparams
+
+def make_row(d):
+    """For copying from output files to latex table."""
+    acc_mean, acc_std = round(d['acc']['mean'] * 100, 2), round(d['acc']['std'] * 100, 2)
+    dp_mean, dp_std = round(d['dp']['mean'] * 100, 2), round(d['dp']['std'] * 100, 2)
+    eo_mean, eo_std = round(d['eo']['mean'] * 100, 2), round(d['eo']['std'] * 100, 2)
+    print(f"${acc_mean:0.2f} \pm {acc_std:0.2f}$ & ${dp_mean:0.2f} \pm {dp_std:0.2f}$ & ${eo_mean:0.2f} \pm {eo_std:0.2f}$")
