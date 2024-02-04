@@ -8,7 +8,7 @@ To install the required dependencies:
 - Activate the envirionement: `source ./venv/bin/activate`
 - Use the latest version of pip: `pip install --upgrade pip`
 - Install the required dependencies: `pip install -r requirements.txt`
-- Install graphsaint `./install_graphsaint.sh` (you might get the following message `error: could not create 'fairgraph/dataset/graphsaint/cython_sampler.cpython-311-darwin.so': No such file or directory`. Check if `cython_sampler.*.so` file is in `fairgraph/dataset/graphsaint/`. If yes, Graphsaint was compiled)
+- Install graphsaint `./install_graphsaint.sh` (you might get the following message `error: could not create 'fairgraph/dataset/graphsaint/cython_sampler.*.so': No such file or directory`. Check if `cython_sampler.*.so` file is in `fairgraph/dataset/graphsaint/`. If yes, Graphsaint was compiled)
 
 ## Our experiments
 The scripts with the configurations for all the experiments carried our as a part of our reproduction can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
