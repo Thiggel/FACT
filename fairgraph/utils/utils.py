@@ -53,12 +53,6 @@ def set_device():
         device = torch.device('cuda')
     else:
         device = torch.device('cpu')
-
-    try:
-        if torch.backends.mps.is_available():
-            device = torch.device('mps')
-    except:
-        device = torch.device('cpu')
     return device
 
 def set_seed(seed):
