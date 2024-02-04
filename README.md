@@ -19,13 +19,13 @@ Here is a more detailed description of each experiment:
 | Experiment Description | File | Notes |
 |-------------|------| ----- |
 |      Grid search as specified in the original paper       |   ?   |       |
-|      Grid search with our evaluation protocol       |   experiment_2.sh   |       |
+|      Grid search with our evaluation protocol       |   [experiment_2.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_2.sh)   |       |
 |      Running with best hyperparameters found in experiment 1 but with our evaluation protocol         |   ?   |       |
-|      Disabling adversarial trainin (`alpha` = 0)       |   experiment_4.sh   | |
-|      Training a supervised model on the original graph with no augmentations from Graphair       |   experiment_5.sh   | |
-|      Ablation study: training Graphair w/o node feature masking an w/o edge perturbation       |   experiment_6.sh   | |
+|      Disabling adversarial trainin (`alpha` = 0)       |   [experiment_4.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_4.sh)   | |
+|      Training a supervised model on the original graph with no augmentations from Graphair       |   [experiment_5.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_5.sh)   | |
+|      Ablation study: training Graphair w/o node feature masking an w/o edge perturbation       |   [experiment_6.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_6.sh)   | |
 |      Synthetic datasets with different homophily values       |   ?   | |
-|      Replacing GCN with GAT       |   experiment_8.sh   | |
+|      Replacing GCN with GAT       |   [experiment_8.sh](https://github.com/Thiggel/FACT/blob/main/scripts/experiment_8.sh)   | |
 
 ### Custom experiments
 To run an experiment with custom settings (e.g. different device or hyperparameters):
