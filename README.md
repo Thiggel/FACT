@@ -10,6 +10,12 @@ To install the required dependencies:
 - Install the required dependencies: `pip install -r requirements.txt`
 - Install graphsaint `./install-graphsaint.sh` (you might get the following message `error: could not create 'fairgraph/dataset/graphsaint/cython_sampler.*.so': No such file or directory`. Check if `cython_sampler.*.so` file is in `fairgraph/dataset/graphsaint/`. If yes, Graphsaint was compiled)
 
+## Run experiments on NBA dataset
+To run all experiments (other than grid searches and training on synthetic datasets) on just the NBA dataset, run the demo:
+`. scripts/demo.sh`
+If permission to run is denied, run
+`chmod +x scripts/demo.sh`, then the command above.
+
 ## Our experiments
 The scripts with the configurations for all the experiments carried our as a part of our reproduction can be found in `/scripts/` directory. To run a script: `. ./scripts/experiment_1.sh`.
 Here is a more detailed description of each experiment:
