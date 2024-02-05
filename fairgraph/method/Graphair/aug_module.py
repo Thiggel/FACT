@@ -75,7 +75,8 @@ class aug_module(torch.nn.Module):
 
         # Node feature masking
         if self.node_feature_masking:
-            mask_probs = torch.sigmoid(self.Xaug(h))
+            mask_logits = self.Xaug(h)
+            mask_probs = torch.sigmoid(mask_logits)
             mask = pyro.distributions.RelaxedBernoulliStraightThrough(
                 temperature=self.temperature,
                 probs=mask_probs
