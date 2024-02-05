@@ -53,7 +53,8 @@ class aug_module(torch.nn.Module):
         adj_logits = None
 
         if self.edge_perturbation:
-            edge_probs = torch.sigmoid(self.Aaug(h))
+            adj_logits = self.Aaug(h)
+            edge_probs = torch.sigmoid(adj_logits)
 
             if adj_orig is not None:
                 edge_probs = alpha*edge_probs + (1-alpha)*adj_orig
