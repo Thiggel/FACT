@@ -51,3 +51,11 @@ python run.py --params_file hyperparams.yml  --dataset_name NBA --device cpu --v
 `--supervised_testing`: whether to only run supervised testing and skip training Graphair, default: False
 
 To run with different hyperparameters, either change `hyperparams.yml` or create a new yaml file and pass it as an argument.
+
+### To Reproduce Spearman Correlation and Node Sensitive Homophily Figures
+
+```
+python reproduce-figures.py --alpha 0.1 --beta 1.0 --gamma 1.0 --lambda 10.0 --dataset NBA
+python reproduce-figures.py --alpha 1 --beta 1 --gamma 10 --lambda 0.1 --dataset POKEC_N
+python reproduce-figures.py --alpha 1 --beta 1 --gamma 1 --lambda 0.1 --dataset POKEC_Z
+```
