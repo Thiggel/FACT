@@ -12,8 +12,14 @@ To install the required dependencies:
 
 ## Run experiments on NBA dataset
 To run all experiments (other than grid searches and training on synthetic datasets) on just the NBA dataset, run the demo:
+
+
 `. scripts/demo.sh`
+
+
 If permission to run is denied, run
+
+
 `chmod +x scripts/demo.sh`, then the command above.
 
 ## Our experiments
