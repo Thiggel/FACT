@@ -148,7 +148,7 @@ class Experiment:
         """
         self.name = experiment_name
         
-        if device in ["cpu", "cuda", "mps"]:
+        if device in ["cpu", "cuda"]:
             self.device = torch.device(device)
         else:
             self.device = set_device()
