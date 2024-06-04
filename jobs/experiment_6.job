@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=Experiment_6
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=08:00:00
+#SBATCH --output=experiment_6_%A.out
+
+module purge
+module load 2022
+module load Anaconda3/2022.05
+
+cd $HOME/FACT/
+source activate fact
+
+hyperparams_dir="experiments/experiment_6"
+
+# Without node feature masking
+echo "Running POKEC_N without feature masking"
+python run.py \
+    --params_file $hyperparams_dir/hyperparams_no_fm_pokec_n.yml \
+    --dataset_name POKEC_N \
+    --experiment_name POKEC_N_without_fm
+
+echo "Running POKEC_Z without feature masking"
+python run.py \
+    --params_file $hyperparams_dir/hyperparams_no_fm_pokec_z.yml \
+    --dataset_name POKEC_Z \
+    --experiment_name POKEC_Z_without_fm
+
+# Without edge perturbation
+
+echo "Running POKEC_N without edge perturbation"
+python run.py \
+    --params_file $hyperparams_dir/hyperparams_no_ep_pokec_n.yml \
+    --dataset_name POKEC_N \
+    --experiment_name POKEC_N_without_ep
+
+echo "Running POKEC_Z without edge perturbation"
+python run.py \
+    --params_file $hyperparams_dir/hyperparams_no_ep_pokec_z.yml \
+    --dataset_name POKEC_Z \
+    --experiment_name POKEC_Z_without_ep

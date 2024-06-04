@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=Experiment_4
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=08:00:00
+#SBATCH --output=experiment_4_%A.out
+
+module purge
+module load 2022
+module load Anaconda3/2022.05
+
+cd $HOME/FACT/
+source activate fact
+
+echo "Running POKEC_Z"
+python run.py \
+    --dataset POKEC_Z \
+    --params_file experiments/experiment_4/pokec_z_best_hyperparameters_alpha_0.yml \
+    --experiment_name POKEC_Z_alpha_0
+
+echo "Running POKEC_N"
+python run.py \
+    --dataset POKEC_N \
+    --params_file experiments/experiment_4/pokec_n_best_hyperparameters_alpha_0.yml \
+    --experiment_name POKEC_N_alpha_0

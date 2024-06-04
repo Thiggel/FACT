@@ -165,3 +165,6 @@ results.pickle
 experiments
 !experiments/plots
 
+graphsaint/**/*
+graphsaint
+graphsaint/*
