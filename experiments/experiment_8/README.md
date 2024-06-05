@@ -1,4 +1,4 @@
-# Results of Experiment 6
+# Results of Experiment 8
 
 ## Results using hyperparameters found in Experiment 2
 
@@ -15,9 +15,9 @@
 | NBA     | Best accuracy | 0.6879 (0.0320) | 0.0771 (0.0510) | 0.0889 (0.0395) |
 | NBA     | Best DP       | 0.6397 (0.0176) | 0.0455 (0.0192) | 0.1305 (0.0764) |
 | NBA     | Best EO       | 0.6567 (0.0268) | 0.0784 (0.0340) | 0.0568 (0.0409) |
-| POKEC-z | Best accuracy |                 |                 |                 |
-| POKEC-z | Best DP       |                 |                 |                 |
-| POKEC-z | Best EO       |                 |                 |                 |
+| POKEC-z | Best accuracy | 0.6094 (0.0192) | 0.0370 (0.0287) | 0.0486 (0.0279) |
+| POKEC-z | Best DP       | 0.6094 (0.0192) | 0.0370 (0.0287) | 0.0486 (0.0279) |
+| POKEC-z | Best EO       | 0.5977 (0.0269) | 0.0450 (0.0172) | 0.0444 (0.0251) |
 | POKEC-n | Best accuracy | 0.6066 (0.0132) | 0.0381 (0.0185) | 0.0345 (0.0248) |
 | POKEC-n | Best DP       | 0.5972 (0.0206) | 0.0178 (0.0121) | 0.0081 (0.0042) |
 | POKEC-n | Best EO       | 0.5972 (0.0206) | 0.0178 (0.0121) | 0.0081 (0.0042) |
