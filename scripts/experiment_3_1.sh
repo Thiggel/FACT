@@ -1,4 +1,4 @@
-hyperparams_dir="experiments/experiment_3_1"
+hyperparams_dir="experiments/experiment_3/experiment_3_1"
 
 # train a model with the best hyperparameters once for each dataset
     

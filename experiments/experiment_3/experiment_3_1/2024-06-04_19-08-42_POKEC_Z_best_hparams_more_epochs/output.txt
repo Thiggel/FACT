@@ -1,0 +1,250 @@
+Experiment with the following hyperparameters:
+        Dataset: POKEC_Z, Epochs: 11000, Test epochs: 500, Batch size: 1000
+        Device: cuda, Seed: 42, N Runs: 5, N Tests: 1
+        Augmentation model g hyperparameters: {'n_hidden': 64, 'temperature': 1.0, 'nlayer': 1, 'dropout': 0.1, 'mlpx_dropout': 0.1, 'edge_perturbation': True, 'node_feature_masking': True}
+        Encoder model f hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2}
+        Adversary model k hyperparameters: {'n_hidden': 64, 'out_feats': 64, 'dropout': 0.1, 'nlayer': 2, 'nclass': 1}
+Start training
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.279 sec
+sampling 200 subgraphs:   time = 0.287 sec
+Training time: 2249.55
+Average time per epoch: 0.2045
+Run 0 results: {'acc': {'mean': 0.6316686967113276, 'std': 0.0}, 'dp': {'mean': 0.023509411521356993, 'std': 0.0}, 'eo': {'mean': 0.007884535641077273, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.276 sec
+sampling 200 subgraphs:   time = 0.290 sec
+sampling 200 subgraphs:   time = 0.285 sec
+sampling 200 subgraphs:   time = 0.289 sec
+sampling 200 subgraphs:   time = 0.285 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.279 sec
+sampling 200 subgraphs:   time = 0.292 sec
+sampling 200 subgraphs:   time = 0.287 sec
+sampling 200 subgraphs:   time = 0.287 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.294 sec
+sampling 200 subgraphs:   time = 0.266 sec
+sampling 200 subgraphs:   time = 0.291 sec
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.291 sec
+sampling 200 subgraphs:   time = 0.286 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.286 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.313 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.268 sec
+sampling 200 subgraphs:   time = 0.292 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.266 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.267 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.303 sec
+sampling 200 subgraphs:   time = 0.294 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.276 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.310 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.300 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.303 sec
+Training time: 2179.60
+Average time per epoch: 0.1981
+Run 1 results: {'acc': {'mean': 0.643848964677223, 'std': 0.0}, 'dp': {'mean': 0.043991751990898775, 'std': 0.0}, 'eo': {'mean': 0.0525049026795803, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.313 sec
+sampling 200 subgraphs:   time = 0.285 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.267 sec
+sampling 200 subgraphs:   time = 0.294 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.281 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.289 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.275 sec
+sampling 200 subgraphs:   time = 0.320 sec
+sampling 200 subgraphs:   time = 0.276 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.291 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.303 sec
+sampling 200 subgraphs:   time = 0.292 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.287 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.281 sec
+sampling 200 subgraphs:   time = 0.294 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.315 sec
+sampling 200 subgraphs:   time = 0.287 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.299 sec
+Training time: 2185.27
+Average time per epoch: 0.1987
+Run 2 results: {'acc': {'mean': 0.6345919610231425, 'std': 0.0}, 'dp': {'mean': 0.033783224738856144, 'std': 0.0}, 'eo': {'mean': 0.03993350543656804, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.315 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.290 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.303 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.279 sec
+sampling 200 subgraphs:   time = 0.300 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.290 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.305 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.287 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.316 sec
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.276 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.277 sec
+sampling 200 subgraphs:   time = 0.311 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.303 sec
+sampling 200 subgraphs:   time = 0.278 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.268 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.272 sec
+Training time: 2195.20
+Average time per epoch: 0.1996
+Run 3 results: {'acc': {'mean': 0.6228989037758831, 'std': 0.0}, 'dp': {'mean': 0.011673259902782063, 'std': 0.0}, 'eo': {'mean': 0.005934994406572303, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.310 sec
+sampling 200 subgraphs:   time = 0.303 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.299 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.318 sec
+sampling 200 subgraphs:   time = 0.284 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.300 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.277 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.289 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.301 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.300 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.306 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.297 sec
+sampling 200 subgraphs:   time = 0.275 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.323 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.282 sec
+sampling 200 subgraphs:   time = 0.291 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.305 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.295 sec
+sampling 200 subgraphs:   time = 0.290 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.292 sec
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.286 sec
+sampling 200 subgraphs:   time = 0.298 sec
+sampling 200 subgraphs:   time = 0.282 sec
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.300 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.304 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.308 sec
+Training time: 2194.82
+Average time per epoch: 0.1995
+Run 4 results: {'acc': {'mean': 0.6364190012180269, 'std': 0.0}, 'dp': {'mean': 0.0012333229910022059, 'std': 0.0}, 'eo': {'mean': 0.005545999905144483, 'std': 0.0}}
+Average training time per run: 2200.89
+Average results: {'acc': {'mean': 0.6338855054811207, 'std': 0.00680893321138534}, 'dp': {'mean': 0.022838194228979238, 'std': 0.015225921654996474}, 'eo': {'mean': 0.02236078761378848, 'std': 0.01989760650997577}}
