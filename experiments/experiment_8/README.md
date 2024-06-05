@@ -18,6 +18,6 @@
 | POKEC-z | Best accuracy |                 |                 |                 |
 | POKEC-z | Best DP       |                 |                 |                 |
 | POKEC-z | Best EO       |                 |                 |                 |
-| POKEC-n | Best accuracy |                 |                 |                 |
-| POKEC-n | Best DP       |                 |                 |                 |
-| POKEC-n | Best EO       |                 |                 |                 |
+| POKEC-n | Best accuracy | 0.6066 (0.0132) | 0.0381 (0.0185) | 0.0345 (0.0248) |
+| POKEC-n | Best DP       | 0.5972 (0.0206) | 0.0178 (0.0121) | 0.0081 (0.0042) |
+| POKEC-n | Best EO       | 0.5972 (0.0206) | 0.0178 (0.0121) | 0.0081 (0.0042) |
