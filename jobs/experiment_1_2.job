@@ -15,4 +15,4 @@ module load Anaconda3/2022.05
 cd $HOME/FACT/
 source activate atcs-nli
 
-. ./scripts/experiment_1_longer.sh
+. ./scripts/experiment_1_long.sh
