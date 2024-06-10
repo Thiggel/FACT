@@ -1,0 +1,57 @@
+alpha: 10.0, lambda: 10.0, gamma: 10.0
+Start training
+sampling 200 subgraphs:   time = 0.266 sec
+sampling 200 subgraphs:   time = 0.242 sec
+sampling 200 subgraphs:   time = 0.266 sec
+sampling 200 subgraphs:   time = 0.257 sec
+sampling 200 subgraphs:   time = 0.268 sec
+sampling 200 subgraphs:   time = 0.260 sec
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.260 sec
+sampling 200 subgraphs:   time = 0.255 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.261 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.254 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.255 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.256 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.249 sec
+sampling 200 subgraphs:   time = 0.275 sec
+sampling 200 subgraphs:   time = 0.261 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.250 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.252 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.264 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.251 sec
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.254 sec
+sampling 200 subgraphs:   time = 0.281 sec
+sampling 200 subgraphs:   time = 0.257 sec
+sampling 200 subgraphs:   time = 0.254 sec
+sampling 200 subgraphs:   time = 0.273 sec
+sampling 200 subgraphs:   time = 0.260 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.250 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.258 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.258 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.250 sec
+sampling 200 subgraphs:   time = 0.271 sec
+sampling 200 subgraphs:   time = 0.256 sec
+sampling 200 subgraphs:   time = 0.280 sec
+sampling 200 subgraphs:   time = 0.264 sec
+sampling 200 subgraphs:   time = 0.275 sec
+sampling 200 subgraphs:   time = 0.248 sec
+Training time: 1782.65
+Average time per epoch: 0.1783
+Run 0 results: {'acc': {'mean': 0.6541915316851379, 'std': 0.000922573633461094}, 'dp': {'mean': 0.02702433212090808, 'std': 0.005209936914288593}, 'eo': {'mean': 0.02111578897293185, 'std': 0.0028785829030073635}}
+Average training time per run: 1782.65
+Average results: {'acc': {'mean': 0.6541915316851379, 'std': 0.0}, 'dp': {'mean': 0.02702433212090808, 'std': 0.0}, 'eo': {'mean': 0.02111578897293185, 'std': 0.0}}
