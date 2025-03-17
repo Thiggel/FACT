@@ -1,0 +1,134 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it should be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] Learning Fair Graph Representations via Automated Data Augmentations"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author (required even for single-authored papers)
+# To include author suffix format name as Last Suffix, First M.I. (e.g. Schackart III, Kenneth E.)
+authors:
+  - name: Max Belitsky
+    orcid: -
+    email: max.belitsky@student.uva.nl
+    affiliations: 1
+    
+  - name: Filipe Laitenberger
+    orcid: -
+    email: filipe.laitenberger@student.uva.nl
+    affiliations: 1
+
+  - name: Denys Sheremet
+    orcid: -
+    email: denys.sheremet@student.uva.nl
+    affiliations: 1
+
+  - name: Nordin Belkacemi
+    orcid: -
+    email: nordin.belkacemi@student.uva.nl
+    affiliations: 1
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code:    1
+    name:    University of Amsterdam
+    address: Amsterdam, Netherlands
+    
+# List of keywords (adding the programming language might be a good idea)
+keywords: rescience c, rescience x, python, graph, deep learning, geometric deep learning
+
+# Code URL and DOI/SWH (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo, or an SWH identifier from
+# Software Heritage.
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://zenodo.org/records/13834566
+  - doi: 10.5281/zenodo.13834566
+  - swh: -
+
+# Data URL and DOI (optional if no data)
+data:
+  - url: https://zenodo.org/records/13837423
+  - doi: 10.5281/zenodo.13837423
+
+# Information about the original article that has been replicated
+replication:
+ - cite: Hongyi Ling, Zhimeng Jiang, Youzhi Luo, Shuiwang Ji, and Na Zou. Learning fair graph representations via automated data augmentations. In The Eleventh International Conference on Learning Representations, 2023
+ - bib:  ling2023learning
+ - url:  https://openreview.net/pdf?id=1_OGWcP1s9w
+ - doi:  No DOI available
+
+# Don't forget to surround abstract with double quotes
+abstract: "We consider fair graph representation learning via data augmentations. While
+this direction has been explored previously, existing methods invariably rely on
+certain assumptions on the properties of fair graph data in order to design fxed
+strategies on data augmentations. Nevertheless, the exact properties of fair graph
+data may vary signifcantly in different scenarios. Hence, heuristically designed
+augmentations may not always generate fair graph data in different application
+scenarios. In this work, we propose a method, known as Graphair, to learn fair representations based on automated graph data augmentations. Such fairness-aware
+augmentations are themselves learned from data. Our Graphair is designed to automatically discover fairness-aware augmentations from input graphs in order to
+circumvent sensitive information while preserving other useful information. Experimental results demonstrate that our Graphair consistently outperforms many
+baselines on multiple node classifcation datasets in terms of fairness-accuracy
+trade-off performance. In addition, results indicate that Graphair can automatically learn to generate fair graph data without prior knowledge on fairness-relevant
+graph properties. Our code is publicly available as part of the DIG package
+(https://github.com/divelab/DIG)."
+
+# Bibliography file (yours)
+bibliography: main.bib
+  
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: Artificial Intelligence
+
+# Coding language (main one only if several)
+language: Python
+
+  
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review: 
+  - url: 
+
+contributors:
+  - name:
+    orcid: 
+    role: editor
+  - name:
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:  November 1, 2018
+  - accepted:
+  - published: 
+
+# This information will be provided by the editor
+article:
+  - number: # Article number will be automatically assigned during publication
+  - doi:    # DOI from Zenodo
+  - url:    # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume: 4
+  - issue:  1

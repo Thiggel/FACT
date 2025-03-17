@@ -1,0 +1,33 @@
+alpha: 10.0, lambda: 10.0, gamma: 0.1
+Start training
+sampling 200 subgraphs:   time = 0.293 sec
+sampling 200 subgraphs:   time = 0.272 sec
+sampling 200 subgraphs:   time = 0.263 sec
+Training time: 134.09
+Average time per epoch: 0.2682
+Run 0 results: {'acc': {'mean': 0.6339869281045751, 'std': 0.0}, 'dp': {'mean': 0.009717170450269652, 'std': 0.0}, 'eo': {'mean': 0.015433970791113638, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.269 sec
+sampling 200 subgraphs:   time = 0.274 sec
+sampling 200 subgraphs:   time = 0.257 sec
+Training time: 134.79
+Average time per epoch: 0.2696
+Run 1 results: {'acc': {'mean': 0.6025859619210003, 'std': 0.0}, 'dp': {'mean': 0.03179167189263765, 'std': 0.0}, 'eo': {'mean': 0.007623329051900496, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.275 sec
+sampling 200 subgraphs:   time = 0.270 sec
+sampling 200 subgraphs:   time = 0.275 sec
+Training time: 134.56
+Average time per epoch: 0.2691
+Run 2 results: {'acc': {'mean': 0.5886615515771526, 'std': 0.0}, 'dp': {'mean': 0.007751160165558768, 'std': 0.0}, 'eo': {'mean': 0.002779958137101024, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.266 sec
+sampling 200 subgraphs:   time = 0.272 sec
+Training time: 133.69
+Average time per epoch: 0.2674
+Run 3 results: {'acc': {'mean': 0.5869565217391305, 'std': 0.0}, 'dp': {'mean': 0.033259124545340524, 'std': 0.0}, 'eo': {'mean': 0.00575614861329149, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.288 sec
+sampling 200 subgraphs:   time = 0.249 sec
+sampling 200 subgraphs:   time = 0.250 sec
+Training time: 131.84
+Average time per epoch: 0.2637
+Run 4 results: {'acc': {'mean': 0.5736004546746235, 'std': 0.0}, 'dp': {'mean': 0.006377774990593221, 'std': 0.0}, 'eo': {'mean': 0.008863160648874935, 'std': 0.0}}
+Average training time per run: 133.79
+Average results: {'acc': {'mean': 0.5971582836032965, 'std': 0.020576931023901048}, 'dp': {'mean': 0.017779380408879962, 'std': 0.012095683758561574}, 'eo': {'mean': 0.008091313448456317, 'std': 0.004204589501931091}}

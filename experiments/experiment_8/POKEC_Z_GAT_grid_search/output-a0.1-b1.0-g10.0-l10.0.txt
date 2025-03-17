@@ -1,0 +1,33 @@
+alpha: 0.1, lambda: 10.0, gamma: 10.0
+Start training
+sampling 200 subgraphs:   time = 0.312 sec
+sampling 200 subgraphs:   time = 0.278 sec
+sampling 200 subgraphs:   time = 0.298 sec
+Training time: 135.71
+Average time per epoch: 0.2714
+Run 0 results: {'acc': {'mean': 0.6369062119366626, 'std': 0.0}, 'dp': {'mean': 0.04400597269624568, 'std': 0.0}, 'eo': {'mean': 0.04048284051268958, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.289 sec
+Training time: 135.73
+Average time per epoch: 0.2715
+Run 1 results: {'acc': {'mean': 0.5605359317904994, 'std': 0.0}, 'dp': {'mean': 0.015578782707622252, 'std': 0.0}, 'eo': {'mean': 0.023421472061361914, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.296 sec
+sampling 200 subgraphs:   time = 0.283 sec
+sampling 200 subgraphs:   time = 0.303 sec
+Training time: 135.59
+Average time per epoch: 0.2712
+Run 2 results: {'acc': {'mean': 0.6330085261875762, 'std': 0.0}, 'dp': {'mean': 0.058792274278622436, 'std': 0.0}, 'eo': {'mean': 0.08314822735553784, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.302 sec
+sampling 200 subgraphs:   time = 0.294 sec
+Training time: 134.67
+Average time per epoch: 0.2693
+Run 3 results: {'acc': {'mean': 0.5750304506699148, 'std': 0.0}, 'dp': {'mean': 0.011035913744958104, 'std': 0.0}, 'eo': {'mean': 0.006766067670249343, 'std': 0.0}}
+sampling 200 subgraphs:   time = 0.313 sec
+sampling 200 subgraphs:   time = 0.278 sec
+sampling 200 subgraphs:   time = 0.296 sec
+Training time: 134.89
+Average time per epoch: 0.2698
+Run 4 results: {'acc': {'mean': 0.5789281364190012, 'std': 0.0}, 'dp': {'mean': 0.08533134243458473, 'std': 0.0}, 'eo': {'mean': 0.10721323730013455, 'std': 0.0}}
+Average training time per run: 135.32
+Average results: {'acc': {'mean': 0.5968818514007308, 'std': 0.031710980859386985}, 'dp': {'mean': 0.04294885717240664, 'std': 0.027625941975767593}, 'eo': {'mean': 0.052206368979994644, 'std': 0.037453935856146946}}
