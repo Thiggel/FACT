@@ -19,17 +19,17 @@ authors:
   - name: Filipe Laitenberger
     orcid:
     email: filipe.laitenberger@student.uva.nl
-    affiliations: 1
+    affiliations: 1,*
 
   - name: Denys Sheremet
-    orcid:
+    orcid: 
     email: denys.sheremet@student.uva.nl
-    affiliations: 1
+    affiliations: 1,*
 
   - name: Nordin Belkacemi
     orcid:
     email: nordin.belkacemi@student.uva.nl
-    affiliations: 1
+    affiliations: 1,*
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
@@ -38,6 +38,8 @@ affiliations:
   - code:    1
     name:    University of Amsterdam
     address: Amsterdam, Netherlands
+  - code:    "*"
+    name:    Equal contribution
     
 # List of keywords (adding the programming language might be a good idea)
 keywords: python, graph, deep learning
@@ -64,19 +66,13 @@ replication:
  - doi:  No DOI available
 
 # Don't forget to surround abstract with double quotes
-abstract: "We consider fair graph representation learning via data augmentations. While
-this direction has been explored previously, existing methods invariably rely on
-certain assumptions on the properties of fair graph data in order to design fxed
-strategies on data augmentations. Nevertheless, the exact properties of fair graph
-data may vary signifcantly in different scenarios. Hence, heuristically designed
-augmentations may not always generate fair graph data in different application
-scenarios. In this work, we propose a method, known as Graphair, to learn fair representations based on automated graph data augmentations. Such fairness-aware
-augmentations are themselves learned from data. Our Graphair is designed to automatically discover fairness-aware augmentations from input graphs in order to
-circumvent sensitive information while preserving other useful information. Experimental results demonstrate that our Graphair consistently outperforms many
-baselines on multiple node classifcation datasets in terms of fairness-accuracy
-trade-off performance. In addition, results indicate that Graphair can automatically learn to generate fair graph data without prior knowledge on fairness-relevant
-graph properties. Our code is publicly available as part of the DIG package
-(https://github.com/divelab/DIG)."
+abstract: "Due to the expanding reproducibility crisis in machine learning, there is a pressing need for careful evaluation of research findings.
+We evaluate the reproducibility of the paper \enquote{Learning Fair Graph Representations via Automated Data Augmentations} by \citet{ling2023learning}. Our objective is to assess the authors' three major claims: (1) fair augmentations improve fairness while retaining similar accuracy compared to other fairness methods, (2) augmenting both edges and node features performs better than augmenting only one of the two, and (3) learned augmentations reduce node-wise sensitive homophily and correlation between node features and the sensitive attribute.
+To achieve this, we (a) repeat all experiments from the original paper; (b) implement a new multi-run evaluation protocol with different random seeds; (c) perform extensive ablations of components of Graphair, and (d) investigate the generalizability of the method to other graph neural network (GNN) architectures, and graphs with varying homophily.
+Our results indicate that claims (1), (2), and (3) are only partially reproducible, achieving comparable performance on a maximum of two out of the three original datasets. 
+Notably, the specific dataset(s) where the claims fail to hold varies between experiments.
+Additionally, we found the method generalizes to other GNN architectures, but does not generalize to graphs with varying homophily, failing for unbalanced homophily settings. 
+Finally, throughout our experiments, we uncover a lack of stability in the Graphair framework."
 
 # Bibliography file (yours)
 bibliography: main.bib
